@@ -7,7 +7,6 @@ using CapaEntidad;
 using System.Data.SqlClient;
 using System.Data;
 using static CapaEntidad.Cliente;
-using CapaEntidad;
 
 
 namespace CapaDatos
