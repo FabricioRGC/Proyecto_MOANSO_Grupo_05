@@ -23,6 +23,7 @@ namespace CapaDatos
         // Metodo para listar los clientes
         public List<entCliente> ListarCliente()
         {
+
             SqlCommand cmd = null;
             List<entCliente> lista = new List<entCliente>();
             try
