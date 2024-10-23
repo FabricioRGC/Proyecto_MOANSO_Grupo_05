@@ -30,5 +30,12 @@ namespace Proyecto_MOANSO_Grupo_05
         {
 
         }
+
+        //Boton para abrir el boton que lleva a la ventana materiales
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form formulario = new MaterialesForm();
+            formulario.Show();
+        }
     }
 }
