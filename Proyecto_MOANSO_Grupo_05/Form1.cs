@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaEntidad;
+using CapaLogica;
 
 namespace Proyecto_MOANSO_Grupo_05
 {
@@ -15,6 +17,18 @@ namespace Proyecto_MOANSO_Grupo_05
         public Form1()
         {
             InitializeComponent();
+        }
+
+        // Boton para abrir el formulario de clientes
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Form formulario = new ClientesForm();
+            formulario.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
