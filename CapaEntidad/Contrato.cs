@@ -15,7 +15,6 @@ namespace CapaEntidad
             public string duracion { get; set; }
             public string estado { get; set; }
             public string tipo_plan { get; set; }
-            public int monto { get; set; }
         }
     }
 }

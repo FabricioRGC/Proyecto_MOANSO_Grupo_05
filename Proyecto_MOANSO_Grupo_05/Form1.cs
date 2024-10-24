@@ -37,5 +37,13 @@ namespace Proyecto_MOANSO_Grupo_05
             Form formulario = new MaterialesForm();
             formulario.Show();
         }
+
+
+        //Boton para abrir el boton que lleva a la ventana contratos
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form formulario = new ContratosForm();
+            formulario.Show();
+        }
     }
 }
