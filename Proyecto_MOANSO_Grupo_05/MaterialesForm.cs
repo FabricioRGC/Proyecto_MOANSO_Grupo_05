@@ -17,6 +17,7 @@ namespace Proyecto_MOANSO_Grupo_05
     {
         public MaterialesForm()
         {
+
             InitializeComponent();
             listarMateriales();
         }
