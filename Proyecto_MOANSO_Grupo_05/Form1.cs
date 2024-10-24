@@ -52,5 +52,11 @@ namespace Proyecto_MOANSO_Grupo_05
             Form formulario = new ProformasForm();
             formulario.Show();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Form formulario = new RepuestosForm();
+            formulario.Show();
+        }
     }
 }

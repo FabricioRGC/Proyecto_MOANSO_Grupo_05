@@ -46,6 +46,7 @@
     <Compile Include="Material.cs" />
     <Compile Include="ProformaVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repuesto.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
