@@ -92,10 +92,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(533, 193);
+            this.button3.Location = new System.Drawing.Point(518, 193);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(172, 52);
+            this.button3.Size = new System.Drawing.Size(212, 52);
             this.button3.TabIndex = 2;
             this.button3.Text = "Notas de Salida";
             this.button3.UseVisualStyleBackColor = false;
@@ -280,6 +280,7 @@
             this.button14.TabIndex = 13;
             this.button14.Text = "Personal Técnico";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button15
             // 
@@ -306,7 +307,7 @@
             this.label1.Location = new System.Drawing.Point(-5, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1079, 97);
+            this.label1.Size = new System.Drawing.Size(968, 87);
             this.label1.TabIndex = 15;
             this.label1.Text = "Lunnys Peru R2d E.I.R.L.";
             // 
@@ -319,7 +320,7 @@
             this.label2.Location = new System.Drawing.Point(513, 142);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(264, 29);
+            this.label2.Size = new System.Drawing.Size(217, 25);
             this.label2.TabIndex = 16;
             this.label2.Text = "Almacen y trabajadores";
             // 
@@ -332,7 +333,7 @@
             this.label3.Location = new System.Drawing.Point(331, 135);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 29);
+            this.label3.Size = new System.Drawing.Size(93, 25);
             this.label3.TabIndex = 17;
             this.label3.Text = "Ordenes ";
             // 
@@ -345,7 +346,7 @@
             this.label4.Location = new System.Drawing.Point(139, 135);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 29);
+            this.label4.Size = new System.Drawing.Size(74, 25);
             this.label4.TabIndex = 18;
             this.label4.Text = "Ventas";
             // 
@@ -358,7 +359,7 @@
             this.label5.Location = new System.Drawing.Point(785, 142);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 29);
+            this.label5.Size = new System.Drawing.Size(140, 25);
             this.label5.TabIndex = 19;
             this.label5.Text = "Mantenimiento";
             // 

@@ -35,6 +35,8 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDisponibilidad = new System.Windows.Forms.TextBox();
             this.tablaPersonal = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tablaPersonal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,18 +91,38 @@
             // tablaPersonal
             // 
             this.tablaPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaPersonal.Location = new System.Drawing.Point(72, 73);
+            this.tablaPersonal.Location = new System.Drawing.Point(21, 73);
             this.tablaPersonal.Name = "tablaPersonal";
             this.tablaPersonal.RowHeadersWidth = 51;
             this.tablaPersonal.RowTemplate.Height = 24;
-            this.tablaPersonal.Size = new System.Drawing.Size(377, 227);
+            this.tablaPersonal.Size = new System.Drawing.Size(411, 270);
             this.tablaPersonal.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(518, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Nombre";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(480, 208);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 16);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Disponibilidad";
             // 
             // PersonalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tablaPersonal);
             this.Controls.Add(this.txtDisponibilidad);
             this.Controls.Add(this.txtNombre);
@@ -125,5 +147,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDisponibilidad;
         private System.Windows.Forms.DataGridView tablaPersonal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
