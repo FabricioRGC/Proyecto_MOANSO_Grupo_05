@@ -70,6 +70,12 @@
     <Compile Include="MaterialesForm.Designer.cs">
       <DependentUpon>MaterialesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProformasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProformasForm.Designer.cs">
+      <DependentUpon>ProformasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ClientesForm.resx">
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialesForm.resx">
       <DependentUpon>MaterialesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProformasForm.resx">
+      <DependentUpon>ProformasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

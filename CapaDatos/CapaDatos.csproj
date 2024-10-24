@@ -45,6 +45,7 @@
     <Compile Include="datCliente.cs" />
     <Compile Include="datContrato.cs" />
     <Compile Include="datMateriales.cs" />
+    <Compile Include="datProforma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -145,6 +145,7 @@
             this.button10.TabIndex = 9;
             this.button10.Text = "Proformas de Venta";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 

@@ -45,5 +45,12 @@ namespace Proyecto_MOANSO_Grupo_05
             Form formulario = new ContratosForm();
             formulario.Show();
         }
+
+        //Boton para abrir el boton que lleva a la ventana proformas
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form formulario = new ProformasForm();
+            formulario.Show();
+        }
     }
 }
