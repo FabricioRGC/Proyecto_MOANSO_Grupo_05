@@ -89,6 +89,12 @@
     <Compile Include="OrdenesPedidoInstalacionForm.Designer.cs">
       <DependentUpon>OrdenesPedidoInstalacionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagosForm.Designer.cs">
+      <DependentUpon>PagosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenesPedidoInstalacionForm.resx">
       <DependentUpon>OrdenesPedidoInstalacionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagosForm.resx">
+      <DependentUpon>PagosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalForm.resx">
       <DependentUpon>PersonalForm.cs</DependentUpon>
