@@ -93,6 +93,7 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_INHABILITAR_PROFORMA", cn);
             }
+
             catch (Exception e)
             {
                 throw e;
