@@ -35,6 +35,8 @@
             this.buttonOrdenes = new System.Windows.Forms.Button();
             this.buttonAlmyTra = new System.Windows.Forms.Button();
             this.buttonMantFr = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -52,7 +54,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 142);
+            this.button1.Location = new System.Drawing.Point(12, 150);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 27);
             this.button1.TabIndex = 21;
@@ -70,7 +72,7 @@
             // buttonOrdenes
             // 
             this.buttonOrdenes.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold);
-            this.buttonOrdenes.Location = new System.Drawing.Point(12, 194);
+            this.buttonOrdenes.Location = new System.Drawing.Point(12, 255);
             this.buttonOrdenes.Name = "buttonOrdenes";
             this.buttonOrdenes.Size = new System.Drawing.Size(101, 35);
             this.buttonOrdenes.TabIndex = 23;
@@ -81,7 +83,7 @@
             // buttonAlmyTra
             // 
             this.buttonAlmyTra.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold);
-            this.buttonAlmyTra.Location = new System.Drawing.Point(12, 245);
+            this.buttonAlmyTra.Location = new System.Drawing.Point(12, 355);
             this.buttonAlmyTra.Name = "buttonAlmyTra";
             this.buttonAlmyTra.Size = new System.Drawing.Size(141, 62);
             this.buttonAlmyTra.TabIndex = 24;
@@ -92,7 +94,7 @@
             // buttonMantFr
             // 
             this.buttonMantFr.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold);
-            this.buttonMantFr.Location = new System.Drawing.Point(12, 325);
+            this.buttonMantFr.Location = new System.Drawing.Point(12, 482);
             this.buttonMantFr.Name = "buttonMantFr";
             this.buttonMantFr.Size = new System.Drawing.Size(166, 30);
             this.buttonMantFr.TabIndex = 25;
@@ -100,12 +102,30 @@
             this.buttonMantFr.UseVisualStyleBackColor = true;
             this.buttonMantFr.Click += new System.EventHandler(this.buttonMantFr_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(555, 103);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(444, 507);
+            this.panel1.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(496, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "label2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1076, 653);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonMantFr);
             this.Controls.Add(this.buttonAlmyTra);
             this.Controls.Add(this.buttonOrdenes);
@@ -128,6 +148,8 @@
         private System.Windows.Forms.Button buttonOrdenes;
         private System.Windows.Forms.Button buttonAlmyTra;
         private System.Windows.Forms.Button buttonMantFr;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
