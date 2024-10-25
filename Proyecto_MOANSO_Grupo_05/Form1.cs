@@ -70,5 +70,10 @@ namespace Proyecto_MOANSO_Grupo_05
             Form formulario = new DiagnosticoForm();
             formulario.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
