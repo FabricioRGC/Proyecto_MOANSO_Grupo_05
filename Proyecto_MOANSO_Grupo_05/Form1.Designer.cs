@@ -45,12 +45,11 @@
             this.label1.BackColor = System.Drawing.Color.OliveDrab;
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 49.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(-65, -3);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(-49, -2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1415, 112);
+            this.label1.Size = new System.Drawing.Size(1348, 89);
             this.label1.TabIndex = 15;
-            this.label1.Text = "        Lunnys Perú R2d E.I.R.L.        ";
+            this.label1.Text = "              Lunnys Perú R2d E.I.R.L.             ";
             // 
             // button1
             // 
@@ -60,10 +59,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(4, 105);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(3, 85);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 93);
+            this.button1.Size = new System.Drawing.Size(178, 76);
             this.button1.TabIndex = 21;
             this.button1.Text = "Ventas";
             this.button1.UseVisualStyleBackColor = true;
@@ -74,10 +72,9 @@
             this.panel2.BackColor = System.Drawing.Color.OliveDrab;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Location = new System.Drawing.Point(279, 102);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(209, 83);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1161, 722);
+            this.panel2.Size = new System.Drawing.Size(1073, 587);
             this.panel2.TabIndex = 22;
             // 
             // buttonOrdenes
@@ -88,10 +85,9 @@
             this.buttonOrdenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOrdenes.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOrdenes.ForeColor = System.Drawing.Color.Black;
-            this.buttonOrdenes.Location = new System.Drawing.Point(4, 4);
-            this.buttonOrdenes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOrdenes.Location = new System.Drawing.Point(3, 3);
             this.buttonOrdenes.Name = "buttonOrdenes";
-            this.buttonOrdenes.Size = new System.Drawing.Size(238, 93);
+            this.buttonOrdenes.Size = new System.Drawing.Size(178, 76);
             this.buttonOrdenes.TabIndex = 23;
             this.buttonOrdenes.Text = "Ordenes";
             this.buttonOrdenes.UseVisualStyleBackColor = true;
@@ -104,10 +100,9 @@
             this.buttonAlmyTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAlmyTra.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlmyTra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonAlmyTra.Location = new System.Drawing.Point(4, 206);
-            this.buttonAlmyTra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAlmyTra.Location = new System.Drawing.Point(3, 167);
             this.buttonAlmyTra.Name = "buttonAlmyTra";
-            this.buttonAlmyTra.Size = new System.Drawing.Size(238, 93);
+            this.buttonAlmyTra.Size = new System.Drawing.Size(178, 76);
             this.buttonAlmyTra.TabIndex = 24;
             this.buttonAlmyTra.Text = "Almacen y trabajadores";
             this.buttonAlmyTra.UseVisualStyleBackColor = true;
@@ -120,10 +115,9 @@
             this.buttonMantFr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMantFr.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMantFr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonMantFr.Location = new System.Drawing.Point(4, 307);
-            this.buttonMantFr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMantFr.Location = new System.Drawing.Point(3, 249);
             this.buttonMantFr.Name = "buttonMantFr";
-            this.buttonMantFr.Size = new System.Drawing.Size(238, 93);
+            this.buttonMantFr.Size = new System.Drawing.Size(178, 76);
             this.buttonMantFr.TabIndex = 25;
             this.buttonMantFr.Text = "Mantenimiento";
             this.buttonMantFr.UseVisualStyleBackColor = true;
@@ -136,23 +130,24 @@
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.buttonAlmyTra);
             this.flowLayoutPanel1.Controls.Add(this.buttonMantFr);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 98);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 80);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(242, 705);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(182, 573);
             this.flowLayoutPanel1.TabIndex = 23;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlText;
-            this.ClientSize = new System.Drawing.Size(1435, 804);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(1281, 653);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.OliveDrab;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.flowLayoutPanel1.ResumeLayout(false);

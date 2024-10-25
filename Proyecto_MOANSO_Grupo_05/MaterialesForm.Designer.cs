@@ -49,7 +49,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(690, 115);
+            this.button1.Location = new System.Drawing.Point(103, 210);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -59,7 +59,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(690, 159);
+            this.button2.Location = new System.Drawing.Point(212, 210);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -70,14 +70,14 @@
             // dataGriMateriales
             // 
             this.dataGriMateriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGriMateriales.Location = new System.Drawing.Point(32, 86);
+            this.dataGriMateriales.Location = new System.Drawing.Point(28, 252);
             this.dataGriMateriales.Name = "dataGriMateriales";
             this.dataGriMateriales.Size = new System.Drawing.Size(426, 175);
             this.dataGriMateriales.TabIndex = 2;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(690, 201);
+            this.button3.Location = new System.Drawing.Point(348, 210);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             // txtBuscarMa
             // 
-            this.txtBuscarMa.Location = new System.Drawing.Point(101, 34);
+            this.txtBuscarMa.Location = new System.Drawing.Point(302, 77);
             this.txtBuscarMa.Name = "txtBuscarMa";
             this.txtBuscarMa.Size = new System.Drawing.Size(100, 20);
             this.txtBuscarMa.TabIndex = 4;
@@ -96,7 +96,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 41);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(247, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 5;
@@ -104,28 +105,28 @@
             // 
             // txtCodigoM
             // 
-            this.txtCodigoM.Location = new System.Drawing.Point(541, 98);
+            this.txtCodigoM.Location = new System.Drawing.Point(103, 70);
             this.txtCodigoM.Name = "txtCodigoM";
             this.txtCodigoM.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoM.TabIndex = 6;
             // 
             // txtNombreM
             // 
-            this.txtNombreM.Location = new System.Drawing.Point(541, 133);
+            this.txtNombreM.Location = new System.Drawing.Point(103, 115);
             this.txtNombreM.Name = "txtNombreM";
             this.txtNombreM.Size = new System.Drawing.Size(100, 20);
             this.txtNombreM.TabIndex = 7;
             // 
             // txtDescripcionM
             // 
-            this.txtDescripcionM.Location = new System.Drawing.Point(541, 178);
+            this.txtDescripcionM.Location = new System.Drawing.Point(103, 152);
             this.txtDescripcionM.Name = "txtDescripcionM";
             this.txtDescripcionM.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcionM.TabIndex = 8;
             // 
             // txtstockM
             // 
-            this.txtstockM.Location = new System.Drawing.Point(541, 223);
+            this.txtstockM.Location = new System.Drawing.Point(302, 117);
             this.txtstockM.Name = "txtstockM";
             this.txtstockM.Size = new System.Drawing.Size(100, 20);
             this.txtstockM.TabIndex = 9;
@@ -133,7 +134,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(468, 105);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(41, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 10;
@@ -142,7 +144,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(468, 140);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(37, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 11;
@@ -151,7 +154,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(468, 185);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(37, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 12;
@@ -160,7 +164,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(468, 226);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(247, 118);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 13;
@@ -172,7 +177,7 @@
             this.CBMateriales.Items.AddRange(new object[] {
             "I",
             "A"});
-            this.CBMateriales.Location = new System.Drawing.Point(539, 268);
+            this.CBMateriales.Location = new System.Drawing.Point(302, 151);
             this.CBMateriales.Name = "CBMateriales";
             this.CBMateriales.Size = new System.Drawing.Size(121, 21);
             this.CBMateriales.TabIndex = 14;
@@ -180,7 +185,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(480, 267);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(247, 159);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 15;
@@ -190,7 +196,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 309);
+            this.BackColor = System.Drawing.Color.OliveDrab;
+            this.ClientSize = new System.Drawing.Size(503, 474);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.CBMateriales);
             this.Controls.Add(this.label5);

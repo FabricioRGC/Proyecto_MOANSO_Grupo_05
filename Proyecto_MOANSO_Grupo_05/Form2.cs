@@ -33,9 +33,9 @@ namespace Proyecto_MOANSO_Grupo_05
         private void button1_Click(object sender, EventArgs e)
         {
             
-                Form formulario = new ContratosForm();
-                formulario.Show();
-          //  AbrirPrueba(new ClientesForm());
+              //  Form formulario = new ContratosForm();
+              //  formulario.Show();
+          AbrirPrueba(new ContratosForm());
 
         }
 
@@ -48,14 +48,16 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form formulario = new PagosForm();
-            formulario.Show();
+            //Form formulario = new PagosForm();
+            //formulario.Show();
+            AbrirPrueba(new PagosForm());
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            Form formulario = new ProformasForm();
-            formulario.Show();
+            //Form formulario = new ProformasForm();
+            //formulario.Show();
+            AbrirPrueba(new ProformasForm());
         }
     }
 }

@@ -32,6 +32,7 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // button14
@@ -101,11 +102,20 @@
             this.button3.Text = "Notas de Salida";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(213, 34);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(804, 485);
+            this.panel1.TabIndex = 18;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 450);
+            this.BackColor = System.Drawing.Color.OliveDrab;
+            this.ClientSize = new System.Drawing.Size(1164, 593);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
@@ -122,5 +132,6 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel1;
     }
 }
