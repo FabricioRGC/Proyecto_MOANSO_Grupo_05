@@ -44,8 +44,9 @@ namespace Proyecto_MOANSO_Grupo_05
                     entPersonal cli = new entPersonal();
                     cli.nombre = txtNombre.Text.Trim();
                     cli.disponibilidad = txtDisponibilidad.Text.Trim();
+                    logPersonal.Instancia.InsertarPersonal(cli);
 
-                }
+            }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
@@ -56,18 +57,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
             private void btnInhabilitar_Click(object sender, EventArgs e)
             {
-                try
-                {
-                    entPersonal cli = new entPersonal();
-                    cli.nombre = txtNombre.Text.Trim();
-                    logPersonal.Instancia.DeshabilitarPersonal(cli);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-                LimpiarVariables();
-                listarPersonal();
+                
             }
 
             private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
@@ -85,7 +75,23 @@ namespace Proyecto_MOANSO_Grupo_05
             {
 
             }
+
+        private void btnInhabilitar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                entPersonal cli = new entPersonal();
+                cli.nombre = txtNombre.Text.Trim();
+                logPersonal.Instancia.DeshabilitarPersonal(cli);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            LimpiarVariables();
+            listarPersonal();
         }
+    }
 
 
     }

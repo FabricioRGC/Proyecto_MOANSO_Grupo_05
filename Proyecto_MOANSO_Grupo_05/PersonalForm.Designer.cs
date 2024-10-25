@@ -42,9 +42,10 @@
             // 
             // btnAñadir
             // 
-            this.btnAñadir.Location = new System.Drawing.Point(540, 277);
+            this.btnAñadir.Location = new System.Drawing.Point(405, 225);
+            this.btnAñadir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(75, 23);
+            this.btnAñadir.Size = new System.Drawing.Size(56, 19);
             this.btnAñadir.TabIndex = 0;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
@@ -52,76 +53,85 @@
             // 
             // btnInhabilitar
             // 
-            this.btnInhabilitar.Location = new System.Drawing.Point(666, 277);
+            this.btnInhabilitar.Location = new System.Drawing.Point(500, 225);
+            this.btnInhabilitar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInhabilitar.Name = "btnInhabilitar";
-            this.btnInhabilitar.Size = new System.Drawing.Size(75, 23);
+            this.btnInhabilitar.Size = new System.Drawing.Size(56, 19);
             this.btnInhabilitar.TabIndex = 1;
             this.btnInhabilitar.Text = "Inhabilitar";
             this.btnInhabilitar.UseVisualStyleBackColor = true;
+            this.btnInhabilitar.Click += new System.EventHandler(this.btnInhabilitar_Click_1);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(703, 94);
+            this.btnBuscar.Location = new System.Drawing.Point(527, 76);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(56, 19);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(580, 94);
+            this.txtBuscar.Location = new System.Drawing.Point(435, 76);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(100, 22);
+            this.txtBuscar.Size = new System.Drawing.Size(76, 20);
             this.txtBuscar.TabIndex = 3;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(580, 154);
+            this.txtNombre.Location = new System.Drawing.Point(435, 125);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtNombre.Size = new System.Drawing.Size(76, 20);
             this.txtNombre.TabIndex = 4;
             // 
             // txtDisponibilidad
             // 
-            this.txtDisponibilidad.Location = new System.Drawing.Point(580, 205);
+            this.txtDisponibilidad.Location = new System.Drawing.Point(435, 167);
+            this.txtDisponibilidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDisponibilidad.Name = "txtDisponibilidad";
-            this.txtDisponibilidad.Size = new System.Drawing.Size(100, 22);
+            this.txtDisponibilidad.Size = new System.Drawing.Size(76, 20);
             this.txtDisponibilidad.TabIndex = 5;
             // 
             // tablaPersonal
             // 
             this.tablaPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaPersonal.Location = new System.Drawing.Point(21, 73);
+            this.tablaPersonal.Location = new System.Drawing.Point(16, 59);
+            this.tablaPersonal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tablaPersonal.Name = "tablaPersonal";
             this.tablaPersonal.RowHeadersWidth = 51;
             this.tablaPersonal.RowTemplate.Height = 24;
-            this.tablaPersonal.Size = new System.Drawing.Size(411, 270);
+            this.tablaPersonal.Size = new System.Drawing.Size(308, 219);
             this.tablaPersonal.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(518, 154);
+            this.label1.Location = new System.Drawing.Point(388, 125);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Nombre";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(480, 208);
+            this.label2.Location = new System.Drawing.Point(360, 169);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 16);
+            this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Disponibilidad";
             // 
             // PersonalForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tablaPersonal);
@@ -131,6 +141,7 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnInhabilitar);
             this.Controls.Add(this.btnAñadir);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PersonalForm";
             this.Text = "PersonalForm";
             ((System.ComponentModel.ISupportInitialize)(this.tablaPersonal)).EndInit();
