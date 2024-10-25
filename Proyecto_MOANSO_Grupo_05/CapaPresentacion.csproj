@@ -76,6 +76,12 @@
     <Compile Include="MaterialesForm.Designer.cs">
       <DependentUpon>MaterialesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrdenDeTrabajocs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenDeTrabajocs.Designer.cs">
+      <DependentUpon>OrdenDeTrabajocs.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialesForm.resx">
       <DependentUpon>MaterialesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenDeTrabajocs.resx">
+      <DependentUpon>OrdenDeTrabajocs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalForm.resx">
       <DependentUpon>PersonalForm.cs</DependentUpon>
