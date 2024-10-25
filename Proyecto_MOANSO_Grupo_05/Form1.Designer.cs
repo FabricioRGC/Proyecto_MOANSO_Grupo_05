@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonOrdenes = new System.Windows.Forms.Button();
@@ -44,25 +43,18 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(120)))), ((int)(((byte)(29)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.24999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-4, 0);
+            this.label1.Location = new System.Drawing.Point(-1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(814, 76);
+            this.label1.Size = new System.Drawing.Size(1118, 76);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Lunnys Peru R2d E.I.R.L.";
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(661, 134);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 348);
-            this.panel1.TabIndex = 20;
+            this.label1.Text = "        Lunnys Peru R2d E.I.R.L.        ";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 122);
+            this.button1.Location = new System.Drawing.Point(12, 142);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 50);
+            this.button1.Size = new System.Drawing.Size(104, 27);
             this.button1.TabIndex = 21;
             this.button1.Text = "Ventas";
             this.button1.UseVisualStyleBackColor = true;
@@ -70,16 +62,17 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(216, 122);
+            this.panel2.Location = new System.Drawing.Point(230, 103);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(342, 507);
+            this.panel2.Size = new System.Drawing.Size(243, 507);
             this.panel2.TabIndex = 22;
             // 
             // buttonOrdenes
             // 
-            this.buttonOrdenes.Location = new System.Drawing.Point(12, 197);
+            this.buttonOrdenes.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold);
+            this.buttonOrdenes.Location = new System.Drawing.Point(12, 194);
             this.buttonOrdenes.Name = "buttonOrdenes";
-            this.buttonOrdenes.Size = new System.Drawing.Size(75, 23);
+            this.buttonOrdenes.Size = new System.Drawing.Size(101, 35);
             this.buttonOrdenes.TabIndex = 23;
             this.buttonOrdenes.Text = "Ordenes";
             this.buttonOrdenes.UseVisualStyleBackColor = true;
@@ -87,9 +80,10 @@
             // 
             // buttonAlmyTra
             // 
-            this.buttonAlmyTra.Location = new System.Drawing.Point(12, 240);
+            this.buttonAlmyTra.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold);
+            this.buttonAlmyTra.Location = new System.Drawing.Point(12, 245);
             this.buttonAlmyTra.Name = "buttonAlmyTra";
-            this.buttonAlmyTra.Size = new System.Drawing.Size(130, 23);
+            this.buttonAlmyTra.Size = new System.Drawing.Size(141, 62);
             this.buttonAlmyTra.TabIndex = 24;
             this.buttonAlmyTra.Text = "Almacen y trabajadores";
             this.buttonAlmyTra.UseVisualStyleBackColor = true;
@@ -97,9 +91,10 @@
             // 
             // buttonMantFr
             // 
-            this.buttonMantFr.Location = new System.Drawing.Point(12, 281);
+            this.buttonMantFr.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Bold);
+            this.buttonMantFr.Location = new System.Drawing.Point(12, 325);
             this.buttonMantFr.Name = "buttonMantFr";
-            this.buttonMantFr.Size = new System.Drawing.Size(90, 24);
+            this.buttonMantFr.Size = new System.Drawing.Size(166, 30);
             this.buttonMantFr.TabIndex = 25;
             this.buttonMantFr.Text = "Mantenimiento";
             this.buttonMantFr.UseVisualStyleBackColor = true;
@@ -110,13 +105,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1076, 678);
+            this.ClientSize = new System.Drawing.Size(1076, 653);
             this.Controls.Add(this.buttonMantFr);
             this.Controls.Add(this.buttonAlmyTra);
             this.Controls.Add(this.buttonOrdenes);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -129,7 +123,6 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonOrdenes;
