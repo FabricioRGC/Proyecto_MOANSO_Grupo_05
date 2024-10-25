@@ -207,6 +207,7 @@
             this.Controls.Add(this.dataGriMateriales);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MaterialesForm";
             this.Text = "MaterialesFrom";
             ((System.ComponentModel.ISupportInitialize)(this.dataGriMateriales)).EndInit();

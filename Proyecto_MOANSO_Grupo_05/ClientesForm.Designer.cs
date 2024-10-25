@@ -209,6 +209,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAñadir);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClientesForm";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.ClientesForm_Load);

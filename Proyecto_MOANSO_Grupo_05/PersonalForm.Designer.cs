@@ -43,7 +43,7 @@
             // btnAñadir
             // 
             this.btnAñadir.Location = new System.Drawing.Point(405, 225);
-            this.btnAñadir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAñadir.Margin = new System.Windows.Forms.Padding(2);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(56, 19);
             this.btnAñadir.TabIndex = 0;
@@ -54,7 +54,7 @@
             // btnInhabilitar
             // 
             this.btnInhabilitar.Location = new System.Drawing.Point(500, 225);
-            this.btnInhabilitar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnInhabilitar.Margin = new System.Windows.Forms.Padding(2);
             this.btnInhabilitar.Name = "btnInhabilitar";
             this.btnInhabilitar.Size = new System.Drawing.Size(56, 19);
             this.btnInhabilitar.TabIndex = 1;
@@ -65,7 +65,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(527, 76);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(56, 19);
             this.btnBuscar.TabIndex = 2;
@@ -75,7 +75,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(435, 76);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(76, 20);
             this.txtBuscar.TabIndex = 3;
@@ -83,7 +83,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(435, 125);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(76, 20);
             this.txtNombre.TabIndex = 4;
@@ -91,7 +91,7 @@
             // txtDisponibilidad
             // 
             this.txtDisponibilidad.Location = new System.Drawing.Point(435, 167);
-            this.txtDisponibilidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDisponibilidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtDisponibilidad.Name = "txtDisponibilidad";
             this.txtDisponibilidad.Size = new System.Drawing.Size(76, 20);
             this.txtDisponibilidad.TabIndex = 5;
@@ -100,7 +100,7 @@
             // 
             this.tablaPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaPersonal.Location = new System.Drawing.Point(16, 59);
-            this.tablaPersonal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tablaPersonal.Margin = new System.Windows.Forms.Padding(2);
             this.tablaPersonal.Name = "tablaPersonal";
             this.tablaPersonal.RowHeadersWidth = 51;
             this.tablaPersonal.RowTemplate.Height = 24;
@@ -141,7 +141,8 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnInhabilitar);
             this.Controls.Add(this.btnAñadir);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PersonalForm";
             this.Text = "PersonalForm";
             ((System.ComponentModel.ISupportInitialize)(this.tablaPersonal)).EndInit();
