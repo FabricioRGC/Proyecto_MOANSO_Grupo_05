@@ -49,6 +49,7 @@
             this.button8.TabIndex = 11;
             this.button8.Text = "Ordenes de Pedido de Instalación";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -97,6 +98,7 @@
             this.button5.TabIndex = 8;
             this.button5.Text = "Ordenes de Trabajo";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form3
             // 

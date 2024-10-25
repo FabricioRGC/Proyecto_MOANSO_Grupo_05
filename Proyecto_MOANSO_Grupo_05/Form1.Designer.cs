@@ -52,9 +52,9 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(634, 96);
+            this.panel1.Location = new System.Drawing.Point(661, 134);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(780, 533);
+            this.panel1.Size = new System.Drawing.Size(350, 348);
             this.panel1.TabIndex = 20;
             // 
             // button1
@@ -110,7 +110,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1426, 678);
+            this.ClientSize = new System.Drawing.Size(1076, 678);
             this.Controls.Add(this.buttonMantFr);
             this.Controls.Add(this.buttonAlmyTra);
             this.Controls.Add(this.buttonOrdenes);

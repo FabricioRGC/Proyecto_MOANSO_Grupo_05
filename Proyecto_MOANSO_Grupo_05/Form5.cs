@@ -30,7 +30,8 @@ namespace Proyecto_MOANSO_Grupo_05
         }*/
         private void button4_Click(object sender, EventArgs e)
         {
-            //AbrirPrueba(new DiagnosticoForm());
+             Form formulario = new DiagnosticoForm();
+             formulario.Show();
         }
     }
 }

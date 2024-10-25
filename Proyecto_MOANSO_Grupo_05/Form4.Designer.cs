@@ -49,6 +49,7 @@
             this.button14.TabIndex = 17;
             this.button14.Text = "Personal Técnico";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button12
             // 
@@ -65,6 +66,7 @@
             this.button12.TabIndex = 16;
             this.button12.Text = "Repuestos";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button11
             // 
@@ -81,6 +83,7 @@
             this.button11.TabIndex = 15;
             this.button11.Text = "Materiales";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button3
             // 

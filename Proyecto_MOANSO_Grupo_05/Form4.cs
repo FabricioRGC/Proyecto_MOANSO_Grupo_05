@@ -16,5 +16,24 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             InitializeComponent();
         }
+        //Boton para abrir el boton que lleva a la ventana materiales
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form formulario = new MaterialesForm();
+            formulario.Show();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Form formulario = new PersonalForm();
+            formulario.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Form formulario = new RepuestosForm();
+            formulario.Show();
+        }
     }
 }
