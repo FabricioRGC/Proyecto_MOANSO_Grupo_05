@@ -32,7 +32,7 @@
             this.btnAñadir = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.cbPlan = new System.Windows.Forms.ComboBox();
-            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
+            this.txtBuscarPlan = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
@@ -68,6 +68,7 @@
             this.button3.TabIndex = 23;
             this.button3.Text = "Inhabilitar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // cbPlan
             // 
@@ -77,12 +78,13 @@
             this.cbPlan.Size = new System.Drawing.Size(121, 21);
             this.cbPlan.TabIndex = 38;
             // 
-            // txtBuscarCliente
+            // txtBuscarPlan
             // 
-            this.txtBuscarCliente.Location = new System.Drawing.Point(643, 20);
-            this.txtBuscarCliente.Name = "txtBuscarCliente";
-            this.txtBuscarCliente.Size = new System.Drawing.Size(145, 20);
-            this.txtBuscarCliente.TabIndex = 37;
+            this.txtBuscarPlan.Location = new System.Drawing.Point(643, 20);
+            this.txtBuscarPlan.Name = "txtBuscarPlan";
+            this.txtBuscarPlan.Size = new System.Drawing.Size(145, 20);
+            this.txtBuscarPlan.TabIndex = 37;
+            this.txtBuscarPlan.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             // 
             // label6
             // 
@@ -143,7 +145,7 @@
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbPlan);
-            this.Controls.Add(this.txtBuscarCliente);
+            this.Controls.Add(this.txtBuscarPlan);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCliente);
@@ -165,7 +167,7 @@
         private System.Windows.Forms.Button btnAñadir;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox cbPlan;
-        private System.Windows.Forms.TextBox txtBuscarCliente;
+        private System.Windows.Forms.TextBox txtBuscarPlan;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCliente;
