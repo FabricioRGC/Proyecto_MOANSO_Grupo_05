@@ -39,6 +39,7 @@ namespace CapaDatos
                     pag.fecha = dr["fecha"].ToString();
                     pag.monto = dr["monto"].ToString();
                     pag.metodo_pago = dr["metodo_pago"].ToString();
+                    pag.estado = dr["estado"].ToString();
                     lista.Add(pag);
                 }
             }
@@ -84,6 +85,37 @@ namespace CapaDatos
                 cmd.Connection.Close();
             }
             return inserto;
+        }
+
+        // Método para anular un pago
+        public Boolean AnularPago(entPago pago)
+        {
+            SqlCommand cmd = null;
+            Boolean anulado = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("SP_ANULAR_PAGO", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigoContrato", pago.contrato_id);
+                cmd.Parameters.AddWithValue("@codigoCliente", pago.cliente_id);
+
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    anulado = true;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return anulado;
         }
     }
 }

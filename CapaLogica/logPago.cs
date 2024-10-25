@@ -28,5 +28,11 @@ namespace CapaLogica
         {
             datPago.Instancia.InsertarPago(pag);
         }
+
+        // Método para anular un pago
+        public void AnularPago(entPago pag)
+        {
+            datPago.Instancia.AnularPago(pag);
+        }
     }
 }

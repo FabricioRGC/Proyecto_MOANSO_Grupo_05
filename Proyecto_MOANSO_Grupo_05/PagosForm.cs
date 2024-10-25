@@ -62,7 +62,19 @@ namespace Proyecto_MOANSO_Grupo_05
         // Botón para anular un pago
         private void button3_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                entPago pag = new entPago();
+                pag.contrato_id = txtContrato.Text;
+                pag.cliente_id = txtCliente.Text;
+                logPago.Instancia.AnularPago(pag);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            limpiarVariables();
+            listarPagos();
         }
     }
 }
