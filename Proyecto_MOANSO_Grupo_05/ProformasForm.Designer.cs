@@ -153,6 +153,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.tablaProformas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProformasForm";
             this.Text = "ProformasForm";
             ((System.ComponentModel.ISupportInitialize)(this.tablaProformas)).EndInit();

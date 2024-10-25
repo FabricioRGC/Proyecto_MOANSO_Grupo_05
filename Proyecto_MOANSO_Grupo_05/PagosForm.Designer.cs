@@ -154,6 +154,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.tablaPagos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PagosForm";
             this.Text = "PagosForm";
             ((System.ComponentModel.ISupportInitialize)(this.tablaPagos)).EndInit();
