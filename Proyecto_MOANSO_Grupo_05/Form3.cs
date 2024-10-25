@@ -28,5 +28,11 @@ namespace Proyecto_MOANSO_Grupo_05
             Form formulario = new OrdenesPedidoInstalacionForm();
             formulario.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form formulario = new OrdenPedidoMaterialForm();
+            formulario.Show();
+        }
     }
 }
