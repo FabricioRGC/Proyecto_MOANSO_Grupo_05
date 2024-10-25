@@ -22,5 +22,11 @@ namespace CapaLogica
         {
             return datPago.Instancia.ListarPago();
         }
+
+        // Método para añadir un pago
+        public void InsertarPago(entPago pag)
+        {
+            datPago.Instancia.InsertarPago(pag);
+        }
     }
 }
