@@ -17,6 +17,9 @@ namespace CapaLogica
             get { return logMateriales._instancia; }
         }
 
+
+
+
         // Metodo para listar los materiales
         public List<entMateriales> ListarMateriales()
         {
