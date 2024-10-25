@@ -23,7 +23,7 @@ namespace CapaDatos
             SqlConnection cn = new SqlConnection();
             cn.ConnectionString = "Data Source=EFRNCLNX\\SQLEXPRESS; Initial Catalog = Lunnys_bd;" +//"User ID=sa; Password = 123"; +
                             "Integrated Security=true";
-            return cn;
+            return cn; 
         }
     }
 }
