@@ -113,6 +113,12 @@
     <Compile Include="OrdenesPedidoInstalacionForm.Designer.cs">
       <DependentUpon>OrdenesPedidoInstalacionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrdenPedidoMaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenPedidoMaterialForm.Designer.cs">
+      <DependentUpon>OrdenPedidoMaterialForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PagosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenesPedidoInstalacionForm.resx">
       <DependentUpon>OrdenesPedidoInstalacionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenPedidoMaterialForm.resx">
+      <DependentUpon>OrdenPedidoMaterialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PagosForm.resx">
       <DependentUpon>PagosForm.cs</DependentUpon>
