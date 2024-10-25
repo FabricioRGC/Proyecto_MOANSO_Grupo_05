@@ -47,8 +47,8 @@ namespace Proyecto_MOANSO_Grupo_05
         // Boton para abrir el formulario de clientes
         private void button13_Click(object sender, EventArgs e)
         {
-            Form formulario = new ClientesForm();
-            formulario.Show();
+            //Form formulario = new ClientesForm();
+            //formulario.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)

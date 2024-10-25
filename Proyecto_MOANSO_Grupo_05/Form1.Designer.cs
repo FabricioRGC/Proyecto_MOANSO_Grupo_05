@@ -35,8 +35,6 @@
             this.buttonOrdenes = new System.Windows.Forms.Button();
             this.buttonAlmyTra = new System.Windows.Forms.Button();
             this.buttonMantFr = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -64,9 +62,9 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(230, 103);
+            this.panel2.Location = new System.Drawing.Point(184, 110);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(243, 507);
+            this.panel2.Size = new System.Drawing.Size(358, 507);
             this.panel2.TabIndex = 22;
             // 
             // buttonOrdenes
@@ -102,30 +100,12 @@
             this.buttonMantFr.UseVisualStyleBackColor = true;
             this.buttonMantFr.Click += new System.EventHandler(this.buttonMantFr_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(555, 103);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 507);
-            this.panel1.TabIndex = 26;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(496, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "label2";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1076, 653);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonMantFr);
             this.Controls.Add(this.buttonAlmyTra);
             this.Controls.Add(this.buttonOrdenes);
@@ -148,8 +128,6 @@
         private System.Windows.Forms.Button buttonOrdenes;
         private System.Windows.Forms.Button buttonAlmyTra;
         private System.Windows.Forms.Button buttonMantFr;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
     }
 }
 
