@@ -43,6 +43,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(55, 113);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(308, 204);
             this.dataGridView1.TabIndex = 0;
@@ -68,6 +69,7 @@
             // txtDiag
             // 
             this.txtDiag.Location = new System.Drawing.Point(121, 31);
+            this.txtDiag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDiag.Name = "txtDiag";
             this.txtDiag.Size = new System.Drawing.Size(100, 20);
             this.txtDiag.TabIndex = 3;
@@ -76,6 +78,7 @@
             // 
             this.combBoxDiag.FormattingEnabled = true;
             this.combBoxDiag.Location = new System.Drawing.Point(121, 70);
+            this.combBoxDiag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.combBoxDiag.Name = "combBoxDiag";
             this.combBoxDiag.Size = new System.Drawing.Size(121, 21);
             this.combBoxDiag.TabIndex = 4;
@@ -83,8 +86,9 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(394, 26);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 22);
             this.button1.TabIndex = 5;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
@@ -92,8 +96,9 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(394, 135);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 22);
             this.button2.TabIndex = 6;
             this.button2.Text = "Inhabilitar";
             this.button2.UseVisualStyleBackColor = true;
@@ -101,8 +106,9 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(394, 79);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 22);
             this.button3.TabIndex = 7;
             this.button3.Text = "Terminado";
             this.button3.UseVisualStyleBackColor = true;
@@ -111,6 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(538, 349);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -120,8 +127,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DiagnosticoForm";
-            this.Text = "DiagnosticoForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
