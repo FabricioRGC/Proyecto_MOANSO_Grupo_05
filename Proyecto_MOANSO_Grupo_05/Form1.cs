@@ -125,6 +125,7 @@ namespace Proyecto_MOANSO_Grupo_05
             AbrirPrueba2(new Form3());
         }
 
+
         private void buttonAlmyTra_Click(object sender, EventArgs e)
         {
             AbrirPrueba2(new Form4());
