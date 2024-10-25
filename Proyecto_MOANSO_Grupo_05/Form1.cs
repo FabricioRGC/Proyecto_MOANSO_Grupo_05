@@ -88,5 +88,11 @@ namespace Proyecto_MOANSO_Grupo_05
         {
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form formulario = new OrdenesPedidoInstalacionForm();
+            formulario.Show();
+        }
     }
 }
