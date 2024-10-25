@@ -16,7 +16,7 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             InitializeComponent();
         }
-        /*public void AbrirPrueba(object fromprue)
+        public void AbrirPrueba(object fromprue)
         {
             if (this.panel1.Controls.Count > 0)
                 this.panel1.Controls.RemoveAt(0);
@@ -27,11 +27,13 @@ namespace Proyecto_MOANSO_Grupo_05
             this.panel1.Tag = fh;
             fh.Show();
 
-        }*/
+        }
         private void button4_Click(object sender, EventArgs e)
         {
-             Form formulario = new DiagnosticoForm();
-             formulario.Show();
+             //Form formulario = new DiagnosticoForm();
+             //formulario.Show();
+            AbrirPrueba(new DiagnosticoForm());
+
         }
     }
 }
