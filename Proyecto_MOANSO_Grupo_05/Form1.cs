@@ -64,5 +64,11 @@ namespace Proyecto_MOANSO_Grupo_05
             Form formulario = new PersonalForm();
             formulario.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form formulario = new DiagnosticoForm();
+            formulario.Show();
+        }
     }
 }
