@@ -259,7 +259,7 @@
             // 
             // btnEnviar
             // 
-            this.btnEnviar.Location = new System.Drawing.Point(667, 334);
+            this.btnEnviar.Location = new System.Drawing.Point(666, 334);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(95, 33);
             this.btnEnviar.TabIndex = 23;
