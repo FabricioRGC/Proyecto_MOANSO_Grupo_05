@@ -88,6 +88,7 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entRepuesto repuesto = new entRepuesto();
+                repuesto.id = int.Parse(txtIdR.Text.Trim());
                 repuesto.codigo = txtCodigoR.Text.Trim();
                 repuesto.nombre = txtNombreR.Text.Trim();
                 repuesto.descripcion = txtDescripcionR.Text.Trim();

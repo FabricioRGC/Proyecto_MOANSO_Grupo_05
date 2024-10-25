@@ -24,5 +24,17 @@ namespace CapaLogica
         {
             return datProforma.Instancia.ListarProforma();
         }
+
+        // Metodo para añadir una proforma
+        public void InsertaProforma(entProformaVenta pro)
+        {
+            datProforma.Instancia.InsertarProforma(pro);
+        }
+
+        // Metodo para inhabilitar una proforma
+        public void DeshabilitarProforma(entProformaVenta pro)
+        {
+            datProforma.Instancia.InhabilitarProforma(pro);
+        }
     }
 }
