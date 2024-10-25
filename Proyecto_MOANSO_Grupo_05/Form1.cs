@@ -30,6 +30,19 @@ namespace Proyecto_MOANSO_Grupo_05
             fh.Show();
 
         }
+        public void AbrirPrueba2(object fromprues)
+        {
+            if (this.panel2.Controls.Count > 0)
+                this.panel2.Controls.RemoveAt(0);
+            Form fhs = fromprues as Form;
+            fhs.TopLevel = false;
+            fhs.Dock = DockStyle.Fill;
+            this.panel2.Controls.Add(fhs);
+            this.panel2.Tag = fhs;
+            fhs.Show();
+
+        }
+
         // Boton para abrir el formulario de clientes
         private void button13_Click(object sender, EventArgs e)
         {
@@ -99,6 +112,26 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             Form formulario = new PagosForm();
             formulario.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new Form2());
+        }
+
+        private void buttonOrdenes_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new Form3());
+        }
+
+        private void buttonAlmyTra_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new Form4());
+        }
+
+        private void buttonMantFr_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new Form5());
         }
     }
 }
