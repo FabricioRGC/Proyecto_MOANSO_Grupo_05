@@ -69,6 +69,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@estado", contrato.estado);
                 cmd.Parameters.AddWithValue("@tipoPlan", contrato.tipo_plan);
                 cmd.Parameters.AddWithValue("@duracion", contrato.duracion);
+
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)

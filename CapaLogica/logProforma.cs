@@ -32,6 +32,9 @@ namespace CapaLogica
         }
 
         // Metodo para inhabilitar una proforma
-
+        public void DeshabilitarProforma(entProformaVenta pro)
+        {
+            datProforma.Instancia.InhabilitarProforma(pro);
+        }
     }
 }

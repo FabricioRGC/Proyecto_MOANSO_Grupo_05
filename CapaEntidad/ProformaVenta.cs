@@ -14,6 +14,7 @@ namespace CapaEntidad
             public string fecha_inicio { get; set; }
             public string tipo_plan { get; set; }
             public string precio { get; set; }
+            public string estado { get; set; }
         }
     }
 }

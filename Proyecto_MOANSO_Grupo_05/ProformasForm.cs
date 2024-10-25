@@ -86,7 +86,19 @@ namespace Proyecto_MOANSO_Grupo_05
         // Boton Inhabilitar
         private void button3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                entProformaVenta pro = new entProformaVenta();
+                pro.cliente_id = txtCliente.Text.Trim();
+                logProforma.Instancia.DeshabilitarProforma(pro);
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            limpiarVariables();
+            listarProforma();
         }
 
         // Filtrar por tipo de plan

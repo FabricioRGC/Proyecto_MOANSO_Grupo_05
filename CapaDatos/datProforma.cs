@@ -7,6 +7,7 @@ using CapaEntidad;
 using System.Data.SqlClient;
 using System.Data;
 using static CapaEntidad.ProformaVenta;
+using System.Drawing;
 
 namespace CapaDatos
 {
@@ -38,6 +39,7 @@ namespace CapaDatos
                     pro.fecha_inicio = dr["fecha_inicio"].ToString();
                     pro.tipo_plan = dr["tipo_plan"].ToString();
                     pro.precio = dr["precio"].ToString();
+                    pro.estado = dr["estado"].ToString();
                     lista.Add(pro);
                 }
             }
@@ -91,7 +93,15 @@ namespace CapaDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_INHABILITAR_PROFORMA", cn);
+                cmd = new SqlCommand("SP_DESHABILITAR_PROFORMAS", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigoCliente", proforma.cliente_id);
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    inhabilitar = true;
+                }
             }
 
             catch (Exception e)
