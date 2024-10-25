@@ -46,6 +46,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="Contrato.cs" />
     <Compile Include="Material.cs" />
+    <Compile Include="PedidoInstalacion.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="ProformaVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
