@@ -53,7 +53,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -102,7 +102,7 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -199,7 +199,7 @@
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.Color.White;
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -216,7 +216,7 @@
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.Color.White;
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -233,7 +233,7 @@
             // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.Color.White;
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -250,7 +250,7 @@
             // 
             // button13
             // 
-            this.button13.BackColor = System.Drawing.Color.White;
+            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
@@ -268,7 +268,7 @@
             // 
             // button14
             // 
-            this.button14.BackColor = System.Drawing.Color.White;
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
