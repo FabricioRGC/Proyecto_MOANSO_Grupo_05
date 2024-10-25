@@ -114,5 +114,15 @@ namespace Proyecto_MOANSO_Grupo_05
             LimpiarVariables();
             listarContrato();
         }
+
+        // Filtrar por Cliente
+        private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
+        {
+            string nombre = txtBuscarCliente.Text;
+
+            var contratosFiltrados = logContrato.Instancia.ListarContrato().Where(c => c.clienteId.Contains(nombre)).ToList();
+            
+            tablaContratos.DataSource = contratosFiltrados;
+        }
     }
 }

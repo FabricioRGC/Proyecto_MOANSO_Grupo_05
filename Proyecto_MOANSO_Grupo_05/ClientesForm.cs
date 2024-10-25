@@ -111,6 +111,8 @@ namespace Proyecto_MOANSO_Grupo_05
             listarCliente();
         }
 
+        // Filtrar por Nombre
+
         private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
         {
             string nombre = txtBuscarNombre.Text;

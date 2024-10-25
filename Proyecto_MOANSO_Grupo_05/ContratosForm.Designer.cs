@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBuscarNombre = new System.Windows.Forms.TextBox();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,12 +45,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablaContratos)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtBuscarNombre
+            // txtBuscarCliente
             // 
-            this.txtBuscarNombre.Location = new System.Drawing.Point(641, 20);
-            this.txtBuscarNombre.Name = "txtBuscarNombre";
-            this.txtBuscarNombre.Size = new System.Drawing.Size(145, 20);
-            this.txtBuscarNombre.TabIndex = 31;
+            this.txtBuscarCliente.Location = new System.Drawing.Point(641, 20);
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(145, 20);
+            this.txtBuscarCliente.TabIndex = 31;
+            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarNombre_TextChanged);
             // 
             // label6
             // 
@@ -176,7 +177,7 @@
             this.Controls.Add(this.txtDuracion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbPlan);
-            this.Controls.Add(this.txtBuscarNombre);
+            this.Controls.Add(this.txtBuscarCliente);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.label5);
@@ -197,7 +198,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtBuscarNombre;
+        private System.Windows.Forms.TextBox txtBuscarCliente;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label5;
