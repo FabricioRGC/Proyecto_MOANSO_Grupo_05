@@ -67,6 +67,7 @@
             this.button10.TabIndex = 15;
             this.button10.Text = "Proformas de Venta";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button2
             // 
@@ -83,6 +84,7 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "Pagos";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

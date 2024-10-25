@@ -30,5 +30,17 @@ namespace Proyecto_MOANSO_Grupo_05
             Form formulario = new ClientesForm();
             formulario.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form formulario = new PagosForm();
+            formulario.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form formulario = new ProformasForm();
+            formulario.Show();
+        }
     }
 }

@@ -52,9 +52,9 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(615, 79);
+            this.panel1.Location = new System.Drawing.Point(634, 96);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(767, 533);
+            this.panel1.Size = new System.Drawing.Size(780, 533);
             this.panel1.TabIndex = 20;
             // 
             // button1
@@ -70,9 +70,9 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(249, 122);
+            this.panel2.Location = new System.Drawing.Point(216, 122);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(280, 430);
+            this.panel2.Size = new System.Drawing.Size(342, 507);
             this.panel2.TabIndex = 22;
             // 
             // buttonOrdenes
@@ -87,7 +87,7 @@
             // 
             // buttonAlmyTra
             // 
-            this.buttonAlmyTra.Location = new System.Drawing.Point(12, 257);
+            this.buttonAlmyTra.Location = new System.Drawing.Point(12, 240);
             this.buttonAlmyTra.Name = "buttonAlmyTra";
             this.buttonAlmyTra.Size = new System.Drawing.Size(130, 23);
             this.buttonAlmyTra.TabIndex = 24;
@@ -97,7 +97,7 @@
             // 
             // buttonMantFr
             // 
-            this.buttonMantFr.Location = new System.Drawing.Point(23, 360);
+            this.buttonMantFr.Location = new System.Drawing.Point(12, 281);
             this.buttonMantFr.Name = "buttonMantFr";
             this.buttonMantFr.Size = new System.Drawing.Size(90, 24);
             this.buttonMantFr.TabIndex = 25;
