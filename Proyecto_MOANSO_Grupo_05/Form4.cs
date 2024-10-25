@@ -40,8 +40,10 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void button14_Click(object sender, EventArgs e)
         {
-            Form formulario = new PersonalForm();
-            formulario.Show();
+           // Form formulario = new PersonalForm();
+           // formulario.Show();
+            AbrirPrueba(new PersonalForm());
+
         }
 
         private void button12_Click(object sender, EventArgs e)

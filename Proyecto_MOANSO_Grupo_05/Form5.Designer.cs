@@ -41,7 +41,7 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(11, 26);
+            this.button9.Location = new System.Drawing.Point(38, 65);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(146, 58);
@@ -57,7 +57,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(29, 100);
+            this.button4.Location = new System.Drawing.Point(56, 139);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 37);
@@ -68,7 +68,7 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(189, 26);
+            this.panel1.Location = new System.Drawing.Point(213, 37);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(725, 528);
             this.panel1.TabIndex = 11;
@@ -82,6 +82,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form5";
             this.Text = "Form5";
             this.ResumeLayout(false);

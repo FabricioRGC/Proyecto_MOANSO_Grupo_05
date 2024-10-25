@@ -249,6 +249,7 @@
             // 
             // btnEnviar
             // 
+            this.btnEnviar.ForeColor = System.Drawing.Color.Black;
             this.btnEnviar.Location = new System.Drawing.Point(500, 271);
             this.btnEnviar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnviar.Name = "btnEnviar";

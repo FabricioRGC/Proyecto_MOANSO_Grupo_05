@@ -71,7 +71,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.OliveDrab;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Location = new System.Drawing.Point(209, 83);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1073, 587);

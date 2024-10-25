@@ -45,18 +45,20 @@
             // dataGridOrPeMateriales
             // 
             this.dataGridOrPeMateriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridOrPeMateriales.Location = new System.Drawing.Point(50, 265);
+            this.dataGridOrPeMateriales.Location = new System.Drawing.Point(38, 215);
+            this.dataGridOrPeMateriales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridOrPeMateriales.Name = "dataGridOrPeMateriales";
             this.dataGridOrPeMateriales.RowHeadersWidth = 57;
             this.dataGridOrPeMateriales.RowTemplate.Height = 24;
-            this.dataGridOrPeMateriales.Size = new System.Drawing.Size(705, 225);
+            this.dataGridOrPeMateriales.Size = new System.Drawing.Size(529, 183);
             this.dataGridOrPeMateriales.TabIndex = 22;
             // 
             // btnAnular
             // 
-            this.btnAnular.Location = new System.Drawing.Point(488, 140);
+            this.btnAnular.Location = new System.Drawing.Point(366, 114);
+            this.btnAnular.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(141, 37);
+            this.btnAnular.Size = new System.Drawing.Size(106, 30);
             this.btnAnular.TabIndex = 21;
             this.btnAnular.Text = "Anular";
             this.btnAnular.UseVisualStyleBackColor = true;
@@ -64,9 +66,10 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(488, 77);
+            this.btnRegistrar.Location = new System.Drawing.Point(366, 63);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(141, 37);
+            this.btnRegistrar.Size = new System.Drawing.Size(106, 30);
             this.btnRegistrar.TabIndex = 20;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -75,73 +78,86 @@
             // cboEstado
             // 
             this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.Location = new System.Drawing.Point(248, 198);
+            this.cboEstado.Location = new System.Drawing.Point(186, 161);
+            this.cboEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(200, 24);
+            this.cboEstado.Size = new System.Drawing.Size(151, 21);
             this.cboEstado.TabIndex = 19;
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(248, 150);
+            this.dtpFecha.Location = new System.Drawing.Point(186, 122);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 22);
+            this.dtpFecha.Size = new System.Drawing.Size(151, 20);
             this.dtpFecha.TabIndex = 18;
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(248, 98);
+            this.txtCantidad.Location = new System.Drawing.Point(186, 80);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(200, 22);
+            this.txtCantidad.Size = new System.Drawing.Size(151, 20);
             this.txtCantidad.TabIndex = 17;
             // 
             // txtIDMateriales
             // 
-            this.txtIDMateriales.Location = new System.Drawing.Point(248, 39);
+            this.txtIDMateriales.Location = new System.Drawing.Point(186, 32);
+            this.txtIDMateriales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIDMateriales.Name = "txtIDMateriales";
-            this.txtIDMateriales.Size = new System.Drawing.Size(200, 22);
+            this.txtIDMateriales.Size = new System.Drawing.Size(151, 20);
             this.txtIDMateriales.TabIndex = 16;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(148, 198);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(111, 161);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 16);
+            this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 15;
             this.label4.Text = "Estado:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(153, 150);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(115, 122);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 16);
+            this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 14;
             this.label3.Text = "Fecha:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(148, 98);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(111, 80);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 16);
+            this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 13;
             this.label2.Text = "Cantidad:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(140, 42);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(105, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 16);
+            this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 12;
             this.label1.Text = "ID Materiales:";
             // 
             // OrdenPedidoMaterialForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 533);
+            this.BackColor = System.Drawing.Color.OliveDrab;
+            this.ClientSize = new System.Drawing.Size(600, 433);
             this.Controls.Add(this.dataGridOrPeMateriales);
             this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.btnRegistrar);
@@ -153,6 +169,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "OrdenPedidoMaterialForm";
             this.Text = "OrdenPedidoMaterialForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrPeMateriales)).EndInit();
