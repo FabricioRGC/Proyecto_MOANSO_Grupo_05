@@ -347,7 +347,7 @@
             // 
             this.panel1.Location = new System.Drawing.Point(710, 110);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(571, 516);
+            this.panel1.Size = new System.Drawing.Size(590, 539);
             this.panel1.TabIndex = 20;
             // 
             // Form1
