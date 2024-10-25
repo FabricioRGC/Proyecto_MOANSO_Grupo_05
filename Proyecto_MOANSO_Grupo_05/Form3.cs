@@ -52,7 +52,8 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            Form formulario = new OrdenPedidoRepuestoForm();
+            formulario.Show();
         }
     }
 }

@@ -48,6 +48,7 @@
     <Compile Include="datContrato.cs" />
     <Compile Include="datMateriales.cs" />
     <Compile Include="datOrdenPedidoMaterial.cs" />
+    <Compile Include="datOrdenPedidoRepuestos.cs" />
     <Compile Include="datPago.cs" />
     <Compile Include="datPedidoInstalacion.cs" />
     <Compile Include="datPersonal.cs" />
