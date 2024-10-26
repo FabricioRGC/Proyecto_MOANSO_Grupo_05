@@ -37,16 +37,16 @@
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button8.BackColor = System.Drawing.Color.Lime;
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(51, 140);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button8.Location = new System.Drawing.Point(68, 172);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(156, 60);
+            this.button8.Size = new System.Drawing.Size(208, 74);
             this.button8.TabIndex = 11;
             this.button8.Text = "Ordenes de Pedido de Instalación";
             this.button8.UseVisualStyleBackColor = false;
@@ -54,16 +54,16 @@
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button7.BackColor = System.Drawing.Color.Lime;
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(51, 272);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Location = new System.Drawing.Point(68, 335);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(156, 64);
+            this.button7.Size = new System.Drawing.Size(208, 79);
             this.button7.TabIndex = 10;
             this.button7.Text = "Ordenes de Pedido de Repuestos";
             this.button7.UseVisualStyleBackColor = false;
@@ -71,16 +71,16 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button6.BackColor = System.Drawing.Color.Lime;
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(51, 205);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Location = new System.Drawing.Point(68, 252);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(156, 54);
+            this.button6.Size = new System.Drawing.Size(208, 66);
             this.button6.TabIndex = 9;
             this.button6.Text = "Ordenes de Pedido de Materiales";
             this.button6.UseVisualStyleBackColor = false;
@@ -88,16 +88,16 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button5.BackColor = System.Drawing.Color.Lime;
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(71, 68);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Location = new System.Drawing.Point(95, 84);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(109, 52);
+            this.button5.Size = new System.Drawing.Size(145, 64);
             this.button5.TabIndex = 8;
             this.button5.Text = "Ordenes de Trabajo";
             this.button5.UseVisualStyleBackColor = false;
@@ -105,23 +105,25 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(227, 41);
+            this.panel1.Location = new System.Drawing.Point(303, 50);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(817, 525);
+            this.panel1.Size = new System.Drawing.Size(1089, 646);
             this.panel1.TabIndex = 12;
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(1120, 601);
+            this.ClientSize = new System.Drawing.Size(1493, 740);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form3";
             this.Text = "Form3";
             this.ResumeLayout(false);
