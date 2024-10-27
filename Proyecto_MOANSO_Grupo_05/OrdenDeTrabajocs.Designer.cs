@@ -60,6 +60,8 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -208,6 +210,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.comboBox5);
+            this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.comboBox4);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.comboBox3);
@@ -230,7 +234,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(801, 528);
+            this.groupBox3.Size = new System.Drawing.Size(801, 576);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles Orden de Trabajo";
@@ -255,7 +259,7 @@
             // btnEnviar
             // 
             this.btnEnviar.ForeColor = System.Drawing.Color.Black;
-            this.btnEnviar.Location = new System.Drawing.Point(670, 482);
+            this.btnEnviar.Location = new System.Drawing.Point(670, 526);
             this.btnEnviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(95, 33);
@@ -265,7 +269,7 @@
             // 
             // txtDirecciónTrabajo
             // 
-            this.txtDirecciónTrabajo.Location = new System.Drawing.Point(195, 274);
+            this.txtDirecciónTrabajo.Location = new System.Drawing.Point(195, 318);
             this.txtDirecciónTrabajo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDirecciónTrabajo.Name = "txtDirecciónTrabajo";
             this.txtDirecciónTrabajo.Size = new System.Drawing.Size(523, 22);
@@ -274,7 +278,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(30, 274);
+            this.label14.Location = new System.Drawing.Point(30, 318);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(134, 16);
             this.label14.TabIndex = 19;
@@ -283,7 +287,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(30, 328);
+            this.label12.Location = new System.Drawing.Point(30, 372);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(213, 16);
             this.label12.TabIndex = 14;
@@ -291,7 +295,7 @@
             // 
             // txtMarcaEquipo
             // 
-            this.txtMarcaEquipo.Location = new System.Drawing.Point(195, 229);
+            this.txtMarcaEquipo.Location = new System.Drawing.Point(195, 273);
             this.txtMarcaEquipo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMarcaEquipo.Name = "txtMarcaEquipo";
             this.txtMarcaEquipo.Size = new System.Drawing.Size(523, 22);
@@ -300,7 +304,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(27, 232);
+            this.label11.Location = new System.Drawing.Point(27, 276);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 16);
             this.label11.TabIndex = 12;
@@ -308,7 +312,7 @@
             // 
             // txtDescripciónTrabajo
             // 
-            this.txtDescripciónTrabajo.Location = new System.Drawing.Point(30, 346);
+            this.txtDescripciónTrabajo.Location = new System.Drawing.Point(30, 390);
             this.txtDescripciónTrabajo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripciónTrabajo.Name = "txtDescripciónTrabajo";
             this.txtDescripciónTrabajo.Size = new System.Drawing.Size(735, 117);
@@ -352,7 +356,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 143);
+            this.label7.Location = new System.Drawing.Point(30, 148);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 16);
             this.label7.TabIndex = 28;
@@ -372,9 +376,9 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(27, 185);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(114, 16);
+            this.label13.Size = new System.Drawing.Size(119, 16);
             this.label13.TabIndex = 29;
-            this.label13.Text = "Asignar Recursos";
+            this.label13.Text = "Asignar Materiales";
             // 
             // comboBox4
             // 
@@ -385,12 +389,30 @@
             this.comboBox4.Size = new System.Drawing.Size(527, 24);
             this.comboBox4.TabIndex = 30;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(30, 231);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(99, 16);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Asignar Equipo";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(192, 228);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(527, 24);
+            this.comboBox5.TabIndex = 32;
+            // 
             // OrdenDeTrabajocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(824, 770);
+            this.ClientSize = new System.Drawing.Size(832, 818);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -442,5 +464,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label15;
     }
 }
