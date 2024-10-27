@@ -43,6 +43,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
@@ -54,14 +62,6 @@
             this.txtDescripciónTrabajo = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -239,6 +239,77 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles Orden de Trabajo";
             // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(192, 228);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(527, 24);
+            this.comboBox5.TabIndex = 32;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(30, 231);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(115, 16);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Asignar Repuesto";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(192, 182);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(527, 24);
+            this.comboBox4.TabIndex = 30;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(27, 185);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(119, 16);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Asignar Materiales";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(192, 140);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(527, 24);
+            this.comboBox3.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(30, 148);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 16);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Tipo";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(191, 101);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(527, 22);
+            this.dateTimePicker2.TabIndex = 27;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 107);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(126, 16);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Fecha de Ejecución";
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(192, 26);
@@ -306,9 +377,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(27, 276);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 16);
+            this.label11.Size = new System.Drawing.Size(112, 16);
             this.label11.TabIndex = 12;
-            this.label11.Text = "Marca";
+            this.label11.Text = "Marca del equipo";
             // 
             // txtDescripciónTrabajo
             // 
@@ -335,77 +406,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(527, 22);
             this.dateTimePicker1.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 107);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 16);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Fecha de Ejecución";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(191, 101);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(527, 22);
-            this.dateTimePicker2.TabIndex = 27;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 148);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 16);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "Tipo";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(192, 140);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(527, 24);
-            this.comboBox3.TabIndex = 7;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 185);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(119, 16);
-            this.label13.TabIndex = 29;
-            this.label13.Text = "Asignar Materiales";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(192, 182);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(527, 24);
-            this.comboBox4.TabIndex = 30;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(30, 231);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(99, 16);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "Asignar Equipo";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(192, 228);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(527, 24);
-            this.comboBox5.TabIndex = 32;
             // 
             // OrdenDeTrabajocs
             // 
