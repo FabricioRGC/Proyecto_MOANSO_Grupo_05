@@ -135,5 +135,10 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             AbrirPrueba2(new Form5());
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

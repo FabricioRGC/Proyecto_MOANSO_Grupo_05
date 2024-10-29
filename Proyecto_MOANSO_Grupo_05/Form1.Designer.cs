@@ -42,23 +42,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.OliveDrab;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 49.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(-49, -2);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(98)))), ((int)(((byte)(175)))));
+            this.label1.Font = new System.Drawing.Font("Leelawadee", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(72, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1348, 89);
+            this.label1.Size = new System.Drawing.Size(1132, 71);
             this.label1.TabIndex = 15;
             this.label1.Text = "              Lunnys Perú R2d E.I.R.L.             ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.OliveDrab;
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(3, 85);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(178, 76);
@@ -69,22 +70,22 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.OliveDrab;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(209, 83);
+            this.panel2.Location = new System.Drawing.Point(172, 83);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1073, 719);
+            this.panel2.Size = new System.Drawing.Size(1110, 719);
             this.panel2.TabIndex = 22;
             // 
             // buttonOrdenes
             // 
-            this.buttonOrdenes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonOrdenes.BackgroundImage")));
             this.buttonOrdenes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.buttonOrdenes.FlatAppearance.BorderColor = System.Drawing.Color.OliveDrab;
+            this.buttonOrdenes.FlatAppearance.BorderSize = 0;
             this.buttonOrdenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOrdenes.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOrdenes.ForeColor = System.Drawing.Color.Black;
+            this.buttonOrdenes.ForeColor = System.Drawing.Color.White;
             this.buttonOrdenes.Location = new System.Drawing.Point(3, 3);
             this.buttonOrdenes.Name = "buttonOrdenes";
             this.buttonOrdenes.Size = new System.Drawing.Size(178, 76);
@@ -95,11 +96,11 @@
             // 
             // buttonAlmyTra
             // 
-            this.buttonAlmyTra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAlmyTra.BackgroundImage")));
             this.buttonAlmyTra.FlatAppearance.BorderColor = System.Drawing.Color.OliveDrab;
+            this.buttonAlmyTra.FlatAppearance.BorderSize = 0;
             this.buttonAlmyTra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAlmyTra.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAlmyTra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAlmyTra.ForeColor = System.Drawing.Color.White;
             this.buttonAlmyTra.Location = new System.Drawing.Point(3, 167);
             this.buttonAlmyTra.Name = "buttonAlmyTra";
             this.buttonAlmyTra.Size = new System.Drawing.Size(178, 76);
@@ -110,11 +111,11 @@
             // 
             // buttonMantFr
             // 
-            this.buttonMantFr.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMantFr.BackgroundImage")));
             this.buttonMantFr.FlatAppearance.BorderColor = System.Drawing.Color.OliveDrab;
+            this.buttonMantFr.FlatAppearance.BorderSize = 0;
             this.buttonMantFr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMantFr.Font = new System.Drawing.Font("Segoe UI Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMantFr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonMantFr.ForeColor = System.Drawing.Color.White;
             this.buttonMantFr.Location = new System.Drawing.Point(3, 249);
             this.buttonMantFr.Name = "buttonMantFr";
             this.buttonMantFr.Size = new System.Drawing.Size(178, 76);
@@ -125,22 +126,22 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.OliveDrab;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(49)))), ((int)(((byte)(64)))));
             this.flowLayoutPanel1.Controls.Add(this.buttonOrdenes);
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.buttonAlmyTra);
             this.flowLayoutPanel1.Controls.Add(this.buttonMantFr);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 80);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(182, 703);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(181, 700);
             this.flowLayoutPanel1.TabIndex = 23;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(98)))), ((int)(((byte)(175)))));
             this.ClientSize = new System.Drawing.Size(1281, 773);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);

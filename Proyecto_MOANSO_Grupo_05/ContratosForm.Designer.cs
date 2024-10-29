@@ -47,7 +47,7 @@
             // 
             // txtBuscarCliente
             // 
-            this.txtBuscarCliente.Location = new System.Drawing.Point(641, 20);
+            this.txtBuscarCliente.Location = new System.Drawing.Point(464, 536);
             this.txtBuscarCliente.Name = "txtBuscarCliente";
             this.txtBuscarCliente.Size = new System.Drawing.Size(145, 20);
             this.txtBuscarCliente.TabIndex = 31;
@@ -56,10 +56,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(567, 23);
+            this.label6.Location = new System.Drawing.Point(461, 501);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.Size = new System.Drawing.Size(61, 17);
             this.label6.TabIndex = 30;
             this.label6.Text = "BUSCAR:";
             // 
@@ -114,9 +115,9 @@
             // tablaContratos
             // 
             this.tablaContratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaContratos.Location = new System.Drawing.Point(12, 23);
+            this.tablaContratos.Location = new System.Drawing.Point(76, 330);
             this.tablaContratos.Name = "tablaContratos";
-            this.tablaContratos.Size = new System.Drawing.Size(536, 313);
+            this.tablaContratos.Size = new System.Drawing.Size(339, 198);
             this.tablaContratos.TabIndex = 19;
             // 
             // button3
@@ -178,8 +179,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(800, 358);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(112)))), ((int)(((byte)(49)))));
+            this.ClientSize = new System.Drawing.Size(800, 596);
             this.Controls.Add(this.txtDuracion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbPlan);
