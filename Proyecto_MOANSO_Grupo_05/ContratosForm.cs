@@ -97,6 +97,7 @@ namespace Proyecto_MOANSO_Grupo_05
             historial.Show();
         }
 
+
         // Actualizar Información
 
         private void cbPlan_SelectedIndexChanged(object sender, EventArgs e)
