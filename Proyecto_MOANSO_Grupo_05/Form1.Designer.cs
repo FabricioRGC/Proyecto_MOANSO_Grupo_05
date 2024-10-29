@@ -74,7 +74,7 @@
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Location = new System.Drawing.Point(209, 83);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1073, 587);
+            this.panel2.Size = new System.Drawing.Size(1073, 634);
             this.panel2.TabIndex = 22;
             // 
             // buttonOrdenes
@@ -131,9 +131,9 @@
             this.flowLayoutPanel1.Controls.Add(this.buttonAlmyTra);
             this.flowLayoutPanel1.Controls.Add(this.buttonMantFr);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 80);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(182, 573);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(182, 605);
             this.flowLayoutPanel1.TabIndex = 23;
             // 
             // Form1
@@ -141,13 +141,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1281, 653);
+            this.ClientSize = new System.Drawing.Size(1281, 678);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.OliveDrab;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.flowLayoutPanel1.ResumeLayout(false);

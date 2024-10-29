@@ -46,14 +46,18 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Form formulario = new OrdenPedidoMaterialForm();
-            formulario.Show();
+            //Form formulario = new OrdenPedidoMaterialForm();
+            //formulario.Show();
+            AbrirPrueba(new OrdenPedidoMaterialForm());
+
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Form formulario = new OrdenPedidoRepuestoForm();
-            formulario.Show();
+            //Form formulario = new OrdenPedidoRepuestoForm();
+            //formulario.Show();
+            AbrirPrueba(new OrdenPedidoRepuestoForm());
+
         }
     }
 }

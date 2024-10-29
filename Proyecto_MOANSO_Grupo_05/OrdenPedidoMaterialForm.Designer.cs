@@ -46,7 +46,7 @@
             // 
             this.dataGridOrPeMateriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridOrPeMateriales.Location = new System.Drawing.Point(38, 215);
-            this.dataGridOrPeMateriales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridOrPeMateriales.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridOrPeMateriales.Name = "dataGridOrPeMateriales";
             this.dataGridOrPeMateriales.RowHeadersWidth = 57;
             this.dataGridOrPeMateriales.RowTemplate.Height = 24;
@@ -56,7 +56,7 @@
             // btnAnular
             // 
             this.btnAnular.Location = new System.Drawing.Point(366, 114);
-            this.btnAnular.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnular.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(106, 30);
             this.btnAnular.TabIndex = 21;
@@ -67,7 +67,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.Location = new System.Drawing.Point(366, 63);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(106, 30);
             this.btnRegistrar.TabIndex = 20;
@@ -79,7 +79,7 @@
             // 
             this.cboEstado.FormattingEnabled = true;
             this.cboEstado.Location = new System.Drawing.Point(186, 161);
-            this.cboEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(151, 21);
             this.cboEstado.TabIndex = 19;
@@ -87,7 +87,7 @@
             // dtpFecha
             // 
             this.dtpFecha.Location = new System.Drawing.Point(186, 122);
-            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFecha.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(151, 20);
             this.dtpFecha.TabIndex = 18;
@@ -95,7 +95,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(186, 80);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(151, 20);
             this.txtCantidad.TabIndex = 17;
@@ -103,7 +103,7 @@
             // txtIDMateriales
             // 
             this.txtIDMateriales.Location = new System.Drawing.Point(186, 32);
-            this.txtIDMateriales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIDMateriales.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDMateriales.Name = "txtIDMateriales";
             this.txtIDMateriales.Size = new System.Drawing.Size(151, 20);
             this.txtIDMateriales.TabIndex = 16;
@@ -169,7 +169,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "OrdenPedidoMaterialForm";
             this.Text = "OrdenPedidoMaterialForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrPeMateriales)).EndInit();
