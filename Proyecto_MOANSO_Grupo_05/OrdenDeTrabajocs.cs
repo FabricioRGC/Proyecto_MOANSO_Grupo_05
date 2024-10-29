@@ -21,5 +21,10 @@ namespace Proyecto_MOANSO_Grupo_05
         {
 
         }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

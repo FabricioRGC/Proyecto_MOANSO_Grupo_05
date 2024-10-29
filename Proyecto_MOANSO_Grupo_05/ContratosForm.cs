@@ -21,19 +21,13 @@ namespace Proyecto_MOANSO_Grupo_05
         public ContratosForm()
         {
             InitializeComponent();
-            listarContrato();
             CargarPlanes();
-        }
-
-        public void listarContrato()
-        {
-            tablaContratos.DataSource = logContrato.Instancia.ListarContrato();
+            cargarClientes();
         }
 
         public void LimpiarVariables()
         {
-            txtCliente.Text = "";
-            cbEstado.SelectedIndex = -1;
+            cbCliente.SelectedIndex = -1;
             cbPlan.SelectedIndex = -1;
         }
 
@@ -57,6 +51,26 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
+        private void cargarClientes()
+        {
+            string consulta = "SELECT NOMBRE FROM CLIENTES";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cbCliente.Items.Add(reader["NOMBRE"].ToString());
+                }
+
+                reader.Close();
+
+            }
+        }
+
         // ----- ACCIONES -----
         // Boton Añadir
         private void btnAñadir_Click(object sender, EventArgs e)
@@ -64,9 +78,8 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entContrato con = new entContrato();
-                con.clienteId = txtCliente.Text.Trim();
+                con.clienteId = cbCliente.SelectedItem.ToString();
                 con.duracion = txtDuracion.Text.Trim();
-                con.estado = cbEstado.SelectedItem.ToString();
                 con.tipo_plan = cbPlan.SelectedItem.ToString();
                 logContrato.Instancia.InsertaContrato(con);
             }
@@ -75,54 +88,86 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
             LimpiarVariables();
-            listarContrato();
         }
 
-        // Boton Modificar
-        private void button2_Click(object sender, EventArgs e)
+        // Boton Historial
+        private void btnHistorial_Click(object sender, EventArgs e)
         {
+            Form historial = new ClientesHistorialForm();
+            historial.Show();
+        }
+
+        // Actualizar Información
+
+        private void cbPlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string planSeleccionado = cbPlan.SelectedItem.ToString();
+
             try
             {
-                entContrato con = new entContrato();
-                con.clienteId = txtCliente.Text.Trim();
-                con.duracion = txtDuracion.Text.Trim();
-                con.estado = cbEstado.SelectedItem.ToString();
-                con.tipo_plan = cbPlan.SelectedItem.ToString();
-                logContrato.Instancia.EditarContrato(con);
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "SELECT VelocidadMbps, LimiteDatosGB, PrecioMensualSoles, TipoServicio, Caracteristicas FROM PlanesInternet WHERE PlanNombre = @planNombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@planNombre", planSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        velocidadLabel.Text = reader["VelocidadMbps"].ToString();
+                        limiteLabel.Text = reader["LimiteDatosGB"].ToString();
+                        precioLabel.Text = reader["PrecioMensualSoles"].ToString();
+                        tipoLabel.Text = reader["TipoServicio"].ToString();
+                        caracteristicasLabel.Text = reader["Caracteristicas"].ToString();
+                    }
+
+                    reader.Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            LimpiarVariables();
-            listarContrato();
         }
 
-        // Boton Inhabilitar
-        private void button3_Click(object sender, EventArgs e)
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string clienteSeleccionado = cbCliente.SelectedItem.ToString();
+
             try
             {
-                entContrato con = new entContrato();
-                con.clienteId = txtCliente.Text.Trim();
-                logContrato.Instancia.DeshabilitarContrato(con);
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "Select codigo, direccion, telefono, estado from Clientes where nombre = @nombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        codigoLabel.Text = reader["codigo"].ToString();
+                        direccionLabel.Text = reader["direccion"].ToString();
+                        telefonoLabel.Text = reader["telefono"].ToString();
+                        estadoLabel.Text = reader["estado"].ToString();
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            LimpiarVariables();
-            listarContrato();
         }
 
         // Filtrar por Cliente
-        private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
-        {
-            string nombre = txtBuscarCliente.Text;
+        //private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
+        //{
+        //    string nombre = txtBuscarCliente.Text;
 
-            var contratosFiltrados = logContrato.Instancia.ListarContrato().Where(c => c.clienteId.Contains(nombre)).ToList();
-            
-            tablaContratos.DataSource = contratosFiltrados;
-        }
+        //    var contratosFiltrados = logContrato.Instancia.ListarContrato().Where(c => c.clienteId.Contains(nombre)).ToList();
+
+        //    tablaContratos.DataSource = contratosFiltrados;
+        //}
     }
 }
