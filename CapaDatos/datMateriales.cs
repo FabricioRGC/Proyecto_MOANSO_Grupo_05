@@ -41,6 +41,7 @@ namespace CapaDatos
                     mat.descripcion = dr["descripcion"].ToString();
                     mat.stock = int.Parse(dr["stock"].ToString());
                     mat.estado = dr["estado"].ToString();
+                    mat.fechaInicio = Convert.ToDateTime(dr["fecha_Registro"]);
                     lista.Add(mat);
 
                 }
@@ -73,6 +74,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@descripcion", materiales.descripcion);
                 cmd.Parameters.AddWithValue("@stock", materiales.stock);
                 cmd.Parameters.AddWithValue("@estado", materiales.estado);
+                cmd.Parameters.AddWithValue("@fechaRegistro", materiales.fechaInicio);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
