@@ -62,7 +62,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtDescripciónTrabajo = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.dniLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -220,7 +220,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.dniLabel);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.cbCliente);
             this.groupBox2.Controls.Add(this.estadoLabel);
@@ -424,15 +424,14 @@
             this.label15.TabIndex = 51;
             this.label15.Text = "Dni:";
             // 
-            // label16
+            // dniLabel
             // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(84, 68);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(26, 13);
-            this.label16.TabIndex = 52;
-            this.label16.Text = "Dni:";
+            this.dniLabel.AutoSize = true;
+            this.dniLabel.ForeColor = System.Drawing.Color.White;
+            this.dniLabel.Location = new System.Drawing.Point(84, 68);
+            this.dniLabel.Name = "dniLabel";
+            this.dniLabel.Size = new System.Drawing.Size(0, 13);
+            this.dniLabel.TabIndex = 52;
             // 
             // ContratosForm
             // 
@@ -490,7 +489,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.RichTextBox txtDescripciónTrabajo;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label dniLabel;
         private System.Windows.Forms.Label label15;
     }
 }

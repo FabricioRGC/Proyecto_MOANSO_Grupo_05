@@ -15,6 +15,7 @@ namespace CapaEntidad
             public string direccion { get; set; }
             public string telefono { get; set; }
             public string estado { get; set; }
+            public string dni { get; set; }
         }
     }
 }

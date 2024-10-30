@@ -140,7 +140,7 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 using (SqlConnection cn = Conexion.Instancia.Conectar())
                 {
-                    string consulta = "Select codigo, direccion, telefono, estado from Clientes where nombre = @nombre";
+                    string consulta = "Select codigo, direccion, telefono, dni, estado from Clientes where nombre = @nombre";
                     SqlCommand cmd = new SqlCommand(consulta, cn);
                     cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
                     cn.Open();
@@ -152,6 +152,7 @@ namespace Proyecto_MOANSO_Grupo_05
                         direccionLabel.Text = reader["direccion"].ToString();
                         telefonoLabel.Text = reader["telefono"].ToString();
                         estadoLabel.Text = reader["estado"].ToString();
+                        dniLabel.Text = reader["dni"].ToString();
                     }
                 }
             }
