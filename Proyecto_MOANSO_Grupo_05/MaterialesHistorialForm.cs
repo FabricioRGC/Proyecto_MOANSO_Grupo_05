@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using static CapaEntidad.Material;
 
 
@@ -35,7 +36,18 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                entMateriales mat = new entMateriales();
+                mat.codigo = textBox2.Text.Trim();
+                logMateriales.Instancia.DeshabilitarMateriales(mat);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            listarMateriales();
+            textBox2.Text = "";
         }
     }
 }
