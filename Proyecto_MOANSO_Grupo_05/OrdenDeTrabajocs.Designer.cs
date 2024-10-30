@@ -62,6 +62,7 @@
             this.txtDescripciónTrabajo = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -77,9 +78,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(9, 20);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(286, 154);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -89,7 +90,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(64, 40);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 21);
             this.comboBox1.TabIndex = 6;
@@ -97,7 +98,7 @@
             // txtCorreoTécnico
             // 
             this.txtCorreoTécnico.Location = new System.Drawing.Point(64, 106);
-            this.txtCorreoTécnico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCorreoTécnico.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreoTécnico.Name = "txtCorreoTécnico";
             this.txtCorreoTécnico.Size = new System.Drawing.Size(209, 20);
             this.txtCorreoTécnico.TabIndex = 5;
@@ -115,7 +116,7 @@
             // txtTélefonoTécnico
             // 
             this.txtTélefonoTécnico.Location = new System.Drawing.Point(64, 72);
-            this.txtTélefonoTécnico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTélefonoTécnico.Margin = new System.Windows.Forms.Padding(2);
             this.txtTélefonoTécnico.Name = "txtTélefonoTécnico";
             this.txtTélefonoTécnico.Size = new System.Drawing.Size(209, 20);
             this.txtTélefonoTécnico.TabIndex = 3;
@@ -151,9 +152,9 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(306, 20);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(304, 154);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -163,7 +164,7 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(76, 32);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(209, 21);
             this.comboBox2.TabIndex = 13;
@@ -171,7 +172,7 @@
             // txtCorreoCliente
             // 
             this.txtCorreoCliente.Location = new System.Drawing.Point(76, 94);
-            this.txtCorreoCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCorreoCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreoCliente.Name = "txtCorreoCliente";
             this.txtCorreoCliente.Size = new System.Drawing.Size(209, 20);
             this.txtCorreoCliente.TabIndex = 12;
@@ -189,7 +190,7 @@
             // txtTelefonoCliente
             // 
             this.txtTelefonoCliente.Location = new System.Drawing.Point(76, 61);
-            this.txtTelefonoCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefonoCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefonoCliente.Name = "txtTelefonoCliente";
             this.txtTelefonoCliente.Size = new System.Drawing.Size(209, 20);
             this.txtTelefonoCliente.TabIndex = 9;
@@ -237,9 +238,9 @@
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(9, 188);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(601, 468);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
@@ -249,7 +250,7 @@
             // 
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(144, 185);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(396, 21);
             this.comboBox5.TabIndex = 32;
@@ -268,7 +269,7 @@
             // 
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(144, 148);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(396, 21);
             this.comboBox4.TabIndex = 30;
@@ -287,7 +288,7 @@
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(144, 114);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(396, 21);
             this.comboBox3.TabIndex = 7;
@@ -305,7 +306,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(143, 82);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(396, 20);
             this.dateTimePicker2.TabIndex = 27;
@@ -323,7 +324,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(144, 21);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(396, 20);
             this.textBox1.TabIndex = 25;
@@ -342,7 +343,7 @@
             // 
             this.btnEnviar.ForeColor = System.Drawing.Color.Black;
             this.btnEnviar.Location = new System.Drawing.Point(502, 427);
-            this.btnEnviar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEnviar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(71, 27);
             this.btnEnviar.TabIndex = 23;
@@ -353,7 +354,7 @@
             // txtDirecciónTrabajo
             // 
             this.txtDirecciónTrabajo.Location = new System.Drawing.Point(146, 258);
-            this.txtDirecciónTrabajo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDirecciónTrabajo.Margin = new System.Windows.Forms.Padding(2);
             this.txtDirecciónTrabajo.Name = "txtDirecciónTrabajo";
             this.txtDirecciónTrabajo.Size = new System.Drawing.Size(393, 20);
             this.txtDirecciónTrabajo.TabIndex = 20;
@@ -381,7 +382,7 @@
             // txtMarcaEquipo
             // 
             this.txtMarcaEquipo.Location = new System.Drawing.Point(146, 222);
-            this.txtMarcaEquipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMarcaEquipo.Margin = new System.Windows.Forms.Padding(2);
             this.txtMarcaEquipo.Name = "txtMarcaEquipo";
             this.txtMarcaEquipo.Size = new System.Drawing.Size(393, 20);
             this.txtMarcaEquipo.TabIndex = 13;
@@ -399,7 +400,7 @@
             // txtDescripciónTrabajo
             // 
             this.txtDescripciónTrabajo.Location = new System.Drawing.Point(22, 317);
-            this.txtDescripciónTrabajo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripciónTrabajo.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripciónTrabajo.Name = "txtDescripciónTrabajo";
             this.txtDescripciónTrabajo.Size = new System.Drawing.Size(552, 96);
             this.txtDescripciónTrabajo.TabIndex = 11;
@@ -418,7 +419,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(144, 50);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(396, 20);
             this.dateTimePicker1.TabIndex = 0;
@@ -433,7 +434,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "OrdenDeTrabajocs";
             this.Text = "OrdenDeTrabajocs";
             this.groupBox1.ResumeLayout(false);
@@ -482,5 +483,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label15;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

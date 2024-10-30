@@ -107,6 +107,12 @@
     <Compile Include="MaterialesForm.Designer.cs">
       <DependentUpon>MaterialesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaterialesHistorialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialesHistorialForm.Designer.cs">
+      <DependentUpon>MaterialesHistorialForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrdenDeTrabajocs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialesForm.resx">
       <DependentUpon>MaterialesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialesHistorialForm.resx">
+      <DependentUpon>MaterialesHistorialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenDeTrabajocs.resx">
       <DependentUpon>OrdenDeTrabajocs.cs</DependentUpon>
