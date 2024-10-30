@@ -53,11 +53,11 @@
     <Compile Include="ClientesForm.Designer.cs">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientesHistorialForm.cs">
+    <Compile Include="ContratoHistorialForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientesHistorialForm.Designer.cs">
-      <DependentUpon>ClientesHistorialForm.cs</DependentUpon>
+    <Compile Include="ContratoHistorialForm.Designer.cs">
+      <DependentUpon>ContratoHistorialForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ContratosForm.cs">
       <SubType>Form</SubType>
@@ -166,8 +166,8 @@
     <EmbeddedResource Include="ClientesForm.resx">
       <DependentUpon>ClientesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientesHistorialForm.resx">
-      <DependentUpon>ClientesHistorialForm.cs</DependentUpon>
+    <EmbeddedResource Include="ContratoHistorialForm.resx">
+      <DependentUpon>ContratoHistorialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContratosForm.resx">
       <DependentUpon>ContratosForm.cs</DependentUpon>

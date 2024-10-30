@@ -77,11 +77,7 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-                entContrato con = new entContrato();
-                con.clienteId = cbCliente.SelectedItem.ToString();
-                con.duracion = txtDuracion.Text.Trim();
-                con.tipo_plan = cbPlan.SelectedItem.ToString();
-                logContrato.Instancia.InsertaContrato(con);
+                
             }
             catch (Exception ex)
             {
@@ -93,7 +89,7 @@ namespace Proyecto_MOANSO_Grupo_05
         // Boton Historial
         private void btnHistorial_Click(object sender, EventArgs e)
         {
-            Form historial = new ClientesHistorialForm();
+            Form historial = new ContratoHistorialForm();
             historial.Show();
         }
 

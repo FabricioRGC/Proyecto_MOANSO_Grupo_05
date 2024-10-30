@@ -65,9 +65,10 @@ namespace CapaDatos
                 cmd = new SqlCommand("SP_AÑADIR_CONTRATO", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@clienteid", contrato.clienteId);
-                cmd.Parameters.AddWithValue("@estado", contrato.estado);
+                cmd.Parameters.AddWithValue("@Estado", contrato.estado);
                 cmd.Parameters.AddWithValue("@tipoPlan", contrato.tipo_plan);
                 cmd.Parameters.AddWithValue("@duracion", contrato.duracion);
+                cmd.Parameters.AddWithValue("@clausulas", contrato.fechaInicio);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
@@ -129,7 +130,7 @@ namespace CapaDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_DESHABILITAR_CONTRATOS", cn);
+                cmd = new SqlCommand("SP_ANULAR_CONTRATO", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@codigoCliente", contrato.clienteId);
 

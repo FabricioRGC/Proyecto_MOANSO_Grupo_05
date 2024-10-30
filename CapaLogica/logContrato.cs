@@ -36,8 +36,7 @@ namespace CapaLogica
             datContrato.Instancia.ModificarContrato(con);
         }
 
-        // Método para deshabilitar un contrato
-        public void DeshabilitarContrato(entContrato con)
+        public void AnularContrato (entContrato con)
         {
             datContrato.Instancia.AnularContrato(con);
         }

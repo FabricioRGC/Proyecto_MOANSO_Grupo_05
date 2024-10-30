@@ -37,32 +37,32 @@
             this.txtDuracion = new System.Windows.Forms.TextBox();
             this.btnHistorial = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.velocidadLabel = new System.Windows.Forms.Label();
-            this.limiteLabel = new System.Windows.Forms.Label();
-            this.precioLabel = new System.Windows.Forms.Label();
-            this.tipoLabel = new System.Windows.Forms.Label();
             this.caracteristicasLabel = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.codigoLabel = new System.Windows.Forms.Label();
-            this.direccionLabel = new System.Windows.Forms.Label();
-            this.telefonoLabel = new System.Windows.Forms.Label();
-            this.estadoLabel = new System.Windows.Forms.Label();
-            this.cbCliente = new System.Windows.Forms.ComboBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtDescripciónTrabajo = new System.Windows.Forms.RichTextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.tipoLabel = new System.Windows.Forms.Label();
+            this.precioLabel = new System.Windows.Forms.Label();
+            this.limiteLabel = new System.Windows.Forms.Label();
+            this.velocidadLabel = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dniLabel = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cbCliente = new System.Windows.Forms.ComboBox();
+            this.estadoLabel = new System.Windows.Forms.Label();
+            this.telefonoLabel = new System.Windows.Forms.Label();
+            this.direccionLabel = new System.Windows.Forms.Label();
+            this.codigoLabel = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtDescripciónTrabajo = new System.Windows.Forms.RichTextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -168,35 +168,60 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles del Plan";
             // 
-            // label2
+            // caracteristicasLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(21, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "Velocidad (Mpbs):";
+            this.caracteristicasLabel.AutoSize = true;
+            this.caracteristicasLabel.ForeColor = System.Drawing.Color.White;
+            this.caracteristicasLabel.Location = new System.Drawing.Point(143, 206);
+            this.caracteristicasLabel.Name = "caracteristicasLabel";
+            this.caracteristicasLabel.Size = new System.Drawing.Size(0, 13);
+            this.caracteristicasLabel.TabIndex = 42;
             // 
-            // label6
+            // tipoLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(21, 103);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 13);
-            this.label6.TabIndex = 34;
-            this.label6.Text = "Limites de Datos (Gb):";
+            this.tipoLabel.AutoSize = true;
+            this.tipoLabel.ForeColor = System.Drawing.Color.White;
+            this.tipoLabel.Location = new System.Drawing.Point(143, 170);
+            this.tipoLabel.Name = "tipoLabel";
+            this.tipoLabel.Size = new System.Drawing.Size(0, 13);
+            this.tipoLabel.TabIndex = 41;
             // 
-            // label7
+            // precioLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(21, 138);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 13);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Precio (Mensual):";
+            this.precioLabel.AutoSize = true;
+            this.precioLabel.ForeColor = System.Drawing.Color.White;
+            this.precioLabel.Location = new System.Drawing.Point(143, 138);
+            this.precioLabel.Name = "precioLabel";
+            this.precioLabel.Size = new System.Drawing.Size(0, 13);
+            this.precioLabel.TabIndex = 40;
+            // 
+            // limiteLabel
+            // 
+            this.limiteLabel.AutoSize = true;
+            this.limiteLabel.ForeColor = System.Drawing.Color.White;
+            this.limiteLabel.Location = new System.Drawing.Point(143, 103);
+            this.limiteLabel.Name = "limiteLabel";
+            this.limiteLabel.Size = new System.Drawing.Size(0, 13);
+            this.limiteLabel.TabIndex = 39;
+            // 
+            // velocidadLabel
+            // 
+            this.velocidadLabel.AutoSize = true;
+            this.velocidadLabel.ForeColor = System.Drawing.Color.White;
+            this.velocidadLabel.Location = new System.Drawing.Point(143, 68);
+            this.velocidadLabel.Name = "velocidadLabel";
+            this.velocidadLabel.Size = new System.Drawing.Size(0, 13);
+            this.velocidadLabel.TabIndex = 38;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(21, 206);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(81, 13);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Características:";
             // 
             // label8
             // 
@@ -208,15 +233,35 @@
             this.label8.TabIndex = 36;
             this.label8.Text = "Tipo de Servicio:";
             // 
-            // label9
+            // label7
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(21, 206);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 13);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "Características:";
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(21, 138);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 13);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Precio (Mensual):";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(21, 103);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 13);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "Limites de Datos (Gb):";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(21, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Velocidad (Mpbs):";
             // 
             // groupBox2
             // 
@@ -240,80 +285,69 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles del Cliente";
             // 
-            // velocidadLabel
+            // dniLabel
             // 
-            this.velocidadLabel.AutoSize = true;
-            this.velocidadLabel.ForeColor = System.Drawing.Color.White;
-            this.velocidadLabel.Location = new System.Drawing.Point(143, 68);
-            this.velocidadLabel.Name = "velocidadLabel";
-            this.velocidadLabel.Size = new System.Drawing.Size(0, 13);
-            this.velocidadLabel.TabIndex = 38;
+            this.dniLabel.AutoSize = true;
+            this.dniLabel.ForeColor = System.Drawing.Color.White;
+            this.dniLabel.Location = new System.Drawing.Point(84, 68);
+            this.dniLabel.Name = "dniLabel";
+            this.dniLabel.Size = new System.Drawing.Size(0, 13);
+            this.dniLabel.TabIndex = 52;
             // 
-            // limiteLabel
+            // label15
             // 
-            this.limiteLabel.AutoSize = true;
-            this.limiteLabel.ForeColor = System.Drawing.Color.White;
-            this.limiteLabel.Location = new System.Drawing.Point(143, 103);
-            this.limiteLabel.Name = "limiteLabel";
-            this.limiteLabel.Size = new System.Drawing.Size(0, 13);
-            this.limiteLabel.TabIndex = 39;
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(19, 68);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(26, 13);
+            this.label15.TabIndex = 51;
+            this.label15.Text = "Dni:";
             // 
-            // precioLabel
+            // cbCliente
             // 
-            this.precioLabel.AutoSize = true;
-            this.precioLabel.ForeColor = System.Drawing.Color.White;
-            this.precioLabel.Location = new System.Drawing.Point(143, 138);
-            this.precioLabel.Name = "precioLabel";
-            this.precioLabel.Size = new System.Drawing.Size(0, 13);
-            this.precioLabel.TabIndex = 40;
+            this.cbCliente.FormattingEnabled = true;
+            this.cbCliente.Location = new System.Drawing.Point(96, 30);
+            this.cbCliente.Name = "cbCliente";
+            this.cbCliente.Size = new System.Drawing.Size(121, 21);
+            this.cbCliente.TabIndex = 43;
+            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.cbCliente_SelectedIndexChanged);
             // 
-            // tipoLabel
+            // estadoLabel
             // 
-            this.tipoLabel.AutoSize = true;
-            this.tipoLabel.ForeColor = System.Drawing.Color.White;
-            this.tipoLabel.Location = new System.Drawing.Point(143, 170);
-            this.tipoLabel.Name = "tipoLabel";
-            this.tipoLabel.Size = new System.Drawing.Size(0, 13);
-            this.tipoLabel.TabIndex = 41;
+            this.estadoLabel.AutoSize = true;
+            this.estadoLabel.ForeColor = System.Drawing.Color.White;
+            this.estadoLabel.Location = new System.Drawing.Point(86, 206);
+            this.estadoLabel.Name = "estadoLabel";
+            this.estadoLabel.Size = new System.Drawing.Size(0, 13);
+            this.estadoLabel.TabIndex = 50;
             // 
-            // caracteristicasLabel
+            // telefonoLabel
             // 
-            this.caracteristicasLabel.AutoSize = true;
-            this.caracteristicasLabel.ForeColor = System.Drawing.Color.White;
-            this.caracteristicasLabel.Location = new System.Drawing.Point(143, 206);
-            this.caracteristicasLabel.Name = "caracteristicasLabel";
-            this.caracteristicasLabel.Size = new System.Drawing.Size(0, 13);
-            this.caracteristicasLabel.TabIndex = 42;
+            this.telefonoLabel.AutoSize = true;
+            this.telefonoLabel.ForeColor = System.Drawing.Color.White;
+            this.telefonoLabel.Location = new System.Drawing.Point(86, 170);
+            this.telefonoLabel.Name = "telefonoLabel";
+            this.telefonoLabel.Size = new System.Drawing.Size(0, 13);
+            this.telefonoLabel.TabIndex = 49;
             // 
-            // label10
+            // direccionLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(19, 103);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 13);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "Codigo:";
+            this.direccionLabel.AutoSize = true;
+            this.direccionLabel.ForeColor = System.Drawing.Color.White;
+            this.direccionLabel.Location = new System.Drawing.Point(86, 138);
+            this.direccionLabel.Name = "direccionLabel";
+            this.direccionLabel.Size = new System.Drawing.Size(0, 13);
+            this.direccionLabel.TabIndex = 48;
             // 
-            // label11
+            // codigoLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(19, 138);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 13);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Dirección:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(19, 170);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(52, 13);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "Teléfono:";
+            this.codigoLabel.AutoSize = true;
+            this.codigoLabel.ForeColor = System.Drawing.Color.White;
+            this.codigoLabel.Location = new System.Drawing.Point(86, 103);
+            this.codigoLabel.Name = "codigoLabel";
+            this.codigoLabel.Size = new System.Drawing.Size(0, 13);
+            this.codigoLabel.TabIndex = 47;
             // 
             // label13
             // 
@@ -325,50 +359,35 @@
             this.label13.TabIndex = 46;
             this.label13.Text = "Estado:";
             // 
-            // codigoLabel
+            // label12
             // 
-            this.codigoLabel.AutoSize = true;
-            this.codigoLabel.ForeColor = System.Drawing.Color.White;
-            this.codigoLabel.Location = new System.Drawing.Point(86, 103);
-            this.codigoLabel.Name = "codigoLabel";
-            this.codigoLabel.Size = new System.Drawing.Size(0, 13);
-            this.codigoLabel.TabIndex = 47;
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(19, 170);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 13);
+            this.label12.TabIndex = 45;
+            this.label12.Text = "Teléfono:";
             // 
-            // direccionLabel
+            // label11
             // 
-            this.direccionLabel.AutoSize = true;
-            this.direccionLabel.ForeColor = System.Drawing.Color.White;
-            this.direccionLabel.Location = new System.Drawing.Point(86, 138);
-            this.direccionLabel.Name = "direccionLabel";
-            this.direccionLabel.Size = new System.Drawing.Size(0, 13);
-            this.direccionLabel.TabIndex = 48;
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(19, 138);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.TabIndex = 44;
+            this.label11.Text = "Dirección:";
             // 
-            // telefonoLabel
+            // label10
             // 
-            this.telefonoLabel.AutoSize = true;
-            this.telefonoLabel.ForeColor = System.Drawing.Color.White;
-            this.telefonoLabel.Location = new System.Drawing.Point(86, 170);
-            this.telefonoLabel.Name = "telefonoLabel";
-            this.telefonoLabel.Size = new System.Drawing.Size(0, 13);
-            this.telefonoLabel.TabIndex = 49;
-            // 
-            // estadoLabel
-            // 
-            this.estadoLabel.AutoSize = true;
-            this.estadoLabel.ForeColor = System.Drawing.Color.White;
-            this.estadoLabel.Location = new System.Drawing.Point(86, 206);
-            this.estadoLabel.Name = "estadoLabel";
-            this.estadoLabel.Size = new System.Drawing.Size(0, 13);
-            this.estadoLabel.TabIndex = 50;
-            // 
-            // cbCliente
-            // 
-            this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(117, 30);
-            this.cbCliente.Name = "cbCliente";
-            this.cbCliente.Size = new System.Drawing.Size(121, 21);
-            this.cbCliente.TabIndex = 43;
-            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.cbCliente_SelectedIndexChanged);
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(19, 103);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 13);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Codigo:";
             // 
             // groupBox3
             // 
@@ -388,12 +407,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles del Contrato";
             // 
-            // dateTimePicker1
+            // txtDescripciónTrabajo
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(96, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 34;
+            this.txtDescripciónTrabajo.Location = new System.Drawing.Point(10, 80);
+            this.txtDescripciónTrabajo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripciónTrabajo.Name = "txtDescripciónTrabajo";
+            this.txtDescripciónTrabajo.Size = new System.Drawing.Size(679, 140);
+            this.txtDescripciónTrabajo.TabIndex = 36;
+            this.txtDescripciónTrabajo.Text = "";
             // 
             // label14
             // 
@@ -405,33 +426,12 @@
             this.label14.TabIndex = 35;
             this.label14.Text = "Clausulas del Contrato:";
             // 
-            // txtDescripciónTrabajo
+            // dateTimePicker1
             // 
-            this.txtDescripciónTrabajo.Location = new System.Drawing.Point(10, 80);
-            this.txtDescripciónTrabajo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDescripciónTrabajo.Name = "txtDescripciónTrabajo";
-            this.txtDescripciónTrabajo.Size = new System.Drawing.Size(679, 140);
-            this.txtDescripciónTrabajo.TabIndex = 36;
-            this.txtDescripciónTrabajo.Text = "";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(19, 68);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(26, 13);
-            this.label15.TabIndex = 51;
-            this.label15.Text = "Dni:";
-            // 
-            // dniLabel
-            // 
-            this.dniLabel.AutoSize = true;
-            this.dniLabel.ForeColor = System.Drawing.Color.White;
-            this.dniLabel.Location = new System.Drawing.Point(84, 68);
-            this.dniLabel.Name = "dniLabel";
-            this.dniLabel.Size = new System.Drawing.Size(0, 13);
-            this.dniLabel.TabIndex = 52;
+            this.dateTimePicker1.Location = new System.Drawing.Point(96, 19);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 34;
             // 
             // ContratosForm
             // 

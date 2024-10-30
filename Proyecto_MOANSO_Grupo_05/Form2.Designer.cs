@@ -108,7 +108,7 @@
             // 
             this.panel1.Location = new System.Drawing.Point(219, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(926, 496);
+            this.panel1.Size = new System.Drawing.Size(940, 596);
             this.panel1.TabIndex = 17;
             // 
             // Form2
@@ -116,7 +116,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(1184, 572);
+            this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button10);
