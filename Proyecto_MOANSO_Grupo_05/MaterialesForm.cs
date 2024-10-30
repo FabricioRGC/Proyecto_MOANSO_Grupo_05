@@ -43,7 +43,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 entMateriales mat = new entMateriales();
                 mat.codigo = txtCodigoM.Text.Trim();
                 mat.nombre = txtNombreM.Text.Trim();
-                mat.descripcion = txtDescripcionM.Text.Trim();
+                mat.descripcion = txtDescripciónMateriales.Text.Trim();
                 mat.stock = int.Parse(txtstockM.Text);
                 mat.estado = CBMateriales.SelectedItem.ToString();
                 logMateriales.Instancia.InsertarMateriales(mat);
@@ -102,6 +102,22 @@ namespace Proyecto_MOANSO_Grupo_05
                 .ToList();
 
             dataGriMateriales.DataSource = Materialesfiltrados;
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonHistorialMat_Click(object sender, EventArgs e)
+        {
+            Form historial = new MaterialesHistorialForm();
+            historial.Show();
         }
     }
 }

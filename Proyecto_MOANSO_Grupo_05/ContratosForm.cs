@@ -158,6 +158,11 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
+        private void ContratosForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         // Filtrar por Cliente
         //private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
         //{

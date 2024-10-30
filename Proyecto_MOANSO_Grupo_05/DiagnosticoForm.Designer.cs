@@ -30,19 +30,35 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtDiag = new System.Windows.Forms.TextBox();
-            this.combBoxDiag = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dniLabel = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cbCliente = new System.Windows.Forms.ComboBox();
+            this.estadoLabel = new System.Windows.Forms.Label();
+            this.telefonoLabel = new System.Windows.Forms.Label();
+            this.direccionLabel = new System.Windows.Forms.Label();
+            this.codigoLabel = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDescripciónTrabajo = new System.Windows.Forms.RichTextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(55, 113);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 520);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(308, 204);
@@ -51,41 +67,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 31);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(27, 307);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Descripcion";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Estado";
-            // 
             // txtDiag
             // 
-            this.txtDiag.Location = new System.Drawing.Point(121, 31);
+            this.txtDiag.Location = new System.Drawing.Point(525, 243);
             this.txtDiag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDiag.Name = "txtDiag";
             this.txtDiag.Size = new System.Drawing.Size(100, 20);
             this.txtDiag.TabIndex = 3;
             // 
-            // combBoxDiag
-            // 
-            this.combBoxDiag.FormattingEnabled = true;
-            this.combBoxDiag.Location = new System.Drawing.Point(121, 70);
-            this.combBoxDiag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.combBoxDiag.Name = "combBoxDiag";
-            this.combBoxDiag.Size = new System.Drawing.Size(121, 21);
-            this.combBoxDiag.TabIndex = 4;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(394, 26);
+            this.button1.Location = new System.Drawing.Point(599, 64);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 22);
@@ -95,7 +94,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(394, 135);
+            this.button2.Location = new System.Drawing.Point(599, 150);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 22);
@@ -105,7 +104,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(394, 79);
+            this.button3.Location = new System.Drawing.Point(599, 94);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 22);
@@ -113,18 +112,197 @@
             this.button3.Text = "Terminado";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(112)))), ((int)(((byte)(49)))));
+            this.groupBox2.Controls.Add(this.dniLabel);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.cbCliente);
+            this.groupBox2.Controls.Add(this.estadoLabel);
+            this.groupBox2.Controls.Add(this.telefonoLabel);
+            this.groupBox2.Controls.Add(this.direccionLabel);
+            this.groupBox2.Controls.Add(this.codigoLabel);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(28, 26);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(277, 260);
+            this.groupBox2.TabIndex = 38;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Detalles del Cliente";
+            // 
+            // dniLabel
+            // 
+            this.dniLabel.AutoSize = true;
+            this.dniLabel.ForeColor = System.Drawing.Color.White;
+            this.dniLabel.Location = new System.Drawing.Point(84, 68);
+            this.dniLabel.Name = "dniLabel";
+            this.dniLabel.Size = new System.Drawing.Size(0, 13);
+            this.dniLabel.TabIndex = 52;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(19, 68);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(26, 13);
+            this.label15.TabIndex = 51;
+            this.label15.Text = "Dni:";
+            // 
+            // cbCliente
+            // 
+            this.cbCliente.FormattingEnabled = true;
+            this.cbCliente.Location = new System.Drawing.Point(96, 30);
+            this.cbCliente.Name = "cbCliente";
+            this.cbCliente.Size = new System.Drawing.Size(121, 21);
+            this.cbCliente.TabIndex = 43;
+            // 
+            // estadoLabel
+            // 
+            this.estadoLabel.AutoSize = true;
+            this.estadoLabel.ForeColor = System.Drawing.Color.White;
+            this.estadoLabel.Location = new System.Drawing.Point(86, 206);
+            this.estadoLabel.Name = "estadoLabel";
+            this.estadoLabel.Size = new System.Drawing.Size(0, 13);
+            this.estadoLabel.TabIndex = 50;
+            // 
+            // telefonoLabel
+            // 
+            this.telefonoLabel.AutoSize = true;
+            this.telefonoLabel.ForeColor = System.Drawing.Color.White;
+            this.telefonoLabel.Location = new System.Drawing.Point(86, 170);
+            this.telefonoLabel.Name = "telefonoLabel";
+            this.telefonoLabel.Size = new System.Drawing.Size(0, 13);
+            this.telefonoLabel.TabIndex = 49;
+            // 
+            // direccionLabel
+            // 
+            this.direccionLabel.AutoSize = true;
+            this.direccionLabel.ForeColor = System.Drawing.Color.White;
+            this.direccionLabel.Location = new System.Drawing.Point(86, 138);
+            this.direccionLabel.Name = "direccionLabel";
+            this.direccionLabel.Size = new System.Drawing.Size(0, 13);
+            this.direccionLabel.TabIndex = 48;
+            // 
+            // codigoLabel
+            // 
+            this.codigoLabel.AutoSize = true;
+            this.codigoLabel.ForeColor = System.Drawing.Color.White;
+            this.codigoLabel.Location = new System.Drawing.Point(86, 103);
+            this.codigoLabel.Name = "codigoLabel";
+            this.codigoLabel.Size = new System.Drawing.Size(0, 13);
+            this.codigoLabel.TabIndex = 47;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(19, 206);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.TabIndex = 46;
+            this.label13.Text = "Estado:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(19, 170);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 13);
+            this.label12.TabIndex = 45;
+            this.label12.Text = "Teléfono:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(19, 138);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.TabIndex = 44;
+            this.label11.Text = "Dirección:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(19, 103);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 13);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Codigo:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(19, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Cliente:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(364, 187);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 39;
+            this.label5.Text = "label5";
+            // 
+            // txtDescripciónTrabajo
+            // 
+            this.txtDescripciónTrabajo.Location = new System.Drawing.Point(28, 322);
+            this.txtDescripciónTrabajo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripciónTrabajo.Name = "txtDescripciónTrabajo";
+            this.txtDescripciónTrabajo.Size = new System.Drawing.Size(679, 140);
+            this.txtDescripciónTrabajo.TabIndex = 40;
+            this.txtDescripciónTrabajo.Text = "";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(446, 56);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 41;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(354, 26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 42;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Informacion general del problema";
+            // 
             // DiagnosticoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(538, 349);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(112)))), ((int)(((byte)(49)))));
+            this.ClientSize = new System.Drawing.Size(744, 746);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.txtDescripciónTrabajo);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.combBoxDiag);
             this.Controls.Add(this.txtDiag);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -132,6 +310,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DiagnosticoForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,11 +321,26 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDiag;
-        private System.Windows.Forms.ComboBox combBoxDiag;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label dniLabel;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cbCliente;
+        private System.Windows.Forms.Label estadoLabel;
+        private System.Windows.Forms.Label telefonoLabel;
+        private System.Windows.Forms.Label direccionLabel;
+        private System.Windows.Forms.Label codigoLabel;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RichTextBox txtDescripciónTrabajo;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

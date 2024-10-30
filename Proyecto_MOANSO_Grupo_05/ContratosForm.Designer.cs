@@ -445,6 +445,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ContratosForm";
             this.Text = "ContratosForm";
+            this.Load += new System.EventHandler(this.ContratosForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
