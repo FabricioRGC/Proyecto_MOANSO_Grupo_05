@@ -24,16 +24,16 @@ namespace Proyecto_MOANSO_Grupo_05
 
         public void listarMateriales()
         {
-            dataGriMateriales.DataSource = logMateriales.Instancia.ListarMateriales();
+            //dataGriMateriales.DataSource = logMateriales.Instancia.ListarMateriales();
         }
 
         private void LimpiarVariables()
         {
             txtCodigoM.Text = "";
             txtNombreM.Text = "";
-            txtDescripcionM.Text = "";
+            txtDescripciónMateriales.Text = "";
             txtstockM.Text = "";
-            CBMateriales.SelectedIndex = -1;
+          //  CBMateriales.SelectedIndex = -1;
         }
         //Añadir
         private void button1_Click(object sender, EventArgs e)
@@ -44,8 +44,10 @@ namespace Proyecto_MOANSO_Grupo_05
                 mat.codigo = txtCodigoM.Text.Trim();
                 mat.nombre = txtNombreM.Text.Trim();
                 mat.descripcion = txtDescripciónMateriales.Text.Trim();
+                mat.fechaInicio = dateTimePicker1.Value.Date;
                 mat.stock = int.Parse(txtstockM.Text);
-                mat.estado = CBMateriales.SelectedItem.ToString();
+                mat.estado = "ACTIVO";
+                // mat.estado = CBMateriales.SelectedItem.ToString();
                 logMateriales.Instancia.InsertarMateriales(mat);
             }
             catch (Exception ex)
@@ -53,7 +55,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
             LimpiarVariables();
-            listarMateriales();
+            //  listarMateriales();
         }
         //Modificar
         private void button2_Click(object sender, EventArgs e)
@@ -63,9 +65,9 @@ namespace Proyecto_MOANSO_Grupo_05
                 entMateriales mat = new entMateriales();
                 mat.codigo = txtCodigoM.Text.Trim();
                 mat.nombre = txtNombreM.Text.Trim();
-                mat.descripcion = txtDescripcionM.Text.Trim();
+                mat.descripcion = txtDescripciónMateriales.Text.Trim();
                 mat.stock = int.Parse(txtstockM.Text);
-                mat.estado = CBMateriales.SelectedItem.ToString();
+              //  mat.estado = CBMateriales.SelectedItem.ToString();
                 logMateriales.Instancia.EditarMateriales(mat);
             }
             catch (Exception ex)
@@ -95,13 +97,13 @@ namespace Proyecto_MOANSO_Grupo_05
         private void txtBuscarMa_TextChanged(object sender, EventArgs e)
         {
 
-            string nombre = txtBuscarMa.Text;
+          /*  string nombre = txtBuscarMa.Text;
 
             var Materialesfiltrados = logMateriales.Instancia.ListarMateriales()
                 .Where(materiales => materiales.nombre.Contains(nombre))
                 .ToList();
 
-            dataGriMateriales.DataSource = Materialesfiltrados;
+            dataGriMateriales.DataSource = Materialesfiltrados;*/
         }
 
         private void label12_Click(object sender, EventArgs e)

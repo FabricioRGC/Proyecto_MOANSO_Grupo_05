@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaLogica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace Proyecto_MOANSO_Grupo_05
         public MaterialesHistorialForm()
         {
             InitializeComponent();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string codigo = textBox1.Text;
+
+            var MaterialesFiltrados = logMateriales.Instancia.ListarMateriales().Where(Mate => Mate.nombre.Contains(codigo)).ToList();
+
+            dataGriMateriales.DataSource = MaterialesFiltrados;
         }
     }
 }
