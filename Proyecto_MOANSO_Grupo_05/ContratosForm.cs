@@ -27,8 +27,11 @@ namespace Proyecto_MOANSO_Grupo_05
 
         public void LimpiarVariables()
         {
-            cbCliente.SelectedIndex = -1;
-            cbPlan.SelectedIndex = -1;
+
+            cbCliente.SelectedIndex = 0;
+            cbPlan.SelectedIndex = 0;
+            txtDuracion.Text = "";
+            txtDescripcionTrabajo.Text = "";
         }
 
         private void CargarPlanes()
@@ -77,7 +80,14 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-                
+                entContrato entContrato = new entContrato();
+                entContrato.clienteId = cbCliente.SelectedItem.ToString();
+                entContrato.tipo_plan = cbPlan.SelectedItem.ToString();
+                entContrato.fechaInicio = fechaPicker.Value.Date;
+                entContrato.duracion = txtDuracion.Text;
+                entContrato.estado = "ACTIVO";
+                entContrato.clausula = txtDescripcionTrabajo.Text;
+                logContrato.Instancia.InsertaContrato(entContrato);
             }
             catch (Exception ex)
             {

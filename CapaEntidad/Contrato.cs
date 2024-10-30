@@ -11,10 +11,11 @@ namespace CapaEntidad
         public class entContrato
         {
             public string clienteId { get; set; }
-            public string fechaInicio { get; set; }
+            public DateTime fechaInicio { get; set; }
             public string duracion { get; set; }
             public string estado { get; set; }
             public string tipo_plan { get; set; }
+            public string clausula { get; set; }
         }
     }
 }

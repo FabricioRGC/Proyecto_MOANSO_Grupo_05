@@ -35,7 +35,7 @@ namespace CapaDatos
                 {
                     entContrato con = new entContrato();
                     con.clienteId = dr["cliente_id"].ToString();
-                    con.fechaInicio = dr["fecha_inicio"].ToString();
+                    con.fechaInicio = Convert.ToDateTime(dr["fecha_inicio"]);
                     con.estado = dr["estado"].ToString();
                     con.tipo_plan = dr["tipo_plan"].ToString();
                     con.duracion = dr["duracion"].ToString();
@@ -65,10 +65,11 @@ namespace CapaDatos
                 cmd = new SqlCommand("SP_AÑADIR_CONTRATO", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@clienteid", contrato.clienteId);
+                cmd.Parameters.AddWithValue("@fechaInicio", contrato.fechaInicio);
                 cmd.Parameters.AddWithValue("@Estado", contrato.estado);
                 cmd.Parameters.AddWithValue("@tipoPlan", contrato.tipo_plan);
                 cmd.Parameters.AddWithValue("@duracion", contrato.duracion);
-                cmd.Parameters.AddWithValue("@clausulas", contrato.fechaInicio);
+                cmd.Parameters.AddWithValue("@clausulas", contrato.clausula);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();

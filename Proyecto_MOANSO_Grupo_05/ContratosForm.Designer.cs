@@ -60,9 +60,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtDescripciónTrabajo = new System.Windows.Forms.RichTextBox();
+            this.txtDescripcionTrabajo = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.fechaPicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -392,9 +392,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnHistorial);
-            this.groupBox3.Controls.Add(this.txtDescripciónTrabajo);
+            this.groupBox3.Controls.Add(this.txtDescripcionTrabajo);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.fechaPicker);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.btnAñadir);
@@ -407,14 +407,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles del Contrato";
             // 
-            // txtDescripciónTrabajo
+            // txtDescripcionTrabajo
             // 
-            this.txtDescripciónTrabajo.Location = new System.Drawing.Point(10, 80);
-            this.txtDescripciónTrabajo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDescripciónTrabajo.Name = "txtDescripciónTrabajo";
-            this.txtDescripciónTrabajo.Size = new System.Drawing.Size(679, 140);
-            this.txtDescripciónTrabajo.TabIndex = 36;
-            this.txtDescripciónTrabajo.Text = "";
+            this.txtDescripcionTrabajo.Location = new System.Drawing.Point(10, 80);
+            this.txtDescripcionTrabajo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripcionTrabajo.Name = "txtDescripcionTrabajo";
+            this.txtDescripcionTrabajo.Size = new System.Drawing.Size(679, 140);
+            this.txtDescripcionTrabajo.TabIndex = 36;
+            this.txtDescripcionTrabajo.Text = "";
             // 
             // label14
             // 
@@ -426,12 +426,12 @@
             this.label14.TabIndex = 35;
             this.label14.Text = "Clausulas del Contrato:";
             // 
-            // dateTimePicker1
+            // fechaPicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(96, 19);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 34;
+            this.fechaPicker.Location = new System.Drawing.Point(96, 19);
+            this.fechaPicker.Name = "fechaPicker";
+            this.fechaPicker.Size = new System.Drawing.Size(200, 20);
+            this.fechaPicker.TabIndex = 34;
             // 
             // ContratosForm
             // 
@@ -487,9 +487,9 @@
         private System.Windows.Forms.Label codigoLabel;
         private System.Windows.Forms.ComboBox cbCliente;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker fechaPicker;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.RichTextBox txtDescripciónTrabajo;
+        private System.Windows.Forms.RichTextBox txtDescripcionTrabajo;
         private System.Windows.Forms.Label dniLabel;
         private System.Windows.Forms.Label label15;
     }
