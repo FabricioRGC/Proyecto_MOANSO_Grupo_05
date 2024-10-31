@@ -20,73 +20,58 @@ namespace Proyecto_MOANSO_Grupo_05
         public OrdenPedidoMaterialForm()
         {
             InitializeComponent();
-            ListarPedidosMateriales();
-            cboEstado.Items.Add("Registrada");
-            cboEstado.Items.Add("Anulada");
-            cboEstado.SelectedIndex = 0;
-        }
-
-        public void ListarPedidosMateriales()
-        {
-            dataGridOrPeMateriales.DataSource = logOrdenPedidoMaterial.Instancia.ListarPedidosMaterial();
         }
 
         private void limpiarVariables()
         {
             txtIDMateriales.Text = "";
-            txtCantidad.Text = "";
-            dtpFecha.Value = DateTime.Now;
-            cboEstado.SelectedIndex = 0;
+            txtCantidadSolicitada.Text = "";
+            dtpFechaRealizacion.Value = DateTime.Now;
         }
 
-        private void dataGridOrPeMateriales_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridOrPeMateriales.CurrentRow != null)
-            {
-                var ordenSeleccionada = (entOrdenPedidoMateriales)dataGridOrPeMateriales.CurrentRow.DataBoundItem;
-                txtIDMateriales.Text = ordenSeleccionada.material_id.ToString();
-                txtCantidad.Text = ordenSeleccionada.cantidad.ToString();
-                dtpFecha.Value = ordenSeleccionada.fecha;
-                cboEstado.SelectedItem = ordenSeleccionada.estado;
-            }
-        }
-
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click_1(object sender, EventArgs e)
         {
             try
             {
                 // Validar que los campos no estén vacíos
                 if (string.IsNullOrEmpty(txtIDMateriales.Text) ||
-                    string.IsNullOrEmpty(txtCantidad.Text) ||
-                    cboEstado.SelectedItem == null)
+                    string.IsNullOrEmpty(txtIDCliente.Text) || // Asegúrate de tener este campo
+                    string.IsNullOrEmpty(txtCantidadSolicitada.Text) ||
+                    string.IsNullOrEmpty(txtCantidadEntregada.Text) || // Asegúrate de tener este campo
+                    string.IsNullOrEmpty(txtObservaciones.Text)) // Asegúrate de tener este campo
                 {
                     MessageBox.Show("Por favor, complete todos los campos.");
                     return; // Salir del método si hay campos vacíos
                 }
 
                 // Crear un nuevo pedido de materiales
-                if (long.TryParse(txtIDMateriales.Text, out long id) &&
-                    int.TryParse(txtCantidad.Text, out int cantidad))
+                if (long.TryParse(txtIDMateriales.Text, out long materialId) &&
+                    long.TryParse(txtIDCliente.Text, out long clienteId) &&
+                    int.TryParse(txtCantidadSolicitada.Text, out int cantidadSolicitada) &&
+                    int.TryParse(txtCantidadEntregada.Text, out int cantidadEntregada))
                 {
+                    // Crear la instancia del pedido con el estado como 'Activado' por defecto
                     entOrdenPedidoMateriales pedidoMateriales = new entOrdenPedidoMateriales
                     {
-                        id = id,
-                        cantidad = cantidad,
-                        fecha = dtpFecha.Value.Date,
-                        estado = cboEstado.SelectedItem.ToString()
+                        material_id = materialId,
+                        cliente_id = clienteId,
+                        cantidad_solicitada = cantidadSolicitada,
+                        cantidad_entregada = cantidadEntregada,
+                        fecha = dtpFechaRealizacion.Value.Date,
+                        fecha_entrega = dtpFechaEntrega.Value.Date,
+                        observaciones = txtObservaciones.Text
                     };
 
                     // Registrar el pedido
                     logOrdenPedidoMaterial.Instancia.RegistrarPedidoMaterial(pedidoMateriales);
                     MessageBox.Show("Pedido de Material añadido exitosamente.");
 
-                    // Limpiar variables y listar pedidos
+                    // Limpiar variables
                     limpiarVariables();
-                    ListarPedidosMateriales();
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, introduzca valores válidos para ID y cantidad.");
+                    MessageBox.Show("Por favor, introduzca valores válidos para ID, cantidad solicitada y cantidad entregada.");
                 }
             }
             catch (Exception ex)
@@ -95,39 +80,10 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
-        private void btnAnular_Click(object sender, EventArgs e)
+        private void buttonHistorialPeMat_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Verificar que se haya seleccionado un pedido
-                if (dataGridOrPeMateriales.CurrentRow != null)
-                {
-                    var ordenSeleccionada = (entOrdenPedidoMateriales)dataGridOrPeMateriales.CurrentRow.DataBoundItem;
-                    long idPedido = ordenSeleccionada.id; // Asegúrate de que el ID esté disponible
-
-                    // Confirmación antes de anular
-                    var confirmResult = MessageBox.Show("¿Está seguro de que desea anular este pedido?",
-                                                         "Confirmar Anulación",
-                                                         MessageBoxButtons.YesNo);
-                    if (confirmResult == DialogResult.Yes)
-                    {
-                        // Llamar al método para anular el pedido
-                        logOrdenPedidoMaterial.Instancia.AnularPedidoMaterial(idPedido);
-                        MessageBox.Show("Pedido anulado exitosamente.");
-
-                        // Actualizar la lista de pedidos
-                        ListarPedidosMateriales();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, seleccione un pedido para anular.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            Form historial = new OrPeMaterialHistorialForm();
+            historial.Show();
         }
     }
 }
