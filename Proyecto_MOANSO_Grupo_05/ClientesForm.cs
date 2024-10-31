@@ -49,6 +49,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 cli.telefono = txtTelefono.Text.Trim();
                 cli.estado = cbEstado.SelectedItem.ToString();
                 logCliente.Instancia.InsertaCliente(cli);
+
             }
             catch (Exception ex)
             {
