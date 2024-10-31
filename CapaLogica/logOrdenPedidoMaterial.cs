@@ -1,10 +1,7 @@
-﻿using System;
+﻿using CapaDatos;
+using static CapaEntidad.OrdenPedidoMaterial;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CapaDatos;
-using CapaEntidad;
+using System;
 
 namespace CapaLogica
 {
@@ -15,19 +12,25 @@ namespace CapaLogica
 
         public static logOrdenPedidoMaterial Instancia
         {
-            get { return logOrdenPedidoMaterial._instancia; }
+            get { return _instancia; }
         }
 
+        // Evento para notificar que se ha agregado un pedido
+        public event Action PedidoAgregado;
+
         // Método para listar pedidos de materiales
-        public List<OrdenPedidoMaterial.entOrdenPedidoMateriales> ListarPedidosMaterial()
+        public List<entOrdenPedidoMateriales> ListarPedidosMaterial()
         {
             return datOrdenPedidoMaterial.Instancia.ListarPedidosMateriales();
         }
 
         // Método para registrar un pedido de materiales
-        public void RegistrarPedidoMaterial(OrdenPedidoMaterial.entOrdenPedidoMateriales pedido)
+        public void RegistrarPedidoMaterial(entOrdenPedidoMateriales pedido)
         {
+            // Registrar el pedido
             datOrdenPedidoMaterial.Instancia.RegistrarPedidoMaterial(pedido);
+            // Disparar el evento después de registrar el pedido
+            PedidoAgregado?.Invoke();
         }
 
         // Método para anular un pedido de materiales
@@ -37,3 +40,4 @@ namespace CapaLogica
         }
     }
 }
+
