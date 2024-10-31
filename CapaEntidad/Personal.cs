@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 namespace CapaEntidad
 {
 
-    
-        public class Personal
+
+    public class Personal
+    {
+        public class entPersonal
         {
-            public class entPersonal
-            {
-                public string nombre { get; set; }
-                public string disponibilidad { get; set; }
+            public string nombre { get; set; }
+            public string apellidos { get; set; }
+            public string dni { get; set; }
+            public string telefono { get; set; }
+            public string disponibilidad { get; set; }
 
-            }
         }
-
     }
 
+}
