@@ -43,7 +43,6 @@ namespace CapaDatos
                     mat.estado = dr["estado"].ToString();
                     mat.fechaInicio = Convert.ToDateTime(dr["fecha_Registro"]);
                     lista.Add(mat);
-
                 }
             }
             catch (Exception ex)

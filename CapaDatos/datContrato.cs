@@ -34,7 +34,7 @@ namespace CapaDatos
                 while (dr.Read())
                 {
                     entContrato con = new entContrato();
-                    con.clienteId = dr["cliente_id"].ToString();
+                    con.nombre_cliente = dr["cliente_id"].ToString();
                     con.fechaInicio = Convert.ToDateTime(dr["fecha_inicio"]);
                     con.estado = dr["estado"].ToString();
                     con.tipo_plan = dr["tipo_plan"].ToString();
