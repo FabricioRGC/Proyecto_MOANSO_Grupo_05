@@ -81,7 +81,7 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entContrato entContrato = new entContrato();
-                entContrato.clienteId = cbCliente.SelectedItem.ToString();
+                entContrato.nombre_cliente = cbCliente.SelectedItem.ToString();
                 entContrato.tipo_plan = cbPlan.SelectedItem.ToString();
                 entContrato.fechaInicio = fechaPicker.Value.Date;
                 entContrato.duracion = txtDuracion.Text;

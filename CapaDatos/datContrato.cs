@@ -34,11 +34,12 @@ namespace CapaDatos
                 while (dr.Read())
                 {
                     entContrato con = new entContrato();
-                    con.nombre_cliente = dr["cliente_id"].ToString();
+                    con.nombre_cliente = dr["nombreCliente"].ToString();
                     con.fechaInicio = Convert.ToDateTime(dr["fecha_inicio"]);
                     con.estado = dr["estado"].ToString();
                     con.tipo_plan = dr["tipo_plan"].ToString();
                     con.duracion = dr["duracion"].ToString();
+                    con.clausula = dr["clausulas"].ToString();
                     lista.Add(con);
                 }
             }
@@ -64,7 +65,7 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_AÑADIR_CONTRATO", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@clienteid", contrato.clienteId);
+                cmd.Parameters.AddWithValue("@clienteNombre", contrato.nombre_cliente);
                 cmd.Parameters.AddWithValue("@fechaInicio", contrato.fechaInicio);
                 cmd.Parameters.AddWithValue("@Estado", contrato.estado);
                 cmd.Parameters.AddWithValue("@tipoPlan", contrato.tipo_plan);
@@ -90,37 +91,37 @@ namespace CapaDatos
         }
 
         // Método para modificar un contrato
-        public Boolean ModificarContrato(entContrato contrato)
-        {
-            SqlCommand cmd = null;
-            Boolean modifico = false;
+        //public Boolean ModificarContrato(entContrato contrato)
+        //{
+        //    SqlCommand cmd = null;
+        //    Boolean modifico = false;
 
-            try
-            {
-                SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_EDITAR_CONTRATO", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@clienteid", contrato.clienteId);
-                cmd.Parameters.AddWithValue("@estado", contrato.estado);
-                cmd.Parameters.AddWithValue("@tipoPlan", contrato.tipo_plan);
-                cmd.Parameters.AddWithValue("@duracion", contrato.duracion);
-                cn.Open();
-                int i = cmd.ExecuteNonQuery();
-                if (i > 0)
-                {
-                    modifico = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-            return modifico;
-        }
+        //    try
+        //    {
+        //        SqlConnection cn = Conexion.Instancia.Conectar();
+        //        cmd = new SqlCommand("SP_EDITAR_CONTRATO", cn);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.Parameters.AddWithValue("@clienteid", contrato.nombre_cliente);
+        //        cmd.Parameters.AddWithValue("@estado", contrato.estado);
+        //        cmd.Parameters.AddWithValue("@tipoPlan", contrato.tipo_plan);
+        //        cmd.Parameters.AddWithValue("@duracion", contrato.duracion);
+        //        cn.Open();
+        //        int i = cmd.ExecuteNonQuery();
+        //        if (i > 0)
+        //        {
+        //            modifico = true;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        cmd.Connection.Close();
+        //    }
+        //    return modifico;
+        //}
 
         // Método para anular un contrato
         public Boolean AnularContrato(entContrato contrato)
@@ -133,7 +134,7 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_ANULAR_CONTRATO", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@codigoCliente", contrato.clienteId);
+                cmd.Parameters.AddWithValue("@clienteNombre", contrato.nombre_cliente);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();

@@ -31,7 +31,7 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entContrato con = new entContrato();
-                con.clienteId = txtCodigoCliente.Text.Trim();
+                con.nombre_cliente = txtCodigoCliente.Text.Trim();
                 logContrato.Instancia.AnularContrato(con);
             }
             catch (Exception ex)
@@ -47,7 +47,7 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             string codigo = txtCliente.Text;
             
-            var contratosFiltrados = logContrato.Instancia.ListarContrato().Where(contrato => contrato.clienteId.Contains(codigo)).ToList();
+            var contratosFiltrados = logContrato.Instancia.ListarContrato().Where(contrato => contrato.nombre_cliente.Contains(codigo)).ToList();
 
             tablaContratos.DataSource = contratosFiltrados;
 

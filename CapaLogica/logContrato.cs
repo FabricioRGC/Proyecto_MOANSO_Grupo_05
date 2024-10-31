@@ -31,10 +31,10 @@ namespace CapaLogica
         }
 
         // Método para actualizar un contrato
-        public void EditarContrato(entContrato con)
-        {
-            datContrato.Instancia.ModificarContrato(con);
-        }
+        //public void EditarContrato(entContrato con)
+        //{
+        //    datContrato.Instancia.ModificarContrato(con);
+        //}
 
         public void AnularContrato (entContrato con)
         {
