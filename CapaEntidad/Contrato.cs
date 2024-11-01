@@ -16,8 +16,6 @@ namespace CapaEntidad
             public string estado { get; set; }
             public string tipo_plan { get; set; }
             public string clausula { get; set; }
-
-            public string clienteId {  get; set; }
         }
     }
 }
