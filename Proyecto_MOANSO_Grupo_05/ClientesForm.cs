@@ -18,6 +18,7 @@ namespace Proyecto_MOANSO_Grupo_05
         public ClientesForm()
         {
             InitializeComponent();
+            tablaClientes.CellClick += new DataGridViewCellEventHandler(tablaClientes_CellClick);
             listarCliente();
         }
 
@@ -32,7 +33,7 @@ namespace Proyecto_MOANSO_Grupo_05
             txtNombre.Text = "";
             txtDireccion.Text = "";
             txtTelefono.Text = "";
-            cbEstado.SelectedIndex = -1;
+            txtDni.Text = "";
         }
 
         // ----- ACCIONES -----
@@ -47,7 +48,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 cli.nombre = txtNombre.Text.Trim();
                 cli.direccion = txtDireccion.Text.Trim();
                 cli.telefono = txtTelefono.Text.Trim();
-                cli.estado = cbEstado.SelectedItem.ToString();
+                cli.dni = txtDni.Text.Trim();
                 logCliente.Instancia.InsertaCliente(cli);
 
             }
@@ -84,7 +85,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 cli.nombre = txtNombre.Text.Trim();
                 cli.direccion = txtDireccion.Text.Trim();
                 cli.telefono = txtTelefono.Text.Trim();
-                cli.estado = cbEstado.SelectedItem.ToString();
+                cli.dni = txtDni.Text.Trim();
                 logCliente.Instancia.EditarCliente(cli);
             }
             catch (Exception ex)
@@ -114,15 +115,26 @@ namespace Proyecto_MOANSO_Grupo_05
 
         // Filtrar por Nombre
 
-        private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
+        private void txtBuscarNombre_TextChanged_1(object sender, EventArgs e)
         {
-            string nombre = txtBuscarNombre.Text;
+            string nombresFiltrados = txtBuscarNombre.Text;
 
-            var clientesfiltrados = logCliente.Instancia.ListarCliente()
-                .Where(cliente => cliente.nombre.Contains(nombre))
+            var clientesFiltrados = logCliente.Instancia.ListarCliente()
+                .Where(cliente => cliente.nombre.Contains(nombresFiltrados))
                 .ToList();
 
-            tablaClientes.DataSource = clientesfiltrados;
+            tablaClientes.DataSource = clientesFiltrados;
+        }
+
+        private void tablaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow fila = tablaClientes.Rows[e.RowIndex];
+
+            txtCodigo.Text = Convert.ToString(fila.Cells[0].Value);
+            txtNombre.Text = Convert.ToString(fila.Cells[1].Value);
+            txtDireccion.Text = Convert.ToString(fila.Cells[2].Value);
+            txtTelefono.Text = Convert.ToString(fila.Cells[3].Value);
+            txtDni.Text = Convert.ToString(fila.Cells[5].Value);
         }
     }
 }

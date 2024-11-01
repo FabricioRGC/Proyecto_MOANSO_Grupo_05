@@ -41,6 +41,7 @@ namespace CapaDatos
                     cli.direccion = dr["direccion"].ToString();
                     cli.telefono = dr["telefono"].ToString();
                     cli.estado = dr["estado"].ToString();
+                    cli.dni = dr["dni"].ToString();
                     lista.Add(cli);
 
                 }
@@ -72,6 +73,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@direccion", cliente.direccion);
                 cmd.Parameters.AddWithValue("@telefono", cliente.telefono);
                 cmd.Parameters.AddWithValue("@estado", cliente.estado);
+                cmd.Parameters.AddWithValue("@Dni", cliente.dni);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
@@ -105,7 +107,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
                 cmd.Parameters.AddWithValue("@direccion", cliente.direccion);
                 cmd.Parameters.AddWithValue("@telefono", cliente.telefono);
-                cmd.Parameters.AddWithValue("@estado", cliente.estado);
+                cmd.Parameters.AddWithValue("@Dni", cliente.dni);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)

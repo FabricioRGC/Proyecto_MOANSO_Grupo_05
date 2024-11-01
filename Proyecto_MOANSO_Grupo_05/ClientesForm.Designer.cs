@@ -40,12 +40,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBuscarNombre = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -147,7 +147,7 @@
             // 
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtDni);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnAñadir);
@@ -176,32 +176,12 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "DNI:";
             // 
-            // textBox1
+            // txtDni
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 223);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 20);
-            this.textBox1.TabIndex = 13;
-            // 
-            // tablaClientes
-            // 
-            this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaClientes.Location = new System.Drawing.Point(293, 95);
-            this.tablaClientes.Name = "tablaClientes";
-            this.tablaClientes.Size = new System.Drawing.Size(628, 343);
-            this.tablaClientes.TabIndex = 17;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(293, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(628, 77);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Buscar Cliente";
+            this.txtDni.Location = new System.Drawing.Point(92, 223);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(145, 20);
+            this.txtDni.TabIndex = 13;
             // 
             // label3
             // 
@@ -214,6 +194,27 @@
             this.label3.Text = "Código:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // tablaClientes
+            // 
+            this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaClientes.Location = new System.Drawing.Point(293, 95);
+            this.tablaClientes.Name = "tablaClientes";
+            this.tablaClientes.Size = new System.Drawing.Size(628, 343);
+            this.tablaClientes.TabIndex = 17;
+            this.tablaClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaClientes_CellClick);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.txtBuscarNombre);
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(293, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(628, 77);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Buscar Cliente";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -224,12 +225,13 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Buscar por Nombre:";
             // 
-            // textBox2
+            // txtBuscarNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(126, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(116, 20);
-            this.textBox2.TabIndex = 15;
+            this.txtBuscarNombre.Location = new System.Drawing.Point(126, 34);
+            this.txtBuscarNombre.Name = "txtBuscarNombre";
+            this.txtBuscarNombre.Size = new System.Drawing.Size(116, 20);
+            this.txtBuscarNombre.TabIndex = 15;
+            this.txtBuscarNombre.TextChanged += new System.EventHandler(this.txtBuscarNombre_TextChanged_1);
             // 
             // ClientesForm
             // 
@@ -267,11 +269,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.DataGridView tablaClientes;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBuscarNombre;
     }
 }
