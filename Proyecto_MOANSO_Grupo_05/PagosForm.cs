@@ -20,20 +20,12 @@ namespace Proyecto_MOANSO_Grupo_05
         public PagosForm()
         {
             InitializeComponent();
-            listarPagos();
-        }
-
-        public void listarPagos()
-        {
-            tablaPagos.DataSource = logPago.Instancia.ListarPagos();
         }
 
         public void limpiarVariables()
         {
             txtContrato.Text = "";
             txtMonto.Text = "";
-            txtCliente.Text = "";
-            cbMetodo.SelectedIndex = -1;
         }
 
         // ----- ACCIONES -----
@@ -46,8 +38,6 @@ namespace Proyecto_MOANSO_Grupo_05
                 entPago pag = new entPago();
                 pag.contrato_id = txtContrato.Text;
                 pag.monto = txtMonto.Text;
-                pag.cliente_id = txtCliente.Text;
-                pag.metodo_pago = cbMetodo.Text;
                 logPago.Instancia.InsertarPago(pag);
 
             }
@@ -56,7 +46,6 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
             limpiarVariables();
-            listarPagos();
         }
 
         // Botón para anular un pago
@@ -66,7 +55,6 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 entPago pag = new entPago();
                 pag.contrato_id = txtContrato.Text;
-                pag.cliente_id = txtCliente.Text;
                 logPago.Instancia.AnularPago(pag);
             }
             catch (Exception ex)
@@ -74,7 +62,6 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
             limpiarVariables();
-            listarPagos();
         }
     }
 }
