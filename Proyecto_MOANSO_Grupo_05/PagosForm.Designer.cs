@@ -99,7 +99,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(450, 161);
+            this.groupBox2.Size = new System.Drawing.Size(461, 161);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles del Cliente";
@@ -239,7 +239,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 251);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 199);
+            this.groupBox1.Size = new System.Drawing.Size(461, 199);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles del Pago";
@@ -268,7 +268,7 @@
             // btnImprimir
             // 
             this.btnImprimir.ForeColor = System.Drawing.Color.Black;
-            this.btnImprimir.Location = new System.Drawing.Point(193, 161);
+            this.btnImprimir.Location = new System.Drawing.Point(211, 161);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(149, 24);
             this.btnImprimir.TabIndex = 54;
@@ -279,7 +279,7 @@
             // btnHistorial
             // 
             this.btnHistorial.ForeColor = System.Drawing.Color.Black;
-            this.btnHistorial.Location = new System.Drawing.Point(82, 161);
+            this.btnHistorial.Location = new System.Drawing.Point(100, 161);
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(105, 24);
             this.btnHistorial.TabIndex = 51;
@@ -324,7 +324,7 @@
             // btnAñadir
             // 
             this.btnAñadir.ForeColor = System.Drawing.Color.Black;
-            this.btnAñadir.Location = new System.Drawing.Point(348, 161);
+            this.btnAñadir.Location = new System.Drawing.Point(366, 161);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(84, 24);
             this.btnAñadir.TabIndex = 48;
@@ -342,7 +342,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 182);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(450, 63);
+            this.groupBox3.Size = new System.Drawing.Size(461, 63);
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles del Contrato:";
@@ -430,7 +430,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(112)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(474, 463);
+            this.ClientSize = new System.Drawing.Size(485, 463);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
