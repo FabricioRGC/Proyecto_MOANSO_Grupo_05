@@ -43,11 +43,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.txtDescripcionTrabajo = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnHistorial = new System.Windows.Forms.Button();
@@ -56,6 +52,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.btnAñadir = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -65,7 +63,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(19, 25);
+            this.label3.Location = new System.Drawing.Point(19, 28);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 16);
             this.label3.TabIndex = 26;
@@ -216,8 +214,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.txtDescripcionTrabajo);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.Controls.Add(this.btnHistorial);
@@ -230,33 +226,10 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 251);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 387);
+            this.groupBox1.Size = new System.Drawing.Size(450, 199);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Detalles del Método de Pago";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(12, 182);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(450, 63);
-            this.groupBox3.TabIndex = 40;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Detalles del Contrato:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(216, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 16);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Tipo de Plan:";
+            this.groupBox1.Text = "Detalles del Pago";
             // 
             // comboBox1
             // 
@@ -268,25 +241,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 58;
-            // 
-            // txtDescripcionTrabajo
-            // 
-            this.txtDescripcionTrabajo.Location = new System.Drawing.Point(22, 187);
-            this.txtDescripcionTrabajo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDescripcionTrabajo.Name = "txtDescripcionTrabajo";
-            this.txtDescripcionTrabajo.Size = new System.Drawing.Size(410, 148);
-            this.txtDescripcionTrabajo.TabIndex = 57;
-            this.txtDescripcionTrabajo.Text = "";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(21, 163);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 16);
-            this.label7.TabIndex = 56;
-            this.label7.Text = "Observaciones:";
             // 
             // label6
             // 
@@ -301,7 +255,7 @@
             // btnImprimir
             // 
             this.btnImprimir.ForeColor = System.Drawing.Color.Black;
-            this.btnImprimir.Location = new System.Drawing.Point(193, 352);
+            this.btnImprimir.Location = new System.Drawing.Point(193, 161);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(149, 24);
             this.btnImprimir.TabIndex = 54;
@@ -311,7 +265,7 @@
             // btnHistorial
             // 
             this.btnHistorial.ForeColor = System.Drawing.Color.Black;
-            this.btnHistorial.Location = new System.Drawing.Point(103, 352);
+            this.btnHistorial.Location = new System.Drawing.Point(103, 161);
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(84, 24);
             this.btnHistorial.TabIndex = 51;
@@ -355,19 +309,43 @@
             // btnAñadir
             // 
             this.btnAñadir.ForeColor = System.Drawing.Color.Black;
-            this.btnAñadir.Location = new System.Drawing.Point(348, 352);
+            this.btnAñadir.Location = new System.Drawing.Point(348, 161);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(84, 24);
             this.btnAñadir.TabIndex = 48;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click_1);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(12, 182);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(450, 63);
+            this.groupBox3.TabIndex = 40;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Detalles del Contrato:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(216, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 16);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Tipo de Plan:";
             // 
             // PagosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(112)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(474, 651);
+            this.ClientSize = new System.Drawing.Size(474, 463);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -403,8 +381,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RichTextBox txtDescripcionTrabajo;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnHistorial;

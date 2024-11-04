@@ -11,6 +11,8 @@ using CapaLogica;
 using CapaEntidad;
 using static CapaEntidad.Pago;
 using Microsoft.VisualBasic.Logging;
+using CapaDatos;
+using System.Data.SqlClient;
 
 
 namespace Proyecto_MOANSO_Grupo_05
@@ -24,8 +26,27 @@ namespace Proyecto_MOANSO_Grupo_05
 
         public void limpiarVariables()
         {
-            txtContrato.Text = "";
             txtMonto.Text = "";
+        }
+
+        public void cargarClientes()
+        {
+            string consulta = "SELECT NOMBRE FROM CLIENTES";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cbCliente.Items.Add(reader["NOMBRE"].ToString());
+                }
+
+                reader.Close();
+
+            }
         }
 
         // ----- ACCIONES -----
@@ -36,7 +57,6 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entPago pag = new entPago();
-                pag.contrato_id = txtContrato.Text;
                 pag.monto = txtMonto.Text;
                 logPago.Instancia.InsertarPago(pag);
 
@@ -54,7 +74,6 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entPago pag = new entPago();
-                pag.contrato_id = txtContrato.Text;
                 logPago.Instancia.AnularPago(pag);
             }
             catch (Exception ex)
@@ -62,6 +81,11 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
             limpiarVariables();
+        }
+
+        private void btnAñadir_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
