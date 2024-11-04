@@ -43,7 +43,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbPago = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnHistorial = new System.Windows.Forms.Button();
@@ -226,7 +226,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbPago);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.Controls.Add(this.btnHistorial);
@@ -244,16 +244,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles del Pago";
             // 
-            // comboBox1
+            // cbPago
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbPago.FormattingEnabled = true;
+            this.cbPago.Items.AddRange(new object[] {
             "Efectivo",
             "Tarjeta"});
-            this.comboBox1.Location = new System.Drawing.Point(146, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 58;
+            this.cbPago.Location = new System.Drawing.Point(146, 30);
+            this.cbPago.Name = "cbPago";
+            this.cbPago.Size = new System.Drawing.Size(121, 24);
+            this.cbPago.TabIndex = 58;
             // 
             // label6
             // 
@@ -279,12 +279,13 @@
             // btnHistorial
             // 
             this.btnHistorial.ForeColor = System.Drawing.Color.Black;
-            this.btnHistorial.Location = new System.Drawing.Point(103, 161);
+            this.btnHistorial.Location = new System.Drawing.Point(82, 161);
             this.btnHistorial.Name = "btnHistorial";
-            this.btnHistorial.Size = new System.Drawing.Size(84, 24);
+            this.btnHistorial.Size = new System.Drawing.Size(105, 24);
             this.btnHistorial.TabIndex = 51;
             this.btnHistorial.Text = "Ver Historial";
             this.btnHistorial.UseVisualStyleBackColor = true;
+            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
             // fechaPicker
             // 
@@ -464,7 +465,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPago;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnHistorial;
