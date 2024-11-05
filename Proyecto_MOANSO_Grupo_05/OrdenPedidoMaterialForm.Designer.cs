@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIDTecnico = new System.Windows.Forms.TextBox();
             this.txtCantidadEntregada = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dtpFechaRealizacion = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtIDCliente = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +89,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtIDCliente);
+            this.groupBox1.Controls.Add(this.txtIDTecnico);
             this.groupBox1.Controls.Add(this.txtCantidadEntregada);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -107,6 +107,14 @@
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Pedido";
+            // 
+            // txtIDTecnico
+            // 
+            this.txtIDTecnico.Location = new System.Drawing.Point(588, 35);
+            this.txtIDTecnico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIDTecnico.Name = "txtIDTecnico";
+            this.txtIDTecnico.Size = new System.Drawing.Size(200, 22);
+            this.txtIDTecnico.TabIndex = 48;
             // 
             // txtCantidadEntregada
             // 
@@ -133,9 +141,9 @@
             this.label4.Location = new System.Drawing.Point(472, 41);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 16);
+            this.label4.Size = new System.Drawing.Size(75, 16);
             this.label4.TabIndex = 44;
-            this.label4.Text = "ID Cliente:";
+            this.label4.Text = "ID Tecnico:";
             // 
             // label7
             // 
@@ -245,14 +253,6 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Fecha Realizacion:";
             // 
-            // txtIDCliente
-            // 
-            this.txtIDCliente.Location = new System.Drawing.Point(588, 35);
-            this.txtIDCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIDCliente.Name = "txtIDCliente";
-            this.txtIDCliente.Size = new System.Drawing.Size(200, 22);
-            this.txtIDCliente.TabIndex = 48;
-            // 
             // OrdenPedidoMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -292,6 +292,6 @@
         private System.Windows.Forms.RichTextBox txtObservaciones;
         private System.Windows.Forms.Button buttonHistorialPeMat;
         private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.TextBox txtIDCliente;
+        private System.Windows.Forms.TextBox txtIDTecnico;
     }
 }

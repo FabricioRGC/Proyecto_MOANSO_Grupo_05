@@ -25,7 +25,11 @@ namespace Proyecto_MOANSO_Grupo_05
         private void limpiarVariables()
         {
             txtIDMateriales.Text = "";
+            txtCantidadEntregada.Text = "";
             txtCantidadSolicitada.Text = "";
+            txtIDTecnico.Text = "";
+            txtObservaciones.Text = "";
+            dtpFechaEntrega.Value = DateTime.Now;
             dtpFechaRealizacion.Value = DateTime.Now;
         }
 
@@ -35,7 +39,7 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 // Validar que los campos no estén vacíos
                 if (string.IsNullOrEmpty(txtIDMateriales.Text) ||
-                    string.IsNullOrEmpty(txtIDCliente.Text) || // Asegúrate de tener este campo
+                    string.IsNullOrEmpty(txtIDTecnico.Text) || // Asegúrate de tener este campo
                     string.IsNullOrEmpty(txtCantidadSolicitada.Text) ||
                     string.IsNullOrEmpty(txtCantidadEntregada.Text) || // Asegúrate de tener este campo
                     string.IsNullOrEmpty(txtObservaciones.Text)) // Asegúrate de tener este campo
@@ -46,7 +50,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
                 // Crear un nuevo pedido de materiales
                 if (long.TryParse(txtIDMateriales.Text, out long materialId) &&
-                    long.TryParse(txtIDCliente.Text, out long clienteId) &&
+                    long.TryParse(txtIDTecnico.Text, out long tecnicoid) &&
                     int.TryParse(txtCantidadSolicitada.Text, out int cantidadSolicitada) &&
                     int.TryParse(txtCantidadEntregada.Text, out int cantidadEntregada))
                 {
@@ -54,7 +58,7 @@ namespace Proyecto_MOANSO_Grupo_05
                     entOrdenPedidoMateriales pedidoMateriales = new entOrdenPedidoMateriales
                     {
                         material_id = materialId,
-                        cliente_id = clienteId,
+                        tecnico_id = tecnicoid,
                         cantidad_solicitada = cantidadSolicitada,
                         cantidad_entregada = cantidadEntregada,
                         fecha = dtpFechaRealizacion.Value.Date,

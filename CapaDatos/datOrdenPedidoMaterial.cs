@@ -31,7 +31,7 @@ namespace CapaDatos
 
                     // Añadir parámetros desde el objeto pedido
                     cmd.Parameters.Add("@material_id", SqlDbType.BigInt).Value = pedido.material_id; // ID del material
-                    cmd.Parameters.Add("@cliente_id", SqlDbType.BigInt).Value = pedido.cliente_id; // ID del cliente
+                    cmd.Parameters.Add("@tecnico_id", SqlDbType.BigInt).Value = pedido.tecnico_id; 
                     cmd.Parameters.Add("@cantidad_solicitada", SqlDbType.Int).Value = pedido.cantidad_solicitada; // Cantidad solicitada
                     cmd.Parameters.Add("@cantidad_entregada", SqlDbType.Int).Value = pedido.cantidad_entregada; // Cantidad entregada
                     cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = pedido.fecha; // Fecha de realización
@@ -66,7 +66,7 @@ namespace CapaDatos
         {
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                using (SqlCommand cmd = new SqlCommand("SP_ANULAR_PEDIDO_MATERIALES", cn))
+                using (SqlCommand cmd = new SqlCommand("SP_ANULAR_PEDIDOS_MATERIALES", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id", idPedido); // Aquí se pasa el id del pedido que se va a anular
@@ -109,7 +109,7 @@ namespace CapaDatos
                             {
                                 id = Convert.ToInt64(dr["id"]),
                                 material_id = Convert.ToInt64(dr["material_id"]),
-                                cliente_id = Convert.ToInt64(dr["cliente_id"]), // Agregado para cliente_id
+                                tecnico_id = Convert.ToInt64(dr["tecnico_id"]), // Agregado para cliente_id
                                 cantidad_solicitada = Convert.ToInt32(dr["cantidad_solicitada"]), // Cambiado a cantidad_solicitada
                                 cantidad_entregada = dr["cantidad_entregada"] != DBNull.Value ? Convert.ToInt32(dr["cantidad_entregada"]) : (int?)null, // Manejo de valores nulos
                                 fecha = Convert.ToDateTime(dr["fecha"]),

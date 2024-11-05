@@ -12,7 +12,7 @@ namespace CapaEntidad
         {
             public long id { get; set; }               // ID del pedido
             public long material_id { get; set; }      // ID del material
-            public long cliente_id { get; set; }       // ID del cliente
+            public long tecnico_id { get; set; }       // ID del cliente
             public int cantidad_solicitada { get; set; }           // Cantidad solicitada
             public int? cantidad_entregada { get; set; } // Cantidad entregada (opcional)
             public DateTime fecha { get; set; }         // Fecha del pedido

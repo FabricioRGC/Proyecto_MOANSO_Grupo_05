@@ -32,7 +32,7 @@ namespace Proyecto_MOANSO_Grupo_05
         private void limpiarVariables()
         {
             dtpFecha.Value = DateTime.Now;
-            txtRepuesto.Text = "";
+            txtIDRepuesto.Text = "";
             txtCantidad.Text = "";
             cboEstado.SelectedIndex = 0;
         }
@@ -43,7 +43,7 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 entOrdenPedidoRepuestos pedidoRepuesto = new entOrdenPedidoRepuestos
                 {
-                    RepuestoId = string.IsNullOrEmpty(txtRepuesto.Text) ? 0 : long.Parse(txtRepuesto.Text),
+                    RepuestoId = string.IsNullOrEmpty(txtIDRepuesto.Text) ? 0 : long.Parse(txtIDRepuesto.Text),
                     Cantidad = int.Parse(txtCantidad.Text),
                     Fecha = dtpFecha.Value.Date,
                     Estado = cboEstado.SelectedItem.ToString()
