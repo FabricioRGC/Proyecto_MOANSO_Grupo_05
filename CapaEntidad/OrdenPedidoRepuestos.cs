@@ -10,11 +10,15 @@ namespace CapaEntidad
     {
         public class entOrdenPedidoRepuestos
         {
-            public long Id { get; set; }
-            public long RepuestoId { get; set; }
-            public int Cantidad { get; set; }
-            public DateTime Fecha { get; set; }
-            public string Estado { get; set; }
+            public long id { get; set; }   
+            public long repuesto_id { get; set; }
+            public long tecnico_id { get; set; }      
+            public int cantidad_solicitada { get; set; }           
+            public int? cantidad_entregada { get; set; } 
+            public DateTime fecha { get; set; }      
+            public DateTime? fecha_entrega { get; set; }
+            public string estado { get; set; }
+            public string observaciones { get; set; }
         }
     }
 }

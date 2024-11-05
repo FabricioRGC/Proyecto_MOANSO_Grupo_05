@@ -149,6 +149,12 @@
     <Compile Include="OrPeMaterialHistorialForm.Designer.cs">
       <DependentUpon>OrPeMaterialHistorialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrPeRepuestoHistorialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrPeRepuestoHistorialForm.Designer.cs">
+      <DependentUpon>OrPeRepuestoHistorialForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PagosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrPeMaterialHistorialForm.resx">
       <DependentUpon>OrPeMaterialHistorialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrPeRepuestoHistorialForm.resx">
+      <DependentUpon>OrPeRepuestoHistorialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PagosForm.resx">
       <DependentUpon>PagosForm.cs</DependentUpon>

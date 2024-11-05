@@ -29,10 +29,13 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Añadir parámetros desde el objeto pedido
-                    cmd.Parameters.Add("@repuesto_id", SqlDbType.BigInt).Value = pedido.RepuestoId; // Especifica el tipo
-                    cmd.Parameters.Add("@cantidad", SqlDbType.Int).Value = pedido.Cantidad; // Especifica el tipo
-                    cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = pedido.Fecha; // Especifica el tipo
-                    cmd.Parameters.Add("@estado", SqlDbType.NVarChar, 20).Value = pedido.Estado; // Especifica el tipo
+                    cmd.Parameters.Add("@repuesto_id", SqlDbType.BigInt).Value = pedido.repuesto_id;
+                    cmd.Parameters.Add("@tecnico_id", SqlDbType.BigInt).Value = pedido.tecnico_id;
+                    cmd.Parameters.Add("@cantidad_solicitada", SqlDbType.Int).Value = pedido.cantidad_solicitada;
+                    cmd.Parameters.Add("@cantidad_entregada", SqlDbType.Int).Value = pedido.cantidad_entregada;
+                    cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = pedido.fecha;
+                    cmd.Parameters.Add("@fecha_entrega", SqlDbType.Date).Value = pedido.fecha_entrega;
+                    cmd.Parameters.Add("@observaciones", SqlDbType.NVarChar).Value = pedido.observaciones ?? (object)DBNull.Value;
 
                     try
                     {
@@ -57,13 +60,24 @@ namespace CapaDatos
         {
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                using (SqlCommand cmd = new SqlCommand("SP_ANULAR_PEDIDOS_REPUESTO", cn))
+                using (SqlCommand cmd = new SqlCommand("SP_ANULAR_PEDIDO_REPUESTOS", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id", idPedido);
 
-                    cn.Open();
-                    cmd.ExecuteNonQuery();
+                    try
+                    {
+                        cn.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Error al anular el pedido: " + ex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
                 }
             }
         }
@@ -83,15 +97,19 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            OrdenPedidoRepuestos.entOrdenPedidoRepuestos pedido = new OrdenPedidoRepuestos.entOrdenPedidoRepuestos
+                            OrdenPedidoRepuestos.entOrdenPedidoRepuestos pedidoRepuesto = new OrdenPedidoRepuestos.entOrdenPedidoRepuestos
                             {
-                                Id = Convert.ToInt64(dr["id"]),
-                                RepuestoId = Convert.ToInt64(dr["repuesto_id"]),
-                                Cantidad = Convert.ToInt32(dr["cantidad"]),
-                                Fecha = Convert.ToDateTime(dr["fecha"]),
-                                Estado = dr["estado"].ToString()
+                                id = Convert.ToInt64(dr["id"]),
+                                repuesto_id = Convert.ToInt64(dr["repuesto_id"]),
+                                tecnico_id = Convert.ToInt64(dr["tecnico_id"]),
+                                cantidad_solicitada = Convert.ToInt32(dr["cantidad_solicitada"]),
+                                cantidad_entregada = dr["cantidad_entregada"] != DBNull.Value ? Convert.ToInt32(dr["cantidad_entregada"]) : (int?)null,
+                                fecha = Convert.ToDateTime(dr["fecha"]),
+                                fecha_entrega = dr["fecha_entrega"] != DBNull.Value ? Convert.ToDateTime(dr["fecha_entrega"]) : (DateTime?)null,
+                                estado = dr["estado"].ToString(),
+                                observaciones = dr["observaciones"] != DBNull.Value ? dr["observaciones"].ToString() : null
                             };
-                            lista.Add(pedido);
+                            lista.Add(pedidoRepuesto);
                         }
                     }
                 }

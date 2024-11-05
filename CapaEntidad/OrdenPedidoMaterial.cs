@@ -10,13 +10,13 @@ namespace CapaEntidad
     {
         public class entOrdenPedidoMateriales
         {
-            public long id { get; set; }               // ID del pedido
-            public long material_id { get; set; }      // ID del material
-            public long tecnico_id { get; set; }       // ID del cliente
-            public int cantidad_solicitada { get; set; }           // Cantidad solicitada
-            public int? cantidad_entregada { get; set; } // Cantidad entregada (opcional)
-            public DateTime fecha { get; set; }         // Fecha del pedido
-            public DateTime? fecha_entrega { get; set; } // Fecha de entrega (opcional)
+            public long id { get; set; }        
+            public long material_id { get; set; }     
+            public long tecnico_id { get; set; }       
+            public int cantidad_solicitada { get; set; }          
+            public int? cantidad_entregada { get; set; } 
+            public DateTime fecha { get; set; }      
+            public DateTime? fecha_entrega { get; set; }
             public string estado { get; set; }
             public string observaciones { get; set; }
         }

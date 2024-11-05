@@ -30,16 +30,13 @@ namespace CapaDatos
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Añadir parámetros desde el objeto pedido
-                    cmd.Parameters.Add("@material_id", SqlDbType.BigInt).Value = pedido.material_id; // ID del material
+                    cmd.Parameters.Add("@material_id", SqlDbType.BigInt).Value = pedido.material_id;
                     cmd.Parameters.Add("@tecnico_id", SqlDbType.BigInt).Value = pedido.tecnico_id; 
-                    cmd.Parameters.Add("@cantidad_solicitada", SqlDbType.Int).Value = pedido.cantidad_solicitada; // Cantidad solicitada
-                    cmd.Parameters.Add("@cantidad_entregada", SqlDbType.Int).Value = pedido.cantidad_entregada; // Cantidad entregada
-                    cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = pedido.fecha; // Fecha de realización
-                    cmd.Parameters.Add("@fecha_entrega", SqlDbType.Date).Value = pedido.fecha_entrega; // Fecha de entrega
-                    cmd.Parameters.Add("@observaciones", SqlDbType.NVarChar).Value = pedido.observaciones ?? (object)DBNull.Value; // Observaciones (puede ser null)
-
-                    // El estado se establece como "Activado" en el procedimiento almacenado
-                    // No es necesario añadirlo aquí ya que lo maneja el SP.
+                    cmd.Parameters.Add("@cantidad_solicitada", SqlDbType.Int).Value = pedido.cantidad_solicitada;
+                    cmd.Parameters.Add("@cantidad_entregada", SqlDbType.Int).Value = pedido.cantidad_entregada;
+                    cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = pedido.fecha;
+                    cmd.Parameters.Add("@fecha_entrega", SqlDbType.Date).Value = pedido.fecha_entrega;
+                    cmd.Parameters.Add("@observaciones", SqlDbType.NVarChar).Value = pedido.observaciones ?? (object)DBNull.Value; 
 
                     try
                     {
@@ -48,12 +45,10 @@ namespace CapaDatos
                     }
                     catch (SqlException ex)
                     {
-                        // Manejo de errores SQL
                         MessageBox.Show("Error al registrar el pedido: " + ex.Message);
                     }
                     catch (Exception ex)
                     {
-                        // Manejo de otros errores
                         MessageBox.Show("Error: " + ex.Message);
                     }
                 }
