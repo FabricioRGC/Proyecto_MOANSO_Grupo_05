@@ -31,7 +31,6 @@ namespace Proyecto_MOANSO_Grupo_05
             cbCliente.SelectedIndex = 0;
             cbPlan.SelectedIndex = 0;
             txtDuracion.Text = "";
-            txtDescripcionTrabajo.Text = "";
         }
 
         private void CargarPlanes()
@@ -86,7 +85,6 @@ namespace Proyecto_MOANSO_Grupo_05
                 entContrato.fechaInicio = fechaPicker.Value.Date;
                 entContrato.duracion = txtDuracion.Text;
                 entContrato.estado = "ACTIVO";
-                entContrato.clausula = txtDescripcionTrabajo.Text;
                 logContrato.Instancia.InsertaContrato(entContrato);
             }
             catch (Exception ex)
