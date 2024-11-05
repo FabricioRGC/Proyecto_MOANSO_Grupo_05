@@ -131,5 +131,11 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Por favor, ingrese un ID válido.");
             }
         }
+
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            Form historial = new PedidoInstalacionHistorialForm();
+            historial.Show();
+        }
     }
 }
