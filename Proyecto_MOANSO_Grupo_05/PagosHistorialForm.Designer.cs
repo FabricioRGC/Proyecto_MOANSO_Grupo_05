@@ -33,18 +33,18 @@
             this.btnAnular = new System.Windows.Forms.Button();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tablaContratos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaContratos)).BeginInit();
+            this.tablaPagos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaPagos)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(263, 18);
+            this.label2.Location = new System.Drawing.Point(253, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 31;
-            this.label2.Text = "Nombre de Cliente:";
+            this.label2.Text = "Código del Contrato:";
             // 
             // txtCodigoCliente
             // 
@@ -61,6 +61,7 @@
             this.btnAnular.TabIndex = 29;
             this.btnAnular.Text = "Anular";
             this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
             // txtCliente
             // 
@@ -68,6 +69,7 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(100, 20);
             this.txtCliente.TabIndex = 28;
+            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // label1
             // 
@@ -78,13 +80,13 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Buscar:";
             // 
-            // tablaContratos
+            // tablaPagos
             // 
-            this.tablaContratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaContratos.Location = new System.Drawing.Point(12, 41);
-            this.tablaContratos.Name = "tablaContratos";
-            this.tablaContratos.Size = new System.Drawing.Size(536, 397);
-            this.tablaContratos.TabIndex = 26;
+            this.tablaPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaPagos.Location = new System.Drawing.Point(12, 41);
+            this.tablaPagos.Name = "tablaPagos";
+            this.tablaPagos.Size = new System.Drawing.Size(536, 397);
+            this.tablaPagos.TabIndex = 26;
             // 
             // PagosHistorialForm
             // 
@@ -96,10 +98,10 @@
             this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tablaContratos);
+            this.Controls.Add(this.tablaPagos);
             this.Name = "PagosHistorialForm";
             this.Text = "PagosHistorialForm";
-            ((System.ComponentModel.ISupportInitialize)(this.tablaContratos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaPagos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,6 +114,6 @@
         private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView tablaContratos;
+        private System.Windows.Forms.DataGridView tablaPagos;
     }
 }

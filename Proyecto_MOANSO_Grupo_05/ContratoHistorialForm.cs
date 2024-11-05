@@ -42,7 +42,7 @@ namespace Proyecto_MOANSO_Grupo_05
             txtCodigoCliente.Text = "";
         }
 
-        // Filtrar por código de cliente
+        // Filtrar por nombre del cliente
         private void txtCliente_TextChanged(object sender, EventArgs e)
         {
             string codigo = txtCliente.Text;

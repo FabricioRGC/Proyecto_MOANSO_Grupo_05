@@ -98,7 +98,7 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entPago pag = new entPago();
-                pag.contrato_id = labelCodigo.Text;
+                pag.contrato_id = labelCodigoContrato.Text;
                 pag.monto = txtMonto.Text;
                 pag.fecha = fechaPicker.Value.Date;
                 pag.metodo_pago = cbPago.SelectedItem.ToString();
@@ -142,7 +142,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
                         reader.Close();
 
-                        string consultaContrato = "SELECT fecha_inicio, tipo_plan FROM Contratos WHERE cliente_nombre = @nombreCliente";
+                        string consultaContrato = "SELECT fecha_inicio, tipo_plan, id FROM Contratos WHERE cliente_nombre = @nombreCliente";
                         SqlCommand cmdContrato = new SqlCommand(consultaContrato, cn);
                         cmdContrato.Parameters.AddWithValue("@nombreCliente", clienteSeleccionado);
                         SqlDataReader readerContrato = cmdContrato.ExecuteReader();
@@ -150,10 +150,9 @@ namespace Proyecto_MOANSO_Grupo_05
                         if (readerContrato.Read())
                         {
                             labelPlan.Text = readerContrato["tipo_plan"].ToString();
-
-                            // Formateo de la fecha para que solo muestre la fecha sin la hora
                             DateTime fechaInicio = (DateTime)readerContrato["fecha_inicio"];
-                            labelFechaContrato.Text = fechaInicio.ToString("dd/MM/yyyy"); // Ajusta el formato según tus necesidades
+                            labelFechaContrato.Text = fechaInicio.ToString("dd/MM/yyyy");
+                            labelCodigoContrato.Text = readerContrato["id"].ToString();
                         }
 
                         readerContrato.Close();

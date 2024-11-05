@@ -100,7 +100,6 @@ namespace CapaDatos
                 cmd = new SqlCommand("SP_ANULAR_PAGO", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@codigoContrato", pago.contrato_id);
-                cmd.Parameters.AddWithValue("@nombreCliente", pago.nombre_cliente);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
