@@ -160,7 +160,7 @@ namespace Proyecto_MOANSO_Grupo_05
                         telefonoLabel.Text = reader["telefono"].ToString();
                         estadoLabel.Text = reader["estado"].ToString();
                         dniLabel.Text = reader["dni"].ToString();
-                    }
+                    }           
                 }
             }
             catch (Exception ex)

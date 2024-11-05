@@ -155,6 +155,12 @@
     <Compile Include="PagosForm.Designer.cs">
       <DependentUpon>PagosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PagosHistorialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagosHistorialForm.Designer.cs">
+      <DependentUpon>PagosHistorialForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PagosForm.resx">
       <DependentUpon>PagosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagosHistorialForm.resx">
+      <DependentUpon>PagosHistorialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalForm.resx">
       <DependentUpon>PersonalForm.cs</DependentUpon>

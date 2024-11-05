@@ -239,6 +239,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.OrangeRed;
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(58, 50);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);

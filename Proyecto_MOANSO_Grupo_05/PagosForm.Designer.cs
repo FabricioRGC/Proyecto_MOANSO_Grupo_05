@@ -43,7 +43,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbPago = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnHistorial = new System.Windows.Forms.Button();
@@ -54,6 +54,13 @@
             this.btnAñadir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.labelDni = new System.Windows.Forms.Label();
+            this.labelDireccion = new System.Windows.Forms.Label();
+            this.labelEstado = new System.Windows.Forms.Label();
+            this.labelCodigo = new System.Windows.Forms.Label();
+            this.labelTelefono = new System.Windows.Forms.Label();
+            this.labelFechaContrato = new System.Windows.Forms.Label();
+            this.labelPlan = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -65,12 +72,17 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(19, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 16);
+            this.label3.Size = new System.Drawing.Size(120, 16);
             this.label3.TabIndex = 26;
-            this.label3.Text = "Código de Contrato:";
+            this.label3.Text = "Fecha de Contrato:";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labelTelefono);
+            this.groupBox2.Controls.Add(this.labelCodigo);
+            this.groupBox2.Controls.Add(this.labelEstado);
+            this.groupBox2.Controls.Add(this.labelDireccion);
+            this.groupBox2.Controls.Add(this.labelDni);
             this.groupBox2.Controls.Add(this.dniLabel);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.cbCliente);
@@ -87,7 +99,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(450, 161);
+            this.groupBox2.Size = new System.Drawing.Size(461, 161);
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles del Cliente";
@@ -106,7 +118,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(259, 33);
+            this.label15.Location = new System.Drawing.Point(234, 33);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(30, 16);
             this.label15.TabIndex = 51;
@@ -119,6 +131,7 @@
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(121, 24);
             this.cbCliente.TabIndex = 43;
+            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.cbCliente_SelectedIndexChanged);
             // 
             // estadoLabel
             // 
@@ -213,7 +226,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbPago);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.Controls.Add(this.btnHistorial);
@@ -226,21 +239,21 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 251);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 199);
+            this.groupBox1.Size = new System.Drawing.Size(461, 199);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles del Pago";
             // 
-            // comboBox1
+            // cbPago
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbPago.FormattingEnabled = true;
+            this.cbPago.Items.AddRange(new object[] {
             "Efectivo",
             "Tarjeta"});
-            this.comboBox1.Location = new System.Drawing.Point(146, 30);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 58;
+            this.cbPago.Location = new System.Drawing.Point(146, 30);
+            this.cbPago.Name = "cbPago";
+            this.cbPago.Size = new System.Drawing.Size(121, 24);
+            this.cbPago.TabIndex = 58;
             // 
             // label6
             // 
@@ -255,22 +268,24 @@
             // btnImprimir
             // 
             this.btnImprimir.ForeColor = System.Drawing.Color.Black;
-            this.btnImprimir.Location = new System.Drawing.Point(193, 161);
+            this.btnImprimir.Location = new System.Drawing.Point(211, 161);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(149, 24);
             this.btnImprimir.TabIndex = 54;
             this.btnImprimir.Text = "Generar Comprobante";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnHistorial
             // 
             this.btnHistorial.ForeColor = System.Drawing.Color.Black;
-            this.btnHistorial.Location = new System.Drawing.Point(103, 161);
+            this.btnHistorial.Location = new System.Drawing.Point(100, 161);
             this.btnHistorial.Name = "btnHistorial";
-            this.btnHistorial.Size = new System.Drawing.Size(84, 24);
+            this.btnHistorial.Size = new System.Drawing.Size(105, 24);
             this.btnHistorial.TabIndex = 51;
             this.btnHistorial.Text = "Ver Historial";
             this.btnHistorial.UseVisualStyleBackColor = true;
+            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
             // fechaPicker
             // 
@@ -309,7 +324,7 @@
             // btnAñadir
             // 
             this.btnAñadir.ForeColor = System.Drawing.Color.Black;
-            this.btnAñadir.Location = new System.Drawing.Point(348, 161);
+            this.btnAñadir.Location = new System.Drawing.Point(366, 161);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(84, 24);
             this.btnAñadir.TabIndex = 48;
@@ -319,13 +334,15 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.labelPlan);
+            this.groupBox3.Controls.Add(this.labelFechaContrato);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 182);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(450, 63);
+            this.groupBox3.Size = new System.Drawing.Size(461, 63);
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles del Contrato:";
@@ -334,18 +351,86 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(216, 28);
+            this.label4.Location = new System.Drawing.Point(237, 28);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 16);
             this.label4.TabIndex = 27;
             this.label4.Text = "Tipo de Plan:";
+            // 
+            // labelDni
+            // 
+            this.labelDni.AutoSize = true;
+            this.labelDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDni.ForeColor = System.Drawing.Color.White;
+            this.labelDni.Location = new System.Drawing.Point(270, 33);
+            this.labelDni.Name = "labelDni";
+            this.labelDni.Size = new System.Drawing.Size(0, 16);
+            this.labelDni.TabIndex = 53;
+            // 
+            // labelDireccion
+            // 
+            this.labelDireccion.AutoSize = true;
+            this.labelDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDireccion.ForeColor = System.Drawing.Color.White;
+            this.labelDireccion.Location = new System.Drawing.Point(259, 78);
+            this.labelDireccion.Name = "labelDireccion";
+            this.labelDireccion.Size = new System.Drawing.Size(0, 16);
+            this.labelDireccion.TabIndex = 54;
+            // 
+            // labelEstado
+            // 
+            this.labelEstado.AutoSize = true;
+            this.labelEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEstado.ForeColor = System.Drawing.Color.White;
+            this.labelEstado.Location = new System.Drawing.Point(275, 122);
+            this.labelEstado.Name = "labelEstado";
+            this.labelEstado.Size = new System.Drawing.Size(0, 16);
+            this.labelEstado.TabIndex = 55;
+            // 
+            // labelCodigo
+            // 
+            this.labelCodigo.AutoSize = true;
+            this.labelCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCodigo.ForeColor = System.Drawing.Color.White;
+            this.labelCodigo.Location = new System.Drawing.Point(79, 78);
+            this.labelCodigo.Name = "labelCodigo";
+            this.labelCodigo.Size = new System.Drawing.Size(0, 16);
+            this.labelCodigo.TabIndex = 56;
+            // 
+            // labelTelefono
+            // 
+            this.labelTelefono.AutoSize = true;
+            this.labelTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefono.ForeColor = System.Drawing.Color.White;
+            this.labelTelefono.Location = new System.Drawing.Point(92, 122);
+            this.labelTelefono.Name = "labelTelefono";
+            this.labelTelefono.Size = new System.Drawing.Size(0, 16);
+            this.labelTelefono.TabIndex = 57;
+            // 
+            // labelFechaContrato
+            // 
+            this.labelFechaContrato.AutoSize = true;
+            this.labelFechaContrato.ForeColor = System.Drawing.Color.White;
+            this.labelFechaContrato.Location = new System.Drawing.Point(145, 28);
+            this.labelFechaContrato.Name = "labelFechaContrato";
+            this.labelFechaContrato.Size = new System.Drawing.Size(0, 16);
+            this.labelFechaContrato.TabIndex = 28;
+            // 
+            // labelPlan
+            // 
+            this.labelPlan.AutoSize = true;
+            this.labelPlan.ForeColor = System.Drawing.Color.White;
+            this.labelPlan.Location = new System.Drawing.Point(330, 28);
+            this.labelPlan.Name = "labelPlan";
+            this.labelPlan.Size = new System.Drawing.Size(0, 16);
+            this.labelPlan.TabIndex = 29;
             // 
             // PagosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(112)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(474, 463);
+            this.ClientSize = new System.Drawing.Size(485, 463);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -380,7 +465,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPago;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnHistorial;
@@ -389,5 +474,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.Button btnAñadir;
+        private System.Windows.Forms.Label labelTelefono;
+        private System.Windows.Forms.Label labelCodigo;
+        private System.Windows.Forms.Label labelEstado;
+        private System.Windows.Forms.Label labelDireccion;
+        private System.Windows.Forms.Label labelDni;
+        private System.Windows.Forms.Label labelPlan;
+        private System.Windows.Forms.Label labelFechaContrato;
     }
 }
