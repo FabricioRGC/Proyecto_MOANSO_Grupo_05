@@ -272,6 +272,9 @@
     <EmbeddedResource Include="RepuestosForm.resx">
       <DependentUpon>RepuestosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ZonasDeCoberturaForm.resx">
+      <DependentUpon>ZonasDeCoberturaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
