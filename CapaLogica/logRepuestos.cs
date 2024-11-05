@@ -29,12 +29,6 @@ namespace CapaLogica
             datRepuestos.Instancia.InsertarRepuesto(repuesto);
         }
 
-        // Método para actualizar un repuesto
-        public void EditarRepuesto(Repuesto.entRepuesto repuesto)
-        {
-            datRepuestos.Instancia.EditarRepuesto(repuesto);
-        }
-
         // Método para deshabilitar un repuesto
         public void DeshabilitarRepuestos(Repuesto.entRepuesto repuesto)
         {

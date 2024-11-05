@@ -20,44 +20,15 @@ namespace Proyecto_MOANSO_Grupo_05
         public RepuestosForm()
         {
             InitializeComponent();
-            listarRepuestos();
-        }
-
-        public void listarRepuestos()
-        {
-            dataGridRepuestos.DataSource = logRepuestos.Instancia.ListarRepuestos();
         }
 
         private void LimpiarVariables()
         {
-            txtIdR.Text = "";
-            txtCodigoR.Text = "";
-            txtNombreR.Text = "";
-            txtDescripcionR.Text = "";
+            txtCodigoRepuesto.Text = "";
+            txtNombreRepuesto.Text = "";
+            txtDescripción.Text = "";
             txtStockR.Text = "";
-            txtBuscarR.Text = "";
-        }
-
-        private void txtBuscarR_TextChanged(object sender, EventArgs e)
-        {
-            string nombre = txtBuscarR.Text;
-            var repuestosFiltrados = logRepuestos.Instancia.ListarRepuestos()
-                .Where(repuesto => repuesto.nombre.Contains(nombre))
-                .ToList();
-            dataGridRepuestos.DataSource = repuestosFiltrados;
-        }
-
-        private void dataGridRepuestos_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridRepuestos.CurrentRow != null)
-            {
-                var repuestoSeleccionado = (entRepuesto)dataGridRepuestos.CurrentRow.DataBoundItem;
-                txtIdR.Text = repuestoSeleccionado.id.ToString();
-                txtCodigoR.Text = repuestoSeleccionado.codigo;
-                txtNombreR.Text = repuestoSeleccionado.nombre;
-                txtDescripcionR.Text = repuestoSeleccionado.descripcion;
-                txtStockR.Text = repuestoSeleccionado.stock.ToString();
-            }
+            dtpRepuestos.Value = DateTime.Now;
         }
 
 
@@ -65,59 +36,43 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-                entRepuesto repuesto = new entRepuesto
+                // Crear un nuevo repuesto
+                if (long.TryParse(txtCodigoRepuesto.Text, out long codigo_repuesto) &&
+                    !string.IsNullOrEmpty(txtDescripción.Text) &&
+                    !string.IsNullOrEmpty(txtNombreRepuesto.Text) &&
+                    int.TryParse(txtStockR.Text, out int stock))
                 {
-                    codigo = txtCodigoR.Text.Trim(),
-                    nombre = txtNombreR.Text.Trim(),
-                    descripcion = txtDescripcionR.Text.Trim(),
-                    stock = int.Parse(txtStockR.Text)
-                };
-                logRepuestos.Instancia.InsertarRepuesto(repuesto);
-                MessageBox.Show("Repuesto añadido exitosamente.");
+
+                    entRepuesto repuesto = new entRepuesto
+                    {
+                        codigo = txtCodigoRepuesto.Text,
+                        nombre = txtNombreRepuesto.Text,
+                        descripcion = txtDescripción.Text,
+                        stock = stock,
+                        estado = "Registrado",
+                        fecha_registro = DateTime.Now
+                    };
+
+                    // Registrar el repuesto
+                    logRepuestos.Instancia.InsertarRepuesto(repuesto);
+                    MessageBox.Show("Repuesto añadido exitosamente.");
+                    LimpiarVariables();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, introduzca valores válidos para los campos.");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            LimpiarVariables();
-            listarRepuestos();
         }
 
-        private void btnModificarRepuesto_Click(object sender, EventArgs e)
+        private void btnHistorial_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                entRepuesto repuesto = new entRepuesto();
-                repuesto.id = int.Parse(txtIdR.Text.Trim());
-                repuesto.codigo = txtCodigoR.Text.Trim();
-                repuesto.nombre = txtNombreR.Text.Trim();
-                repuesto.descripcion = txtDescripcionR.Text.Trim();
-                repuesto.stock = int.Parse(txtStockR.Text);
-                logRepuestos.Instancia.EditarRepuesto(repuesto);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            LimpiarVariables();
-            listarRepuestos();
-        }
-
-        private void btnInhabilitarRepuesto_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                long idRepuesto = long.Parse(txtIdR.Text.Trim());
-                entRepuesto repuesto = new entRepuesto { id = idRepuesto };
-                logRepuestos.Instancia.DeshabilitarRepuestos(repuesto);
-                MessageBox.Show("Repuesto inhabilitado exitosamente.");
-                listarRepuestos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            LimpiarVariables();
+            Form historial = new RepuestoHistorialForm();
+            historial.Show();
         }
     }
 }
