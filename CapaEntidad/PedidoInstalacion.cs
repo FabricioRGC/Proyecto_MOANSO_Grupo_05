@@ -14,7 +14,7 @@ namespace CapaEntidad
             public int IDInstalacion { get; set; }
             public DateTime FechaOrden { get; set; }
             public string Telefono { get; set; }
-            public int? IDJefeSoporteTecnico { get; set; }
+            public int IDJefeSoporteTecnico { get; set; }
             public DateTime FechaInicio { get; set; }
             public DateTime? FechaFin { get; set; }
             public TimeSpan HoraInicio { get; set; }

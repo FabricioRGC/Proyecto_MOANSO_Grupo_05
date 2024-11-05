@@ -1,10 +1,6 @@
 ﻿using CapaEntidad;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static CapaEntidad.PedidoInstalacion;
 using CapaDatos;
 
 namespace CapaLogica
@@ -34,15 +30,9 @@ namespace CapaLogica
         }
 
         // Método para anular un pedido de instalación
-        public void AnularPedidoInstalacion(long id)
+        public void AnularPedidoInstalacion(int numeroOrden)
         {
-            datPedidoInstalacion.Instancia.AnularPedidoInstalacion(id);
-        }
-
-        // Método para consultar un pedido de instalación específico
-        public PedidoInstalacion.entPedidoInstalacion ConsultarPedidoInstalacion(long id)
-        {
-            return datPedidoInstalacion.Instancia.ConsultarPedidoInstalacion(id);
+            datPedidoInstalacion.Instancia.AnularPedidoInstalacion(numeroOrden);
         }
     }
 }

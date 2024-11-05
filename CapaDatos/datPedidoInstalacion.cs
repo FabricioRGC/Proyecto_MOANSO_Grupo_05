@@ -26,7 +26,7 @@ namespace CapaDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_MOSTRAR_PedidosInstalacion", cn); // Asumiendo que tienes un SP para mostrar
+                cmd = new SqlCommand("SP_MOSTRAR_PedidoInstalacion", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -34,9 +34,20 @@ namespace CapaDatos
                 {
                     PedidoInstalacion.entPedidoInstalacion pedido = new PedidoInstalacion.entPedidoInstalacion
                     {
-                        id = long.Parse(dr["id"].ToString()),
-                        fecha = DateTime.Parse(dr["fecha"].ToString()),
-                        estado = dr["estado"].ToString()
+                        NumeroOrden = Convert.ToInt32(dr["NumeroOrden"]),
+                        IDInstalacion = Convert.ToInt32(dr["IDInstalacion"]),
+                        FechaOrden = DateTime.Parse(dr["FechaOrden"].ToString()),
+                        Telefono = dr["Telefono"].ToString(),
+                        IDJefeSoporteTecnico = Convert.ToInt32(dr["IDJefeSoporteTecnico"]),
+                        FechaInicio = DateTime.Parse(dr["FechaInicio"].ToString()), // No puede ser NULL
+                        FechaFin = dr["FechaFin"] != DBNull.Value ? DateTime.Parse(dr["FechaFin"].ToString()) : (DateTime?)null, // Manejo de FechaFin que puede ser NULL
+                        HoraInicio = dr["HoraInicio"] != DBNull.Value ? TimeSpan.Parse(dr["HoraInicio"].ToString()) : TimeSpan.Zero,
+                        HoraFin = dr["HoraFin"] != DBNull.Value ? TimeSpan.Parse(dr["HoraFin"].ToString()) : TimeSpan.Zero,
+                        TipoInstalacion = dr["TipoInstalacion"].ToString(),
+                        Ubicacion = dr["Ubicacion"].ToString(),
+                        Descripcion = dr["Descripcion"].ToString(),
+                        Observaciones = dr["Observaciones"].ToString(),
+                        Estado = dr["Estado"].ToString()
                     };
                     lista.Add(pedido);
                 }
@@ -52,6 +63,7 @@ namespace CapaDatos
             return lista;
         }
 
+
         // Método para añadir un pedido de instalación
         public Boolean InsertarPedidoInstalacion(PedidoInstalacion.entPedidoInstalacion pedido)
         {
@@ -61,10 +73,23 @@ namespace CapaDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_AÑADIR_PedidoInstalacion", cn);
+                cmd = new SqlCommand("SP_AÑADIR_PedidosInstalacion", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@fecha", pedido.fecha);
-                cmd.Parameters.AddWithValue("@estado", pedido.estado);
+                cmd.Parameters.AddWithValue("@NumeroOrden", pedido.NumeroOrden);
+                cmd.Parameters.AddWithValue("@IDInstalacion", pedido.IDInstalacion);
+                cmd.Parameters.AddWithValue("@FechaOrden", pedido.FechaOrden);
+                cmd.Parameters.AddWithValue("@Telefono", pedido.Telefono);
+                cmd.Parameters.AddWithValue("@IDJefeSoporteTecnico", pedido.IDJefeSoporteTecnico);
+                cmd.Parameters.AddWithValue("@FechaInicio", pedido.FechaInicio);
+                cmd.Parameters.AddWithValue("@FechaFin", (object)pedido.FechaFin ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@HoraInicio", pedido.HoraInicio);
+                cmd.Parameters.AddWithValue("@HoraFin", pedido.HoraFin);
+                cmd.Parameters.AddWithValue("@TipoInstalacion", pedido.TipoInstalacion);
+                cmd.Parameters.AddWithValue("@Ubicacion", pedido.Ubicacion);
+                cmd.Parameters.AddWithValue("@Descripcion", pedido.Descripcion);
+                cmd.Parameters.AddWithValue("@Observaciones", pedido.Observaciones);
+                cmd.Parameters.AddWithValue("@Estado", pedido.Estado);
+
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
@@ -83,61 +108,29 @@ namespace CapaDatos
             return inserto;
         }
 
+
         // Método para anular un pedido de instalación
-        public void AnularPedidoInstalacion(long id)
+        public void AnularPedidoInstalacion(int numeroOrden)
         {
             SqlCommand cmd = null;
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_ANULAR_PEDIDO_INSTALACION", cn);
+                cmd = new SqlCommand("SP_ANULAR_PEDIDOS_INSTALACION", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@NumeroOrden", numeroOrden);
+
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al anular el pedido de instalación: " + ex.Message);
+                throw new Exception("Error al anular el pedido de instalación: " + ex.Message, ex);
             }
             finally
             {
                 cmd?.Connection.Close();
             }
-        }
-
-        // Método para consultar un pedido de instalación específico
-        public PedidoInstalacion.entPedidoInstalacion ConsultarPedidoInstalacion(long id)
-        {
-            SqlCommand cmd = null;
-            PedidoInstalacion.entPedidoInstalacion pedido = null;
-            try
-            {
-                SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_CONSULTAR_PEDIDO_INSTALACION", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
-                cn.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    pedido = new PedidoInstalacion.entPedidoInstalacion
-                    {
-                        id = long.Parse(dr["id"].ToString()),
-                        fecha = DateTime.Parse(dr["fecha"].ToString()),
-                        estado = dr["estado"].ToString()
-                    };
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                cmd?.Connection.Close();
-            }
-            return pedido;
         }
 
     }
