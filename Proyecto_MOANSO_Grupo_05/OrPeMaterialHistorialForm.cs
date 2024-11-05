@@ -88,15 +88,5 @@ namespace Proyecto_MOANSO_Grupo_05
                 dataGridOrPeMateriales.DataSource = logOrdenPedidoMaterial.Instancia.ListarPedidosMaterial(); // Mostrar todos los materiales
             }
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridOrPeMateriales_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

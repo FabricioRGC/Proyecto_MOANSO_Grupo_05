@@ -44,7 +44,6 @@
             this.label2.Size = new System.Drawing.Size(190, 16);
             this.label2.TabIndex = 31;
             this.label2.Text = "Buscar Por Codigo de Material";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtIdMateriales
             // 
@@ -76,7 +75,6 @@
             this.dataGridOrPeMateriales.RowTemplate.Height = 24;
             this.dataGridOrPeMateriales.Size = new System.Drawing.Size(1145, 475);
             this.dataGridOrPeMateriales.TabIndex = 32;
-            this.dataGridOrPeMateriales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridOrPeMateriales_CellContentClick);
             // 
             // OrPeMaterialHistorialForm
             // 

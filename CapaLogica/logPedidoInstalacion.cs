@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using CapaDatos;
+using System.Data.SqlClient;
 
 namespace CapaLogica
 {
@@ -34,5 +35,29 @@ namespace CapaLogica
         {
             datPedidoInstalacion.Instancia.AnularPedidoInstalacion(numeroOrden);
         }
+
+        public int ObtenerUltimoNumeroOrden()
+        {
+            int ultimoNumeroOrden = 0;
+            SqlCommand cmd = new SqlCommand("SELECT MAX(NumeroOrden) FROM pedidosinstalacion", Conexion.Instancia.Conectar());
+
+            try
+            {
+                cmd.Connection.Open();
+                object resultado = cmd.ExecuteScalar();
+                ultimoNumeroOrden = resultado != DBNull.Value ? Convert.ToInt32(resultado) : 0;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el último número de orden: " + ex.Message, ex);
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+
+            return ultimoNumeroOrden;
+        }
+
     }
 }

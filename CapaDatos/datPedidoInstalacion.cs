@@ -75,7 +75,6 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_AÑADIR_PedidosInstalacion", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@NumeroOrden", pedido.NumeroOrden);
                 cmd.Parameters.AddWithValue("@IDInstalacion", pedido.IDInstalacion);
                 cmd.Parameters.AddWithValue("@FechaOrden", pedido.FechaOrden);
                 cmd.Parameters.AddWithValue("@Telefono", pedido.Telefono);

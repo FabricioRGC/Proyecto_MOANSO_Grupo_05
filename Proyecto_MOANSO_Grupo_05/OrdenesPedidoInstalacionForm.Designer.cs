@@ -63,7 +63,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtIdInstalacion = new System.Windows.Forms.TextBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -76,11 +76,11 @@
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(509, 332);
+            this.groupBox4.Location = new System.Drawing.Point(484, 332);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(489, 288);
+            this.groupBox4.Size = new System.Drawing.Size(457, 288);
             this.groupBox4.TabIndex = 35;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Detalles de la Instalación:";
@@ -91,7 +91,7 @@
             this.txtObservaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(440, 175);
+            this.txtObservaciones.Size = new System.Drawing.Size(409, 175);
             this.txtObservaciones.TabIndex = 22;
             // 
             // label3
@@ -115,7 +115,7 @@
             // 
             // btnHistorial
             // 
-            this.btnHistorial.Location = new System.Drawing.Point(533, 644);
+            this.btnHistorial.Location = new System.Drawing.Point(508, 644);
             this.btnHistorial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(236, 36);
@@ -136,11 +136,11 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.dtpInicio);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(509, 23);
+            this.groupBox3.Location = new System.Drawing.Point(484, 23);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(489, 285);
+            this.groupBox3.Size = new System.Drawing.Size(457, 285);
             this.groupBox3.TabIndex = 33;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Fechas y Horarios";
@@ -148,7 +148,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(100, 202);
+            this.label17.Location = new System.Drawing.Point(77, 200);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(80, 16);
             this.label17.TabIndex = 25;
@@ -157,7 +157,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(95, 156);
+            this.label14.Location = new System.Drawing.Point(72, 154);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(93, 16);
             this.label14.TabIndex = 24;
@@ -165,7 +165,7 @@
             // 
             // mtbHoraInicio
             // 
-            this.mtbHoraInicio.Location = new System.Drawing.Point(207, 153);
+            this.mtbHoraInicio.Location = new System.Drawing.Point(184, 151);
             this.mtbHoraInicio.Mask = "00:00";
             this.mtbHoraInicio.Name = "mtbHoraInicio";
             this.mtbHoraInicio.Size = new System.Drawing.Size(200, 22);
@@ -174,7 +174,7 @@
             // 
             // mtbHoraFinal
             // 
-            this.mtbHoraFinal.Location = new System.Drawing.Point(207, 196);
+            this.mtbHoraFinal.Location = new System.Drawing.Point(184, 194);
             this.mtbHoraFinal.Mask = "00:00";
             this.mtbHoraFinal.Name = "mtbHoraFinal";
             this.mtbHoraFinal.Size = new System.Drawing.Size(200, 22);
@@ -183,7 +183,7 @@
             // 
             // dtpFin
             // 
-            this.dtpFin.Location = new System.Drawing.Point(207, 109);
+            this.dtpFin.Location = new System.Drawing.Point(184, 107);
             this.dtpFin.Name = "dtpFin";
             this.dtpFin.Size = new System.Drawing.Size(200, 22);
             this.dtpFin.TabIndex = 20;
@@ -191,7 +191,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(96, 114);
+            this.label8.Location = new System.Drawing.Point(73, 112);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 16);
             this.label8.TabIndex = 19;
@@ -209,7 +209,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(90, 74);
+            this.label2.Location = new System.Drawing.Point(67, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 16);
             this.label2.TabIndex = 12;
@@ -217,7 +217,7 @@
             // 
             // dtpInicio
             // 
-            this.dtpInicio.Location = new System.Drawing.Point(207, 66);
+            this.dtpInicio.Location = new System.Drawing.Point(184, 64);
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(200, 22);
             this.dtpInicio.TabIndex = 18;
@@ -232,7 +232,7 @@
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtUbicacion);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(28, 332);
+            this.groupBox2.Location = new System.Drawing.Point(13, 332);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -319,7 +319,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtIdInstalacion);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(28, 23);
+            this.groupBox1.Location = new System.Drawing.Point(13, 23);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -394,6 +394,8 @@
             // 
             // txtNumOrden
             // 
+            this.txtNumOrden.Enabled = false;
+            this.txtNumOrden.ForeColor = System.Drawing.SystemColors.Control;
             this.txtNumOrden.Location = new System.Drawing.Point(211, 43);
             this.txtNumOrden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNumOrden.Name = "txtNumOrden";
@@ -427,32 +429,34 @@
             this.txtIdInstalacion.Size = new System.Drawing.Size(200, 22);
             this.txtIdInstalacion.TabIndex = 14;
             // 
-            // btnGuardar
+            // btnRegistrar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(254, 644);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(236, 36);
-            this.btnGuardar.TabIndex = 29;
-            this.btnGuardar.Text = "Registrar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Location = new System.Drawing.Point(239, 644);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(236, 36);
+            this.btnRegistrar.TabIndex = 29;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // OrdenesPedidoInstalacionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(1026, 703);
+            this.ClientSize = new System.Drawing.Size(960, 718);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnHistorial);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnRegistrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "OrdenesPedidoInstalacionForm";
             this.Text = "OrdenesPedidoInstalacionForm";
+            this.Load += new System.EventHandler(this.OrdenesPedidoInstalacionForm_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -502,6 +506,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtIdInstalacion;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnRegistrar;
     }
 }
