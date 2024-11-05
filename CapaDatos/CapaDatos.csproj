@@ -52,6 +52,7 @@
     <Compile Include="datPago.cs" />
     <Compile Include="datPedidoInstalacion.cs" />
     <Compile Include="datPersonal.cs" />
+    <Compile Include="datPlanificacionMantenimiento.cs" />
     <Compile Include="datProforma.cs" />
     <Compile Include="datRepuestos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

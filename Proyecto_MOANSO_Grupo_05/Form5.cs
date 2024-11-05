@@ -35,5 +35,10 @@ namespace Proyecto_MOANSO_Grupo_05
             AbrirPrueba(new DiagnosticoForm());
 
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba(new PlanificacionMantenimientoForm());
+        }
     }
 }

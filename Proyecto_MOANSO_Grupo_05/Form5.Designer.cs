@@ -48,6 +48,7 @@
             this.button9.TabIndex = 10;
             this.button9.Text = "Planificaciónes de Mantenimiento";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button4
             // 
@@ -69,7 +70,7 @@
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(284, 46);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(967, 650);
             this.panel1.TabIndex = 11;
@@ -84,7 +85,7 @@
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form5";
             this.Text = "Form5";
             this.ResumeLayout(false);

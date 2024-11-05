@@ -28,13 +28,16 @@ namespace CapaDatos
         {
             SqlCommand cmd = null;
             List<entPersonal> lista = new List<entPersonal>();
+            SqlConnection cn = null;
+
             try
             {
-                SqlConnection cn = Conexion.Instancia.Conectar();
+                cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_MOSTRAR_PERSONALTECNICO", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
+
                 while (dr.Read())
                 {
                     entPersonal personal = new entPersonal();
@@ -52,10 +55,15 @@ namespace CapaDatos
             }
             finally
             {
-                cmd.Connection.Close();
+                if (cn != null && cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
             }
+
             return lista;
         }
+
 
         // Método para insertar personal técnico
         public Boolean InsertarPersonal(entPersonal personal)

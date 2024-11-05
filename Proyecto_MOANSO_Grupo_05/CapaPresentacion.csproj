@@ -161,6 +161,12 @@
     <Compile Include="PersonalForm.Designer.cs">
       <DependentUpon>PersonalForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlanificacionMantenimientoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanificacionMantenimientoForm.Designer.cs">
+      <DependentUpon>PlanificacionMantenimientoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProformasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalForm.resx">
       <DependentUpon>PersonalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanificacionMantenimientoForm.resx">
+      <DependentUpon>PlanificacionMantenimientoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProformasForm.resx">
       <DependentUpon>ProformasForm.cs</DependentUpon>
