@@ -97,7 +97,14 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-
+                entPago pag = new entPago();
+                pag.contrato_id = labelCodigo.Text;
+                pag.monto = txtMonto.Text;
+                pag.fecha = fechaPicker.Value.Date;
+                pag.metodo_pago = cbPago.SelectedItem.ToString();
+                pag.nombre_cliente = cbCliente.SelectedItem.ToString();
+                pag.estado = "ACTIVO";
+                logPago.Instancia.InsertarPago(pag);
             }
             catch (Exception ex)
             {
@@ -135,7 +142,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
                         reader.Close();
 
-                        string consultaContrato = "SELECT fecha_inicio, tipo_plan FROM Contratos WHERE nombreCliente = @nombreCliente";
+                        string consultaContrato = "SELECT fecha_inicio, tipo_plan FROM Contratos WHERE cliente_nombre = @nombreCliente";
                         SqlCommand cmdContrato = new SqlCommand(consultaContrato, cn);
                         cmdContrato.Parameters.AddWithValue("@nombreCliente", clienteSeleccionado);
                         SqlDataReader readerContrato = cmdContrato.ExecuteReader();

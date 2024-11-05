@@ -88,7 +88,6 @@ namespace Proyecto_MOANSO_Grupo_05
                 entContrato.estado = "ACTIVO";
                 entContrato.clausula = txtDescripcionTrabajo.Text;
                 logContrato.Instancia.InsertaContrato(entContrato);
-
             }
             catch (Exception ex)
             {
