@@ -62,8 +62,7 @@
             this.txtNumOrden = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.btnAnular = new System.Windows.Forms.Button();
+            this.txtIdInstalacion = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -116,7 +115,7 @@
             // 
             // btnHistorial
             // 
-            this.btnHistorial.Location = new System.Drawing.Point(675, 644);
+            this.btnHistorial.Location = new System.Drawing.Point(533, 644);
             this.btnHistorial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(236, 36);
@@ -318,7 +317,7 @@
             this.groupBox1.Controls.Add(this.txtNumOrden);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtId);
+            this.groupBox1.Controls.Add(this.txtIdInstalacion);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(28, 23);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -420,32 +419,22 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "ID Instalaciòn:";
             // 
-            // txtId
+            // txtIdInstalacion
             // 
-            this.txtId.Location = new System.Drawing.Point(211, 92);
-            this.txtId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(200, 22);
-            this.txtId.TabIndex = 14;
-            // 
-            // btnAnular
-            // 
-            this.btnAnular.Location = new System.Drawing.Point(409, 644);
-            this.btnAnular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(235, 36);
-            this.btnAnular.TabIndex = 30;
-            this.btnAnular.Text = "Anular";
-            this.btnAnular.UseVisualStyleBackColor = true;
+            this.txtIdInstalacion.Location = new System.Drawing.Point(211, 92);
+            this.txtIdInstalacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdInstalacion.Name = "txtIdInstalacion";
+            this.txtIdInstalacion.Size = new System.Drawing.Size(200, 22);
+            this.txtIdInstalacion.TabIndex = 14;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(135, 644);
+            this.btnGuardar.Location = new System.Drawing.Point(254, 644);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(236, 36);
             this.btnGuardar.TabIndex = 29;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "Registrar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // OrdenesPedidoInstalacionForm
@@ -459,7 +448,6 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.btnGuardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -513,8 +501,7 @@
         private System.Windows.Forms.TextBox txtNumOrden;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Button btnAnular;
+        private System.Windows.Forms.TextBox txtIdInstalacion;
         private System.Windows.Forms.Button btnGuardar;
     }
 }

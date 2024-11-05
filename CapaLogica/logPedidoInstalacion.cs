@@ -18,6 +18,8 @@ namespace CapaLogica
             get { return logPedidoInstalacion._instancia; }
         }
 
+        public event Action PedidoInstalacionAgregado;
+
         // Método para listar pedidos de instalación
         public List<PedidoInstalacion.entPedidoInstalacion> ListarPedidosInstalacion()
         {
@@ -28,6 +30,7 @@ namespace CapaLogica
         public void InsertarPedidoInstalacion(PedidoInstalacion.entPedidoInstalacion pedido)
         {
             datPedidoInstalacion.Instancia.InsertarPedidoInstalacion(pedido);
+            PedidoInstalacionAgregado?.Invoke();
         }
 
         // Método para anular un pedido de instalación

@@ -46,6 +46,7 @@
             this.btnInhabilitar.TabIndex = 20;
             this.btnInhabilitar.Text = "Inhabilitar";
             this.btnInhabilitar.UseVisualStyleBackColor = true;
+            this.btnInhabilitar.Click += new System.EventHandler(this.btnInhabilitar_Click);
             // 
             // label2
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaLogica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace Proyecto_MOANSO_Grupo_05
         public PedidoInstalacionHistorialForm()
         {
             InitializeComponent();
+            ListarPedidosInstalacion();
+        }
+
+        public void ListarPedidosInstalacion()
+        {
+            dataGridOrPeInstalacion.DataSource = logPedidoInstalacion.Instancia.ListarPedidosInstalacion();
+        }
+
+        private void btnInhabilitar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
