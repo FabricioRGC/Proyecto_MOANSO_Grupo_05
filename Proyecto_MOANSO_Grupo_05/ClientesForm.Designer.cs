@@ -197,7 +197,7 @@
             // tablaClientes
             // 
             this.tablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaClientes.Location = new System.Drawing.Point(293, 95);
+            this.tablaClientes.Location = new System.Drawing.Point(293, 102);
             this.tablaClientes.Name = "tablaClientes";
             this.tablaClientes.Size = new System.Drawing.Size(628, 343);
             this.tablaClientes.TabIndex = 17;
