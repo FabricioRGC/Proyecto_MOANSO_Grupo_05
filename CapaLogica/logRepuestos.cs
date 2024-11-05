@@ -30,9 +30,9 @@ namespace CapaLogica
         }
 
         // Método para deshabilitar un repuesto
-        public void DeshabilitarRepuestos(Repuesto.entRepuesto repuesto)
+        public void DeshabilitarRepuestos(int idRepuesto)
         {
-            datRepuestos.Instancia.DeshabilitarRepuestos(repuesto);
+            datRepuestos.Instancia.DeshabilitarRepuestos(idRepuesto);
         }
     }
 }

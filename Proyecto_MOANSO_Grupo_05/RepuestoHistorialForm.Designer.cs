@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridRepuestos = new System.Windows.Forms.DataGridView();
+            this.txtBuscarRepuesto = new System.Windows.Forms.TextBox();
+            this.dataGridRepuestos2 = new System.Windows.Forms.DataGridView();
             this.btnAnular = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridRepuestos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRepuestos2)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -45,23 +45,24 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "Codigo de Repuesto:";
             // 
-            // textBox2
+            // txtBuscarRepuesto
             // 
-            this.textBox2.Location = new System.Drawing.Point(440, 25);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 12;
+            this.txtBuscarRepuesto.Location = new System.Drawing.Point(440, 25);
+            this.txtBuscarRepuesto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscarRepuesto.Name = "txtBuscarRepuesto";
+            this.txtBuscarRepuesto.Size = new System.Drawing.Size(132, 22);
+            this.txtBuscarRepuesto.TabIndex = 12;
+            this.txtBuscarRepuesto.TextChanged += new System.EventHandler(this.txtBuscarRepuesto_TextChanged);
             // 
-            // dataGridRepuestos
+            // dataGridRepuestos2
             // 
-            this.dataGridRepuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridRepuestos.Location = new System.Drawing.Point(21, 69);
-            this.dataGridRepuestos.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridRepuestos.Name = "dataGridRepuestos";
-            this.dataGridRepuestos.RowHeadersWidth = 57;
-            this.dataGridRepuestos.Size = new System.Drawing.Size(699, 465);
-            this.dataGridRepuestos.TabIndex = 9;
+            this.dataGridRepuestos2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridRepuestos2.Location = new System.Drawing.Point(21, 69);
+            this.dataGridRepuestos2.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridRepuestos2.Name = "dataGridRepuestos2";
+            this.dataGridRepuestos2.RowHeadersWidth = 57;
+            this.dataGridRepuestos2.Size = new System.Drawing.Size(699, 465);
+            this.dataGridRepuestos2.TabIndex = 9;
             // 
             // btnAnular
             // 
@@ -81,11 +82,11 @@
             this.ClientSize = new System.Drawing.Size(746, 560);
             this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dataGridRepuestos);
+            this.Controls.Add(this.txtBuscarRepuesto);
+            this.Controls.Add(this.dataGridRepuestos2);
             this.Name = "RepuestoHistorialForm";
             this.Text = "RepuestoHistorialForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridRepuestos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRepuestos2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,8 +94,8 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridView dataGridRepuestos;
+        private System.Windows.Forms.TextBox txtBuscarRepuesto;
+        private System.Windows.Forms.DataGridView dataGridRepuestos2;
         private System.Windows.Forms.Button btnAnular;
     }
 }

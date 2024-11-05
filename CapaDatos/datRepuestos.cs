@@ -100,7 +100,7 @@ namespace CapaDatos
 
 
         // Método para inhabilitar un repuesto
-        public void DeshabilitarRepuestos(Repuesto.entRepuesto repuesto)
+        public void DeshabilitarRepuestos(long idRepuesto)
         {
             SqlCommand cmd = null;
             try
@@ -108,21 +108,20 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_ANULAR_REPUESTOS", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
-                cmd.Parameters.AddWithValue("@idRepuesto", repuesto.id);
-                cmd.Parameters.AddWithValue("@estado", "Inactivo");
+                cmd.Parameters.AddWithValue("@id", idRepuesto); // Aquí usamos el id
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al inhabilitar el repuesto: " + ex.Message);
+                throw new Exception("Error al deshabilitar el repuesto: " + ex.Message);
             }
             finally
             {
                 cmd?.Connection.Close();
             }
         }
+
     }
 }
