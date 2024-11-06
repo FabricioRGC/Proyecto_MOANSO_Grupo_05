@@ -21,16 +21,32 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             InitializeComponent();
             cargarClientes();
+            cargarPlanes();
         }
-
-        //public void listarProforma()
-        //{
-        //    tablaProformas.DataSource = logProforma.Instancia.ListarProforma();
-        //}
 
         private void limpiarVariables()
         {
             txtPrecio.Text = "";
+        }
+
+        public void cargarPlanes()
+        {
+            string consulta = "SELECT PlanNombre FROM PlanesInternet";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cbPlan.Items.Add(reader["PlanNombre"].ToString());
+                }
+
+                reader.Close();
+
+            }
         }
 
         // ----- ACCIONES -----
@@ -105,6 +121,39 @@ namespace Proyecto_MOANSO_Grupo_05
                         estadoLabel.Text = reader["estado"].ToString();
                         dniLabel.Text = reader["dni"].ToString();
                     }
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void cbPlan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string planSeleccionado = cbPlan.SelectedItem.ToString();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "SELECT VelocidadMbps, LimiteDatosGB, PrecioMensualSoles, TipoServicio, Caracteristicas FROM PlanesInternet WHERE PlanNombre = @planNombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@planNombre", planSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        velocidadLabel.Text = reader["VelocidadMbps"].ToString();
+                        limiteLabel.Text = reader["LimiteDatosGB"].ToString();
+                        precioLabel.Text = reader["PrecioMensualSoles"].ToString();
+                        tipoLabel.Text = reader["TipoServicio"].ToString();
+                        caracteristicasLabel.Text = reader["Caracteristicas"].ToString();
+                    }
+
+                    reader.Close();
                 }
             }
             catch (Exception ex)
