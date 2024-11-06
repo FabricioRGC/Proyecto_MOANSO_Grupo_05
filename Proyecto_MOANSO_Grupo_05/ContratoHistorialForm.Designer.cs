@@ -44,6 +44,7 @@
             this.tablaContratos.Name = "tablaContratos";
             this.tablaContratos.Size = new System.Drawing.Size(536, 397);
             this.tablaContratos.TabIndex = 20;
+            this.tablaContratos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaContratos_CellContentClick);
             // 
             // label1
             // 
@@ -53,6 +54,7 @@
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 21;
             this.label1.Text = "Buscar:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtCliente
             // 
@@ -78,6 +80,7 @@
             this.txtCodigoCliente.Name = "txtCodigoCliente";
             this.txtCodigoCliente.Size = new System.Drawing.Size(105, 20);
             this.txtCodigoCliente.TabIndex = 24;
+            this.txtCodigoCliente.TextChanged += new System.EventHandler(this.txtCodigoCliente_TextChanged);
             // 
             // label2
             // 
@@ -102,6 +105,7 @@
             this.Controls.Add(this.tablaContratos);
             this.Name = "ContratoHistorialForm";
             this.Text = "ClientesHistorialForm";
+            this.Load += new System.EventHandler(this.ContratoHistorialForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tablaContratos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

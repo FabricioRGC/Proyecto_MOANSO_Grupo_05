@@ -20,40 +20,17 @@ namespace Proyecto_MOANSO_Grupo_05
         public ProformasForm()
         {
             InitializeComponent();
-            listarProforma();
-            cargarPlanes();
+            cargarClientes();
         }
 
-        public void listarProforma()
-        {
-            tablaProformas.DataSource = logProforma.Instancia.ListarProforma();
-        }
+        //public void listarProforma()
+        //{
+        //    tablaProformas.DataSource = logProforma.Instancia.ListarProforma();
+        //}
 
         private void limpiarVariables()
         {
-            txtCliente.Text = "";
-            cbPlan.SelectedIndex = -1;
             txtPrecio.Text = "";
-        }
-
-        private void cargarPlanes()
-        {
-            string consulta = "SELECT PlanNombre FROM PlanesInternet";
-
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
-            {
-                SqlCommand cmd = new SqlCommand(consulta, cn);
-                cn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    cbPlan.Items.Add(reader["PlanNombre"].ToString());
-                }
-
-                reader.Close();
-
-            }
         }
 
         // ----- ACCIONES -----
@@ -64,9 +41,7 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entProformaVenta pro = new entProformaVenta();
-                pro.cliente_id = txtCliente.Text.Trim();
                 pro.fecha_inicio = DateTime.Now.ToString("yyyy-MM-dd");
-                pro.tipo_plan = cbPlan.SelectedItem.ToString();
                 pro.precio = txtPrecio.Text.Trim();
                 logProforma.Instancia.InsertaProforma(pro);
             }
@@ -75,7 +50,6 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
             limpiarVariables();
-            listarProforma();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -83,31 +57,60 @@ namespace Proyecto_MOANSO_Grupo_05
 
         }
 
-        // Boton Inhabilitar
-        private void button3_Click(object sender, EventArgs e)
+        private void btnHistorial_Click(object sender, EventArgs e)
         {
+            Form historial = new ProformaHistorialForm();
+            historial.Show();
+        }
+
+        private void cargarClientes()
+        {
+            string consulta = "SELECT NOMBRE FROM CLIENTES";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cbCliente.Items.Add(reader["NOMBRE"].ToString());
+                }
+
+                reader.Close();
+
+            }
+        }
+
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string clienteSeleccionado = cbCliente.SelectedItem.ToString();
+
             try
             {
-                entProformaVenta pro = new entProformaVenta();
-                pro.cliente_id = txtCliente.Text.Trim();
-                logProforma.Instancia.DeshabilitarProforma(pro);
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "Select codigo, direccion, telefono, dni, estado from Clientes where nombre = @nombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
+                    while (reader.Read())
+                    {
+                        codigoLabel.Text = reader["codigo"].ToString();
+                        direccionLabel.Text = reader["direccion"].ToString();
+                        telefonoLabel.Text = reader["telefono"].ToString();
+                        estadoLabel.Text = reader["estado"].ToString();
+                        dniLabel.Text = reader["dni"].ToString();
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            limpiarVariables();
-            listarProforma();
-        }
-
-        // Filtrar por tipo de plan
-        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
-        {
-            string tipoPlan = txtBuscarPlan.Text;
-            var proformasFiltradas = logProforma.Instancia.ListarProforma().Where(proforma => proforma.tipo_plan.Contains(tipoPlan)).ToList();
-
-            tablaProformas.DataSource = proformasFiltradas;
         }
     }
 }

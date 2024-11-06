@@ -57,5 +57,25 @@ namespace Proyecto_MOANSO_Grupo_05
         {
 
         }
+
+        private void ContratoHistorialForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tablaContratos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtCodigoCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
