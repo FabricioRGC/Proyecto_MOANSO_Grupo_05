@@ -55,6 +55,7 @@
     <Compile Include="datPlanificacionMantenimiento.cs" />
     <Compile Include="datProforma.cs" />
     <Compile Include="datRepuestos.cs" />
+    <Compile Include="datZonaDeCobertura.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

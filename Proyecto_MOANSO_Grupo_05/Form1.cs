@@ -224,5 +224,10 @@ namespace Proyecto_MOANSO_Grupo_05
             // Cierra la aplicación
             Application.Exit();
         }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new ZonasDeCoberturaForm());
+        }
     }
 }

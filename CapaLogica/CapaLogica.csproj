@@ -53,6 +53,7 @@
     <Compile Include="logProforma.cs" />
     <Compile Include="logRepuestos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="logZonaDeCobertura.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
