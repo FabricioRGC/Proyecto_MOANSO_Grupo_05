@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    internal class ZonaDeCobertura
+    public class ZonaDeCobertura
     {
+        public class entZonas
+        {
+
+            public string Distrito { get; set; }
+            public string VelocidadDeCobertura { get; set; }
+            public string TipoZona { get; set; }
+            public int CodigoPostal { get; set; }
+            public string Tipo { get; set; }
+
+        }
+
     }
 }
