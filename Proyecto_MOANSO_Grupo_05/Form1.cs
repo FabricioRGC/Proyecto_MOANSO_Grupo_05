@@ -218,5 +218,11 @@ namespace Proyecto_MOANSO_Grupo_05
             AbrirPrueba2(new PlanificacionMantenimientoForm());
 
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            // Cierra la aplicación
+            Application.Exit();
+        }
     }
 }

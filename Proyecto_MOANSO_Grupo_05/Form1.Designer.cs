@@ -402,6 +402,7 @@
             this.button15.TabIndex = 44;
             this.button15.Text = "Salir";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // Form1
             // 

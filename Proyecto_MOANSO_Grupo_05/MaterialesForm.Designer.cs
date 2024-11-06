@@ -54,7 +54,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(523, 426);
+            this.button1.Location = new System.Drawing.Point(495, 382);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -177,7 +177,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(442, 426);
+            this.button3.Location = new System.Drawing.Point(259, 426);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 23;
@@ -190,7 +190,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(200, 432);
+            this.label2.Location = new System.Drawing.Point(25, 432);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 13);
             this.label2.TabIndex = 22;
@@ -198,14 +198,14 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(319, 429);
+            this.textBox2.Location = new System.Drawing.Point(144, 429);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 21;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(56, 429);
+            this.textBox1.Location = new System.Drawing.Point(66, 384);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 20;
@@ -215,7 +215,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(10, 436);
+            this.label3.Location = new System.Drawing.Point(20, 391);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 19;
@@ -226,12 +226,12 @@
             this.dataGriMateriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGriMateriales.Location = new System.Drawing.Point(12, 475);
             this.dataGriMateriales.Name = "dataGriMateriales";
-            this.dataGriMateriales.Size = new System.Drawing.Size(586, 378);
+            this.dataGriMateriales.Size = new System.Drawing.Size(640, 378);
             this.dataGriMateriales.TabIndex = 18;
             // 
             // buttonModi
             // 
-            this.buttonModi.Location = new System.Drawing.Point(484, 384);
+            this.buttonModi.Location = new System.Drawing.Point(495, 429);
             this.buttonModi.Name = "buttonModi";
             this.buttonModi.Size = new System.Drawing.Size(75, 23);
             this.buttonModi.TabIndex = 24;
@@ -244,7 +244,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(635, 865);
+            this.ClientSize = new System.Drawing.Size(734, 865);
             this.Controls.Add(this.buttonModi);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label2);
