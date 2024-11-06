@@ -53,5 +53,10 @@ namespace Proyecto_MOANSO_Grupo_05
             AbrirPrueba(new RepuestosForm());
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

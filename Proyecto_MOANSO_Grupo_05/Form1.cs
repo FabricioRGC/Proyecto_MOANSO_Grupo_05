@@ -30,7 +30,7 @@ namespace Proyecto_MOANSO_Grupo_05
            //fh.Show();
 
        }
-
+       
         public void AbrirPrueba2(object fromprues)
         {
             if (this.panel2.Controls.Count > 0)
@@ -138,6 +138,84 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new ClientesForm());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new ContratosForm());
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new PagosForm());
+
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new ProformasForm());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new OrdenDeTrabajocs());
+
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new OrdenesPedidoInstalacionForm());
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new OrdenPedidoMaterialForm());
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new OrdenPedidoRepuestoForm());
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new MaterialesForm());
+        }
+
+        private void button14_Click_1(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new PersonalForm());
+
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new RepuestosForm());
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new PlanificacionMantenimientoForm());
 
         }
     }

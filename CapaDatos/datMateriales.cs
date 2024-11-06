@@ -41,7 +41,8 @@ namespace CapaDatos
                     mat.descripcion = dr["descripcion"].ToString();
                     mat.stock = int.Parse(dr["stock"].ToString());
                     mat.estado = dr["estado"].ToString();
-                    mat.fechaInicio = Convert.ToDateTime(dr["fecha_Registro"]);
+                   // mat.fechaInicio = Convert.ToDateTime(dr["fecha_Registro"]);
+                    mat.Categoria = dr["categoria"].ToString();
                     lista.Add(mat);
                 }
             }
@@ -73,7 +74,8 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@descripcion", materiales.descripcion);
                 cmd.Parameters.AddWithValue("@stock", materiales.stock);
                 cmd.Parameters.AddWithValue("@estado", materiales.estado);
-                cmd.Parameters.AddWithValue("@fechaRegistro", materiales.fechaInicio);
+               // cmd.Parameters.AddWithValue("@fechaRegistro", materiales.fechaInicio);
+                cmd.Parameters.AddWithValue("@categoria", materiales.Categoria);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
@@ -107,9 +109,10 @@ namespace CapaDatos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@codigo", materiales.codigo);
                 cmd.Parameters.AddWithValue("@nombre", materiales.nombre);
-                cmd.Parameters.AddWithValue("@descripcion", materiales.descripcion);
+                //cmd.Parameters.AddWithValue("@descripcion", materiales.descripcion);
                 cmd.Parameters.AddWithValue("@stock", materiales.stock);
-                cmd.Parameters.AddWithValue("@estado", materiales.estado);
+                //cmd.Parameters.AddWithValue("@estado", materiales.estado);
+       
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
