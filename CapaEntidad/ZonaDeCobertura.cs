@@ -14,6 +14,8 @@ namespace CapaEntidad
             public string Distrito { get; set; }
             public string VelocidadDeCobertura { get; set; }
             public string TipoZona { get; set; }
+
+            public string Estado { get; set; }
             public int CodigoPostal { get; set; }
             public string Tipo { get; set; }
 
