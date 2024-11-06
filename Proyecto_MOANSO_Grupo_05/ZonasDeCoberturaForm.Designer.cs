@@ -35,13 +35,15 @@
             this.txtObservaciones = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbxTipoCobertura = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -123,6 +125,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Disponibilidad de Servicio:\n";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(113, 71);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(127, 22);
+            this.textBox3.TabIndex = 7;
+            // 
             // checkedListBox2
             // 
             this.checkedListBox2.BackColor = System.Drawing.Color.OliveDrab;
@@ -137,6 +147,16 @@
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(229, 34);
             this.checkedListBox2.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 74);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Código Postal";
             // 
             // dataGridView1
             // 
@@ -160,6 +180,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.cmbxTipoCobertura);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label3);
@@ -169,18 +191,27 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(345, 135);
+            this.groupBox1.Size = new System.Drawing.Size(345, 150);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Identificación de la Zona\n\n";
             // 
-            // textBox3
+            // label6
             // 
-            this.textBox3.Location = new System.Drawing.Point(113, 71);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(127, 22);
-            this.textBox3.TabIndex = 7;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 16);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Tipo";
+            // 
+            // cmbxTipoCobertura
+            // 
+            this.cmbxTipoCobertura.FormattingEnabled = true;
+            this.cmbxTipoCobertura.Location = new System.Drawing.Point(204, 111);
+            this.cmbxTipoCobertura.Name = "cmbxTipoCobertura";
+            this.cmbxTipoCobertura.Size = new System.Drawing.Size(127, 24);
+            this.cmbxTipoCobertura.TabIndex = 7;
             // 
             // label1
             // 
@@ -191,16 +222,6 @@
             this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Distrito";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 74);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Código Postal";
             // 
             // textBox2
             // 
@@ -254,7 +275,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ZonasDeCoberturaForm";
             this.Text = "ZonasDeCoberturaForm";
             this.groupBox3.ResumeLayout(false);
@@ -287,5 +308,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbxTipoCobertura;
     }
 }

@@ -15,6 +15,8 @@ namespace Proyecto_MOANSO_Grupo_05
         public ZonasDeCoberturaForm()
         {
             InitializeComponent();
+            cmbxTipoCobertura.Items.Add("Internet");
+            cmbxTipoCobertura.Items.Add("Cable");
         }
     }
 }
