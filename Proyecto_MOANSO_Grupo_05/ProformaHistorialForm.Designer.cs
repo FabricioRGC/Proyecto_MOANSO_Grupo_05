@@ -31,8 +31,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCodigoCliente = new System.Windows.Forms.TextBox();
             this.btnAnular = new System.Windows.Forms.Button();
-            this.tablaContratos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaContratos)).BeginInit();
+            this.tablaProformas = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaProformas)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -53,20 +53,21 @@
             // 
             // btnAnular
             // 
-            this.btnAnular.Location = new System.Drawing.Point(230, 7);
+            this.btnAnular.Location = new System.Drawing.Point(219, 6);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(75, 23);
             this.btnAnular.TabIndex = 29;
             this.btnAnular.Text = "Anular";
             this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
-            // tablaContratos
+            // tablaProformas
             // 
-            this.tablaContratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaContratos.Location = new System.Drawing.Point(12, 38);
-            this.tablaContratos.Name = "tablaContratos";
-            this.tablaContratos.Size = new System.Drawing.Size(521, 397);
-            this.tablaContratos.TabIndex = 26;
+            this.tablaProformas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaProformas.Location = new System.Drawing.Point(12, 38);
+            this.tablaProformas.Name = "tablaProformas";
+            this.tablaProformas.Size = new System.Drawing.Size(521, 397);
+            this.tablaProformas.TabIndex = 26;
             // 
             // ProformaHistorialForm
             // 
@@ -76,10 +77,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCodigoCliente);
             this.Controls.Add(this.btnAnular);
-            this.Controls.Add(this.tablaContratos);
+            this.Controls.Add(this.tablaProformas);
             this.Name = "ProformaHistorialForm";
             this.Text = "ProformaHistorialForm";
-            ((System.ComponentModel.ISupportInitialize)(this.tablaContratos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaProformas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,6 +91,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCodigoCliente;
         private System.Windows.Forms.Button btnAnular;
-        private System.Windows.Forms.DataGridView tablaContratos;
+        private System.Windows.Forms.DataGridView tablaProformas;
     }
 }

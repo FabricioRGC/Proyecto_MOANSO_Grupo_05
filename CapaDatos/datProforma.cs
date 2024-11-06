@@ -33,12 +33,13 @@ namespace CapaDatos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read()) {
+                while (dr.Read())
+                {
                     entProformaVenta pro = new entProformaVenta();
                     pro.cliente_id = dr["cliente_id"].ToString();
-                    pro.fecha_inicio = dr["fecha_inicio"].ToString();
+                    pro.fecha_inicio = Convert.ToDateTime(dr["fecha_inicio"]);
+                    pro.precio = Convert.ToInt32(dr["precio"]);
                     pro.tipo_plan = dr["tipo_plan"].ToString();
-                    pro.precio = dr["precio"].ToString();
                     pro.estado = dr["estado"].ToString();
                     lista.Add(pro);
                 }

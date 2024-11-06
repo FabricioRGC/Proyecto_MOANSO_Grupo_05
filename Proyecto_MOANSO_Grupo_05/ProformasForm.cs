@@ -26,7 +26,6 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void limpiarVariables()
         {
-            txtPrecio.Text = "";
         }
 
         public void cargarPlanes()
@@ -57,8 +56,12 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entProformaVenta pro = new entProformaVenta();
-                pro.fecha_inicio = DateTime.Now.ToString("yyyy-MM-dd");
-                pro.precio = txtPrecio.Text.Trim();
+                pro.cliente_id = codigoLabel.Text;
+                pro.fecha_inicio = DateTime.Now;
+                pro.tipo_plan = cbPlan.SelectedItem.ToString();
+                pro.precio = float.Parse(precioLabel.Text);
+                pro.estado = "ACTIVO";
+
                 logProforma.Instancia.InsertaProforma(pro);
             }
             catch (Exception ex)
