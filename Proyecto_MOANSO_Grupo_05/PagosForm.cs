@@ -186,6 +186,7 @@ namespace Proyecto_MOANSO_Grupo_05
             };
 
            string html = Properties.Resources.plantilla.ToString();
+            html = html.Replace("{nombre_cliente}", cbCliente.SelectedItem.ToString());
 
             if (guardar.ShowDialog() == DialogResult.OK)
             {
