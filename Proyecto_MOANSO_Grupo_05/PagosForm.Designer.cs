@@ -58,11 +58,11 @@
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.labelCodigoContrato = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.labelPlan = new System.Windows.Forms.Label();
             this.labelFechaContrato = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.labelCodigoContrato = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -401,6 +401,25 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles del Contrato:";
             // 
+            // labelCodigoContrato
+            // 
+            this.labelCodigoContrato.AutoSize = true;
+            this.labelCodigoContrato.ForeColor = System.Drawing.Color.White;
+            this.labelCodigoContrato.Location = new System.Drawing.Point(155, 68);
+            this.labelCodigoContrato.Name = "labelCodigoContrato";
+            this.labelCodigoContrato.Size = new System.Drawing.Size(0, 16);
+            this.labelCodigoContrato.TabIndex = 31;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(19, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(126, 16);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Código de Contrato:";
+            // 
             // labelPlan
             // 
             this.labelPlan.AutoSize = true;
@@ -428,25 +447,6 @@
             this.label4.Size = new System.Drawing.Size(87, 16);
             this.label4.TabIndex = 27;
             this.label4.Text = "Tipo de Plan:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(19, 68);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(126, 16);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Código de Contrato:";
-            // 
-            // labelCodigoContrato
-            // 
-            this.labelCodigoContrato.AutoSize = true;
-            this.labelCodigoContrato.ForeColor = System.Drawing.Color.White;
-            this.labelCodigoContrato.Location = new System.Drawing.Point(155, 68);
-            this.labelCodigoContrato.Name = "labelCodigoContrato";
-            this.labelCodigoContrato.Size = new System.Drawing.Size(0, 16);
-            this.labelCodigoContrato.TabIndex = 31;
             // 
             // PagosForm
             // 

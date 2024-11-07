@@ -61,12 +61,20 @@ namespace Proyecto_MOANSO_Grupo_05.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///  &lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        ///    &lt;title&gt;Document&lt;/title&gt;
+        ///  &lt;/head&gt;
+        ///  &lt;body&gt;&lt;/body&gt;
+        ///&lt;/html&gt;
+        ///.
         /// </summary>
-        internal static System.Drawing.Bitmap Captura_de_pantalla_2024_10_24_225715 {
+        internal static string plantilla {
             get {
-                object obj = ResourceManager.GetObject("Captura de pantalla 2024-10-24 225715", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("plantilla", resourceCulture);
             }
         }
     }

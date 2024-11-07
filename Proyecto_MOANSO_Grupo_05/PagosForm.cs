@@ -15,6 +15,12 @@ using CapaDatos;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.xml;
+using System.IO;
+using iTextSharp.tool.xml;
+
 
 namespace Proyecto_MOANSO_Grupo_05
 {
@@ -115,7 +121,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
 
             if (cbCliente.SelectedIndex != -1)
             {
@@ -164,13 +170,44 @@ namespace Proyecto_MOANSO_Grupo_05
                 }
             }
 
-            
+
         }
 
         // Boton para generar comprobante de pago
         private void btnImprimir_Click(object sender, EventArgs e)
         {
 
+            SaveFileDialog guardar = new SaveFileDialog
+            {
+                FileName = "COMPROBANTE_PAGO_" + DateTime.Now.ToString("yyyyMMdd") + "_" + cbCliente.SelectedItem.ToString(),
+                Filter = "PDF Files (*.pdf)|*.pdf",
+                DefaultExt = "pdf",        // Establece pdf como la extensión predeterminada
+                AddExtension = true        // Agrega automáticamente la extensión .pdf si el usuario no la incluye
+            };
+
+           string html = Properties.Resources.plantilla.ToString();
+
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream fs = new FileStream(guardar.FileName, FileMode.Create))
+                {
+                    Document pdf = new Document(PageSize.A4, 25, 25, 25, 25);
+
+                    PdfWriter writer = PdfWriter.GetInstance(pdf, fs);
+                    pdf.Open();
+                    pdf.Add(new Phrase(""));
+
+                    using (StringReader sr = new StringReader(html))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdf, sr);
+                    }
+
+
+                    pdf.Close();
+                    fs.Close();
+                }
+            }
+            
         }
 
         private void btnHistorial_Click(object sender, EventArgs e)
