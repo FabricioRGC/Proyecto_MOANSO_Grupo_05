@@ -105,6 +105,7 @@ namespace CapaDatos
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_EDITAR_Zona", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@VelocidadDeCobertura", zonas.VelocidadDeCobertura);
                 cmd.Parameters.AddWithValue("@TipoZona", zonas.TipoZona);
                 cmd.Parameters.AddWithValue("@CodigoPostal", zonas.CodigoPostal);
