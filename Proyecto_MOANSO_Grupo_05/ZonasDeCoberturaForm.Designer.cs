@@ -30,25 +30,25 @@
         {
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buscarTxt = new System.Windows.Forms.TextBox();
+            this.btnInhabilitarZon = new System.Windows.Forms.Button();
             this.txtObservaciones = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.comboBoxTipozon = new System.Windows.Forms.ComboBox();
+            this.textBoxPostal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAñadirZon = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxVelocidad = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbxTipoCobertura = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.textBoxDistritos = new System.Windows.Forms.TextBox();
+            this.btnModificarZon = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -57,7 +57,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(315, 394);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(132, 22);
             this.textBox5.TabIndex = 51;
@@ -73,24 +73,25 @@
             this.label5.TabIndex = 50;
             this.label5.Text = "Buscar";
             // 
-            // textBox4
+            // buscarTxt
             // 
-            this.textBox4.Location = new System.Drawing.Point(16, 394);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(132, 22);
-            this.textBox4.TabIndex = 49;
+            this.buscarTxt.Location = new System.Drawing.Point(16, 394);
+            this.buscarTxt.Margin = new System.Windows.Forms.Padding(4);
+            this.buscarTxt.Name = "buscarTxt";
+            this.buscarTxt.Size = new System.Drawing.Size(132, 22);
+            this.buscarTxt.TabIndex = 49;
+            this.buscarTxt.TextChanged += new System.EventHandler(this.buscarTxt_TextChanged);
             // 
-            // button2
+            // btnInhabilitarZon
             // 
-            this.button2.Location = new System.Drawing.Point(456, 391);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 48;
-            this.button2.Text = "Inhabilitar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnInhabilitarZon.Location = new System.Drawing.Point(456, 391);
+            this.btnInhabilitarZon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInhabilitarZon.Name = "btnInhabilitarZon";
+            this.btnInhabilitarZon.Size = new System.Drawing.Size(100, 28);
+            this.btnInhabilitarZon.TabIndex = 48;
+            this.btnInhabilitarZon.Text = "Inhabilitar";
+            this.btnInhabilitarZon.UseVisualStyleBackColor = true;
+            this.btnInhabilitarZon.Click += new System.EventHandler(this.btnInhabilitarZon_Click);
             // 
             // txtObservaciones
             // 
@@ -115,14 +116,14 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.comboBoxTipozon);
+            this.groupBox3.Controls.Add(this.textBoxPostal);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(393, 32);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(267, 142);
             this.groupBox3.TabIndex = 45;
             this.groupBox3.TabStop = false;
@@ -138,25 +139,26 @@
             this.label7.TabIndex = 55;
             this.label7.Text = "Tipo de zona";
             // 
-            // comboBox1
+            // comboBoxTipozon
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxTipozon.FormattingEnabled = true;
+            this.comboBoxTipozon.Items.AddRange(new object[] {
             "Total (Cubre toda la zona)",
             "Parcial (Especificar)"});
-            this.comboBox1.Location = new System.Drawing.Point(21, 50);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 54;
+            this.comboBoxTipozon.Location = new System.Drawing.Point(21, 50);
+            this.comboBoxTipozon.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxTipozon.Name = "comboBoxTipozon";
+            this.comboBoxTipozon.Size = new System.Drawing.Size(160, 24);
+            this.comboBoxTipozon.TabIndex = 54;
             // 
-            // textBox3
+            // textBoxPostal
             // 
-            this.textBox3.Location = new System.Drawing.Point(117, 89);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(127, 22);
-            this.textBox3.TabIndex = 7;
+            this.textBoxPostal.Location = new System.Drawing.Point(117, 89);
+            this.textBoxPostal.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPostal.Name = "textBoxPostal";
+            this.textBoxPostal.Size = new System.Drawing.Size(127, 22);
+            this.textBoxPostal.TabIndex = 7;
+            this.textBoxPostal.TextChanged += new System.EventHandler(this.textBoxPostal_TextChanged);
             // 
             // label2
             // 
@@ -172,49 +174,49 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(11, 442);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(649, 303);
             this.dataGridView1.TabIndex = 44;
             // 
-            // button1
+            // btnAñadirZon
             // 
-            this.button1.Location = new System.Drawing.Point(565, 390);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 26);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "Añadir";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAñadirZon.Location = new System.Drawing.Point(565, 390);
+            this.btnAñadirZon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAñadirZon.Name = "btnAñadirZon";
+            this.btnAñadirZon.Size = new System.Drawing.Size(100, 26);
+            this.btnAñadirZon.TabIndex = 43;
+            this.btnAñadirZon.Text = "Añadir";
+            this.btnAñadirZon.UseVisualStyleBackColor = true;
+            this.btnAñadirZon.Click += new System.EventHandler(this.btnAñadirZon_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.comboBoxVelocidad);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmbxTipoCobertura);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBoxDistritos);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(16, 23);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(345, 150);
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Identificación de la Zona\n\n";
             // 
-            // comboBox2
+            // comboBoxVelocidad
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(203, 73);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(128, 24);
-            this.comboBox2.TabIndex = 9;
+            this.comboBoxVelocidad.FormattingEnabled = true;
+            this.comboBoxVelocidad.Location = new System.Drawing.Point(203, 73);
+            this.comboBoxVelocidad.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxVelocidad.Name = "comboBoxVelocidad";
+            this.comboBoxVelocidad.Size = new System.Drawing.Size(128, 24);
+            this.comboBoxVelocidad.TabIndex = 9;
             // 
             // label6
             // 
@@ -255,23 +257,24 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Velocidad de la cobertura";
             // 
-            // textBox1
+            // textBoxDistritos
             // 
-            this.textBox1.Location = new System.Drawing.Point(204, 27);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 22);
-            this.textBox1.TabIndex = 5;
+            this.textBoxDistritos.Location = new System.Drawing.Point(204, 27);
+            this.textBoxDistritos.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxDistritos.Name = "textBoxDistritos";
+            this.textBoxDistritos.Size = new System.Drawing.Size(127, 22);
+            this.textBoxDistritos.TabIndex = 5;
             // 
-            // button3
+            // btnModificarZon
             // 
-            this.button3.Location = new System.Drawing.Point(165, 391);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 28);
-            this.button3.TabIndex = 53;
-            this.button3.Text = "Modificar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnModificarZon.Location = new System.Drawing.Point(165, 391);
+            this.btnModificarZon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarZon.Name = "btnModificarZon";
+            this.btnModificarZon.Size = new System.Drawing.Size(75, 28);
+            this.btnModificarZon.TabIndex = 53;
+            this.btnModificarZon.Text = "ModificarZon";
+            this.btnModificarZon.UseVisualStyleBackColor = true;
+            this.btnModificarZon.Click += new System.EventHandler(this.btnModificarZon_Click);
             // 
             // ZonasDeCoberturaForm
             // 
@@ -279,18 +282,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
             this.ClientSize = new System.Drawing.Size(679, 793);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnModificarZon);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buscarTxt);
+            this.Controls.Add(this.btnInhabilitarZon);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.btnAñadirZon);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ZonasDeCoberturaForm";
             this.Text = "ZonasDeCoberturaForm";
             this.groupBox3.ResumeLayout(false);
@@ -307,24 +310,24 @@
 
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox buscarTxt;
+        private System.Windows.Forms.Button btnInhabilitarZon;
         private System.Windows.Forms.RichTextBox txtObservaciones;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAñadirZon;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxPostal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBoxDistritos;
+        private System.Windows.Forms.Button btnModificarZon;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbxTipoCobertura;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxTipozon;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxVelocidad;
     }
 }
