@@ -40,6 +40,5 @@ namespace CapaLogica
             datZonaDeCobertura.Instancia.DeshabilitarZona(zon);
         }
 
-
     }
 }

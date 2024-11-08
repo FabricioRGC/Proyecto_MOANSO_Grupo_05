@@ -20,16 +20,16 @@ namespace CapaDatos
             get { return datZonaDeCobertura._instancia; }
         }
 
-        // Metodo para listar los clientes
+        // Metodo para listar los Zonas
         public List<entZonas> ListarZona()
         {
-            
+
             SqlCommand cmd = null;
             List<entZonas> lista = new List<entZonas>();
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                
+
                 cmd = new SqlCommand("SP_MOSTRAR_Zona", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
@@ -41,9 +41,8 @@ namespace CapaDatos
                     zon.VelocidadDeCobertura = dr["VelocidadDeCobertura"].ToString();
                     zon.TipoZona = dr["TipoZona"].ToString();
                     zon.CodigoPostal = int.Parse(dr["CodigoPostal"].ToString());
-                    zon.Tipo = dr["Tipo "].ToString();
+                    zon.Tipo = dr["Tipo"].ToString();
                     zon.Estado = dr["Estado"].ToString();
-                    // mat.fechaInicio = Convert.ToDateTime(dr["fecha_Registro"]);
                     lista.Add(zon);
                 }
             }
@@ -106,7 +105,6 @@ namespace CapaDatos
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_EDITAR_Zona", cn);
-                cmd.Parameters.AddWithValue("@Distrito", zonas.Distrito);
                 cmd.Parameters.AddWithValue("@VelocidadDeCobertura", zonas.VelocidadDeCobertura);
                 cmd.Parameters.AddWithValue("@TipoZona", zonas.TipoZona);
                 cmd.Parameters.AddWithValue("@CodigoPostal", zonas.CodigoPostal);
@@ -140,7 +138,7 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_DESHABILITAR_Zona", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Estado", zon.Estado);
+                cmd.Parameters.AddWithValue("@CodigoPostal", zon.CodigoPostal);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
