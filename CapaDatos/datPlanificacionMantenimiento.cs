@@ -31,11 +31,9 @@ namespace CapaDatos
                 {
                     entPlanificacionMantenimiento planificacion = new entPlanificacionMantenimiento();
                     planificacion.Id = Convert.ToInt32(dr["id"]);
-                    planificacion.Tipo = dr["tipo"].ToString();
                     planificacion.Fecha = Convert.ToDateTime(dr["fecha"]);
-                    planificacion.Recursos_Asignados = dr["recursos_asignados"].ToString();
                     planificacion.Estado = dr["estado"].ToString();
-                    planificacion.NombrePersonal = dr["NombrePersonal"].ToString();
+                    planificacion.NombreCliente = dr["NombreCliente"].ToString();
                     lista.Add(planificacion);
                 }
             }
@@ -67,10 +65,8 @@ namespace CapaDatos
 
                 // Añadir los parámetros con sus valores, utilizando las propiedades correctas
                 cmd.Parameters.AddWithValue("@Fecha", planificacion.Fecha);
-                cmd.Parameters.AddWithValue("@Tipo", planificacion.Tipo);
-                cmd.Parameters.AddWithValue("@Recursos_Asignados", planificacion.Recursos_Asignados);
                 cmd.Parameters.AddWithValue("@Estado", "planificado"); // Estado por defecto al añadir
-                cmd.Parameters.AddWithValue("@NombrePersonal", planificacion.NombrePersonal);
+                cmd.Parameters.AddWithValue("@NombreCliente", planificacion.NombreCliente);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
