@@ -59,7 +59,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
             LimpiarVariables();
-            //  listarMateriales();
+            listarMateriales();
         }
         //Modificar
         private void button2_Click(object sender, EventArgs e)
