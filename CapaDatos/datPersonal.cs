@@ -46,6 +46,8 @@ namespace CapaDatos
                     personal.dni = dr["dni"].ToString();
                     personal.telefono = dr["telefono"].ToString();
                     personal.disponibilidad = dr["disponibilidad"].ToString();
+                    personal.tipo_encargado = dr["tipo_encargado"].ToString(); 
+                    personal.area_trabajo = dr["area_trabajo"].ToString();
                     lista.Add(personal);
                 }
             }
@@ -81,7 +83,8 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@dni", personal.dni);
                 cmd.Parameters.AddWithValue("@telefono", personal.telefono);
                 cmd.Parameters.AddWithValue("@disponibilidad", personal.disponibilidad);
-
+                cmd.Parameters.AddWithValue("@tipo_encargado", personal.tipo_encargado);
+                cmd.Parameters.AddWithValue("@area_trabajo", personal.area_trabajo);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();

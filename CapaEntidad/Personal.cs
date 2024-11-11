@@ -17,7 +17,8 @@ namespace CapaEntidad
             public string dni { get; set; }
             public string telefono { get; set; }
             public string disponibilidad { get; set; }
-
+            public string tipo_encargado { get; set; } // Nuevo campo
+            public string area_trabajo { get; set; } // Nuevo campo
         }
     }
 

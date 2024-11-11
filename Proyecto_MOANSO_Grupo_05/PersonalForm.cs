@@ -51,6 +51,8 @@ namespace Proyecto_MOANSO_Grupo_05
                 personal.dni = txtDNI.Text.Trim();
                 personal.telefono = txtTelefono.Text.Trim();
                 personal.disponibilidad = cbEstado.Text.Trim();
+                personal.tipo_encargado = cbTipoEncargado.SelectedItem.ToString();
+                personal.area_trabajo = cbAreaTrabajo.SelectedItem.ToString();
 
 
                 logPersonal.Instancia.InsertarPersonal(personal);
