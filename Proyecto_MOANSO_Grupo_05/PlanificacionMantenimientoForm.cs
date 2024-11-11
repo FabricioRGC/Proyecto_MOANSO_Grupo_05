@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static CapaEntidad.Cliente;
 using static CapaEntidad.Personal;
 
 namespace Proyecto_MOANSO_Grupo_05
@@ -31,12 +32,13 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-                List<entPersonal> personalList = logPersonal.Instancia.listarPersonal();
-                cbPersonal.Items.Clear(); // Asegúrate de limpiar antes de cargar nuevos datos
+                // Supongamos que tienes una capa lógica llamada logCliente con el método listarClientes()
+                List<entCliente> clienteList = logCliente.Instancia.ListarCliente();
+                cbPersonal.Items.Clear(); // Limpia el ComboBox antes de cargar nuevos datos
 
-                foreach (var personal in personalList)
+                foreach (var cliente in clienteList)
                 {
-                    cbPersonal.Items.Add(personal.nombre); // Añade solo el nombre al ComboBox
+                    cbPersonal.Items.Add(cliente.nombre); // Añade solo el nombre del cliente al ComboBox
                 }
 
                 if (cbPersonal.Items.Count > 0)
@@ -46,7 +48,7 @@ namespace Proyecto_MOANSO_Grupo_05
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar el personal técnico: " + ex.Message);
+                MessageBox.Show("Error al cargar los datos del cliente: " + ex.Message);
             }
         }
         private void CargarPlanificaciones()
@@ -68,26 +70,22 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(txtTipo.Text) || string.IsNullOrWhiteSpace(txtRecursos.Text))
+                if (string.IsNullOrWhiteSpace(cbPersonal.Text))
                 {
-                    MessageBox.Show("Por favor, completa todos los campos antes de añadir una planificación.");
+                    MessageBox.Show("Por favor, selecciona un cliente antes de añadir una planificación.");
                     return;
                 }
 
                 entPlanificacionMantenimiento nuevaPlanificacion = new entPlanificacionMantenimiento
                 {
-                    Tipo = txtTipo.Text.Trim(),
                     Fecha = datePickerFecha.Value,
-                    Recursos_Asignados = txtRecursos.Text.Trim(),
                     Estado = "Planificado",
-                    NombrePersonal = cbPersonal.Text // Captura el nombre seleccionado del ComboBox
+                    NombreCliente = cbPersonal.Text // Captura el nombre seleccionado del ComboBox
                 };
 
                 logPlanificacionMantenimiento.Instancia.InsertarPlanificacion(nuevaPlanificacion);
 
                 MessageBox.Show("La planificación de mantenimiento ha sido añadida con éxito.");
-                txtTipo.Clear();
-                txtRecursos.Clear();
                 datePickerFecha.Value = DateTime.Now;
                 CargarPlanificaciones();
             }
@@ -121,7 +119,7 @@ namespace Proyecto_MOANSO_Grupo_05
         }
         private void CargarPersonal()
         {
-            cbPersonal.DataSource = logPersonal.Instancia.listarPersonal();
+            cbPersonal.DataSource = logCliente.Instancia.ListarCliente();
             cbPersonal.DisplayMember = "nombre"; // Campo que se muestra en el ComboBox
             cbPersonal.ValueMember = "nombre"; // Este podría ser "Id" si usas el ID como valor
         }
