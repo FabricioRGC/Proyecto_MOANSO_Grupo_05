@@ -36,7 +36,6 @@ namespace CapaDatos
                 while (dr.Read())
                 {
                     entCliente cli = new entCliente();
-                    cli.codigo = dr["codigo"].ToString();
                     cli.nombre = dr["nombre"].ToString();
                     cli.direccion = dr["direccion"].ToString();
                     cli.telefono = dr["telefono"].ToString();
@@ -68,7 +67,6 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_AÑADIR_CLIENTE", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@codigo", cliente.codigo);
                 cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
                 cmd.Parameters.AddWithValue("@direccion", cliente.direccion);
                 cmd.Parameters.AddWithValue("@telefono", cliente.telefono);
@@ -103,7 +101,6 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_EDITAR_CLIENTE", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@codigo", cliente.codigo);
                 cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
                 cmd.Parameters.AddWithValue("@direccion", cliente.direccion);
                 cmd.Parameters.AddWithValue("@telefono", cliente.telefono);
@@ -136,11 +133,12 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_DESHABILITAR_CLIENTE", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@codigoCliente", cli.codigo);
+                cmd.Parameters.AddWithValue("@codigoCliente", cli.dni);
+
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
-                if(i > 0)
+                if (i > 0)
                 {
                     deshabilito = true;
                 }

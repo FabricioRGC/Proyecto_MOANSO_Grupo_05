@@ -29,7 +29,6 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void LimpiarVariables()
         {
-            txtCodigo.Text = "";
             txtNombre.Text = "";
             txtDireccion.Text = "";
             txtTelefono.Text = "";
@@ -44,7 +43,6 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entCliente cli = new entCliente();
-                cli.codigo = txtCodigo.Text.Trim();
                 cli.nombre = txtNombre.Text.Trim();
                 cli.direccion = txtDireccion.Text.Trim();
                 cli.telefono = txtTelefono.Text.Trim();
@@ -81,7 +79,6 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entCliente cli = new entCliente();
-                cli.codigo = txtCodigo.Text.Trim();
                 cli.nombre = txtNombre.Text.Trim();
                 cli.direccion = txtDireccion.Text.Trim();
                 cli.telefono = txtTelefono.Text.Trim();
@@ -102,7 +99,7 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entCliente cli = new entCliente();
-                cli.codigo = txtCodigo.Text.Trim();
+                cli.dni = txtDni.Text.Trim();
                 logCliente.Instancia.DeshabilitarCliente(cli);
             }
             catch (Exception ex)
@@ -130,11 +127,10 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             DataGridViewRow fila = tablaClientes.Rows[e.RowIndex];
 
-            txtCodigo.Text = Convert.ToString(fila.Cells[0].Value);
-            txtNombre.Text = Convert.ToString(fila.Cells[1].Value);
-            txtDireccion.Text = Convert.ToString(fila.Cells[2].Value);
-            txtTelefono.Text = Convert.ToString(fila.Cells[3].Value);
-            txtDni.Text = Convert.ToString(fila.Cells[5].Value);
+            txtNombre.Text = Convert.ToString(fila.Cells[0].Value);
+            txtDireccion.Text = Convert.ToString(fila.Cells[1].Value);
+            txtTelefono.Text = Convert.ToString(fila.Cells[2].Value);
+            txtDni.Text = Convert.ToString(fila.Cells[4].Value);
         }
     }
 }
