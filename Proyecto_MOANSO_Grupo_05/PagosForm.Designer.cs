@@ -179,7 +179,7 @@
             // cbCliente
             // 
             this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(82, 30);
+            this.cbCliente.Location = new System.Drawing.Point(22, 60);
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(121, 24);
             this.cbCliente.TabIndex = 43;
@@ -261,9 +261,8 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(21, 78);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 16);
+            this.label10.Size = new System.Drawing.Size(0, 16);
             this.label10.TabIndex = 43;
-            this.label10.Text = "Codigo:";
             // 
             // label5
             // 

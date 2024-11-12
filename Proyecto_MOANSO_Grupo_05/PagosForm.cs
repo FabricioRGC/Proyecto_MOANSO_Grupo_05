@@ -40,7 +40,6 @@ namespace Proyecto_MOANSO_Grupo_05
             labelTelefono.Text = "";
             labelEstado.Text = "";
             labelDni.Text = "";
-            labelCodigo.Text = "";
             labelPlan.Text = "";
             labelFechaContrato.Text = "";
         }
@@ -131,7 +130,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 {
                     using (SqlConnection cn = Conexion.Instancia.Conectar())
                     {
-                        string consulta = "SELECT codigo, direccion, telefono, dni, estado FROM Clientes WHERE nombre = @nombre";
+                        string consulta = "SELECT direccion, telefono, dni, estado FROM Clientes WHERE nombre = @nombre";
                         SqlCommand cmd = new SqlCommand(consulta, cn);
                         cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
                         cn.Open();
@@ -139,7 +138,6 @@ namespace Proyecto_MOANSO_Grupo_05
 
                         while (reader.Read())
                         {
-                            labelCodigo.Text = reader["codigo"].ToString();
                             labelDireccion.Text = reader["direccion"].ToString();
                             labelTelefono.Text = reader["telefono"].ToString();
                             labelEstado.Text = reader["estado"].ToString();
@@ -181,8 +179,8 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 FileName = "COMPROBANTE_PAGO_" + DateTime.Now.ToString("yyyyMMdd") + "_" + cbCliente.SelectedItem.ToString(),
                 Filter = "PDF Files (*.pdf)|*.pdf",
-                DefaultExt = "pdf",        // Establece pdf como la extensión predeterminada
-                AddExtension = true        // Agrega automáticamente la extensión .pdf si el usuario no la incluye
+                DefaultExt = "pdf",        
+                AddExtension = true        
             };
 
            string html = Properties.Resources.plantilla.ToString();
@@ -192,6 +190,19 @@ namespace Proyecto_MOANSO_Grupo_05
             html = html.Replace("@codigocliente", labelCodigo.Text);
             html = html.Replace("@direccioncliente", labelDireccion.Text);
             html = html.Replace("@telefonocliente", labelTelefono.Text);
+            html = html.Replace("@contratoid", labelCodigoContrato.Text);
+            double monto;
+            if (double.TryParse(txtMonto.Text, out monto))
+            {
+                html = html.Replace("@igv", (monto * 0.18).ToString());
+            }
+            else
+            {
+                MessageBox.Show("Error: Monto no válido");
+            }
+            html = html.Replace("@tipoplan", labelPlan.Text);
+            html = html.Replace("@pago", txtMonto.Text);
+            html = html.Replace("@TOTAL", (monto + (monto * 0.18)).ToString());
 
             if (guardar.ShowDialog() == DialogResult.OK)
             {
@@ -202,6 +213,12 @@ namespace Proyecto_MOANSO_Grupo_05
                     PdfWriter writer = PdfWriter.GetInstance(pdf, fs);
                     pdf.Open();
                     pdf.Add(new Phrase(""));
+
+                    iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(Properties.Resources.LUNNYS_PNG, System.Drawing.Imaging.ImageFormat.Png);
+                    logo.ScaleToFit(120, 100);
+                    logo.Alignment = iTextSharp.text.Image.UNDERLYING;
+                    logo.SetAbsolutePosition(pdf.LeftMargin, pdf.Top - 80);
+                    pdf.Add(logo);
 
                     using (StringReader sr = new StringReader(html))
                     {
@@ -215,6 +232,8 @@ namespace Proyecto_MOANSO_Grupo_05
             }
             
         }
+
+        // 18% igv
 
         private void btnHistorial_Click(object sender, EventArgs e)
         {

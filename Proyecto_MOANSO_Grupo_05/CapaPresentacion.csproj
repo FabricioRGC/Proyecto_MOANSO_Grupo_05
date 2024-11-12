@@ -351,5 +351,8 @@
   <ItemGroup>
     <None Include="Resources\plantilla.html" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LUNNYS_PNG.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
