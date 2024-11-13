@@ -19,9 +19,9 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             InitializeComponent();
             ListarZona();
-            comboBoxVelocidad.Items.Add("5G");
-            comboBoxVelocidad.Items.Add("4G");
-            comboBoxVelocidad.Items.Add("3G");
+            comboBoxVelocidad.Items.Add("Fibra óptica");
+            comboBoxVelocidad.Items.Add("Conexión inalámbrica");
+            comboBoxVelocidad.Items.Add("Conexión utp");
             cmbxTipoCobertura.Items.Add("Internet");
             cmbxTipoCobertura.Items.Add("Cable");
             cmbxTipoCobertura.Items.Add("TODO");

@@ -253,9 +253,9 @@
             this.label3.Location = new System.Drawing.Point(24, 76);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 16);
+            this.label3.Size = new System.Drawing.Size(92, 16);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Velocidad de la cobertura";
+            this.label3.Text = "Tipo conexión";
             // 
             // textBoxDistritos
             // 
