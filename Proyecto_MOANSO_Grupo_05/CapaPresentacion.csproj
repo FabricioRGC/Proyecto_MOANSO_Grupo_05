@@ -205,12 +205,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepuestoHistorialForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RepuestoHistorialForm.Designer.cs">
-      <DependentUpon>RepuestoHistorialForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="RepuestosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,9 +302,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RepuestoHistorialForm.resx">
-      <DependentUpon>RepuestoHistorialForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RepuestosForm.resx">
       <DependentUpon>RepuestosForm.cs</DependentUpon>
     </EmbeddedResource>

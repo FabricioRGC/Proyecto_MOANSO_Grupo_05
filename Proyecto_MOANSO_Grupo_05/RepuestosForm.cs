@@ -20,6 +20,12 @@ namespace Proyecto_MOANSO_Grupo_05
         public RepuestosForm()
         {
             InitializeComponent();
+            listarRepuestos();
+        }
+
+        public void listarRepuestos()
+        {
+            dataGridRepuestos2.DataSource = logRepuestos.Instancia.ListarRepuestos();
         }
 
         private void LimpiarVariables()
@@ -36,8 +42,9 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-                // Crear un nuevo repuesto
-                if (long.TryParse(txtCodigoRepuesto.Text, out long codigo_repuesto) &&
+                string codigo_repuesto = txtCodigoRepuesto.Text;
+
+                if (!string.IsNullOrEmpty(codigo_repuesto) &&
                     !string.IsNullOrEmpty(txtDescripción.Text) &&
                     !string.IsNullOrEmpty(txtNombreRepuesto.Text) &&
                     int.TryParse(txtStockR.Text, out int stock))
@@ -56,6 +63,7 @@ namespace Proyecto_MOANSO_Grupo_05
                     // Registrar el repuesto
                     logRepuestos.Instancia.InsertarRepuesto(repuesto);
                     MessageBox.Show("Repuesto añadido exitosamente.");
+                    listarRepuestos();
                     LimpiarVariables();
                 }
                 else
@@ -69,10 +77,45 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
-        private void btnHistorial_Click_1(object sender, EventArgs e)
+        private void btnAnular_Click(object sender, EventArgs e)
         {
-            Form historial = new RepuestoHistorialForm();
-            historial.Show();
+            try
+            {
+                if (dataGridRepuestos2.CurrentRow != null)
+                {
+                    var repuestoSeleccionado = (Repuesto.entRepuesto)dataGridRepuestos2.CurrentRow.DataBoundItem;
+                    long idRepuesto = repuestoSeleccionado.id;
+
+                    // Confirmación antes de anular
+                    var confirmResult = MessageBox.Show("¿Está seguro de que desea anular este repuesto?",
+                                                         "Confirmar Anulación",
+                                                         MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        // Cambiado a pasar solo el ID del repuesto
+                        datRepuestos.Instancia.DeshabilitarRepuestos(idRepuesto);
+                        MessageBox.Show("Repuesto anulado exitosamente.");
+                        listarRepuestos();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un repuesto para anular.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
+
+        private void txtBuscarRepuesto_TextChanged(object sender, EventArgs e)
+        {
+            string textoBusqueda = txtBuscarRepuesto.Text.Trim();
+            List<Repuesto.entRepuesto> listaRepuestos = logRepuestos.Instancia.ListarRepuestos();
+            var listaFiltrada = listaRepuestos.Where(r => r.codigo.Contains(textoBusqueda)).ToList();
+            dataGridRepuestos2.DataSource = listaFiltrada;
+        }
+
     }
 }

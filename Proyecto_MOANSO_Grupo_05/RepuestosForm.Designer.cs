@@ -41,13 +41,20 @@
             this.dtpRepuestos = new System.Windows.Forms.DateTimePicker();
             this.txtCodigoRepuesto = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnHistorial = new System.Windows.Forms.Button();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBuscarRepuesto = new System.Windows.Forms.TextBox();
+            this.Datos = new System.Windows.Forms.GroupBox();
+            this.dataGridRepuestos2 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            this.Datos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRepuestos2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrarRepuesto
             // 
-            this.btnRegistrarRepuesto.Location = new System.Drawing.Point(441, 468);
+            this.btnRegistrarRepuesto.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnRegistrarRepuesto.Location = new System.Drawing.Point(568, 394);
             this.btnRegistrarRepuesto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrarRepuesto.Name = "btnRegistrarRepuesto";
             this.btnRegistrarRepuesto.Size = new System.Drawing.Size(148, 31);
@@ -77,6 +84,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(39, 135);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
@@ -87,6 +95,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(33, 48);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
@@ -97,6 +106,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(31, 231);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
@@ -107,6 +117,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(39, 181);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
@@ -133,10 +144,10 @@
             // 
             // txtDescripción
             // 
-            this.txtDescripción.Location = new System.Drawing.Point(29, 268);
+            this.txtDescripción.Location = new System.Drawing.Point(29, 261);
             this.txtDescripción.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripción.Name = "txtDescripción";
-            this.txtDescripción.Size = new System.Drawing.Size(687, 138);
+            this.txtDescripción.Size = new System.Drawing.Size(687, 125);
             this.txtDescripción.TabIndex = 12;
             this.txtDescripción.Text = "";
             // 
@@ -160,6 +171,7 @@
             // 
             this.groupBox1.Controls.Add(this.txtCodigoRepuesto);
             this.groupBox1.Controls.Add(this.dtpRepuestos);
+            this.groupBox1.Controls.Add(this.btnRegistrarRepuesto);
             this.groupBox1.Controls.Add(this.txtDescripción);
             this.groupBox1.Controls.Add(this.txtStockR);
             this.groupBox1.Controls.Add(this.label10);
@@ -169,7 +181,7 @@
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txtNombreRepuesto);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
@@ -179,32 +191,79 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de los materiales";
             // 
-            // btnHistorial
+            // btnAnular
             // 
-            this.btnHistorial.Location = new System.Drawing.Point(606, 468);
-            this.btnHistorial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnHistorial.Name = "btnHistorial";
-            this.btnHistorial.Size = new System.Drawing.Size(148, 31);
-            this.btnHistorial.TabIndex = 39;
-            this.btnHistorial.Text = "Ver Historial";
-            this.btnHistorial.UseVisualStyleBackColor = true;
-            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click_1);
+            this.btnAnular.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnAnular.Location = new System.Drawing.Point(567, 33);
+            this.btnAnular.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(148, 31);
+            this.btnAnular.TabIndex = 42;
+            this.btnAnular.Text = "Anular";
+            this.btnAnular.UseVisualStyleBackColor = true;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(20, 34);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 16);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Buscar Por Codigo:";
+            // 
+            // txtBuscarRepuesto
+            // 
+            this.txtBuscarRepuesto.Location = new System.Drawing.Point(151, 33);
+            this.txtBuscarRepuesto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscarRepuesto.Name = "txtBuscarRepuesto";
+            this.txtBuscarRepuesto.Size = new System.Drawing.Size(164, 22);
+            this.txtBuscarRepuesto.TabIndex = 40;
+            this.txtBuscarRepuesto.TextChanged += new System.EventHandler(this.txtBuscarRepuesto_TextChanged);
+            // 
+            // Datos
+            // 
+            this.Datos.Controls.Add(this.dataGridRepuestos2);
+            this.Datos.Controls.Add(this.btnAnular);
+            this.Datos.Controls.Add(this.label2);
+            this.Datos.Controls.Add(this.txtBuscarRepuesto);
+            this.Datos.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.Datos.Location = new System.Drawing.Point(13, 455);
+            this.Datos.Name = "Datos";
+            this.Datos.Size = new System.Drawing.Size(741, 279);
+            this.Datos.TabIndex = 43;
+            this.Datos.TabStop = false;
+            this.Datos.Text = "Detalle Datos";
+            // 
+            // dataGridRepuestos2
+            // 
+            this.dataGridRepuestos2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridRepuestos2.Location = new System.Drawing.Point(23, 74);
+            this.dataGridRepuestos2.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridRepuestos2.Name = "dataGridRepuestos2";
+            this.dataGridRepuestos2.RowHeadersWidth = 57;
+            this.dataGridRepuestos2.Size = new System.Drawing.Size(692, 187);
+            this.dataGridRepuestos2.TabIndex = 37;
             // 
             // RepuestosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(770, 522);
-            this.Controls.Add(this.btnHistorial);
+            this.ClientSize = new System.Drawing.Size(770, 744);
+            this.Controls.Add(this.Datos);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnRegistrarRepuesto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RepuestosForm";
             this.Text = "RepuestosForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.Datos.ResumeLayout(false);
+            this.Datos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRepuestos2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,6 +282,10 @@
         private System.Windows.Forms.DateTimePicker dtpRepuestos;
         private System.Windows.Forms.TextBox txtCodigoRepuesto;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnHistorial;
+        private System.Windows.Forms.GroupBox Datos;
+        private System.Windows.Forms.Button btnAnular;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBuscarRepuesto;
+        private System.Windows.Forms.DataGridView dataGridRepuestos2;
     }
 }
