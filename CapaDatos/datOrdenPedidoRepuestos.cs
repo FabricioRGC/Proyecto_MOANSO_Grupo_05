@@ -53,11 +53,11 @@ namespace CapaDatos
         }
 
 
-        public void AnularPedidoRepuesto(long idPedido)
+        public void TerminarPedidoRepuesto(long idPedido)
         {
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                using (SqlCommand cmd = new SqlCommand("SP_ANULAR_PEDIDO_REPUESTOS", cn))
+                using (SqlCommand cmd = new SqlCommand("SP_TERMINAR_PEDIDO_REPUESTOS", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id", idPedido);
@@ -69,7 +69,7 @@ namespace CapaDatos
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("Error al anular el pedido: " + ex.Message);
+                        MessageBox.Show("Error al terminar el pedido: " + ex.Message);
                     }
                     catch (Exception ex)
                     {

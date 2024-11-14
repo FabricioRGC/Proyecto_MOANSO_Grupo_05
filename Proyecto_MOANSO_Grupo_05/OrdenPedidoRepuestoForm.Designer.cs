@@ -58,7 +58,7 @@
             this.dniLabel = new System.Windows.Forms.Label();
             this.dataGridRepuestos = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtIdRepuestos = new System.Windows.Forms.TextBox();
+            this.txtRepuestos = new System.Windows.Forms.TextBox();
             this.dtpFechaRegistroRepuesto = new System.Windows.Forms.DateTimePicker();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -79,7 +79,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.txtIdRepuestos);
+            this.groupBox3.Controls.Add(this.txtRepuestos);
             this.groupBox3.Controls.Add(this.dataGridRepuestos);
             this.groupBox3.Controls.Add(this.btnTerminarPedido);
             this.groupBox3.Controls.Add(this.btnAñadir);
@@ -164,6 +164,7 @@
             this.btnTerminarPedido.TabIndex = 42;
             this.btnTerminarPedido.Text = "Terminar Pedido";
             this.btnTerminarPedido.UseVisualStyleBackColor = true;
+            this.btnTerminarPedido.Click += new System.EventHandler(this.btnTerminarPedido_Click);
             // 
             // groupBox4
             // 
@@ -410,13 +411,14 @@
             this.label4.TabIndex = 46;
             this.label4.Text = "Buscar Por Codigo de Repuesto:\r\n";
             // 
-            // txtIdRepuestos
+            // txtRepuestos
             // 
-            this.txtIdRepuestos.Location = new System.Drawing.Point(658, 114);
-            this.txtIdRepuestos.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIdRepuestos.Name = "txtIdRepuestos";
-            this.txtIdRepuestos.Size = new System.Drawing.Size(208, 22);
-            this.txtIdRepuestos.TabIndex = 45;
+            this.txtRepuestos.Location = new System.Drawing.Point(658, 114);
+            this.txtRepuestos.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRepuestos.Name = "txtRepuestos";
+            this.txtRepuestos.Size = new System.Drawing.Size(208, 22);
+            this.txtRepuestos.TabIndex = 45;
+            this.txtRepuestos.TextChanged += new System.EventHandler(this.txtIdRepuestos_TextChanged);
             // 
             // dtpFechaRegistroRepuesto
             // 
@@ -481,7 +483,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dataGridRepuestos;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtIdRepuestos;
+        private System.Windows.Forms.TextBox txtRepuestos;
         private System.Windows.Forms.DateTimePicker dtpFechaRegistroRepuesto;
     }
 }

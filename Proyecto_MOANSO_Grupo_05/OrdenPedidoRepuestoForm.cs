@@ -179,5 +179,44 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void txtIdRepuestos_TextChanged(object sender, EventArgs e)
+        {
+            string textoBusqueda = txtRepuestos.Text.Trim();
+            List<OrdenPedidoRepuestos.entOrdenPedidoRepuestos> listaRepuestos = logOrdenPedidoRepuestos.Instancia.ListarPedidosRepuestos();
+            var listaFiltrada = listaRepuestos.Where(r => r.nombreRepuesto.Contains(textoBusqueda)).ToList();
+            dataGridRepuestos.DataSource = listaFiltrada;
+        }
+
+        private void btnTerminarPedido_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Verificar que se haya seleccionado un pedido
+                if (dataGridRepuestos.CurrentRow != null)
+                {
+                    var ordenSeleccionada = (entOrdenPedidoRepuestos)dataGridRepuestos.CurrentRow.DataBoundItem;
+                    long idPedido = ordenSeleccionada.id;
+
+                    var confirmResult = MessageBox.Show("¿Está seguro de que desea terminar este pedido?",
+                                                         "Confirmar Anulación",
+                                                         MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        logOrdenPedidoRepuestos.Instancia.TerminarPedidoRepuesto(idPedido);
+                        MessageBox.Show("Pedido terminado exitosamente.");
+                        ListarPedidosRepuesto();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un pedido para terminar.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }

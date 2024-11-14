@@ -41,7 +41,6 @@
             this.dtpRepuestos = new System.Windows.Forms.DateTimePicker();
             this.txtCodigoRepuesto = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAnular = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscarRepuesto = new System.Windows.Forms.TextBox();
             this.Datos = new System.Windows.Forms.GroupBox();
@@ -191,18 +190,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de los materiales";
             // 
-            // btnAnular
-            // 
-            this.btnAnular.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnAnular.Location = new System.Drawing.Point(567, 33);
-            this.btnAnular.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAnular.Name = "btnAnular";
-            this.btnAnular.Size = new System.Drawing.Size(148, 31);
-            this.btnAnular.TabIndex = 42;
-            this.btnAnular.Text = "Anular";
-            this.btnAnular.UseVisualStyleBackColor = true;
-            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -226,7 +213,6 @@
             // Datos
             // 
             this.Datos.Controls.Add(this.dataGridRepuestos2);
-            this.Datos.Controls.Add(this.btnAnular);
             this.Datos.Controls.Add(this.label2);
             this.Datos.Controls.Add(this.txtBuscarRepuesto);
             this.Datos.ForeColor = System.Drawing.SystemColors.Desktop;
@@ -283,7 +269,6 @@
         private System.Windows.Forms.TextBox txtCodigoRepuesto;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox Datos;
-        private System.Windows.Forms.Button btnAnular;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBuscarRepuesto;
         private System.Windows.Forms.DataGridView dataGridRepuestos2;

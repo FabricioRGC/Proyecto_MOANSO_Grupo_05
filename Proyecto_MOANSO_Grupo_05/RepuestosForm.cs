@@ -78,38 +78,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-
-        private void btnAnular_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dataGridRepuestos2.CurrentRow != null)
-                {
-                    var repuestoSeleccionado = (Repuesto.entRepuesto)dataGridRepuestos2.CurrentRow.DataBoundItem;
-                    long idRepuesto = repuestoSeleccionado.id;
-
-                    // Confirmación antes de anular
-                    var confirmResult = MessageBox.Show("¿Está seguro de que desea anular este repuesto?",
-                                                         "Confirmar Anulación",
-                                                         MessageBoxButtons.YesNo);
-                    if (confirmResult == DialogResult.Yes)
-                    {
-                        // Cambiado a pasar solo el ID del repuesto
-                        datRepuestos.Instancia.DeshabilitarRepuestos(idRepuesto);
-                        MessageBox.Show("Repuesto anulado exitosamente.");
-                        listarRepuestos();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, seleccione un repuesto para anular.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
+        
 
         private void txtBuscarRepuesto_TextChanged(object sender, EventArgs e)
         {

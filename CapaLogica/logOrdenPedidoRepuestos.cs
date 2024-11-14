@@ -30,9 +30,9 @@ namespace CapaLogica
         }
 
         // Método para anular un pedido de repuestos
-        public void AnularPedidoRepuesto(long id)
+        public void TerminarPedidoRepuesto(long id)
         {
-            datOrdenPedidoRepuestos.Instancia.AnularPedidoRepuesto(id);
+            datOrdenPedidoRepuestos.Instancia.TerminarPedidoRepuesto(id);
         }
     }
 }
