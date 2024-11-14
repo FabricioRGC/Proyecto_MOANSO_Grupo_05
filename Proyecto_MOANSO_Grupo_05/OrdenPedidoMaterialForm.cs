@@ -53,6 +53,7 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
+
         private void cargarPersonalTecnico()
         {
             string consulta = "select nombre from personaltecnico";

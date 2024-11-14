@@ -328,7 +328,7 @@
             this.groupBox5.Controls.Add(this.dtpFechaRealizacion);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.ForeColor = System.Drawing.Color.Black;
-            this.groupBox5.Location = new System.Drawing.Point(22, 339);
+            this.groupBox5.Location = new System.Drawing.Point(22, 329);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
@@ -433,7 +433,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(949, 787);
+            this.ClientSize = new System.Drawing.Size(949, 769);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

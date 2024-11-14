@@ -167,12 +167,6 @@
     <Compile Include="PagosHistorialForm.Designer.cs">
       <DependentUpon>PagosHistorialForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PedidoInstalacionHistorialForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PedidoInstalacionHistorialForm.Designer.cs">
-      <DependentUpon>PedidoInstalacionHistorialForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="PersonalForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,9 +261,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PagosHistorialForm.resx">
       <DependentUpon>PagosHistorialForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PedidoInstalacionHistorialForm.resx">
-      <DependentUpon>PedidoInstalacionHistorialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalForm.resx">
       <DependentUpon>PersonalForm.cs</DependentUpon>
