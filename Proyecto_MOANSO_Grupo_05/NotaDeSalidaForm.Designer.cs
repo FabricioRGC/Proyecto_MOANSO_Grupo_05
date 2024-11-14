@@ -33,19 +33,19 @@
             this.TXTAREA = new System.Windows.Forms.TextBox();
             this.TXTNOMUSUARIO = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UNIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DETALLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UNIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DETALLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -99,6 +99,27 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // CANTIDAD
+            // 
+            this.CANTIDAD.HeaderText = "CANTIDAD";
+            this.CANTIDAD.MinimumWidth = 6;
+            this.CANTIDAD.Name = "CANTIDAD";
+            this.CANTIDAD.Width = 125;
+            // 
+            // UNIDAD
+            // 
+            this.UNIDAD.HeaderText = "UNIDAD";
+            this.UNIDAD.MinimumWidth = 6;
+            this.UNIDAD.Name = "UNIDAD";
+            this.UNIDAD.Width = 125;
+            // 
+            // DETALLE
+            // 
+            this.DETALLE.HeaderText = "NOMBRE DEL ARTICULO";
+            this.DETALLE.MinimumWidth = 6;
+            this.DETALLE.Name = "DETALLE";
+            this.DETALLE.Width = 125;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -147,27 +168,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(245, 22);
             this.dateTimePicker1.TabIndex = 11;
             // 
-            // CANTIDAD
-            // 
-            this.CANTIDAD.HeaderText = "CANTIDAD";
-            this.CANTIDAD.MinimumWidth = 6;
-            this.CANTIDAD.Name = "CANTIDAD";
-            this.CANTIDAD.Width = 125;
-            // 
-            // UNIDAD
-            // 
-            this.UNIDAD.HeaderText = "UNIDAD";
-            this.UNIDAD.MinimumWidth = 6;
-            this.UNIDAD.Name = "UNIDAD";
-            this.UNIDAD.Width = 125;
-            // 
-            // DETALLE
-            // 
-            this.DETALLE.HeaderText = "NOMBRE DEL ARTICULO";
-            this.DETALLE.MinimumWidth = 6;
-            this.DETALLE.Name = "DETALLE";
-            this.DETALLE.Width = 125;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -189,15 +189,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(164, 18);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 16);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "ENTREGADO POR :";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -206,6 +197,15 @@
             this.label9.Size = new System.Drawing.Size(108, 16);
             this.label9.TabIndex = 15;
             this.label9.Text = "RECIBIDO POR :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(164, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(131, 16);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "ENTREGADO POR :";
             // 
             // button1
             // 
