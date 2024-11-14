@@ -29,14 +29,11 @@ namespace CapaDatos
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    // Añadir parámetros desde el objeto pedido
-                    cmd.Parameters.Add("@material_id", SqlDbType.BigInt).Value = pedido.material_id;
-                    cmd.Parameters.Add("@tecnico_id", SqlDbType.BigInt).Value = pedido.tecnico_id; 
-                    cmd.Parameters.Add("@cantidad_solicitada", SqlDbType.Int).Value = pedido.cantidad_solicitada;
-                    cmd.Parameters.Add("@cantidad_entregada", SqlDbType.Int).Value = pedido.cantidad_entregada;
-                    cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = pedido.fecha;
-                    cmd.Parameters.Add("@fecha_entrega", SqlDbType.Date).Value = pedido.fecha_entrega;
-                    cmd.Parameters.Add("@observaciones", SqlDbType.NVarChar).Value = pedido.observaciones ?? (object)DBNull.Value; 
+                    cmd.Parameters.Add("@nombreMaterial", SqlDbType.NVarChar, 30).Value = pedido.nombreMaterial;
+                    cmd.Parameters.Add("@nombreTecnico", SqlDbType.NVarChar, 30).Value = pedido.nombreTecnico;
+                    cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = pedido.fecha == DateTime.MinValue ? (object)DBNull.Value : pedido.fecha;
+                    cmd.Parameters.Add("@fecha_entrega", SqlDbType.Date).Value = pedido.fecha_entrega == DateTime.MinValue ? (object)DBNull.Value : pedido.fecha_entrega;
+                    cmd.Parameters.Add("@estado", SqlDbType.NVarChar, 20).Value = "Pendiente";
 
                     try
                     {
@@ -45,7 +42,7 @@ namespace CapaDatos
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("Error al registrar el pedido: " + ex.Message);
+                        MessageBox.Show("Error al registrar el pedido de material: " + ex.Message);
                     }
                     catch (Exception ex)
                     {
@@ -56,15 +53,15 @@ namespace CapaDatos
         }
 
 
-        // Método para anular un pedido de materiales
-        public void AnularPedidoMaterial(long idPedido)
+        // Método para terminar un pedido de materiales
+        public void TerminarPedidoMaterial(long idPedido)
         {
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                using (SqlCommand cmd = new SqlCommand("SP_ANULAR_PEDIDOS_MATERIALES", cn))
+                using (SqlCommand cmd = new SqlCommand("SP_TERMINAR_PEDIDO_MATERIALES", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", idPedido); // Aquí se pasa el id del pedido que se va a anular
+                    cmd.Parameters.AddWithValue("@id", idPedido);
 
                     try
                     {
@@ -73,12 +70,10 @@ namespace CapaDatos
                     }
                     catch (SqlException ex)
                     {
-                        // Manejo de errores SQL
-                        MessageBox.Show("Error al anular el pedido: " + ex.Message);
+                        MessageBox.Show("Error al terminar el pedido: " + ex.Message);
                     }
                     catch (Exception ex)
                     {
-                        // Manejo de otros errores
                         MessageBox.Show("Error: " + ex.Message);
                     }
                 }
@@ -103,14 +98,11 @@ namespace CapaDatos
                             OrdenPedidoMaterial.entOrdenPedidoMateriales pedido = new OrdenPedidoMaterial.entOrdenPedidoMateriales
                             {
                                 id = Convert.ToInt64(dr["id"]),
-                                material_id = Convert.ToInt64(dr["material_id"]),
-                                tecnico_id = Convert.ToInt64(dr["tecnico_id"]), // Agregado para cliente_id
-                                cantidad_solicitada = Convert.ToInt32(dr["cantidad_solicitada"]), // Cambiado a cantidad_solicitada
-                                cantidad_entregada = dr["cantidad_entregada"] != DBNull.Value ? Convert.ToInt32(dr["cantidad_entregada"]) : (int?)null, // Manejo de valores nulos
+                                nombreMaterial = dr["nombreMaterial"].ToString(),
+                                nombreTecnico = dr["nombreTecnico"].ToString(),
                                 fecha = Convert.ToDateTime(dr["fecha"]),
-                                fecha_entrega = dr["fecha_entrega"] != DBNull.Value ? Convert.ToDateTime(dr["fecha_entrega"]) : (DateTime?)null, // Manejo de valores nulos
-                                estado = dr["estado"].ToString(), // El estado se recupera directamente
-                                observaciones = dr["observaciones"] != DBNull.Value ? dr["observaciones"].ToString() : null // Manejo de valores nulos
+                                fecha_entrega = dr["fecha_entrega"] != DBNull.Value ? Convert.ToDateTime(dr["fecha_entrega"]) : (DateTime?)null,
+                                estado = dr["estado"].ToString()
                             };
                             lista.Add(pedido);
                         }

@@ -146,6 +146,7 @@
             this.cboMateriales.Name = "cboMateriales";
             this.cboMateriales.Size = new System.Drawing.Size(196, 24);
             this.cboMateriales.TabIndex = 55;
+            this.cboMateriales.SelectedIndexChanged += new System.EventHandler(this.cboMateriales_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -207,6 +208,7 @@
             this.cboTecnico.Name = "cboTecnico";
             this.cboTecnico.Size = new System.Drawing.Size(188, 24);
             this.cboTecnico.TabIndex = 56;
+            this.cboTecnico.SelectedIndexChanged += new System.EventHandler(this.cboTecnico_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -339,7 +341,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(446, 117);
+            this.label17.Location = new System.Drawing.Point(445, 117);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(193, 16);
@@ -348,11 +350,12 @@
             // 
             // txtMateriales
             // 
-            this.txtMateriales.Location = new System.Drawing.Point(658, 114);
+            this.txtMateriales.Location = new System.Drawing.Point(656, 114);
             this.txtMateriales.Margin = new System.Windows.Forms.Padding(4);
             this.txtMateriales.Name = "txtMateriales";
             this.txtMateriales.Size = new System.Drawing.Size(208, 22);
             this.txtMateriales.TabIndex = 45;
+            this.txtMateriales.TextChanged += new System.EventHandler(this.txtMateriales_TextChanged);
             // 
             // dataGridMateriales
             // 
@@ -375,6 +378,7 @@
             this.btnTerminarMaterial.TabIndex = 42;
             this.btnTerminarMaterial.Text = "Terminar Pedido";
             this.btnTerminarMaterial.UseVisualStyleBackColor = true;
+            this.btnTerminarMaterial.Click += new System.EventHandler(this.btnTerminarMaterial_Click);
             // 
             // btnRegistrar
             // 
@@ -386,6 +390,7 @@
             this.btnRegistrar.TabIndex = 40;
             this.btnRegistrar.Text = "Añadir";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // dtpFechaEntrega
             // 

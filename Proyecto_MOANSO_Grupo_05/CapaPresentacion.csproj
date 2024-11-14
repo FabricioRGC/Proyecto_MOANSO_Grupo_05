@@ -155,12 +155,6 @@
     <Compile Include="OrdenPedidoRepuestoForm.Designer.cs">
       <DependentUpon>OrdenPedidoRepuestoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrPeMaterialHistorialForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrPeMaterialHistorialForm.Designer.cs">
-      <DependentUpon>OrPeMaterialHistorialForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="PagosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,9 +261,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenPedidoRepuestoForm.resx">
       <DependentUpon>OrdenPedidoRepuestoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OrPeMaterialHistorialForm.resx">
-      <DependentUpon>OrPeMaterialHistorialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PagosForm.resx">
       <DependentUpon>PagosForm.cs</DependentUpon>

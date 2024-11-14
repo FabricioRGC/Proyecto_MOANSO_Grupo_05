@@ -191,7 +191,7 @@ namespace Proyecto_MOANSO_Grupo_05
                     long idPedido = ordenSeleccionada.id;
 
                     var confirmResult = MessageBox.Show("¿Está seguro de que desea terminar este pedido?",
-                                                         "Confirmar Anulación",
+                                                         "Confirmar finalizacion",
                                                          MessageBoxButtons.YesNo);
                     if (confirmResult == DialogResult.Yes)
                     {

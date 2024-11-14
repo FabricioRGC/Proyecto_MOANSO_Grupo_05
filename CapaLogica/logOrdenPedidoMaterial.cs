@@ -15,9 +15,6 @@ namespace CapaLogica
             get { return _instancia; }
         }
 
-        // Evento para notificar que se ha agregado un pedido
-        public event Action PedidoAgregado;
-
         // Método para listar pedidos de materiales
         public List<entOrdenPedidoMateriales> ListarPedidosMaterial()
         {
@@ -29,14 +26,12 @@ namespace CapaLogica
         {
             // Registrar el pedido
             datOrdenPedidoMaterial.Instancia.RegistrarPedidoMaterial(pedido);
-            // Disparar el evento después de registrar el pedido
-            PedidoAgregado?.Invoke();
         }
 
-        // Método para anular un pedido de materiales
-        public void AnularPedidoMaterial(long idPedido)
+        // Método para terminar un pedido de materiales
+        public void TerminarPedidoMaterial(long idPedido)
         {
-            datOrdenPedidoMaterial.Instancia.AnularPedidoMaterial(idPedido);
+            datOrdenPedidoMaterial.Instancia.TerminarPedidoMaterial(idPedido);
         }
     }
 }
