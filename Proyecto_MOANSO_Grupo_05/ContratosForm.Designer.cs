@@ -60,8 +60,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.fechaPicker = new System.Windows.Forms.DateTimePicker();
+            this.tablaContratos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaContratos)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -97,7 +99,7 @@
             // btnAñadir
             // 
             this.btnAñadir.ForeColor = System.Drawing.Color.Black;
-            this.btnAñadir.Location = new System.Drawing.Point(628, 357);
+            this.btnAñadir.Location = new System.Drawing.Point(592, 532);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(84, 24);
             this.btnAñadir.TabIndex = 16;
@@ -134,7 +136,7 @@
             // btnHistorial
             // 
             this.btnHistorial.ForeColor = System.Drawing.Color.Black;
-            this.btnHistorial.Location = new System.Drawing.Point(526, 357);
+            this.btnHistorial.Location = new System.Drawing.Point(588, 562);
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(88, 24);
             this.btnHistorial.TabIndex = 35;
@@ -157,7 +159,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cbPlan);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(307, 80);
+            this.groupBox1.Location = new System.Drawing.Point(307, 67);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(405, 260);
             this.groupBox1.TabIndex = 36;
@@ -274,7 +276,7 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(10, 80);
+            this.groupBox2.Location = new System.Drawing.Point(10, 67);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(277, 260);
             this.groupBox2.TabIndex = 37;
@@ -392,12 +394,21 @@
             this.fechaPicker.Size = new System.Drawing.Size(200, 20);
             this.fechaPicker.TabIndex = 34;
             // 
+            // tablaContratos
+            // 
+            this.tablaContratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaContratos.Location = new System.Drawing.Point(10, 342);
+            this.tablaContratos.Name = "tablaContratos";
+            this.tablaContratos.Size = new System.Drawing.Size(536, 256);
+            this.tablaContratos.TabIndex = 38;
+            // 
             // ContratosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(112)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(724, 397);
+            this.ClientSize = new System.Drawing.Size(724, 626);
+            this.Controls.Add(this.tablaContratos);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnHistorial);
@@ -414,6 +425,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaContratos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,5 +464,6 @@
         private System.Windows.Forms.DateTimePicker fechaPicker;
         private System.Windows.Forms.Label dniLabel;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridView tablaContratos;
     }
 }
