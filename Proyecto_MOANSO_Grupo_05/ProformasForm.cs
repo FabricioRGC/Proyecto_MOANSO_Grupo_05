@@ -22,7 +22,14 @@ namespace Proyecto_MOANSO_Grupo_05
             InitializeComponent();
             cargarClientes();
             cargarPlanes();
+            cargarAsesores();
+            listarProforma();
         }
+        public void listarProforma()
+        {
+            tablaProformas.DataSource = logProforma.Instancia.ListarProforma();
+        }
+
 
         private void limpiarVariables()
         {
@@ -48,6 +55,26 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
+        public void cargarAsesores()
+        {
+            string consulta= "SELECT Nombre from personaltecnico where tipo_encargado = 'Asesor de Ventas'";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cbAsesor.Items.Add(reader["Nombre"].ToString());
+                }
+
+                reader.Close();
+
+            }
+        }
+
         // ----- ACCIONES -----
 
         // Boton Añadir
@@ -61,6 +88,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 pro.tipo_plan = cbPlan.SelectedItem.ToString();
                 pro.precio = float.Parse(precioLabel.Text);
                 pro.estado = "ACTIVO";
+                pro.asesor = cbAsesor.SelectedItem.ToString();
 
                 logProforma.Instancia.InsertaProforma(pro);
             }
@@ -69,6 +97,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
             limpiarVariables();
+            listarProforma();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -163,6 +192,40 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string asesorSeleccionado = cbAsesor.SelectedItem.ToString();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "SELECT DNI, Telefono FROM PersonalTecnico WHERE Nombre = @nombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@nombre", asesorSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        labelAD.Text = reader["DNI"].ToString();
+                        labelAT.Text = reader["Telefono"].ToString();
+                    }
+
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

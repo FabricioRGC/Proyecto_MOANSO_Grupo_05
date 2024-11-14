@@ -56,13 +56,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbPlan = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbAsesor = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.labelAD = new System.Windows.Forms.Label();
+            this.labelAT = new System.Windows.Forms.Label();
+            this.tablaProformas = new System.Windows.Forms.DataGridView();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtCodigoCliente = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaProformas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAñadir
             // 
-            this.btnAñadir.Location = new System.Drawing.Point(484, 278);
+            this.btnAñadir.Location = new System.Drawing.Point(484, 587);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(89, 24);
             this.btnAñadir.TabIndex = 21;
@@ -73,7 +85,7 @@
             // btnHistorial
             // 
             this.btnHistorial.ForeColor = System.Drawing.Color.Black;
-            this.btnHistorial.Location = new System.Drawing.Point(390, 278);
+            this.btnHistorial.Location = new System.Drawing.Point(390, 587);
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Size = new System.Drawing.Size(88, 24);
             this.btnHistorial.TabIndex = 43;
@@ -353,12 +365,115 @@
             this.cbPlan.TabIndex = 32;
             this.cbPlan.SelectedIndexChanged += new System.EventHandler(this.cbPlan_SelectedIndexChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.labelAT);
+            this.groupBox1.Controls.Add(this.labelAD);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cbAsesor);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(12, 278);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(561, 70);
+            this.groupBox1.TabIndex = 53;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Detalle del Asesor";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(19, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Asesor de Venta:";
+            // 
+            // cbAsesor
+            // 
+            this.cbAsesor.FormattingEnabled = true;
+            this.cbAsesor.Location = new System.Drawing.Point(113, 27);
+            this.cbAsesor.Name = "cbAsesor";
+            this.cbAsesor.Size = new System.Drawing.Size(121, 21);
+            this.cbAsesor.TabIndex = 53;
+            this.cbAsesor.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(253, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 53;
+            this.label2.Text = "Dni:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(380, 30);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 13);
+            this.label14.TabIndex = 54;
+            this.label14.Text = "Teléfono:";
+            // 
+            // labelAD
+            // 
+            this.labelAD.AutoSize = true;
+            this.labelAD.ForeColor = System.Drawing.Color.White;
+            this.labelAD.Location = new System.Drawing.Point(285, 30);
+            this.labelAD.Name = "labelAD";
+            this.labelAD.Size = new System.Drawing.Size(0, 13);
+            this.labelAD.TabIndex = 55;
+            // 
+            // labelAT
+            // 
+            this.labelAT.AutoSize = true;
+            this.labelAT.ForeColor = System.Drawing.Color.White;
+            this.labelAT.Location = new System.Drawing.Point(438, 30);
+            this.labelAT.Name = "labelAT";
+            this.labelAT.Size = new System.Drawing.Size(0, 13);
+            this.labelAT.TabIndex = 56;
+            // 
+            // tablaProformas
+            // 
+            this.tablaProformas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaProformas.Location = new System.Drawing.Point(12, 354);
+            this.tablaProformas.Name = "tablaProformas";
+            this.tablaProformas.Size = new System.Drawing.Size(561, 227);
+            this.tablaProformas.TabIndex = 54;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(9, 593);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(95, 13);
+            this.label16.TabIndex = 56;
+            this.label16.Text = "Codigo del Cliente:";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // txtCodigoCliente
+            // 
+            this.txtCodigoCliente.Location = new System.Drawing.Point(108, 588);
+            this.txtCodigoCliente.Name = "txtCodigoCliente";
+            this.txtCodigoCliente.Size = new System.Drawing.Size(105, 20);
+            this.txtCodigoCliente.TabIndex = 55;
+            // 
             // ProformasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(112)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(585, 312);
+            this.ClientSize = new System.Drawing.Size(1003, 636);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.txtCodigoCliente);
+            this.Controls.Add(this.tablaProformas);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnHistorial);
@@ -370,7 +485,11 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaProformas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -403,5 +522,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbPlan;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbAsesor;
+        private System.Windows.Forms.Label labelAT;
+        private System.Windows.Forms.Label labelAD;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView tablaProformas;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtCodigoCliente;
     }
 }

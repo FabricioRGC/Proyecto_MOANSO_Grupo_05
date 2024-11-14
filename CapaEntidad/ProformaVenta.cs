@@ -15,6 +15,7 @@ namespace CapaEntidad
             public string tipo_plan { get; set; }
             public float precio { get; set; }
             public string estado { get; set; }
+            public string asesor { get; set; }
         }
     }
 }

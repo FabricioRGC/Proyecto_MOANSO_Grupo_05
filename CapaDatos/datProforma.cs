@@ -68,6 +68,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@clienteId", proforma.cliente_id);
                 cmd.Parameters.AddWithValue("@tipoPlan", proforma.tipo_plan);
                 cmd.Parameters.AddWithValue("@precio", proforma.precio);
+                cmd.Parameters.AddWithValue("@asesor", proforma.asesor);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
