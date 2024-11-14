@@ -21,12 +21,19 @@ namespace Proyecto_MOANSO_Grupo_05
         public OrdenPedidoRepuestoForm()
         {
             InitializeComponent();
+            ListarPedidosRepuesto();
             cargarRepuestos();
+            cargarPersonalTecnico();
         }
 
         private void limpiarVariables()
         {
 
+        }
+
+        public void ListarPedidosRepuesto()
+        {
+            dataGridRepuestos.DataSource = logOrdenPedidoRepuestos.Instancia.ListarPedidosRepuestos();
         }
 
         private void cargarRepuestos()
@@ -49,9 +56,58 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
+        private void cargarPersonalTecnico()
+        {
+            string consulta = "select nombre from personaltecnico";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cboTecnico.Items.Add(reader["nombre"].ToString());
+                }
+
+                reader.Close();
+
+            }
+        }
+
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                // Validar que los campos no estén vacíos
+                if (cboRepuestos.SelectedIndex == -1 || cboTecnico.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Por favor, complete todos los campos.");
+                    return;
+                }
+
+                // Crear la instancia del pedido con el estado como 'Pendiente' por defecto
+                entOrdenPedidoRepuestos pedidoRepuestos = new entOrdenPedidoRepuestos
+                {
+                    nombreRepuesto = cboRepuestos.SelectedItem.ToString(),
+                    nombreTecnico = cboTecnico.SelectedItem.ToString(),
+                    fecha = dtpFechaRealizacion.Value.Date,
+                    fecha_entrega = dtpFechaEntrega.Value.Date,
+                    estado = "Pendiente"
+                };
+
+                // Registrar el pedido
+                logOrdenPedidoRepuestos.Instancia.InsertarPedidoRepuesto(pedidoRepuestos);
+                MessageBox.Show("Pedido de Repuesto añadido exitosamente.");
+
+                // Limpiar variables después de registrar el pedido
+                limpiarVariables();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
 
@@ -94,5 +150,34 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
+        private void cboTecnico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string personalTecnicoSeleccionado = cboTecnico.SelectedItem.ToString();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "SELECT dni, telefono, disponibilidad, tipo_encargado, area_trabajo FROM personaltecnico WHERE nombre = @nombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@nombre", personalTecnicoSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        dniLabel.Text = reader["dni"].ToString();
+                        telefonoLabel.Text = reader["telefono"].ToString();
+                        estadoLabel.Text = reader["disponibilidad"].ToString();
+                        tipoCargoLabel.Text = reader["tipo_encargado"].ToString();
+                        areaTrabajoLabel.Text = reader["area_trabajo"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }

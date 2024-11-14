@@ -48,8 +48,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.codigoLabel = new System.Windows.Forms.Label();
-            this.direccionLabel = new System.Windows.Forms.Label();
+            this.tipoCargoLabel = new System.Windows.Forms.Label();
+            this.areaTrabajoLabel = new System.Windows.Forms.Label();
             this.telefonoLabel = new System.Windows.Forms.Label();
             this.estadoLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(33, 85);
+            this.label8.Location = new System.Drawing.Point(55, 65);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 16);
             this.label8.TabIndex = 12;
@@ -88,7 +88,7 @@
             this.groupBox3.Controls.Add(this.dtpFechaRealizacion);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(23, 374);
+            this.groupBox3.Location = new System.Drawing.Point(27, 323);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -148,9 +148,9 @@
             // cboRepuestos
             // 
             this.cboRepuestos.FormattingEnabled = true;
-            this.cboRepuestos.Location = new System.Drawing.Point(158, 81);
+            this.cboRepuestos.Location = new System.Drawing.Point(180, 61);
             this.cboRepuestos.Name = "cboRepuestos";
-            this.cboRepuestos.Size = new System.Drawing.Size(187, 24);
+            this.cboRepuestos.Size = new System.Drawing.Size(196, 24);
             this.cboRepuestos.TabIndex = 55;
             this.cboRepuestos.SelectedIndexChanged += new System.EventHandler(this.cboRepuestos_SelectedIndexChanged);
             // 
@@ -176,11 +176,11 @@
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.label22);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(69, 30);
+            this.groupBox4.Location = new System.Drawing.Point(422, 29);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(399, 332);
+            this.groupBox4.Size = new System.Drawing.Size(443, 255);
             this.groupBox4.TabIndex = 42;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Detalles del Repuesto";
@@ -189,7 +189,7 @@
             // 
             this.CodigoRepuesto.AutoSize = true;
             this.CodigoRepuesto.ForeColor = System.Drawing.Color.White;
-            this.CodigoRepuesto.Location = new System.Drawing.Point(165, 128);
+            this.CodigoRepuesto.Location = new System.Drawing.Point(187, 108);
             this.CodigoRepuesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CodigoRepuesto.Name = "CodigoRepuesto";
             this.CodigoRepuesto.Size = new System.Drawing.Size(0, 16);
@@ -199,7 +199,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(33, 128);
+            this.label9.Location = new System.Drawing.Point(55, 108);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 16);
@@ -210,7 +210,7 @@
             // 
             this.stockRepuesto.AutoSize = true;
             this.stockRepuesto.ForeColor = System.Drawing.Color.White;
-            this.stockRepuesto.Location = new System.Drawing.Point(167, 214);
+            this.stockRepuesto.Location = new System.Drawing.Point(189, 194);
             this.stockRepuesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.stockRepuesto.Name = "stockRepuesto";
             this.stockRepuesto.Size = new System.Drawing.Size(0, 16);
@@ -220,7 +220,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(33, 214);
+            this.label21.Location = new System.Drawing.Point(55, 194);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(44, 16);
@@ -231,7 +231,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(33, 171);
+            this.label22.Location = new System.Drawing.Point(55, 151);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(102, 16);
@@ -241,23 +241,24 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dniLabel);
+            this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.cboTecnico);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.estadoLabel);
             this.groupBox2.Controls.Add(this.telefonoLabel);
-            this.groupBox2.Controls.Add(this.direccionLabel);
-            this.groupBox2.Controls.Add(this.codigoLabel);
+            this.groupBox2.Controls.Add(this.areaTrabajoLabel);
+            this.groupBox2.Controls.Add(this.tipoCargoLabel);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(515, 35);
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(27, 13);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(369, 327);
+            this.groupBox2.Size = new System.Drawing.Size(901, 302);
             this.groupBox2.TabIndex = 43;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles del Tecnico";
@@ -266,7 +267,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(25, 219);
+            this.label10.Location = new System.Drawing.Point(25, 218);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(78, 16);
@@ -277,7 +278,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(27, 268);
+            this.label11.Location = new System.Drawing.Point(27, 264);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 16);
@@ -306,25 +307,25 @@
             this.label13.TabIndex = 46;
             this.label13.Text = "Estado:";
             // 
-            // codigoLabel
+            // tipoCargoLabel
             // 
-            this.codigoLabel.AutoSize = true;
-            this.codigoLabel.ForeColor = System.Drawing.Color.White;
-            this.codigoLabel.Location = new System.Drawing.Point(130, 219);
-            this.codigoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.codigoLabel.Name = "codigoLabel";
-            this.codigoLabel.Size = new System.Drawing.Size(0, 16);
-            this.codigoLabel.TabIndex = 47;
+            this.tipoCargoLabel.AutoSize = true;
+            this.tipoCargoLabel.ForeColor = System.Drawing.Color.White;
+            this.tipoCargoLabel.Location = new System.Drawing.Point(130, 218);
+            this.tipoCargoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tipoCargoLabel.Name = "tipoCargoLabel";
+            this.tipoCargoLabel.Size = new System.Drawing.Size(0, 16);
+            this.tipoCargoLabel.TabIndex = 47;
             // 
-            // direccionLabel
+            // areaTrabajoLabel
             // 
-            this.direccionLabel.AutoSize = true;
-            this.direccionLabel.ForeColor = System.Drawing.Color.White;
-            this.direccionLabel.Location = new System.Drawing.Point(132, 268);
-            this.direccionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.direccionLabel.Name = "direccionLabel";
-            this.direccionLabel.Size = new System.Drawing.Size(0, 16);
-            this.direccionLabel.TabIndex = 48;
+            this.areaTrabajoLabel.AutoSize = true;
+            this.areaTrabajoLabel.ForeColor = System.Drawing.Color.White;
+            this.areaTrabajoLabel.Location = new System.Drawing.Point(132, 264);
+            this.areaTrabajoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.areaTrabajoLabel.Name = "areaTrabajoLabel";
+            this.areaTrabajoLabel.Size = new System.Drawing.Size(0, 16);
+            this.areaTrabajoLabel.TabIndex = 48;
             // 
             // telefonoLabel
             // 
@@ -375,6 +376,7 @@
             this.cboTecnico.Name = "cboTecnico";
             this.cboTecnico.Size = new System.Drawing.Size(188, 24);
             this.cboTecnico.TabIndex = 56;
+            this.cboTecnico.SelectedIndexChanged += new System.EventHandler(this.cboTecnico_SelectedIndexChanged);
             // 
             // dniLabel
             // 
@@ -401,7 +403,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(458, 117);
+            this.label4.Location = new System.Drawing.Point(446, 117);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(204, 16);
@@ -410,7 +412,7 @@
             // 
             // txtIdRepuestos
             // 
-            this.txtIdRepuestos.Location = new System.Drawing.Point(670, 114);
+            this.txtIdRepuestos.Location = new System.Drawing.Point(658, 114);
             this.txtIdRepuestos.Margin = new System.Windows.Forms.Padding(4);
             this.txtIdRepuestos.Name = "txtIdRepuestos";
             this.txtIdRepuestos.Size = new System.Drawing.Size(208, 22);
@@ -418,10 +420,10 @@
             // 
             // dtpFechaRegistroRepuesto
             // 
-            this.dtpFechaRegistroRepuesto.Location = new System.Drawing.Point(156, 172);
+            this.dtpFechaRegistroRepuesto.Location = new System.Drawing.Point(178, 152);
             this.dtpFechaRegistroRepuesto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFechaRegistroRepuesto.Name = "dtpFechaRegistroRepuesto";
-            this.dtpFechaRegistroRepuesto.Size = new System.Drawing.Size(189, 22);
+            this.dtpFechaRegistroRepuesto.Size = new System.Drawing.Size(198, 22);
             this.dtpFechaRegistroRepuesto.TabIndex = 47;
             // 
             // OrdenPedidoRepuestoForm
@@ -429,9 +431,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(961, 824);
+            this.ClientSize = new System.Drawing.Size(961, 763);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -472,8 +473,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label estadoLabel;
         private System.Windows.Forms.Label telefonoLabel;
-        private System.Windows.Forms.Label direccionLabel;
-        private System.Windows.Forms.Label codigoLabel;
+        private System.Windows.Forms.Label areaTrabajoLabel;
+        private System.Windows.Forms.Label tipoCargoLabel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;

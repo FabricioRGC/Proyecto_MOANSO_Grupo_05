@@ -19,14 +19,10 @@ namespace Proyecto_MOANSO_Grupo_05
         public OrPeRepuestoHistorialForm()
         {
             InitializeComponent();
-            ListarPedidosRepuesto();
             CenterToScreen();
         }
 
-        public void ListarPedidosRepuesto()
-        {
-            dataGridRepuestos.DataSource = logOrdenPedidoRepuestos.Instancia.ListarPedidosRepuestos();
-        }
+        
 
         private void btnAnular_Click(object sender, EventArgs e)
         {
@@ -49,7 +45,7 @@ namespace Proyecto_MOANSO_Grupo_05
                         MessageBox.Show("Pedido anulado exitosamente.");
 
                         // Actualizar la lista de pedidos
-                        ListarPedidosRepuesto();
+           
                     }
                 }
                 else
@@ -65,19 +61,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void txtIdRepuestos_TextChanged(object sender, EventArgs e)
         {
-            string idRepuesto = txtIdRepuestos.Text;
-            if (long.TryParse(idRepuesto, out long idOrPeRepuestos))
-            {
-                var RepuestosFiltrados = logOrdenPedidoRepuestos.Instancia.ListarPedidosRepuestos()
-                    .Where(Mate => Mate.repuesto_id == idOrPeRepuestos)
-                    .ToList();
-
-                dataGridRepuestos.DataSource = RepuestosFiltrados;
-            }
-            else
-            {
-                dataGridRepuestos.DataSource = logOrdenPedidoRepuestos.Instancia.ListarPedidosRepuestos();
-            }
+            
         }
     }
 }
