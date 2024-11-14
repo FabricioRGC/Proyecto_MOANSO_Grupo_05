@@ -26,11 +26,6 @@ namespace Proyecto_MOANSO_Grupo_05
             cargarPersonalTecnico();
         }
 
-        private void limpiarVariables()
-        {
-
-        }
-
         public void ListarPedidosRepuesto()
         {
             dataGridRepuestos.DataSource = logOrdenPedidoRepuestos.Instancia.ListarPedidosRepuestos();
@@ -100,9 +95,6 @@ namespace Proyecto_MOANSO_Grupo_05
                 // Registrar el pedido
                 logOrdenPedidoRepuestos.Instancia.InsertarPedidoRepuesto(pedidoRepuestos);
                 MessageBox.Show("Pedido de Repuesto añadido exitosamente.");
-
-                // Limpiar variables después de registrar el pedido
-                limpiarVariables();
             }
             catch (Exception ex)
             {

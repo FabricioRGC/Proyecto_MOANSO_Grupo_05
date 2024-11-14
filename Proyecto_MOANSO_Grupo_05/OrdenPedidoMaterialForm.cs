@@ -12,6 +12,7 @@ using CapaDatos;
 using static CapaEntidad.OrdenPedidoMaterial;
 using CapaEntidad;
 using static CapaEntidad.PedidoInstalacion;
+using static CapaEntidad.OrdenPedidoRepuestos;
 
 namespace Proyecto_MOANSO_Grupo_05
 {
@@ -20,17 +21,18 @@ namespace Proyecto_MOANSO_Grupo_05
         public OrdenPedidoMaterialForm()
         {
             InitializeComponent();
+            ListarPedidosMateriales();
         }
 
         private void limpiarVariables()
         {
-            txtIDMateriales.Text = "";
-            txtCantidadEntregada.Text = "";
-            txtCantidadSolicitada.Text = "";
-            txtIDTecnico.Text = "";
-            txtObservaciones.Text = "";
             dtpFechaEntrega.Value = DateTime.Now;
             dtpFechaRealizacion.Value = DateTime.Now;
+        }
+
+        public void ListarPedidosMateriales()
+        {
+            dataGridMateriales.DataSource = logOrdenPedidoMaterial.Instancia.ListarPedidosMaterial();
         }
 
         private void btnRegistrar_Click_1(object sender, EventArgs e)
@@ -38,45 +40,25 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 // Validar que los campos no estén vacíos
-                if (string.IsNullOrEmpty(txtIDMateriales.Text) ||
-                    string.IsNullOrEmpty(txtIDTecnico.Text) || // Asegúrate de tener este campo
-                    string.IsNullOrEmpty(txtCantidadSolicitada.Text) ||
-                    string.IsNullOrEmpty(txtCantidadEntregada.Text) || // Asegúrate de tener este campo
-                    string.IsNullOrEmpty(txtObservaciones.Text)) // Asegúrate de tener este campo
+                if (cboRepuestos.SelectedIndex == -1 || cboTecnico.SelectedIndex == -1)
                 {
                     MessageBox.Show("Por favor, complete todos los campos.");
-                    return; // Salir del método si hay campos vacíos
+                    return;
                 }
 
-                // Crear un nuevo pedido de materiales
-                if (long.TryParse(txtIDMateriales.Text, out long materialId) &&
-                    long.TryParse(txtIDTecnico.Text, out long tecnicoid) &&
-                    int.TryParse(txtCantidadSolicitada.Text, out int cantidadSolicitada) &&
-                    int.TryParse(txtCantidadEntregada.Text, out int cantidadEntregada))
+                // Crear la instancia del pedido con el estado como 'Pendiente' por defecto
+                entOrdenPedidoRepuestos pedidoRepuestos = new entOrdenPedidoRepuestos
                 {
-                    // Crear la instancia del pedido con el estado como 'Activado' por defecto
-                    entOrdenPedidoMateriales pedidoMateriales = new entOrdenPedidoMateriales
-                    {
-                        material_id = materialId,
-                        tecnico_id = tecnicoid,
-                        cantidad_solicitada = cantidadSolicitada,
-                        cantidad_entregada = cantidadEntregada,
-                        fecha = dtpFechaRealizacion.Value.Date,
-                        fecha_entrega = dtpFechaEntrega.Value.Date,
-                        observaciones = txtObservaciones.Text
-                    };
+                    nombreRepuesto = cboRepuestos.SelectedItem.ToString(),
+                    nombreTecnico = cboTecnico.SelectedItem.ToString(),
+                    fecha = dtpFechaRealizacion.Value.Date,
+                    fecha_entrega = dtpFechaEntrega.Value.Date,
+                    estado = "Pendiente"
+                };
 
-                    // Registrar el pedido
-                    logOrdenPedidoMaterial.Instancia.RegistrarPedidoMaterial(pedidoMateriales);
-                    MessageBox.Show("Pedido de Material añadido exitosamente.");
-
-                    // Limpiar variables
-                    limpiarVariables();
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, introduzca valores válidos para ID, cantidad solicitada y cantidad entregada.");
-                }
+                // Registrar el pedido
+                logOrdenPedidoRepuestos.Instancia.InsertarPedidoRepuesto(pedidoRepuestos);
+                MessageBox.Show("Pedido de Repuesto añadido exitosamente.");
             }
             catch (Exception ex)
             {

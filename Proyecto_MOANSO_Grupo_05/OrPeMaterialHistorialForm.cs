@@ -18,19 +18,7 @@ namespace Proyecto_MOANSO_Grupo_05
         public OrPeMaterialHistorialForm()
         {
             InitializeComponent();
-            logOrdenPedidoMaterial.Instancia.PedidoAgregado += ActualizarListaPedidos;
-            ListarPedidosMateriales();
-        }
-
-        public void ListarPedidosMateriales()
-        {
-            dataGridOrPeMateriales.DataSource = logOrdenPedidoMaterial.Instancia.ListarPedidosMaterial();
-            dataGridOrPeMateriales.ClearSelection(); // Limpiar la selección después de cargar los datos
-        }
-
-        private void ActualizarListaPedidos()
-        {
-            ListarPedidosMateriales();
+            
         }
 
         private void btnAnular_Click(object sender, EventArgs e)
@@ -53,8 +41,6 @@ namespace Proyecto_MOANSO_Grupo_05
                         logOrdenPedidoMaterial.Instancia.AnularPedidoMaterial(idPedido);
                         MessageBox.Show("Pedido anulado exitosamente.");
 
-                        // Actualizar la lista de pedidos
-                        ListarPedidosMateriales();
                     }
                 }
                 else
