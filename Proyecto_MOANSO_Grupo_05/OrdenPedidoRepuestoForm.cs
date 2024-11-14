@@ -17,7 +17,7 @@ using System.Data.SqlClient;
 namespace Proyecto_MOANSO_Grupo_05
 {
     public partial class OrdenPedidoRepuestoForm : Form
-    {
+    { 
         public OrdenPedidoRepuestoForm()
         {
             InitializeComponent();
