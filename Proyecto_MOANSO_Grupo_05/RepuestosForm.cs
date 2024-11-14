@@ -20,6 +20,12 @@ namespace Proyecto_MOANSO_Grupo_05
         public RepuestosForm()
         {
             InitializeComponent();
+            listarRepuestos();
+        }
+
+        public void listarRepuestos()
+        {
+            dataGridRepuestos2.DataSource = logRepuestos.Instancia.ListarRepuestos();
         }
 
         private void LimpiarVariables()
@@ -36,12 +42,15 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-                // Crear un nuevo repuesto
-                if (long.TryParse(txtCodigoRepuesto.Text, out long codigo_repuesto) &&
+                string codigo_repuesto = txtCodigoRepuesto.Text;
+
+                if (!string.IsNullOrEmpty(codigo_repuesto) &&
                     !string.IsNullOrEmpty(txtDescripción.Text) &&
                     !string.IsNullOrEmpty(txtNombreRepuesto.Text) &&
                     int.TryParse(txtStockR.Text, out int stock))
                 {
+                    // Obtener la fecha seleccionada
+                    DateTime fechaSeleccionada = dtpRepuestos.Value;
 
                     entRepuesto repuesto = new entRepuesto
                     {
@@ -50,12 +59,13 @@ namespace Proyecto_MOANSO_Grupo_05
                         descripcion = txtDescripción.Text,
                         stock = stock,
                         estado = "Registrado",
-                        fecha_registro = DateTime.Now
+                        fecha_registro = fechaSeleccionada // Asignar la fecha seleccionada
                     };
 
-                    // Registrar el repuesto
+                    // Llamar al procedimiento almacenado con el parámetro de fecha
                     logRepuestos.Instancia.InsertarRepuesto(repuesto);
                     MessageBox.Show("Repuesto añadido exitosamente.");
+                    listarRepuestos();
                     LimpiarVariables();
                 }
                 else
@@ -68,11 +78,15 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+        
 
-        private void btnHistorial_Click_1(object sender, EventArgs e)
+        private void txtBuscarRepuesto_TextChanged(object sender, EventArgs e)
         {
-            Form historial = new RepuestoHistorialForm();
-            historial.Show();
+            string textoBusqueda = txtBuscarRepuesto.Text.Trim();
+            List<Repuesto.entRepuesto> listaRepuestos = logRepuestos.Instancia.ListarRepuestos();
+            var listaFiltrada = listaRepuestos.Where(r => r.codigo.Contains(textoBusqueda)).ToList();
+            dataGridRepuestos2.DataSource = listaFiltrada;
         }
+
     }
 }

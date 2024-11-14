@@ -78,6 +78,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@descripcion", repuesto.descripcion);
                 cmd.Parameters.AddWithValue("@stock", repuesto.stock);
                 cmd.Parameters.AddWithValue("@estado", "Registrado");
+                cmd.Parameters.AddWithValue("@fecha_registro", repuesto.fecha_registro);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
@@ -96,8 +97,6 @@ namespace CapaDatos
             }
             return inserto;
         }
-
-
 
         // Método para inhabilitar un repuesto
         public void DeshabilitarRepuestos(long idRepuesto)
