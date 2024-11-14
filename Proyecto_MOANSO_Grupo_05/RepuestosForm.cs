@@ -49,6 +49,8 @@ namespace Proyecto_MOANSO_Grupo_05
                     !string.IsNullOrEmpty(txtNombreRepuesto.Text) &&
                     int.TryParse(txtStockR.Text, out int stock))
                 {
+                    // Obtener la fecha seleccionada
+                    DateTime fechaSeleccionada = dtpRepuestos.Value;
 
                     entRepuesto repuesto = new entRepuesto
                     {
@@ -57,10 +59,10 @@ namespace Proyecto_MOANSO_Grupo_05
                         descripcion = txtDescripción.Text,
                         stock = stock,
                         estado = "Registrado",
-                        fecha_registro = DateTime.Now
+                        fecha_registro = fechaSeleccionada // Asignar la fecha seleccionada
                     };
 
-                    // Registrar el repuesto
+                    // Llamar al procedimiento almacenado con el parámetro de fecha
                     logRepuestos.Instancia.InsertarRepuesto(repuesto);
                     MessageBox.Show("Repuesto añadido exitosamente.");
                     listarRepuestos();
