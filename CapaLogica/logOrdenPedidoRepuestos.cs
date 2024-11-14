@@ -17,8 +17,6 @@ namespace CapaLogica
             get { return logOrdenPedidoRepuestos._instancia; }
         }
 
-        public event Action PedidoAgregado;
-
         // Método para listar pedidos de repuestos
         public List<OrdenPedidoRepuestos.entOrdenPedidoRepuestos> ListarPedidosRepuestos()
         {
@@ -29,13 +27,12 @@ namespace CapaLogica
         public void InsertarPedidoRepuesto(OrdenPedidoRepuestos.entOrdenPedidoRepuestos pedido)
         {
             datOrdenPedidoRepuestos.Instancia.RegistrarPedidoRepuesto(pedido);
-            PedidoAgregado?.Invoke();
         }
 
         // Método para anular un pedido de repuestos
-        public void AnularPedidoRepuesto(long id)
+        public void TerminarPedidoRepuesto(long id)
         {
-            datOrdenPedidoRepuestos.Instancia.AnularPedidoRepuesto(id);
+            datOrdenPedidoRepuestos.Instancia.TerminarPedidoRepuesto(id);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace CapaLogica
         // Método para listar pedidos de instalación
         public List<PedidoInstalacion.entPedidoInstalacion> ListarPedidosInstalacion()
         {
-            return datPedidoInstalacion.Instancia.ListarPedidosInstalacion();
+            return datPedidoInstalacion.Instancia.ListarPedidoInstalacion();
         }
 
         // Método para añadir un pedido de instalación
@@ -30,10 +30,10 @@ namespace CapaLogica
             PedidoInstalacionAgregado?.Invoke();
         }
 
-        // Método para anular un pedido de instalación
-        public void AnularPedidoInstalacion(int numeroOrden)
+        // Método para terminar un pedido de instalación
+        public void TerminarPedidoRepuesto(int numeroOrden)
         {
-            datPedidoInstalacion.Instancia.AnularPedidoInstalacion(numeroOrden);
+            datPedidoInstalacion.Instancia.TerminarPedidoRepuesto(numeroOrden);
         }
 
         public int ObtenerUltimoNumeroOrden()

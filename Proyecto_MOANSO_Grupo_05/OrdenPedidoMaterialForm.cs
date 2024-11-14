@@ -12,6 +12,8 @@ using CapaDatos;
 using static CapaEntidad.OrdenPedidoMaterial;
 using CapaEntidad;
 using static CapaEntidad.PedidoInstalacion;
+using static CapaEntidad.OrdenPedidoRepuestos;
+using System.Data.SqlClient;
 
 namespace Proyecto_MOANSO_Grupo_05
 {
@@ -20,62 +22,116 @@ namespace Proyecto_MOANSO_Grupo_05
         public OrdenPedidoMaterialForm()
         {
             InitializeComponent();
+            ListarPedidosMateriales();
+            cargarMateriales();
+            cargarPersonalTecnico();
         }
 
         private void limpiarVariables()
         {
-            txtIDMateriales.Text = "";
-            txtCantidadEntregada.Text = "";
-            txtCantidadSolicitada.Text = "";
-            txtIDTecnico.Text = "";
-            txtObservaciones.Text = "";
             dtpFechaEntrega.Value = DateTime.Now;
             dtpFechaRealizacion.Value = DateTime.Now;
         }
 
-        private void btnRegistrar_Click_1(object sender, EventArgs e)
+        private void cargarMateriales()
+        {
+            string consulta = "select nombre from materiales";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cboMateriales.Items.Add(reader["nombre"].ToString());
+                }
+
+                reader.Close();
+
+            }
+        }
+
+
+        private void cargarPersonalTecnico()
+        {
+            string consulta = "select nombre from personaltecnico";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cboTecnico.Items.Add(reader["nombre"].ToString());
+                }
+
+                reader.Close();
+
+            }
+        }
+
+        public void ListarPedidosMateriales()
+        {
+            dataGridMateriales.DataSource = logOrdenPedidoMaterial.Instancia.ListarPedidosMaterial();
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
             try
             {
                 // Validar que los campos no estén vacíos
-                if (string.IsNullOrEmpty(txtIDMateriales.Text) ||
-                    string.IsNullOrEmpty(txtIDTecnico.Text) || // Asegúrate de tener este campo
-                    string.IsNullOrEmpty(txtCantidadSolicitada.Text) ||
-                    string.IsNullOrEmpty(txtCantidadEntregada.Text) || // Asegúrate de tener este campo
-                    string.IsNullOrEmpty(txtObservaciones.Text)) // Asegúrate de tener este campo
+                if (cboMateriales.SelectedIndex == -1 || cboTecnico.SelectedIndex == -1)
                 {
                     MessageBox.Show("Por favor, complete todos los campos.");
-                    return; // Salir del método si hay campos vacíos
+                    return;
                 }
 
-                // Crear un nuevo pedido de materiales
-                if (long.TryParse(txtIDMateriales.Text, out long materialId) &&
-                    long.TryParse(txtIDTecnico.Text, out long tecnicoid) &&
-                    int.TryParse(txtCantidadSolicitada.Text, out int cantidadSolicitada) &&
-                    int.TryParse(txtCantidadEntregada.Text, out int cantidadEntregada))
+                // Crear la instancia del pedido con el estado como 'Pendiente' por defecto
+                entOrdenPedidoMateriales pedidoMateriales = new entOrdenPedidoMateriales
                 {
-                    // Crear la instancia del pedido con el estado como 'Activado' por defecto
-                    entOrdenPedidoMateriales pedidoMateriales = new entOrdenPedidoMateriales
+                    nombreMaterial = cboMateriales.SelectedItem.ToString(),
+                    nombreTecnico = cboTecnico.SelectedItem.ToString(),
+                    fecha = dtpFechaRealizacion.Value.Date,
+                    fecha_entrega = dtpFechaEntrega.Value.Date,
+                    estado = "Pendiente"
+                };
+
+                // Registrar el pedido
+                logOrdenPedidoMaterial.Instancia.RegistrarPedidoMaterial(pedidoMateriales);
+                MessageBox.Show("Pedido de Material añadido exitosamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void cboTecnico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String personalTecnicoSeleccionado = cboTecnico.SelectedItem.ToString();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "SELECT dni, telefono, disponibilidad, tipo_encargado, area_trabajo FROM personaltecnico WHERE nombre = @nombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@nombre", personalTecnicoSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
                     {
-                        material_id = materialId,
-                        tecnico_id = tecnicoid,
-                        cantidad_solicitada = cantidadSolicitada,
-                        cantidad_entregada = cantidadEntregada,
-                        fecha = dtpFechaRealizacion.Value.Date,
-                        fecha_entrega = dtpFechaEntrega.Value.Date,
-                        observaciones = txtObservaciones.Text
-                    };
-
-                    // Registrar el pedido
-                    logOrdenPedidoMaterial.Instancia.RegistrarPedidoMaterial(pedidoMateriales);
-                    MessageBox.Show("Pedido de Material añadido exitosamente.");
-
-                    // Limpiar variables
-                    limpiarVariables();
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, introduzca valores válidos para ID, cantidad solicitada y cantidad entregada.");
+                        dniLabel.Text = reader["dni"].ToString();
+                        telefonoLabel.Text = reader["telefono"].ToString();
+                        estadoLabel.Text = reader["disponibilidad"].ToString();
+                        tipoCargoLabel.Text = reader["tipo_encargado"].ToString();
+                        areaTrabajoLabel.Text = reader["area_trabajo"].ToString();
+                    }
                 }
             }
             catch (Exception ex)
@@ -84,10 +140,69 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
-        private void buttonHistorialPeMat_Click(object sender, EventArgs e)
+        private void cboMateriales_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Form historial = new OrPeMaterialHistorialForm();
-            historial.Show();
+            string repuestoSeleccionado = cboMateriales.SelectedItem.ToString();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "SELECT codigo, stock FROM materiales WHERE nombre = @nombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@nombre", repuestoSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        CodigoMaterial.Text = reader["codigo"].ToString();
+                        stockMaterial.Text = reader["stock"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btnTerminarMaterial_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridMateriales.CurrentRow != null)
+                {
+                    var ordenSeleccionada = (entOrdenPedidoMateriales)dataGridMateriales.CurrentRow.DataBoundItem;
+                    long idPedido = ordenSeleccionada.id;
+
+                    var confirmResult = MessageBox.Show("¿Está seguro de que desea terminar este pedido?",
+                                                         "Confirmar finalizacion",
+                                                         MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        logOrdenPedidoMaterial.Instancia.TerminarPedidoMaterial(idPedido);
+                        MessageBox.Show("Pedido terminado exitosamente.");
+                        ListarPedidosMateriales();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un pedido para terminar.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void txtMateriales_TextChanged(object sender, EventArgs e)
+        {
+            string textoBusqueda = txtMateriales.Text.Trim();
+            List<OrdenPedidoMaterial.entOrdenPedidoMateriales> listaMateriales = logOrdenPedidoMaterial.Instancia.ListarPedidosMaterial();
+            var listaFiltrada = listaMateriales.Where(r => r.nombreMaterial.Contains(textoBusqueda)).ToList();
+            dataGridMateriales.DataSource = listaFiltrada;
         }
     }
 }

@@ -28,270 +28,461 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtCantidadSolicitada = new System.Windows.Forms.TextBox();
-            this.txtIDMateriales = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtIDTecnico = new System.Windows.Forms.TextBox();
-            this.txtCantidadEntregada = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.buttonHistorialPeMat = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dniLabel = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaRegistroMaterial = new System.Windows.Forms.DateTimePicker();
+            this.CodigoMaterial = new System.Windows.Forms.Label();
+            this.cboMateriales = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.stockMaterial = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.cboTecnico = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.estadoLabel = new System.Windows.Forms.Label();
+            this.telefonoLabel = new System.Windows.Forms.Label();
+            this.areaTrabajoLabel = new System.Windows.Forms.Label();
+            this.tipoCargoLabel = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtMateriales = new System.Windows.Forms.TextBox();
+            this.dataGridMateriales = new System.Windows.Forms.DataGridView();
+            this.btnTerminarMaterial = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
-            this.txtObservaciones = new System.Windows.Forms.RichTextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.dtpFechaRealizacion = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.label19 = new System.Windows.Forms.Label();
+            this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMateriales)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtCantidadSolicitada
+            // groupBox2
             // 
-            this.txtCantidadSolicitada.Location = new System.Drawing.Point(190, 90);
-            this.txtCantidadSolicitada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCantidadSolicitada.Name = "txtCantidadSolicitada";
-            this.txtCantidadSolicitada.Size = new System.Drawing.Size(200, 22);
-            this.txtCantidadSolicitada.TabIndex = 17;
+            this.groupBox2.Controls.Add(this.dniLabel);
+            this.groupBox2.Controls.Add(this.groupBox4);
+            this.groupBox2.Controls.Add(this.cboTecnico);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.estadoLabel);
+            this.groupBox2.Controls.Add(this.telefonoLabel);
+            this.groupBox2.Controls.Add(this.areaTrabajoLabel);
+            this.groupBox2.Controls.Add(this.tipoCargoLabel);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(22, 23);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(901, 302);
+            this.groupBox2.TabIndex = 45;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Detalles del Tecnico";
             // 
-            // txtIDMateriales
+            // dniLabel
             // 
-            this.txtIDMateriales.Location = new System.Drawing.Point(190, 42);
-            this.txtIDMateriales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIDMateriales.Name = "txtIDMateriales";
-            this.txtIDMateriales.Size = new System.Drawing.Size(200, 22);
-            this.txtIDMateriales.TabIndex = 16;
+            this.dniLabel.AutoSize = true;
+            this.dniLabel.ForeColor = System.Drawing.Color.White;
+            this.dniLabel.Location = new System.Drawing.Point(129, 84);
+            this.dniLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dniLabel.Name = "dniLabel";
+            this.dniLabel.Size = new System.Drawing.Size(0, 16);
+            this.dniLabel.TabIndex = 52;
             // 
-            // label2
+            // groupBox4
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(47, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 16);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Cantidad Solicitada:";
+            this.groupBox4.Controls.Add(this.dtpFechaRegistroMaterial);
+            this.groupBox4.Controls.Add(this.CodigoMaterial);
+            this.groupBox4.Controls.Add(this.cboMateriales);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.stockMaterial);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.ForeColor = System.Drawing.Color.White;
+            this.groupBox4.Location = new System.Drawing.Point(422, 29);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Size = new System.Drawing.Size(443, 255);
+            this.groupBox4.TabIndex = 42;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Detalles del Repuesto";
             // 
-            // label1
+            // dtpFechaRegistroMaterial
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(69, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 16);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "ID Materiales:";
+            this.dtpFechaRegistroMaterial.Location = new System.Drawing.Point(178, 152);
+            this.dtpFechaRegistroMaterial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFechaRegistroMaterial.Name = "dtpFechaRegistroMaterial";
+            this.dtpFechaRegistroMaterial.Size = new System.Drawing.Size(198, 22);
+            this.dtpFechaRegistroMaterial.TabIndex = 47;
             // 
-            // groupBox1
+            // CodigoMaterial
             // 
-            this.groupBox1.Controls.Add(this.txtIDTecnico);
-            this.groupBox1.Controls.Add(this.txtCantidadEntregada);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtIDMateriales);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCantidadSolicitada);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(22, 28);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(899, 172);
-            this.groupBox1.TabIndex = 23;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos del Pedido";
+            this.CodigoMaterial.AutoSize = true;
+            this.CodigoMaterial.ForeColor = System.Drawing.Color.White;
+            this.CodigoMaterial.Location = new System.Drawing.Point(187, 108);
+            this.CodigoMaterial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CodigoMaterial.Name = "CodigoMaterial";
+            this.CodigoMaterial.Size = new System.Drawing.Size(0, 16);
+            this.CodigoMaterial.TabIndex = 52;
             // 
-            // txtIDTecnico
+            // cboMateriales
             // 
-            this.txtIDTecnico.Location = new System.Drawing.Point(588, 35);
-            this.txtIDTecnico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIDTecnico.Name = "txtIDTecnico";
-            this.txtIDTecnico.Size = new System.Drawing.Size(200, 22);
-            this.txtIDTecnico.TabIndex = 48;
+            this.cboMateriales.FormattingEnabled = true;
+            this.cboMateriales.Location = new System.Drawing.Point(180, 61);
+            this.cboMateriales.Name = "cboMateriales";
+            this.cboMateriales.Size = new System.Drawing.Size(196, 24);
+            this.cboMateriales.TabIndex = 55;
+            this.cboMateriales.SelectedIndexChanged += new System.EventHandler(this.cboMateriales_SelectedIndexChanged);
             // 
-            // txtCantidadEntregada
+            // label9
             // 
-            this.txtCantidadEntregada.Location = new System.Drawing.Point(588, 90);
-            this.txtCantidadEntregada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCantidadEntregada.Name = "txtCantidadEntregada";
-            this.txtCantidadEntregada.Size = new System.Drawing.Size(200, 22);
-            this.txtCantidadEntregada.TabIndex = 47;
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(55, 108);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 16);
+            this.label9.TabIndex = 51;
+            this.label9.Text = "Codigo:";
             // 
-            // label5
+            // stockMaterial
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(446, 93);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 16);
-            this.label5.TabIndex = 46;
-            this.label5.Text = "Cantidad Entregada:";
+            this.stockMaterial.AutoSize = true;
+            this.stockMaterial.ForeColor = System.Drawing.Color.White;
+            this.stockMaterial.Location = new System.Drawing.Point(189, 194);
+            this.stockMaterial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.stockMaterial.Name = "stockMaterial";
+            this.stockMaterial.Size = new System.Drawing.Size(0, 16);
+            this.stockMaterial.TabIndex = 48;
             // 
-            // label4
+            // label10
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(472, 41);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 16);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "ID Tecnico:";
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(55, 65);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(110, 16);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Nombre Material:";
             // 
-            // label7
+            // label21
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 229);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 16);
-            this.label7.TabIndex = 6;
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(55, 194);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(44, 16);
+            this.label21.TabIndex = 44;
+            this.label21.Text = "Stock:";
             // 
-            // groupBox3
+            // label22
             // 
-            this.groupBox3.Controls.Add(this.buttonHistorialPeMat);
-            this.groupBox3.Controls.Add(this.btnRegistrar);
-            this.groupBox3.Controls.Add(this.txtObservaciones);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.dtpFechaEntrega);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.dtpFechaRealizacion);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(22, 214);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(899, 356);
-            this.groupBox3.TabIndex = 39;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Detalles del Pedido";
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(55, 151);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(102, 16);
+            this.label22.TabIndex = 43;
+            this.label22.Text = "Fecha Registro:";
             // 
-            // buttonHistorialPeMat
+            // cboTecnico
             // 
-            this.buttonHistorialPeMat.ForeColor = System.Drawing.Color.Black;
-            this.buttonHistorialPeMat.Location = new System.Drawing.Point(609, 304);
-            this.buttonHistorialPeMat.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonHistorialPeMat.Name = "buttonHistorialPeMat";
-            this.buttonHistorialPeMat.Size = new System.Drawing.Size(127, 30);
-            this.buttonHistorialPeMat.TabIndex = 39;
-            this.buttonHistorialPeMat.Text = "Ver Historial";
-            this.buttonHistorialPeMat.UseVisualStyleBackColor = true;
-            this.buttonHistorialPeMat.Click += new System.EventHandler(this.buttonHistorialPeMat_Click);
+            this.cboTecnico.FormattingEnabled = true;
+            this.cboTecnico.Location = new System.Drawing.Point(152, 42);
+            this.cboTecnico.Name = "cboTecnico";
+            this.cboTecnico.Size = new System.Drawing.Size(188, 24);
+            this.cboTecnico.TabIndex = 56;
+            this.cboTecnico.SelectedIndexChanged += new System.EventHandler(this.cboTecnico_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(25, 84);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(30, 16);
+            this.label15.TabIndex = 51;
+            this.label15.Text = "Dni:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(25, 45);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(120, 16);
+            this.label11.TabIndex = 49;
+            this.label11.Text = "Tecnico Asignado:";
+            // 
+            // estadoLabel
+            // 
+            this.estadoLabel.AutoSize = true;
+            this.estadoLabel.ForeColor = System.Drawing.Color.White;
+            this.estadoLabel.Location = new System.Drawing.Point(130, 172);
+            this.estadoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.estadoLabel.Name = "estadoLabel";
+            this.estadoLabel.Size = new System.Drawing.Size(0, 16);
+            this.estadoLabel.TabIndex = 50;
+            // 
+            // telefonoLabel
+            // 
+            this.telefonoLabel.AutoSize = true;
+            this.telefonoLabel.ForeColor = System.Drawing.Color.White;
+            this.telefonoLabel.Location = new System.Drawing.Point(130, 127);
+            this.telefonoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.telefonoLabel.Name = "telefonoLabel";
+            this.telefonoLabel.Size = new System.Drawing.Size(0, 16);
+            this.telefonoLabel.TabIndex = 49;
+            // 
+            // areaTrabajoLabel
+            // 
+            this.areaTrabajoLabel.AutoSize = true;
+            this.areaTrabajoLabel.ForeColor = System.Drawing.Color.White;
+            this.areaTrabajoLabel.Location = new System.Drawing.Point(132, 264);
+            this.areaTrabajoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.areaTrabajoLabel.Name = "areaTrabajoLabel";
+            this.areaTrabajoLabel.Size = new System.Drawing.Size(0, 16);
+            this.areaTrabajoLabel.TabIndex = 48;
+            // 
+            // tipoCargoLabel
+            // 
+            this.tipoCargoLabel.AutoSize = true;
+            this.tipoCargoLabel.ForeColor = System.Drawing.Color.White;
+            this.tipoCargoLabel.Location = new System.Drawing.Point(130, 218);
+            this.tipoCargoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tipoCargoLabel.Name = "tipoCargoLabel";
+            this.tipoCargoLabel.Size = new System.Drawing.Size(0, 16);
+            this.tipoCargoLabel.TabIndex = 47;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(25, 172);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 16);
+            this.label13.TabIndex = 46;
+            this.label13.Text = "Estado:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(25, 127);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 16);
+            this.label12.TabIndex = 45;
+            this.label12.Text = "Teléfono:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(27, 264);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(90, 16);
+            this.label14.TabIndex = 44;
+            this.label14.Text = "Area Trabajo:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(25, 218);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(78, 16);
+            this.label16.TabIndex = 43;
+            this.label16.Text = "Tipo Cargo:";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label17);
+            this.groupBox5.Controls.Add(this.txtMateriales);
+            this.groupBox5.Controls.Add(this.dataGridMateriales);
+            this.groupBox5.Controls.Add(this.btnTerminarMaterial);
+            this.groupBox5.Controls.Add(this.btnRegistrar);
+            this.groupBox5.Controls.Add(this.dtpFechaEntrega);
+            this.groupBox5.Controls.Add(this.label18);
+            this.groupBox5.Controls.Add(this.dtpFechaRealizacion);
+            this.groupBox5.Controls.Add(this.label19);
+            this.groupBox5.ForeColor = System.Drawing.Color.Black;
+            this.groupBox5.Location = new System.Drawing.Point(22, 329);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Size = new System.Drawing.Size(905, 427);
+            this.groupBox5.TabIndex = 44;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Detalles del Pedido";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(445, 117);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(193, 16);
+            this.label17.TabIndex = 46;
+            this.label17.Text = "Buscar Por Codigo de Material:\r\n";
+            // 
+            // txtMateriales
+            // 
+            this.txtMateriales.Location = new System.Drawing.Point(656, 114);
+            this.txtMateriales.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMateriales.Name = "txtMateriales";
+            this.txtMateriales.Size = new System.Drawing.Size(208, 22);
+            this.txtMateriales.TabIndex = 45;
+            this.txtMateriales.TextChanged += new System.EventHandler(this.txtMateriales_TextChanged);
+            // 
+            // dataGridMateriales
+            // 
+            this.dataGridMateriales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridMateriales.Location = new System.Drawing.Point(27, 145);
+            this.dataGridMateriales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridMateriales.Name = "dataGridMateriales";
+            this.dataGridMateriales.RowHeadersWidth = 57;
+            this.dataGridMateriales.RowTemplate.Height = 24;
+            this.dataGridMateriales.Size = new System.Drawing.Size(851, 235);
+            this.dataGridMateriales.TabIndex = 43;
+            // 
+            // btnTerminarMaterial
+            // 
+            this.btnTerminarMaterial.ForeColor = System.Drawing.Color.Black;
+            this.btnTerminarMaterial.Location = new System.Drawing.Point(736, 386);
+            this.btnTerminarMaterial.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTerminarMaterial.Name = "btnTerminarMaterial";
+            this.btnTerminarMaterial.Size = new System.Drawing.Size(142, 30);
+            this.btnTerminarMaterial.TabIndex = 42;
+            this.btnTerminarMaterial.Text = "Terminar Pedido";
+            this.btnTerminarMaterial.UseVisualStyleBackColor = true;
+            this.btnTerminarMaterial.Click += new System.EventHandler(this.btnTerminarMaterial_Click);
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.ForeColor = System.Drawing.Color.Black;
-            this.btnRegistrar.Location = new System.Drawing.Point(744, 304);
+            this.btnRegistrar.Location = new System.Drawing.Point(381, 47);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(127, 30);
-            this.btnRegistrar.TabIndex = 38;
+            this.btnRegistrar.Size = new System.Drawing.Size(166, 30);
+            this.btnRegistrar.TabIndex = 40;
             this.btnRegistrar.Text = "Añadir";
             this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click_1);
-            // 
-            // txtObservaciones
-            // 
-            this.txtObservaciones.Location = new System.Drawing.Point(27, 122);
-            this.txtObservaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(844, 162);
-            this.txtObservaciones.TabIndex = 37;
-            this.txtObservaciones.Text = "";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(34, 90);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 16);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Observaciones:";
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // dtpFechaEntrega
             // 
-            this.dtpFechaEntrega.Location = new System.Drawing.Point(627, 30);
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(161, 71);
             this.dtpFechaEntrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(200, 22);
             this.dtpFechaEntrega.TabIndex = 22;
             // 
-            // label6
+            // label18
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(499, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 16);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Fecha Entrega:";
+            this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(43, 76);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(98, 16);
+            this.label18.TabIndex = 21;
+            this.label18.Text = "Fecha Entrega:";
             // 
             // dtpFechaRealizacion
             // 
-            this.dtpFechaRealizacion.Location = new System.Drawing.Point(152, 29);
+            this.dtpFechaRealizacion.Location = new System.Drawing.Point(161, 34);
             this.dtpFechaRealizacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFechaRealizacion.Name = "dtpFechaRealizacion";
             this.dtpFechaRealizacion.Size = new System.Drawing.Size(200, 22);
             this.dtpFechaRealizacion.TabIndex = 20;
             // 
-            // label3
+            // label19
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(24, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 16);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Fecha Realizacion:";
+            this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(29, 36);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(122, 16);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "Fecha Realizacion:";
             // 
             // OrdenPedidoMaterialForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(942, 596);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(949, 769);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "OrdenPedidoMaterialForm";
             this.Text = "OrdenPedidoMaterialForm";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMateriales)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtCantidadSolicitada;
-        private System.Windows.Forms.TextBox txtIDMateriales;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtCantidadEntregada;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dtpFechaRealizacion;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtpFechaEntrega;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RichTextBox txtObservaciones;
-        private System.Windows.Forms.Button buttonHistorialPeMat;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label dniLabel;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DateTimePicker dtpFechaRegistroMaterial;
+        private System.Windows.Forms.Label CodigoMaterial;
+        private System.Windows.Forms.ComboBox cboMateriales;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label stockMaterial;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox cboTecnico;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label estadoLabel;
+        private System.Windows.Forms.Label telefonoLabel;
+        private System.Windows.Forms.Label areaTrabajoLabel;
+        private System.Windows.Forms.Label tipoCargoLabel;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtMateriales;
+        private System.Windows.Forms.DataGridView dataGridMateriales;
+        private System.Windows.Forms.Button btnTerminarMaterial;
         private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.TextBox txtIDTecnico;
+        private System.Windows.Forms.DateTimePicker dtpFechaEntrega;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DateTimePicker dtpFechaRealizacion;
+        private System.Windows.Forms.Label label19;
     }
 }

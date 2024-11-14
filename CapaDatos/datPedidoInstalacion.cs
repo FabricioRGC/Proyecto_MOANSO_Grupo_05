@@ -19,46 +19,34 @@ namespace CapaDatos
         }
 
         // Método para listar pedidos de instalación
-        public List<PedidoInstalacion.entPedidoInstalacion> ListarPedidosInstalacion()
+        public List<PedidoInstalacion.entPedidoInstalacion> ListarPedidoInstalacion()
         {
-            SqlCommand cmd = null;
             List<PedidoInstalacion.entPedidoInstalacion> lista = new List<PedidoInstalacion.entPedidoInstalacion>();
-            try
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_MOSTRAR_PedidoInstalacion", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cn.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM pedidosinstalacion", cn))
                 {
-                    PedidoInstalacion.entPedidoInstalacion pedido = new PedidoInstalacion.entPedidoInstalacion
+                    cn.Open();
+                    using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        NumeroOrden = Convert.ToInt32(dr["NumeroOrden"]),
-                        IDInstalacion = Convert.ToInt32(dr["IDInstalacion"]),
-                        FechaOrden = DateTime.Parse(dr["FechaOrden"].ToString()),
-                        Telefono = dr["Telefono"].ToString(),
-                        IDJefeSoporteTecnico = Convert.ToInt32(dr["IDJefeSoporteTecnico"]),
-                        FechaInicio = DateTime.Parse(dr["FechaInicio"].ToString()), // No puede ser NULL
-                        FechaFin = dr["FechaFin"] != DBNull.Value ? DateTime.Parse(dr["FechaFin"].ToString()) : (DateTime?)null, // Manejo de FechaFin que puede ser NULL
-                        HoraInicio = dr["HoraInicio"] != DBNull.Value ? TimeSpan.Parse(dr["HoraInicio"].ToString()) : TimeSpan.Zero,
-                        HoraFin = dr["HoraFin"] != DBNull.Value ? TimeSpan.Parse(dr["HoraFin"].ToString()) : TimeSpan.Zero,
-                        TipoInstalacion = dr["TipoInstalacion"].ToString(),
-                        Ubicacion = dr["Ubicacion"].ToString(),
-                        Descripcion = dr["Descripcion"].ToString(),
-                        Observaciones = dr["Observaciones"].ToString(),
-                        Estado = dr["Estado"].ToString()
-                    };
-                    lista.Add(pedido);
+                        while (dr.Read())
+                        {
+                            PedidoInstalacion.entPedidoInstalacion pedidoInstalacion = new PedidoInstalacion.entPedidoInstalacion
+                            {
+                                NumeroOrden = Convert.ToInt32(dr["numeroOrden"]),
+                                nombreCliente = dr["nombreCliente"].ToString(),
+                                nombreTecnico = dr["nombreTecnico"].ToString(),
+                                TipoInstalacion = dr["tipoInstalacion"].ToString(),
+                                FechaInicio = Convert.ToDateTime(dr["fechaInicio"]),
+                                FechaFin = dr["fechaFin"] != DBNull.Value ? Convert.ToDateTime(dr["fechaFin"]) : (DateTime?)null,
+                                Estado = dr["estado"].ToString()
+                            };
+
+                            lista.Add(pedidoInstalacion);
+                        }
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                cmd?.Connection.Close();
             }
             return lista;
         }
@@ -75,18 +63,13 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_AÑADIR_PedidosInstalacion", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@IDInstalacion", pedido.IDInstalacion);
-                cmd.Parameters.AddWithValue("@FechaOrden", pedido.FechaOrden);
-                cmd.Parameters.AddWithValue("@Telefono", pedido.Telefono);
-                cmd.Parameters.AddWithValue("@IDJefeSoporteTecnico", pedido.IDJefeSoporteTecnico);
+
+                // Parámetros que coinciden con la tabla 'pedidosinstalacion'
+                cmd.Parameters.AddWithValue("@nombreCliente", pedido.nombreCliente);
+                cmd.Parameters.AddWithValue("@nombreTecnico", pedido.nombreTecnico);
                 cmd.Parameters.AddWithValue("@FechaInicio", pedido.FechaInicio);
                 cmd.Parameters.AddWithValue("@FechaFin", (object)pedido.FechaFin ?? DBNull.Value);
-                cmd.Parameters.AddWithValue("@HoraInicio", pedido.HoraInicio);
-                cmd.Parameters.AddWithValue("@HoraFin", pedido.HoraFin);
                 cmd.Parameters.AddWithValue("@TipoInstalacion", pedido.TipoInstalacion);
-                cmd.Parameters.AddWithValue("@Ubicacion", pedido.Ubicacion);
-                cmd.Parameters.AddWithValue("@Descripcion", pedido.Descripcion);
-                cmd.Parameters.AddWithValue("@Observaciones", pedido.Observaciones);
                 cmd.Parameters.AddWithValue("@Estado", pedido.Estado);
 
                 cn.Open();
@@ -104,18 +87,20 @@ namespace CapaDatos
             {
                 cmd?.Connection.Close();
             }
+
             return inserto;
         }
 
 
-        // Método para anular un pedido de instalación
-        public void AnularPedidoInstalacion(int numeroOrden)
+
+        // Método para terminar un pedido de instalación
+        public void TerminarPedidoRepuesto(int numeroOrden)
         {
             SqlCommand cmd = null;
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_ANULAR_PEDIDOS_INSTALACION", cn);
+                cmd = new SqlCommand("SP_TERMINAR_PEDIDOS_INSTALACION", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@NumeroOrden", numeroOrden);
 
@@ -124,7 +109,7 @@ namespace CapaDatos
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al anular el pedido de instalación: " + ex.Message, ex);
+                throw new Exception("Error al terminar el pedido de instalación: " + ex.Message, ex);
             }
             finally
             {
