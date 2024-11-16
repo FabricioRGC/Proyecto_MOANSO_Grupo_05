@@ -8,7 +8,19 @@ namespace CapaEntidad
 {
     public class Planes
     {
+        public class entPlanes
+        {
+            public string PlanNombre { get; set; }
+            public int VelocidadMbps { get; set; }
+            public int LimiteDeDatos { get; set; }
+            public float PrecioMensual { get; set; }
+            public string TipoServicio { get; set; }
+            public string Caracteristicas { get; set; }
+            public string estado { get; set; }
 
+
+
+        }
 
     }
 }
