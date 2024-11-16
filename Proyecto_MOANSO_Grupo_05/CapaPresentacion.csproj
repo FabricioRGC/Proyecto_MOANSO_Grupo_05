@@ -71,18 +71,6 @@
     <Compile Include="ContratosForm.Designer.cs">
       <DependentUpon>ContratosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DiagnosticoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DiagnosticoForm.Designer.cs">
-      <DependentUpon>DiagnosticoForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DiagnosticoHistorialForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DiagnosticoHistorialForm.Designer.cs">
-      <DependentUpon>DiagnosticoHistorialForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,12 +207,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContratosForm.resx">
       <DependentUpon>ContratosForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DiagnosticoForm.resx">
-      <DependentUpon>DiagnosticoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DiagnosticoHistorialForm.resx">
-      <DependentUpon>DiagnosticoHistorialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
