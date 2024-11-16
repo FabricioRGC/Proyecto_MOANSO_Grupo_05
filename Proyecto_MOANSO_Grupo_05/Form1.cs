@@ -148,47 +148,42 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void button13_Click_1(object sender, EventArgs e)
         {
-            AbrirPrueba2(new ClientesForm());
+            //AbrirPrueba2(new ClientesForm());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AbrirPrueba2(new ContratosForm());
+           
 
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            AbrirPrueba2(new PagosForm());
 
         }
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            AbrirPrueba2(new ProformasForm());
+           
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AbrirPrueba2(new OrdenDeTrabajocs());
 
         }
 
         private void button8_Click_1(object sender, EventArgs e)
         {
-            AbrirPrueba2(new OrdenesPedidoInstalacionForm());
 
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            AbrirPrueba2(new OrdenPedidoMaterialForm());
 
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            AbrirPrueba2(new OrdenPedidoRepuestoForm());
 
         }
 
@@ -204,7 +199,6 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void button14_Click_1(object sender, EventArgs e)
         {
-            AbrirPrueba2(new PersonalForm());
 
         }
 
@@ -215,7 +209,6 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            AbrirPrueba2(new PlanificacionMantenimientoForm());
 
         }
 
@@ -227,7 +220,119 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void button16_Click(object sender, EventArgs e)
         {
+        }
+
+        private void proformasDeVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new ProformasForm());
+        }
+
+        private void vENTASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        //clientes 
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new ClientesForm());
+        }
+
+        private void contratosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new ContratosForm());
+        }
+
+        private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new PagosForm());
+        }
+
+        private void ordenesDeTrabajoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new OrdenDeTrabajocs());
+
+        }
+
+        private void ordenesDePedidoDeInstalaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ordenesDePedidoDeMaterialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ordenesDePedidoDeRepuestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sSSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new NotaDeSalidaForm());
+        }
+
+        private void materialesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new MaterialesForm());
+
+        }
+
+        private void repuestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new RepuestosForm());
+
+        }
+
+        private void personalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new PlanificacionMantenimientoForm());
+
+        }
+
+        private void zonaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
+
+        private void ordenesDePedidoDeInstalaciónToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new OrdenesPedidoInstalacionForm());
+
+        }
+
+        private void personalToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new PersonalForm());
+        }
+
+        private void ordenesDePedidoDeMaterialesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new OrdenPedidoMaterialForm());
+
+        }
+
+        private void ordenesDePedidoDeRepuestosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new OrdenPedidoRepuestoForm());
+
+        }
+
+        private void zonaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
             AbrirPrueba2(new ZonasDeCoberturaForm());
+
         }
     }
 }

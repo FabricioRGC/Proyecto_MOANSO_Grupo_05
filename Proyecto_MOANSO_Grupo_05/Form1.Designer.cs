@@ -28,31 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.vENTASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contratosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proformasDeVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oRDENESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenesDeTrabajoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mANTENIMIENTOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aLMACENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sSSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materialesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.repuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pEDIDOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenesDePedidoDeInstalaciónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenesDePedidoDeMaterialesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenesDePedidoDeRepuestosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pERSONALToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.personalToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pLANESYZONAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zonaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.serviciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -61,7 +70,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(98)))), ((int)(((byte)(175)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(72, 2);
+            this.label1.Location = new System.Drawing.Point(-12, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1189, 69);
             this.label1.TabIndex = 15;
@@ -73,52 +82,23 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(172, 83);
+            this.panel2.Location = new System.Drawing.Point(12, 245);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1110, 1036);
+            this.panel2.Size = new System.Drawing.Size(1287, 1036);
             this.panel2.TabIndex = 22;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.OliveDrab;
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button16);
             this.panel1.Controls.Add(this.button15);
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.button14);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.ForeColor = System.Drawing.Color.Olive;
-            this.panel1.Location = new System.Drawing.Point(-2, 86);
+            this.panel1.Location = new System.Drawing.Point(12, 196);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 984);
+            this.panel1.Size = new System.Drawing.Size(79, 29);
             this.panel1.TabIndex = 26;
-            // 
-            // button16
-            // 
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(14, 685);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(146, 67);
-            this.button16.TabIndex = 45;
-            this.button16.Text = "Zona ";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button15
             // 
@@ -132,23 +112,6 @@
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(21, 622);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(131, 36);
-            this.button4.TabIndex = 43;
-            this.button4.Text = "Planificaciónes de Mantenimiento";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
-            // 
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.Lime;
@@ -158,283 +121,238 @@
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.Black;
             this.button9.Location = new System.Drawing.Point(1200, 597);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(156, 36);
             this.button9.TabIndex = 42;
             this.button9.Text = "Planificaciónes de Mantenimiento";
             this.button9.UseVisualStyleBackColor = false;
             // 
-            // label5
+            // menuStrip1
             // 
-            this.label5.AutoSize = true;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(-5, 580);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(186, 31);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Mantenimiento";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vENTASToolStripMenuItem,
+            this.oRDENESToolStripMenuItem,
+            this.pEDIDOSToolStripMenuItem,
+            this.pERSONALToolStripMenuItem1,
+            this.aLMACENToolStripMenuItem,
+            this.mANTENIMIENTOToolStripMenuItem,
+            this.pLANESYZONAToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1311, 73);
+            this.menuStrip1.TabIndex = 27;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // button14
+            // contextMenuStrip1
             // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.ForeColor = System.Drawing.Color.Black;
-            this.button14.Location = new System.Drawing.Point(32, 545);
-            this.button14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(114, 23);
-            this.button14.TabIndex = 40;
-            this.button14.Text = "Personal";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click_1);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // button12
+            // vENTASToolStripMenuItem
             // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Location = new System.Drawing.Point(47, 518);
-            this.button12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(93, 23);
-            this.button12.TabIndex = 39;
-            this.button12.Text = "Repuestos";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click_1);
+            this.vENTASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientesToolStripMenuItem,
+            this.contratosToolStripMenuItem,
+            this.pagosToolStripMenuItem,
+            this.proformasDeVToolStripMenuItem});
+            this.vENTASToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vENTASToolStripMenuItem.Image")));
+            this.vENTASToolStripMenuItem.Name = "vENTASToolStripMenuItem";
+            this.vENTASToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.vENTASToolStripMenuItem.Text = "VENTAS";
+            this.vENTASToolStripMenuItem.Click += new System.EventHandler(this.vENTASToolStripMenuItem_Click);
             // 
-            // button11
+            // clientesToolStripMenuItem
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.Location = new System.Drawing.Point(57, 490);
-            this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(83, 24);
-            this.button11.TabIndex = 38;
-            this.button11.Text = "Materiales";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click_1);
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
-            // button1
+            // contratosToolStripMenuItem
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(44, 458);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 28);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Notas de Salida";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.contratosToolStripMenuItem.Name = "contratosToolStripMenuItem";
+            this.contratosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.contratosToolStripMenuItem.Text = "Contratos ";
+            this.contratosToolStripMenuItem.Click += new System.EventHandler(this.contratosToolStripMenuItem_Click);
             // 
-            // label4
+            // pagosToolStripMenuItem
             // 
-            this.label4.AutoSize = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(-5, 398);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 48);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "Almacen";
+            this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.pagosToolStripMenuItem.Text = "Pagos";
+            this.pagosToolStripMenuItem.Click += new System.EventHandler(this.pagosToolStripMenuItem_Click);
             // 
-            // button8
+            // proformasDeVToolStripMenuItem
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(11, 258);
-            this.button8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(156, 38);
-            this.button8.TabIndex = 35;
-            this.button8.Text = "Ordenes de Pedido de Instalación";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            this.proformasDeVToolStripMenuItem.Name = "proformasDeVToolStripMenuItem";
+            this.proformasDeVToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.proformasDeVToolStripMenuItem.Text = "Proformas de ventas";
+            this.proformasDeVToolStripMenuItem.Click += new System.EventHandler(this.proformasDeVToolStripMenuItem_Click);
             // 
-            // button7
+            // oRDENESToolStripMenuItem
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(11, 342);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(156, 38);
-            this.button7.TabIndex = 34;
-            this.button7.Text = "Ordenes de Pedido de Repuestos";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.oRDENESToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ordenesDeTrabajoToolStripMenuItem});
+            this.oRDENESToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("oRDENESToolStripMenuItem.Image")));
+            this.oRDENESToolStripMenuItem.Name = "oRDENESToolStripMenuItem";
+            this.oRDENESToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.oRDENESToolStripMenuItem.Text = "ORDENES";
             // 
-            // button6
+            // ordenesDeTrabajoToolStripMenuItem
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(11, 300);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(156, 38);
-            this.button6.TabIndex = 33;
-            this.button6.Text = "Ordenes de Pedido de Materiales";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.ordenesDeTrabajoToolStripMenuItem.Name = "ordenesDeTrabajoToolStripMenuItem";
+            this.ordenesDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ordenesDeTrabajoToolStripMenuItem.Text = "Ordenes de trabajo ";
+            this.ordenesDeTrabajoToolStripMenuItem.Click += new System.EventHandler(this.ordenesDeTrabajoToolStripMenuItem_Click);
             // 
-            // button5
+            // mANTENIMIENTOToolStripMenuItem
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(29, 229);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(123, 25);
-            this.button5.TabIndex = 32;
-            this.button5.Text = "Ordenes de Trabajo";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.mANTENIMIENTOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sSToolStripMenuItem});
+            this.mANTENIMIENTOToolStripMenuItem.Name = "mANTENIMIENTOToolStripMenuItem";
+            this.mANTENIMIENTOToolStripMenuItem.Size = new System.Drawing.Size(114, 69);
+            this.mANTENIMIENTOToolStripMenuItem.Text = "MANTENIMIENTO";
             // 
-            // label3
+            // aLMACENToolStripMenuItem
             // 
-            this.label3.AutoSize = true;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(0, 180);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(177, 37);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "ORDENES";
+            this.aLMACENToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sSSToolStripMenuItem,
+            this.materialesToolStripMenuItem,
+            this.repuestosToolStripMenuItem});
+            this.aLMACENToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aLMACENToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aLMACENToolStripMenuItem.Image")));
+            this.aLMACENToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.aLMACENToolStripMenuItem.Name = "aLMACENToolStripMenuItem";
+            this.aLMACENToolStripMenuItem.Size = new System.Drawing.Size(259, 69);
+            this.aLMACENToolStripMenuItem.Text = "ALMACEN";
             // 
-            // button13
+            // sSSToolStripMenuItem
             // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.Black;
-            this.button13.Location = new System.Drawing.Point(29, 56);
-            this.button13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(123, 25);
-            this.button13.TabIndex = 30;
-            this.button13.Text = "Clientes";
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click_1);
+            this.sSSToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.sSSToolStripMenuItem.Name = "sSSToolStripMenuItem";
+            this.sSSToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sSSToolStripMenuItem.Text = "Nota de Salida";
+            this.sSSToolStripMenuItem.Click += new System.EventHandler(this.sSSToolStripMenuItem_Click);
             // 
-            // button10
+            // sSToolStripMenuItem
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Location = new System.Drawing.Point(31, 144);
-            this.button10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(121, 26);
-            this.button10.TabIndex = 29;
-            this.button10.Text = "Proformas de Venta";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            this.sSToolStripMenuItem.Name = "sSToolStripMenuItem";
+            this.sSToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
+            this.sSToolStripMenuItem.Text = "Planificación de Mantenimiento Preventivo ";
+            this.sSToolStripMenuItem.Click += new System.EventHandler(this.sSToolStripMenuItem_Click);
             // 
-            // button2
+            // materialesToolStripMenuItem
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(31, 114);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 26);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Pagos";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.materialesToolStripMenuItem.Name = "materialesToolStripMenuItem";
+            this.materialesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.materialesToolStripMenuItem.Text = "Materiales ";
+            this.materialesToolStripMenuItem.Click += new System.EventHandler(this.materialesToolStripMenuItem_Click);
             // 
-            // button3
+            // repuestosToolStripMenuItem
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(201)))), ((int)(((byte)(48)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(31, 85);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 25);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Contratos";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.repuestosToolStripMenuItem.Name = "repuestosToolStripMenuItem";
+            this.repuestosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.repuestosToolStripMenuItem.Text = "Repuestos";
+            this.repuestosToolStripMenuItem.Click += new System.EventHandler(this.repuestosToolStripMenuItem_Click);
             // 
-            // label2
+            // salirToolStripMenuItem
             // 
-            this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 44);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "VENTAS";
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // pEDIDOSToolStripMenuItem
+            // 
+            this.pEDIDOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ordenesDePedidoDeInstalaciónToolStripMenuItem1,
+            this.ordenesDePedidoDeMaterialesToolStripMenuItem1,
+            this.ordenesDePedidoDeRepuestosToolStripMenuItem1});
+            this.pEDIDOSToolStripMenuItem.Name = "pEDIDOSToolStripMenuItem";
+            this.pEDIDOSToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.pEDIDOSToolStripMenuItem.Text = "PEDIDOS";
+            // 
+            // ordenesDePedidoDeInstalaciónToolStripMenuItem1
+            // 
+            this.ordenesDePedidoDeInstalaciónToolStripMenuItem1.Name = "ordenesDePedidoDeInstalaciónToolStripMenuItem1";
+            this.ordenesDePedidoDeInstalaciónToolStripMenuItem1.Size = new System.Drawing.Size(187, 22);
+            this.ordenesDePedidoDeInstalaciónToolStripMenuItem1.Text = "Pedido de Instalación";
+            this.ordenesDePedidoDeInstalaciónToolStripMenuItem1.Click += new System.EventHandler(this.ordenesDePedidoDeInstalaciónToolStripMenuItem1_Click);
+            // 
+            // ordenesDePedidoDeMaterialesToolStripMenuItem1
+            // 
+            this.ordenesDePedidoDeMaterialesToolStripMenuItem1.Name = "ordenesDePedidoDeMaterialesToolStripMenuItem1";
+            this.ordenesDePedidoDeMaterialesToolStripMenuItem1.Size = new System.Drawing.Size(187, 22);
+            this.ordenesDePedidoDeMaterialesToolStripMenuItem1.Text = "Pedido de Materiales";
+            this.ordenesDePedidoDeMaterialesToolStripMenuItem1.Click += new System.EventHandler(this.ordenesDePedidoDeMaterialesToolStripMenuItem1_Click);
+            // 
+            // ordenesDePedidoDeRepuestosToolStripMenuItem1
+            // 
+            this.ordenesDePedidoDeRepuestosToolStripMenuItem1.Name = "ordenesDePedidoDeRepuestosToolStripMenuItem1";
+            this.ordenesDePedidoDeRepuestosToolStripMenuItem1.Size = new System.Drawing.Size(187, 22);
+            this.ordenesDePedidoDeRepuestosToolStripMenuItem1.Text = "Pedido de Repuestos";
+            this.ordenesDePedidoDeRepuestosToolStripMenuItem1.Click += new System.EventHandler(this.ordenesDePedidoDeRepuestosToolStripMenuItem1_Click);
+            // 
+            // pERSONALToolStripMenuItem1
+            // 
+            this.pERSONALToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.personalToolStripMenuItem2});
+            this.pERSONALToolStripMenuItem1.Name = "pERSONALToolStripMenuItem1";
+            this.pERSONALToolStripMenuItem1.Size = new System.Drawing.Size(77, 20);
+            this.pERSONALToolStripMenuItem1.Text = "PERSONAL";
+            // 
+            // personalToolStripMenuItem2
+            // 
+            this.personalToolStripMenuItem2.Name = "personalToolStripMenuItem2";
+            this.personalToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.personalToolStripMenuItem2.Text = "Personal";
+            this.personalToolStripMenuItem2.Click += new System.EventHandler(this.personalToolStripMenuItem2_Click);
+            // 
+            // pLANESYZONAToolStripMenuItem
+            // 
+            this.pLANESYZONAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zonaToolStripMenuItem1,
+            this.serviciosToolStripMenuItem});
+            this.pLANESYZONAToolStripMenuItem.Name = "pLANESYZONAToolStripMenuItem";
+            this.pLANESYZONAToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
+            this.pLANESYZONAToolStripMenuItem.Text = "PLANES DE SERVICIO";
+            // 
+            // zonaToolStripMenuItem1
+            // 
+            this.zonaToolStripMenuItem1.Name = "zonaToolStripMenuItem1";
+            this.zonaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.zonaToolStripMenuItem1.Text = "Zona";
+            this.zonaToolStripMenuItem1.Click += new System.EventHandler(this.zonaToolStripMenuItem1_Click);
+            // 
+            // serviciosToolStripMenuItem
+            // 
+            this.serviciosToolStripMenuItem.Name = "serviciosToolStripMenuItem";
+            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.serviciosToolStripMenuItem.Text = "Servicios";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(98)))), ((int)(((byte)(175)))));
-            this.ClientSize = new System.Drawing.Size(1281, 855);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1311, 650);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.Color.Olive;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,26 +362,33 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem vENTASToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contratosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem proformasDeVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oRDENESToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenesDeTrabajoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aLMACENToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sSSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem materialesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem repuestosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mANTENIMIENTOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pEDIDOSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenesDePedidoDeInstalaciónToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ordenesDePedidoDeMaterialesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ordenesDePedidoDeRepuestosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pERSONALToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem personalToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem pLANESYZONAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zonaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem serviciosToolStripMenuItem;
     }
 }
 
