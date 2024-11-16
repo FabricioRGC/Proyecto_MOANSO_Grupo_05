@@ -32,7 +32,7 @@ namespace Proyecto_MOANSO_Grupo_05
         {
              //Form formulario = new DiagnosticoForm();
              //formulario.Show();
-            AbrirPrueba(new DiagnosticoForm());
+            //AbrirPrueba(new DiagnosticoForm());
 
         }
 

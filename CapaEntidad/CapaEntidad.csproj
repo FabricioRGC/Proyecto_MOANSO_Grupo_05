@@ -52,6 +52,7 @@
     <Compile Include="Pago.cs" />
     <Compile Include="PedidoInstalacion.cs" />
     <Compile Include="Personal.cs" />
+    <Compile Include="Planes.cs" />
     <Compile Include="PlanificacionMantenimiento.cs" />
     <Compile Include="ProformaVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

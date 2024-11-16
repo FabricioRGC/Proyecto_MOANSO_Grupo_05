@@ -50,6 +50,7 @@
     <Compile Include="logPago.cs" />
     <Compile Include="logPedidoInstalacion.cs" />
     <Compile Include="logPersonal.cs" />
+    <Compile Include="logPlanes.cs" />
     <Compile Include="logPlanificacionMatenimiento.cs" />
     <Compile Include="logProforma.cs" />
     <Compile Include="logRepuestos.cs" />
