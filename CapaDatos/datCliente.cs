@@ -36,11 +36,11 @@ namespace CapaDatos
                 while (dr.Read())
                 {
                     entCliente cli = new entCliente();
-                    cli.nombre = dr["nombre"].ToString();
-                    cli.direccion = dr["direccion"].ToString();
-                    cli.telefono = dr["telefono"].ToString();
-                    cli.estado = dr["estado"].ToString();
-                    cli.dni = dr["dni"].ToString();
+                    cli.nombre = dr["Nombre"].ToString();
+                    cli.direccion = dr["Dirección"].ToString();
+                    cli.telefono = dr["Telefono"].ToString();
+                    cli.estado = dr["DNI"].ToString();
+                    cli.dni = dr["Estado"].ToString();
                     lista.Add(cli);
 
                 }

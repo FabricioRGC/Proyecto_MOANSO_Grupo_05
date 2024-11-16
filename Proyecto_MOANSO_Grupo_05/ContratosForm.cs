@@ -23,6 +23,12 @@ namespace Proyecto_MOANSO_Grupo_05
             InitializeComponent();
             CargarPlanes();
             cargarClientes();
+            listarContrato();
+        }
+
+        public void listarContrato()
+        {
+            tablaContratos.DataSource = logContrato.Instancia.ListarContrato();
         }
 
         public void LimpiarVariables()
@@ -35,7 +41,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void CargarPlanes()
         {
-            string consulta = "SELECT PlanNombre FROM PlanesInternet";
+            string consulta = "SELECT NombrePlanServicio FROM PlanDeServicio";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
@@ -55,7 +61,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void cargarClientes()
         {
-            string consulta = "SELECT NOMBRE FROM CLIENTES";
+            string consulta = "SELECT NOMBRE FROM CLIENTE";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
@@ -92,6 +98,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
             LimpiarVariables();
+            listarContrato();
         }
 
         // Boton Historial

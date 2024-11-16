@@ -37,7 +37,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         public void cargarPlanes()
         {
-            string consulta = "SELECT PlanNombre FROM PlanesInternet";
+            string consulta = "SELECT NombrePlanServicio FROM PlanDeServicio";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
@@ -57,7 +57,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         public void cargarAsesores()
         {
-            string consulta= "SELECT Nombre from personaltecnico where tipo_encargado = 'Asesor de Ventas'";
+            string consulta= "SELECT Nombre from Personal where Cargo = 'Asesor de Ventas'";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
@@ -113,7 +113,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void cargarClientes()
         {
-            string consulta = "SELECT NOMBRE FROM CLIENTES";
+            string consulta = "SELECT NOMBRE FROM CLIENTE";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {

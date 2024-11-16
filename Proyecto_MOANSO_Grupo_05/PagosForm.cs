@@ -30,6 +30,12 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             InitializeComponent();
             cargarClientes();
+            listarPagos();
+        }
+
+        public void listarPagos()
+        {
+            tablaPagos.DataSource = logPago.Instancia.ListarPagos();
         }
 
         public void limpiarVariables()
@@ -46,7 +52,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         public void cargarClientes()
         {
-            string consulta = "SELECT NOMBRE FROM CLIENTES";
+            string consulta = "SELECT NOMBRE FROM CLIENTE";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {

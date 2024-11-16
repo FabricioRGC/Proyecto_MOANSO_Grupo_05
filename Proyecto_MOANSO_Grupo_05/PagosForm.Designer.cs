@@ -63,9 +63,11 @@
             this.labelPlan = new System.Windows.Forms.Label();
             this.labelFechaContrato = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.tablaPagos = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaPagos)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -288,7 +290,7 @@
             this.groupBox1.Controls.Add(this.btnAñadir);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 293);
+            this.groupBox1.Location = new System.Drawing.Point(12, 182);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(461, 197);
             this.groupBox1.TabIndex = 39;
@@ -393,7 +395,7 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(12, 182);
+            this.groupBox3.Location = new System.Drawing.Point(479, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(461, 105);
             this.groupBox3.TabIndex = 40;
@@ -447,12 +449,21 @@
             this.label4.TabIndex = 27;
             this.label4.Text = "Tipo de Plan:";
             // 
+            // tablaPagos
+            // 
+            this.tablaPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaPagos.Location = new System.Drawing.Point(479, 123);
+            this.tablaPagos.Name = "tablaPagos";
+            this.tablaPagos.Size = new System.Drawing.Size(461, 256);
+            this.tablaPagos.TabIndex = 41;
+            // 
             // PagosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(112)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(485, 509);
+            this.ClientSize = new System.Drawing.Size(956, 394);
+            this.Controls.Add(this.tablaPagos);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -465,6 +476,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaPagos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -505,5 +517,6 @@
         private System.Windows.Forms.Label labelFechaContrato;
         private System.Windows.Forms.Label labelCodigoContrato;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView tablaPagos;
     }
 }
