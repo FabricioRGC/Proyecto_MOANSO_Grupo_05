@@ -182,5 +182,10 @@ namespace Proyecto_MOANSO_Grupo_05
             LimpiarVariables();
             listarMateriales();
         }
+
+        private void MaterialesForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
