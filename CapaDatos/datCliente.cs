@@ -38,9 +38,9 @@ namespace CapaDatos
                     entCliente cli = new entCliente();
                     cli.nombre = dr["Nombre"].ToString();
                     cli.direccion = dr["Dirección"].ToString();
-                    cli.telefono = dr["Telefono"].ToString();
-                    cli.estado = dr["DNI"].ToString();
-                    cli.dni = dr["Estado"].ToString();
+                    cli.telefono = dr["Telefono"].ToString();  
+                    cli.estado = dr["Estado"].ToString();
+                    cli.dni = dr["DNI"].ToString();
                     lista.Add(cli);
 
                 }

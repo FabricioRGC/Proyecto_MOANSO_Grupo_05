@@ -130,7 +130,7 @@ namespace Proyecto_MOANSO_Grupo_05
             txtNombre.Text = Convert.ToString(fila.Cells[0].Value);
             txtDireccion.Text = Convert.ToString(fila.Cells[1].Value);
             txtTelefono.Text = Convert.ToString(fila.Cells[2].Value);
-            txtDni.Text = Convert.ToString(fila.Cells[3].Value);
+            txtDni.Text = Convert.ToString(fila.Cells[4].Value);
         }
     }
 }
