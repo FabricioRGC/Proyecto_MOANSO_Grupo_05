@@ -208,7 +208,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtBuscarNombre);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(220, 10);
+            this.groupBox2.Location = new System.Drawing.Point(293, 11);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(628, 77);
