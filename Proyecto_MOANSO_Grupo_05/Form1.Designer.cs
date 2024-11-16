@@ -70,7 +70,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(98)))), ((int)(((byte)(175)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-12, 96);
+            this.label1.Location = new System.Drawing.Point(0, 161);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1189, 69);
             this.label1.TabIndex = 15;
@@ -91,11 +91,11 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.OliveDrab;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.button15);
             this.panel1.Controls.Add(this.button9);
             this.panel1.ForeColor = System.Drawing.Color.Olive;
-            this.panel1.Location = new System.Drawing.Point(12, 196);
+            this.panel1.Location = new System.Drawing.Point(12, 129);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(79, 29);
             this.panel1.TabIndex = 26;
@@ -130,6 +130,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.vENTASToolStripMenuItem,
             this.oRDENESToolStripMenuItem,
@@ -141,7 +142,7 @@
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1311, 73);
+            this.menuStrip1.Size = new System.Drawing.Size(1311, 29);
             this.menuStrip1.TabIndex = 27;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -221,11 +222,10 @@
             this.sSSToolStripMenuItem,
             this.materialesToolStripMenuItem,
             this.repuestosToolStripMenuItem});
-            this.aLMACENToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aLMACENToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aLMACENToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aLMACENToolStripMenuItem.Image")));
-            this.aLMACENToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.aLMACENToolStripMenuItem.Name = "aLMACENToolStripMenuItem";
-            this.aLMACENToolStripMenuItem.Size = new System.Drawing.Size(259, 69);
+            this.aLMACENToolStripMenuItem.Size = new System.Drawing.Size(115, 25);
             this.aLMACENToolStripMenuItem.Text = "ALMACEN";
             // 
             // sSSToolStripMenuItem
@@ -259,8 +259,9 @@
             // 
             // salirToolStripMenuItem
             // 
+            this.salirToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(56, 25);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
