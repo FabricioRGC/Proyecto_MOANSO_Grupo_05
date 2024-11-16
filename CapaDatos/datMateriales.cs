@@ -14,12 +14,13 @@ namespace CapaDatos
 {
     public class datMateriales
     {
-       private static readonly datMateriales _instancia = new datMateriales();
 
-       public static datMateriales Instancia
-       {
-          get { return datMateriales._instancia; }
-       }
+        private static readonly datMateriales _instancia = new datMateriales();
+
+        public static datMateriales Instancia
+        {
+            get { return datMateriales._instancia; }
+        }
         // Metodo para listar los clientes
         public List<entMateriales> ListarMateriales()
         {
@@ -36,13 +37,13 @@ namespace CapaDatos
                 while (dr.Read())
                 {
                     entMateriales mat = new entMateriales();
-                    mat.codigo = dr["codigo"].ToString();
-                    mat.nombre = dr["nombre"].ToString();
-                    mat.descripcion = dr["descripcion"].ToString();
-                    mat.stock = int.Parse(dr["stock"].ToString());
-                    mat.estado = dr["estado"].ToString();
-                   // mat.fechaInicio = Convert.ToDateTime(dr["fecha_Registro"]);
-                    mat.Categoria = dr["categoria"].ToString();
+                    mat.codigo = dr["CodigoMaterial"].ToString();
+                    mat.nombre = dr["NombreMaterial"].ToString();
+                    mat.descripcion = dr["Descripción"].ToString();
+                    mat.stock = int.Parse(dr["Stock"].ToString());
+                    mat.estado = dr["Estado"].ToString();
+                    // mat.fechaInicio = Convert.ToDateTime(dr["fecha_Registro"]);
+                    mat.Categoria = dr["CategoriaMaterialID"].ToString(); //int.Parse(dr["CategoriaMaterialID"].ToString());
                     lista.Add(mat);
                 }
             }
@@ -69,13 +70,12 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_AÑADIR_Materiales", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@codigo", materiales.codigo);
-                cmd.Parameters.AddWithValue("@nombre", materiales.nombre);
-                cmd.Parameters.AddWithValue("@descripcion", materiales.descripcion);
+                cmd.Parameters.AddWithValue("@codigomat", materiales.codigo);
+                cmd.Parameters.AddWithValue("@nombremat", materiales.nombre);
                 cmd.Parameters.AddWithValue("@stock", materiales.stock);
                 cmd.Parameters.AddWithValue("@estado", materiales.estado);
-               // cmd.Parameters.AddWithValue("@fechaRegistro", materiales.fechaInicio);
-                cmd.Parameters.AddWithValue("@categoria", materiales.Categoria);
+                cmd.Parameters.AddWithValue("@descripcion", materiales.descripcion);
+                cmd.Parameters.AddWithValue("@categoriaID", materiales.Categoria);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
@@ -92,7 +92,7 @@ namespace CapaDatos
                 cmd.Connection.Close();
             }
             return inserto;
-        
+
 
         }
 
@@ -107,12 +107,12 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_EDITAR_Materiales", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@codigo", materiales.codigo);
-                cmd.Parameters.AddWithValue("@nombre", materiales.nombre);
-                //cmd.Parameters.AddWithValue("@descripcion", materiales.descripcion);
+                cmd.Parameters.AddWithValue("@codigomat", materiales.codigo);
+                cmd.Parameters.AddWithValue("@nombremat", materiales.nombre);
                 cmd.Parameters.AddWithValue("@stock", materiales.stock);
-                //cmd.Parameters.AddWithValue("@estado", materiales.estado);
-       
+                cmd.Parameters.AddWithValue("@categoriaID", materiales.Categoria);
+
+
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
@@ -141,7 +141,7 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_DESHABILITAR_Materiales", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@codigo", mat.codigo);
+                cmd.Parameters.AddWithValue("@codigomat", mat.codigo);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
@@ -160,7 +160,6 @@ namespace CapaDatos
             }
             return deshabilito;
         }
-
 
     }
 }

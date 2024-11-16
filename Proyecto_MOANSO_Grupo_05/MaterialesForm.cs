@@ -43,23 +43,37 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-                entMateriales mat = new entMateriales();
-                mat.codigo = txtCodigoM.Text.Trim();
-                mat.nombre = txtNombreM.Text.Trim();
-                mat.descripcion = txtDescripciónMateriales.Text.Trim();
-                //mat.fechaInicio = dateTimePicker1.Value.Date;
-                mat.stock = int.Parse(txtstockM.Text);
-                mat.estado = "ACTIVO";
-                mat.Categoria= comboBoxCategoriaMat.SelectedItem.ToString();
-                // mat.estado = CBMateriales.SelectedItem.ToString();
+                // Crear una nueva instancia de la entidad de materiales
+                entMateriales mat = new entMateriales
+                {
+                    codigo = txtCodigoM.Text.Trim(),
+                    nombre = txtNombreM.Text.Trim(),
+                    descripcion = txtDescripciónMateriales.Text.Trim(),
+                    stock = int.Parse(txtstockM.Text),
+                    estado = "ACTIVO", // Estado fijo como "ACTIVO"
+                    Categoria = comboBoxCategoriaMat.SelectedValue.ToString() // Clave foránea seleccionada del ComboBox
+                };
+
+                // Llamar al método para insertar el material
                 logMateriales.Instancia.InsertarMateriales(mat);
+
+                // Mostrar mensaje de éxito
+                MessageBox.Show("Material insertado correctamente.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                // Mostrar error en caso de que falle el proceso
+                MessageBox.Show("Error al insertar material: " + ex.Message);
             }
-            LimpiarVariables();
-            listarMateriales();
+            finally
+            {
+                // Limpiar los campos del formulario
+                LimpiarVariables();
+
+                // Actualizar la lista de materiales
+                listarMateriales();
+            }
+
         }
         //Modificar
         private void button2_Click(object sender, EventArgs e)
@@ -116,20 +130,20 @@ namespace Proyecto_MOANSO_Grupo_05
         }
         private void CargarCategorias()
         {
-            string consulta = "select Categoria from Categorias";
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                SqlCommand cmd = new SqlCommand(consulta, cn);
                 cn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
 
-                while (reader.Read())
+                using (SqlCommand command = new SqlCommand("SELECT CategoriaMaterialID, CategoriaMaterial FROM CategoriaMaterial", cn))
                 {
-                    comboBoxCategoriaMat.Items.Add(reader["Categoria"].ToString());
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    comboBoxCategoriaMat.DataSource = dataTable;
+                    comboBoxCategoriaMat.DisplayMember = "CategoriaMaterial";
+                    comboBoxCategoriaMat.ValueMember = "CategoriaMaterialID";
                 }
-
-                reader.Close();
-
             }
         }
 
@@ -161,8 +175,9 @@ namespace Proyecto_MOANSO_Grupo_05
             }
             listarMateriales();
             textBox2.Text = "";
-        }
 
+        }
+        //modificar materiales
         private void buttonModi_Click(object sender, EventArgs e)
         {
             try
@@ -171,8 +186,11 @@ namespace Proyecto_MOANSO_Grupo_05
                 mat.codigo = txtCodigoM.Text.Trim();
                 mat.nombre = txtNombreM.Text.Trim();
                 mat.stock = int.Parse(txtstockM.Text);
-                //mat.telefono = txtTelefono.Text.Trim();
-                //mat.dni = txtDni.Text.Trim();
+                mat.Categoria = comboBoxCategoriaMat.SelectedValue.ToString(); // Clave foránea seleccionada del ComboBox
+
+
+
+
                 logMateriales.Instancia.EditarMateriales(mat);
             }
             catch (Exception ex)
@@ -181,6 +199,7 @@ namespace Proyecto_MOANSO_Grupo_05
             }
             LimpiarVariables();
             listarMateriales();
+
         }
 
         private void MaterialesForm_Load(object sender, EventArgs e)
