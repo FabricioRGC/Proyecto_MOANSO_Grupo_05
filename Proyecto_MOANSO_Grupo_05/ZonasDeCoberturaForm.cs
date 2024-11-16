@@ -28,13 +28,11 @@ namespace Proyecto_MOANSO_Grupo_05
         }
         private void LimpiarVariables()
         {
-           /* textBoxDistritos.Text = "";
-            textBoxPostal.Text = "";
+           textBoxDistritos.Text = "";
             comboBoxVelocidad.SelectedIndex = -1;
             cmbxTipoCobertura.SelectedIndex = -1;
-            comboBoxTipozon.SelectedIndex = -1;
 
-            //  CBMateriales.SelectedIndex = -1;*/
+            //  CBMateriales.SelectedIndex = -1;
         }
         public void ListarZona()
         {
@@ -45,16 +43,14 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-             /*   entZonas zon = new entZonas();
+             entZonas zon = new entZonas();
                 zon.Distrito = textBoxDistritos.Text.Trim();
                 zon.VelocidadDeCobertura = comboBoxVelocidad.SelectedItem.ToString();
                 zon.TipoZona = cmbxTipoCobertura.SelectedItem.ToString();
                 //mat.fechaInicio = dateTimePicker1.Value.Date;
-                zon.CodigoPostal = int.Parse(textBoxPostal.Text);
                 zon.Estado = "ACTIVO";
-                zon.Tipo = comboBoxTipozon.SelectedItem.ToString();
                 // mat.estado = CBMateriales.SelectedItem.ToString();
-                logZonaDeCobertura.Instancia.InsertarZona(zon);*/
+                logZonaDeCobertura.Instancia.InsertarZona(zon);
             }
             catch (Exception ex)
             {
@@ -89,12 +85,10 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-               /* entZonas zon = new entZonas();
-                zon.CodigoPostal = int.Parse(textBoxPostal.Text);
+               entZonas zon = new entZonas();
                 zon.VelocidadDeCobertura = comboBoxVelocidad.SelectedItem.ToString();
                 zon.TipoZona = cmbxTipoCobertura.SelectedItem.ToString();
-                zon.Tipo = comboBoxTipozon.SelectedItem.ToString();
-                logZonaDeCobertura.Instancia.EditarZona(zon);*/
+                logZonaDeCobertura.Instancia.EditarZona(zon);
             }
             catch (Exception ex)
             {
