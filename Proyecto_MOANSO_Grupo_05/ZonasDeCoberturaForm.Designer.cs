@@ -206,6 +206,7 @@
             this.Controls.Add(this.buscarTxt);
             this.Controls.Add(this.btnInhabilitarZon);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ZonasDeCoberturaForm";
             this.Text = "ZonasDeCoberturaForm";
