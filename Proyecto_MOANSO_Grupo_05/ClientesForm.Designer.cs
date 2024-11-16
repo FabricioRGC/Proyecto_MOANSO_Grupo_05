@@ -90,7 +90,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(15, 30);
+            this.label1.Location = new System.Drawing.Point(15, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
@@ -115,7 +115,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(15, 72);
+            this.label2.Location = new System.Drawing.Point(15, 88);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
@@ -124,7 +124,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(92, 135);
+            this.txtTelefono.Location = new System.Drawing.Point(94, 135);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(147, 20);
             this.txtTelefono.TabIndex = 11;
@@ -133,7 +133,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(15, 112);
+            this.label4.Location = new System.Drawing.Point(20, 138);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
@@ -142,7 +142,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.OliveDrab;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.txtDni);
@@ -168,7 +168,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(15, 155);
+            this.label5.Location = new System.Drawing.Point(20, 191);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 13);
@@ -177,10 +177,11 @@
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(92, 188);
+            this.txtDni.Location = new System.Drawing.Point(96, 188);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(145, 20);
             this.txtDni.TabIndex = 13;
+            this.txtDni.TextChanged += new System.EventHandler(this.txtDni_TextChanged);
             // 
             // label3
             // 
@@ -204,7 +205,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.OliveDrab;
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtBuscarNombre);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
@@ -220,7 +221,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(14, 31);
+            this.label6.Location = new System.Drawing.Point(5, 37);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 13);
@@ -229,7 +230,7 @@
             // 
             // txtBuscarNombre
             // 
-            this.txtBuscarNombre.Location = new System.Drawing.Point(126, 34);
+            this.txtBuscarNombre.Location = new System.Drawing.Point(111, 34);
             this.txtBuscarNombre.Name = "txtBuscarNombre";
             this.txtBuscarNombre.Size = new System.Drawing.Size(116, 20);
             this.txtBuscarNombre.TabIndex = 15;
@@ -244,7 +245,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tablaClientes);
             this.Controls.Add(this.groupBox1);
-            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClientesForm";
             this.Text = "Clientes";

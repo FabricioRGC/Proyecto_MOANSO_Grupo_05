@@ -132,5 +132,10 @@ namespace Proyecto_MOANSO_Grupo_05
             txtTelefono.Text = Convert.ToString(fila.Cells[2].Value);
             txtDni.Text = Convert.ToString(fila.Cells[4].Value);
         }
+
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
