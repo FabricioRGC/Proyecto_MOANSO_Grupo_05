@@ -113,7 +113,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 pag.monto = txtMonto.Text;
                 pag.fecha = fechaPicker.Value.Date;
                 pag.metodo_pago = cbPago.SelectedItem.ToString();
-                pag.nombre_cliente = cbCliente.SelectedItem.ToString();
+                //pag.nombre_cliente = cbCliente.SelectedItem.ToString();
                 pag.estado = "ACTIVO";
                 logPago.Instancia.InsertarPago(pag);
             }
@@ -122,6 +122,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
             limpiarVariables();
+            listarPagos();
         }
 
         private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -136,7 +137,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 {
                     using (SqlConnection cn = Conexion.Instancia.Conectar())
                     {
-                        string consulta = "SELECT direccion, telefono, dni, estado FROM Clientes WHERE nombre = @nombre";
+                        string consulta = "SELECT clienteid, direccion, telefono, dni, estado FROM Cliente WHERE nombre = @nombre";
                         SqlCommand cmd = new SqlCommand(consulta, cn);
                         cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
                         cn.Open();
@@ -144,6 +145,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
                         while (reader.Read())
                         {
+                            codigoClientelabel.Text = reader["clienteid"].ToString();
                             labelDireccion.Text = reader["direccion"].ToString();
                             labelTelefono.Text = reader["telefono"].ToString();
                             labelEstado.Text = reader["estado"].ToString();
@@ -152,17 +154,17 @@ namespace Proyecto_MOANSO_Grupo_05
 
                         reader.Close();
 
-                        string consultaContrato = "SELECT fecha_inicio, tipo_plan, id FROM Contratos WHERE cliente_nombre = @nombreCliente";
+                        string consultaContrato = "SELECT fechaInicio, plandeservicioID, contratoID FROM Contrato WHERE clienteid = @nombreCliente";
                         SqlCommand cmdContrato = new SqlCommand(consultaContrato, cn);
-                        cmdContrato.Parameters.AddWithValue("@nombreCliente", clienteSeleccionado);
+                        cmdContrato.Parameters.AddWithValue("@nombreCliente", codigoClientelabel.Text);
                         SqlDataReader readerContrato = cmdContrato.ExecuteReader();
 
                         if (readerContrato.Read())
                         {
-                            labelPlan.Text = readerContrato["tipo_plan"].ToString();
-                            DateTime fechaInicio = (DateTime)readerContrato["fecha_inicio"];
+                            labelPlan.Text = readerContrato["plandeservicioID"].ToString();
+                            DateTime fechaInicio = (DateTime)readerContrato["fechaInicio"];
                             labelFechaContrato.Text = fechaInicio.ToString("dd/MM/yyyy");
-                            labelCodigoContrato.Text = readerContrato["id"].ToString();
+                            labelCodigoContrato.Text = readerContrato["contratoID"].ToString();
                         }
 
                         readerContrato.Close();

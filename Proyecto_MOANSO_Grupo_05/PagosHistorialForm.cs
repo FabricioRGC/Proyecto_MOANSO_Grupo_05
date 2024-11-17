@@ -45,9 +45,9 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             string nombre = txtCliente.Text;
 
-            var nombresFiltrados = logPago.Instancia.ListarPagos().Where(pago => pago.nombre_cliente.Contains(nombre)).ToList();
+            //var nombresFiltrados = logPago.Instancia.ListarPagos().Where(pago => pago.nombre_cliente.Contains(nombre)).ToList();
 
-            tablaPagos.DataSource = nombresFiltrados;
+            //tablaPagos.DataSource = nombresFiltrados;
         }
     }
 }

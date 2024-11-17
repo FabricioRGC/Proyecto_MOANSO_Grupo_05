@@ -34,11 +34,11 @@ namespace CapaDatos
                 while (dr.Read())
                 {
                     entPago pag = new entPago();
-                    pag.nombre_cliente = dr["nombre_cliente"].ToString();
-                    pag.contrato_id = dr["contrato_id"].ToString();
-                    pag.fecha = Convert.ToDateTime(dr["fecha"].ToString());
+                    //pag.nombre_cliente = dr["nombre_cliente"].ToString();
+                    pag.contrato_id = dr["contratoid"].ToString();
+                    pag.fecha = Convert.ToDateTime(dr["fechapago"].ToString());
                     pag.monto = dr["monto"].ToString();
-                    pag.metodo_pago = dr["metodo_pago"].ToString();
+                    pag.metodo_pago = dr["metodopago"].ToString();
                     pag.estado = dr["estado"].ToString();
                     lista.Add(pag);
                 }
@@ -68,7 +68,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("monto", pago.monto);
                 cmd.Parameters.AddWithValue("@fecha", pago.fecha);
                 cmd.Parameters.AddWithValue("@metodoPago", pago.metodo_pago);
-                cmd.Parameters.AddWithValue("@nombreCliente", pago.nombre_cliente);
+                //cmd.Parameters.AddWithValue("@nombreCliente", pago.nombre_cliente);
                 cmd.Parameters.AddWithValue("@Estado", pago.estado);
 
                 cn.Open();

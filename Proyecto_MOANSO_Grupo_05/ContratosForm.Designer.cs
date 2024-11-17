@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDuracion = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelCodigoServicio = new System.Windows.Forms.Label();
             this.caracteristicasLabel = new System.Windows.Forms.Label();
             this.tipoLabel = new System.Windows.Forms.Label();
             this.precioLabel = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelcodigocliente = new System.Windows.Forms.Label();
             this.dniLabel = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cbCliente = new System.Windows.Forms.ComboBox();
@@ -58,8 +60,9 @@
             this.tablaContratos = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBuscarContrato = new System.Windows.Forms.TextBox();
-            this.labelcodigocliente = new System.Windows.Forms.Label();
-            this.labelCodigoServicio = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaContratos)).BeginInit();
@@ -104,7 +107,7 @@
             this.btnAñadir.ForeColor = System.Drawing.Color.Black;
             this.btnAñadir.Location = new System.Drawing.Point(12, 280);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(302, 47);
+            this.btnAñadir.Size = new System.Drawing.Size(150, 47);
             this.btnAñadir.TabIndex = 16;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = false;
@@ -158,6 +161,16 @@
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles del Servicio:";
+            // 
+            // labelCodigoServicio
+            // 
+            this.labelCodigoServicio.AutoSize = true;
+            this.labelCodigoServicio.BackColor = System.Drawing.Color.Transparent;
+            this.labelCodigoServicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
+            this.labelCodigoServicio.Location = new System.Drawing.Point(298, 33);
+            this.labelCodigoServicio.Name = "labelCodigoServicio";
+            this.labelCodigoServicio.Size = new System.Drawing.Size(0, 13);
+            this.labelCodigoServicio.TabIndex = 54;
             // 
             // caracteristicasLabel
             // 
@@ -260,6 +273,16 @@
             this.groupBox2.TabIndex = 37;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles del Cliente";
+            // 
+            // labelcodigocliente
+            // 
+            this.labelcodigocliente.AutoSize = true;
+            this.labelcodigocliente.BackColor = System.Drawing.Color.Transparent;
+            this.labelcodigocliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
+            this.labelcodigocliente.Location = new System.Drawing.Point(241, 33);
+            this.labelcodigocliente.Name = "labelcodigocliente";
+            this.labelcodigocliente.Size = new System.Drawing.Size(0, 13);
+            this.labelcodigocliente.TabIndex = 53;
             // 
             // dniLabel
             // 
@@ -371,7 +394,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(341, 297);
+            this.label6.Location = new System.Drawing.Point(530, 297);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 39;
@@ -379,30 +402,40 @@
             // 
             // txtBuscarContrato
             // 
-            this.txtBuscarContrato.Location = new System.Drawing.Point(390, 294);
+            this.txtBuscarContrato.Location = new System.Drawing.Point(579, 294);
             this.txtBuscarContrato.Name = "txtBuscarContrato";
-            this.txtBuscarContrato.Size = new System.Drawing.Size(145, 20);
+            this.txtBuscarContrato.Size = new System.Drawing.Size(117, 20);
             this.txtBuscarContrato.TabIndex = 40;
             // 
-            // labelcodigocliente
+            // button1
             // 
-            this.labelcodigocliente.AutoSize = true;
-            this.labelcodigocliente.BackColor = System.Drawing.Color.Transparent;
-            this.labelcodigocliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.labelcodigocliente.Location = new System.Drawing.Point(241, 33);
-            this.labelcodigocliente.Name = "labelcodigocliente";
-            this.labelcodigocliente.Size = new System.Drawing.Size(0, 13);
-            this.labelcodigocliente.TabIndex = 53;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(164, 280);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 47);
+            this.button1.TabIndex = 41;
+            this.button1.Text = "Anular";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // labelCodigoServicio
+            // textBox1
             // 
-            this.labelCodigoServicio.AutoSize = true;
-            this.labelCodigoServicio.BackColor = System.Drawing.Color.Transparent;
-            this.labelCodigoServicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.labelCodigoServicio.Location = new System.Drawing.Point(298, 33);
-            this.labelCodigoServicio.Name = "labelCodigoServicio";
-            this.labelCodigoServicio.Size = new System.Drawing.Size(0, 13);
-            this.labelCodigoServicio.TabIndex = 54;
+            this.textBox1.Location = new System.Drawing.Point(433, 294);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(71, 20);
+            this.textBox1.TabIndex = 43;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(329, 297);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 13);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Codigo de Cliente:";
             // 
             // ContratosForm
             // 
@@ -410,6 +443,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(750, 626);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBuscarContrato);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tablaContratos);
@@ -467,5 +503,8 @@
         private System.Windows.Forms.TextBox txtBuscarContrato;
         private System.Windows.Forms.Label labelcodigocliente;
         private System.Windows.Forms.Label labelCodigoServicio;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label10;
     }
 }

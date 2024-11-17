@@ -170,6 +170,22 @@ namespace Proyecto_MOANSO_Grupo_05
 
         }
 
+        // Anular Contrato
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                entContrato entContrato = new entContrato();
+                entContrato.id_cliente = Convert.ToInt32(textBox1.Text);
+                logContrato.Instancia.AnularContrato(entContrato);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            listarContrato();
+        }
+
         // Filtrar por Cliente
         //private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
         //{

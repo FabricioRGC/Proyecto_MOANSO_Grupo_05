@@ -14,7 +14,7 @@ namespace CapaEntidad
             public string monto { get; set; }
             public DateTime fecha { get; set; }
             public string metodo_pago { get; set; }
-            public string nombre_cliente { get; set; }
+            //public string nombre_cliente { get; set; }
             public string estado { get; set; }
         }
     }
