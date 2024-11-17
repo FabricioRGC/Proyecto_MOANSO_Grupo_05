@@ -80,24 +80,24 @@ namespace Proyecto_MOANSO_Grupo_05
         // Boton Añadir
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            try
-            {
-                entProformaVenta pro = new entProformaVenta();
-                pro.cliente_id = codigoLabel.Text;
-                pro.fecha_inicio = DateTime.Now;
-                pro.tipo_plan = cbPlan.SelectedItem.ToString();
-                pro.precio = float.Parse(precioLabel.Text);
-                pro.estado = "ACTIVO";
-                pro.asesor = cbAsesor.SelectedItem.ToString();
+            //try
+            //{
+            //    entProformaVenta pro = new entProformaVenta();
+            //    pro.cliente_id = labelcodigocliente.Text;
+            //    pro.fecha_inicio = DateTime.Now;
+            //    pro.tipo_plan = cbPlan.SelectedItem.ToString();
+            //    pro.precio = float.Parse(precioLabel.Text);
+            //    pro.estado = "ACTIVO";
+            //    pro.asesor = cbAsesor.SelectedItem.ToString();
 
-                logProforma.Instancia.InsertaProforma(pro);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            limpiarVariables();
-            listarProforma();
+            //    logProforma.Instancia.InsertaProforma(pro);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
+            //limpiarVariables();
+            //listarProforma();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -128,69 +128,6 @@ namespace Proyecto_MOANSO_Grupo_05
 
                 reader.Close();
 
-            }
-        }
-
-        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string clienteSeleccionado = cbCliente.SelectedItem.ToString();
-
-            try
-            {
-                using (SqlConnection cn = Conexion.Instancia.Conectar())
-                {
-                    string consulta = "Select codigo, direccion, telefono, dni, estado from Clientes where nombre = @nombre";
-                    SqlCommand cmd = new SqlCommand(consulta, cn);
-                    cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
-                    cn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        codigoLabel.Text = reader["codigo"].ToString();
-                        direccionLabel.Text = reader["direccion"].ToString();
-                        telefonoLabel.Text = reader["telefono"].ToString();
-                        estadoLabel.Text = reader["estado"].ToString();
-                        dniLabel.Text = reader["dni"].ToString();
-                    }
-                    reader.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
-
-        private void cbPlan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string planSeleccionado = cbPlan.SelectedItem.ToString();
-
-            try
-            {
-                using (SqlConnection cn = Conexion.Instancia.Conectar())
-                {
-                    string consulta = "SELECT VelocidadMbps, LimiteDatosGB, PrecioMensualSoles, TipoServicio, Caracteristicas FROM PlanesInternet WHERE PlanNombre = @planNombre";
-                    SqlCommand cmd = new SqlCommand(consulta, cn);
-                    cmd.Parameters.AddWithValue("@planNombre", planSeleccionado);
-                    cn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        velocidadLabel.Text = reader["VelocidadMbps"].ToString();
-                        limiteLabel.Text = reader["LimiteDatosGB"].ToString();
-                        precioLabel.Text = reader["PrecioMensualSoles"].ToString();
-                        tipoLabel.Text = reader["TipoServicio"].ToString();
-                        caracteristicasLabel.Text = reader["Caracteristicas"].ToString();
-                    }
-
-                    reader.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
             }
         }
 
@@ -226,6 +163,68 @@ namespace Proyecto_MOANSO_Grupo_05
         private void label16_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbCliente_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            string clienteSeleccionado = cbCliente.SelectedItem.ToString();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "Select ClienteID, dirección, telefono, dni, estado from Cliente where nombre = @nombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        labelcodigocliente.Text = reader["ClienteID"].ToString();
+                        direccionLabel.Text = reader["dirección"].ToString();
+                        telefonoLabel.Text = reader["telefono"].ToString();
+                        estadoLabel.Text = reader["estado"].ToString();
+                        dniLabel.Text = reader["dni"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void cbPlan_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            string planSeleccionado = cbPlan.SelectedItem.ToString();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "SELECT PlanDeServicioID, VelocidadMbps, precio, TipoServicio, Caracteristicas FROM PlanDeServicio WHERE NombrePlanServicio = @NombrePlanServicio";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@NombrePlanServicio", planSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        labelCodigoServicio.Text = reader["PlanDeServicioID"].ToString();
+                        velocidadLabel.Text = reader["VelocidadMbps"].ToString();
+                        precioLabel.Text = reader["Precio"].ToString();
+                        tipoLabel.Text = reader["TipoServicio"].ToString();
+                        caracteristicasLabel.Text = reader["Caracteristicas"].ToString();
+                    }
+
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

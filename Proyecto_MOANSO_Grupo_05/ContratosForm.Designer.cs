@@ -30,7 +30,6 @@
         {
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.cbPlan = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,17 +44,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.labelcodigocliente = new System.Windows.Forms.Label();
-            this.dniLabel = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cbCliente = new System.Windows.Forms.ComboBox();
-            this.estadoLabel = new System.Windows.Forms.Label();
-            this.telefonoLabel = new System.Windows.Forms.Label();
-            this.direccionLabel = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.fechaPicker = new System.Windows.Forms.DateTimePicker();
             this.tablaContratos = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,9 +51,21 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.direccionLabel = new System.Windows.Forms.Label();
+            this.telefonoLabel = new System.Windows.Forms.Label();
+            this.estadoLabel = new System.Windows.Forms.Label();
+            this.cbCliente = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dniLabel = new System.Windows.Forms.Label();
+            this.labelcodigocliente = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaContratos)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -89,17 +89,6 @@
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 26;
             this.label4.Text = "Plan:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(19, 33);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Cliente:";
             // 
             // btnAñadir
             // 
@@ -252,127 +241,6 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "Velocidad (Mpbs):";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.groupBox2.Controls.Add(this.labelcodigocliente);
-            this.groupBox2.Controls.Add(this.dniLabel);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.cbCliente);
-            this.groupBox2.Controls.Add(this.estadoLabel);
-            this.groupBox2.Controls.Add(this.telefonoLabel);
-            this.groupBox2.Controls.Add(this.direccionLabel);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(12, 67);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(302, 207);
-            this.groupBox2.TabIndex = 37;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Detalles del Cliente";
-            // 
-            // labelcodigocliente
-            // 
-            this.labelcodigocliente.AutoSize = true;
-            this.labelcodigocliente.BackColor = System.Drawing.Color.Transparent;
-            this.labelcodigocliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.labelcodigocliente.Location = new System.Drawing.Point(241, 33);
-            this.labelcodigocliente.Name = "labelcodigocliente";
-            this.labelcodigocliente.Size = new System.Drawing.Size(0, 13);
-            this.labelcodigocliente.TabIndex = 53;
-            // 
-            // dniLabel
-            // 
-            this.dniLabel.AutoSize = true;
-            this.dniLabel.ForeColor = System.Drawing.Color.Black;
-            this.dniLabel.Location = new System.Drawing.Point(86, 80);
-            this.dniLabel.Name = "dniLabel";
-            this.dniLabel.Size = new System.Drawing.Size(0, 13);
-            this.dniLabel.TabIndex = 52;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(19, 80);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(26, 13);
-            this.label15.TabIndex = 51;
-            this.label15.Text = "Dni:";
-            // 
-            // cbCliente
-            // 
-            this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(96, 30);
-            this.cbCliente.Name = "cbCliente";
-            this.cbCliente.Size = new System.Drawing.Size(121, 21);
-            this.cbCliente.TabIndex = 43;
-            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.cbCliente_SelectedIndexChanged);
-            // 
-            // estadoLabel
-            // 
-            this.estadoLabel.AutoSize = true;
-            this.estadoLabel.ForeColor = System.Drawing.Color.Black;
-            this.estadoLabel.Location = new System.Drawing.Point(86, 179);
-            this.estadoLabel.Name = "estadoLabel";
-            this.estadoLabel.Size = new System.Drawing.Size(0, 13);
-            this.estadoLabel.TabIndex = 50;
-            // 
-            // telefonoLabel
-            // 
-            this.telefonoLabel.AutoSize = true;
-            this.telefonoLabel.ForeColor = System.Drawing.Color.Black;
-            this.telefonoLabel.Location = new System.Drawing.Point(86, 147);
-            this.telefonoLabel.Name = "telefonoLabel";
-            this.telefonoLabel.Size = new System.Drawing.Size(0, 13);
-            this.telefonoLabel.TabIndex = 49;
-            // 
-            // direccionLabel
-            // 
-            this.direccionLabel.AutoSize = true;
-            this.direccionLabel.ForeColor = System.Drawing.Color.Black;
-            this.direccionLabel.Location = new System.Drawing.Point(86, 114);
-            this.direccionLabel.Name = "direccionLabel";
-            this.direccionLabel.Size = new System.Drawing.Size(0, 13);
-            this.direccionLabel.TabIndex = 48;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(19, 179);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(43, 13);
-            this.label13.TabIndex = 46;
-            this.label13.Text = "Estado:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(19, 147);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(52, 13);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "Teléfono:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(19, 114);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 13);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Dirección:";
-            // 
             // fechaPicker
             // 
             this.fechaPicker.Location = new System.Drawing.Point(114, 32);
@@ -437,6 +305,138 @@
             this.label10.TabIndex = 42;
             this.label10.Text = "Codigo de Cliente:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(20, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Cliente:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(19, 114);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.TabIndex = 44;
+            this.label11.Text = "Dirección:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(19, 147);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 13);
+            this.label12.TabIndex = 45;
+            this.label12.Text = "Teléfono:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(19, 179);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.TabIndex = 46;
+            this.label13.Text = "Estado:";
+            // 
+            // direccionLabel
+            // 
+            this.direccionLabel.AutoSize = true;
+            this.direccionLabel.ForeColor = System.Drawing.Color.Black;
+            this.direccionLabel.Location = new System.Drawing.Point(86, 114);
+            this.direccionLabel.Name = "direccionLabel";
+            this.direccionLabel.Size = new System.Drawing.Size(0, 13);
+            this.direccionLabel.TabIndex = 48;
+            // 
+            // telefonoLabel
+            // 
+            this.telefonoLabel.AutoSize = true;
+            this.telefonoLabel.ForeColor = System.Drawing.Color.Black;
+            this.telefonoLabel.Location = new System.Drawing.Point(86, 147);
+            this.telefonoLabel.Name = "telefonoLabel";
+            this.telefonoLabel.Size = new System.Drawing.Size(0, 13);
+            this.telefonoLabel.TabIndex = 49;
+            // 
+            // estadoLabel
+            // 
+            this.estadoLabel.AutoSize = true;
+            this.estadoLabel.ForeColor = System.Drawing.Color.Black;
+            this.estadoLabel.Location = new System.Drawing.Point(86, 179);
+            this.estadoLabel.Name = "estadoLabel";
+            this.estadoLabel.Size = new System.Drawing.Size(0, 13);
+            this.estadoLabel.TabIndex = 50;
+            // 
+            // cbCliente
+            // 
+            this.cbCliente.FormattingEnabled = true;
+            this.cbCliente.Location = new System.Drawing.Point(97, 30);
+            this.cbCliente.Name = "cbCliente";
+            this.cbCliente.Size = new System.Drawing.Size(121, 21);
+            this.cbCliente.TabIndex = 43;
+            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.cbCliente_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(19, 80);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(26, 13);
+            this.label15.TabIndex = 51;
+            this.label15.Text = "Dni:";
+            // 
+            // dniLabel
+            // 
+            this.dniLabel.AutoSize = true;
+            this.dniLabel.ForeColor = System.Drawing.Color.Black;
+            this.dniLabel.Location = new System.Drawing.Point(86, 80);
+            this.dniLabel.Name = "dniLabel";
+            this.dniLabel.Size = new System.Drawing.Size(0, 13);
+            this.dniLabel.TabIndex = 52;
+            // 
+            // labelcodigocliente
+            // 
+            this.labelcodigocliente.AutoSize = true;
+            this.labelcodigocliente.BackColor = System.Drawing.Color.Transparent;
+            this.labelcodigocliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
+            this.labelcodigocliente.Location = new System.Drawing.Point(241, 33);
+            this.labelcodigocliente.Name = "labelcodigocliente";
+            this.labelcodigocliente.Size = new System.Drawing.Size(0, 13);
+            this.labelcodigocliente.TabIndex = 53;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
+            this.groupBox2.Controls.Add(this.labelcodigocliente);
+            this.groupBox2.Controls.Add(this.dniLabel);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.cbCliente);
+            this.groupBox2.Controls.Add(this.estadoLabel);
+            this.groupBox2.Controls.Add(this.telefonoLabel);
+            this.groupBox2.Controls.Add(this.direccionLabel);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(12, 67);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(302, 207);
+            this.groupBox2.TabIndex = 37;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Detalles del Cliente";
+            // 
             // ContratosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,9 +462,9 @@
             this.Load += new System.EventHandler(this.ContratosForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaContratos)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaContratos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,7 +473,6 @@
         #endregion
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAñadir;
         private System.Windows.Forms.ComboBox cbPlan;
         private System.Windows.Forms.Label label1;
@@ -483,28 +482,29 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label caracteristicasLabel;
         private System.Windows.Forms.Label tipoLabel;
         private System.Windows.Forms.Label precioLabel;
         private System.Windows.Forms.Label velocidadLabel;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label estadoLabel;
-        private System.Windows.Forms.Label telefonoLabel;
-        private System.Windows.Forms.Label direccionLabel;
-        private System.Windows.Forms.ComboBox cbCliente;
         private System.Windows.Forms.DateTimePicker fechaPicker;
-        private System.Windows.Forms.Label dniLabel;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView tablaContratos;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBuscarContrato;
-        private System.Windows.Forms.Label labelcodigocliente;
         private System.Windows.Forms.Label labelCodigoServicio;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label direccionLabel;
+        private System.Windows.Forms.Label telefonoLabel;
+        private System.Windows.Forms.Label estadoLabel;
+        private System.Windows.Forms.ComboBox cbCliente;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label dniLabel;
+        private System.Windows.Forms.Label labelcodigocliente;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

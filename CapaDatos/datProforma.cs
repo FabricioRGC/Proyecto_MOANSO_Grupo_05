@@ -36,11 +36,12 @@ namespace CapaDatos
                 while (dr.Read())
                 {
                     entProformaVenta pro = new entProformaVenta();
-                    pro.cliente_id = dr["cliente_id"].ToString();
+                    pro.cliente_id = Convert.ToInt32(dr["cliente_id"]);
                     pro.fecha_inicio = Convert.ToDateTime(dr["fecha_inicio"]);
-                    pro.precio = Convert.ToInt32(dr["precio"]);
-                    pro.tipo_plan = dr["tipo_plan"].ToString();
-                    pro.estado = dr["estado"].ToString();
+                    pro.fecha_fin = Convert.ToDateTime(dr["fecha_fin"]);
+                    pro.servicio_id = Convert.ToInt32(dr["servicio_id"]);
+                    pro.personal_id = Convert.ToInt32(dr["personal_id"]);
+
                     lista.Add(pro);
                 }
             }
@@ -62,19 +63,19 @@ namespace CapaDatos
             Boolean insertar = false;
             try
             {
-                SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_AÑADIR_PROFORMA", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@clienteId", proforma.cliente_id);
-                cmd.Parameters.AddWithValue("@tipoPlan", proforma.tipo_plan);
-                cmd.Parameters.AddWithValue("@precio", proforma.precio);
-                cmd.Parameters.AddWithValue("@asesor", proforma.asesor);
-                cn.Open();
-                int i = cmd.ExecuteNonQuery();
-                if (i > 0)
-                {
-                    insertar = true;
-                }
+                //SqlConnection cn = Conexion.Instancia.Conectar();
+                //cmd = new SqlCommand("SP_AÑADIR_PROFORMA", cn);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@clienteId", proforma.cliente_id);
+                //cmd.Parameters.AddWithValue("@tipoPlan", proforma.tipo_plan);
+                //cmd.Parameters.AddWithValue("@precio", proforma.precio);
+                //cmd.Parameters.AddWithValue("@asesor", proforma.asesor);
+                //cn.Open();
+                //int i = cmd.ExecuteNonQuery();
+                //if (i > 0)
+                //{
+                //    insertar = true;
+                //}
             }
             catch (Exception e)
             {

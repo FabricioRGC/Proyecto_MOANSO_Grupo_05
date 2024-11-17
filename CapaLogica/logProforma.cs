@@ -28,7 +28,7 @@ namespace CapaLogica
         // Metodo para añadir una proforma
         public void InsertaProforma(entProformaVenta pro)
         {
-            datProforma.Instancia.InsertarProforma(pro);
+            //datProforma.Instancia.InsertarProforma(pro);
         }
 
         // Metodo para inhabilitar una proforma

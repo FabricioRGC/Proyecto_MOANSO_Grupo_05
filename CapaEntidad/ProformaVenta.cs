@@ -10,12 +10,11 @@ namespace CapaEntidad
     {
         public class entProformaVenta
         {
-            public string cliente_id { get; set; }
+            public int cliente_id { get; set; }
             public DateTime fecha_inicio { get; set; }
-            public string tipo_plan { get; set; }
-            public float precio { get; set; }
-            public string estado { get; set; }
-            public string asesor { get; set; }
+            public DateTime fecha_fin { get; set; }
+            public int servicio_id { get; set; }
+            public int personal_id { get; set; }
         }
     }
 }
