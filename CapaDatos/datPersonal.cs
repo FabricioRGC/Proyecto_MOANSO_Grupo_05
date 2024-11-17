@@ -40,14 +40,17 @@ namespace CapaDatos
 
                 while (dr.Read())
                 {
-                    entPersonal personal = new entPersonal();
-                    personal.nombre = dr["nombre"].ToString();
-                    personal.apellidos = dr["apellidos"].ToString();
-                    personal.dni = dr["dni"].ToString();
-                    personal.telefono = dr["telefono"].ToString();
-                    personal.disponibilidad = dr["disponibilidad"].ToString();
-                    personal.tipo_encargado = dr["tipo_encargado"].ToString(); 
-                    personal.area_trabajo = dr["area_trabajo"].ToString();
+                    entPersonal personal = new entPersonal
+                    {
+                        PersonalID = Convert.ToInt32(dr["PersonalID"]),
+                        Nombre = dr["Nombre"].ToString(),
+                        Apellido = dr["Apellido"].ToString(),
+                        DNI = dr["DNI"].ToString(),
+                        Teléfono = Convert.ToInt32(dr["Teléfono"]),
+                        Estado = dr["Estado"].ToString(),
+                        Cargo = dr["Cargo"].ToString(),
+                        AreaTrabajo = dr["AreaTrabajo"].ToString()
+                    };
                     lista.Add(personal);
                 }
             }
@@ -78,13 +81,13 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_AÑADIR_PERSONAL", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@nombre", personal.nombre);
-                cmd.Parameters.AddWithValue("@apellidos", personal.apellidos);
-                cmd.Parameters.AddWithValue("@dni", personal.dni);
-                cmd.Parameters.AddWithValue("@telefono", personal.telefono);
-                cmd.Parameters.AddWithValue("@disponibilidad", personal.disponibilidad);
-                cmd.Parameters.AddWithValue("@tipo_encargado", personal.tipo_encargado);
-                cmd.Parameters.AddWithValue("@area_trabajo", personal.area_trabajo);
+                cmd.Parameters.AddWithValue("@Nombre", personal.Nombre);
+                cmd.Parameters.AddWithValue("@Apellido", personal.Apellido);
+                cmd.Parameters.AddWithValue("@DNI", personal.DNI);
+                cmd.Parameters.AddWithValue("@Teléfono", personal.Teléfono);
+                cmd.Parameters.AddWithValue("@Estado", personal.Estado);
+                cmd.Parameters.AddWithValue("@Cargo", personal.Cargo);
+                cmd.Parameters.AddWithValue("@AreaTrabajo", personal.AreaTrabajo);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
@@ -107,17 +110,19 @@ namespace CapaDatos
             return inserto;
         }
 
+
         // Método para deshabilitar personal técnico
         public Boolean DeshabilitaPersonal(entPersonal personal)
         {
             SqlCommand cmd = null;
             Boolean deshabilito = false;
+
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_DESHABILITAR_PERSONAL", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@dni", personal.dni);
+                cmd.Parameters.AddWithValue("@DNI", personal.DNI);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
