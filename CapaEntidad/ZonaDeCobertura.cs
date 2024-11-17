@@ -12,11 +12,9 @@ namespace CapaEntidad
         {
 
             public string Distrito { get; set; }
-            public string VelocidadDeCobertura { get; set; }
-            public string TipoZona { get; set; }
-            public string Estado { get; set; }
-            public int CodigoPostal { get; set; }
-            public string Tipo { get; set; }
+            public string Estado_zona { get; set; }
+            public string TipoConexion { get; set; }
+            public string TipoServicio { get; set; }
 
         }
 
