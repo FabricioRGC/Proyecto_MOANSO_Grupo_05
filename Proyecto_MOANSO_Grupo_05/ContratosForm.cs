@@ -51,7 +51,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
                 while (reader.Read())
                 {
-                    cbPlan.Items.Add(reader["PlanNombre"].ToString());
+                    cbPlan.Items.Add(reader["NombrePlanServicio"].ToString());
                 }
 
                 reader.Close();
@@ -86,10 +86,10 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entContrato entContrato = new entContrato();
-                entContrato.nombre_cliente = cbCliente.SelectedItem.ToString();
-                entContrato.tipo_plan = cbPlan.SelectedItem.ToString();
+                entContrato.id_cliente = Convert.ToInt32(labelcodigocliente.Text);
+                entContrato.id_servicio = Convert.ToInt32(labelCodigoServicio.Text);
                 entContrato.fechaInicio = fechaPicker.Value.Date;
-                entContrato.duracion = txtDuracion.Text;
+                entContrato.duracion = Convert.ToInt32(txtDuracion.Text);
                 entContrato.estado = "ACTIVO";
                 logContrato.Instancia.InsertaContrato(entContrato);
             }
@@ -101,14 +101,6 @@ namespace Proyecto_MOANSO_Grupo_05
             listarContrato();
         }
 
-        // Boton Historial
-        private void btnHistorial_Click(object sender, EventArgs e)
-        {
-            Form historial = new ContratoHistorialForm();
-            historial.Show();
-        }
-
-
         // Actualizar Información
 
         private void cbPlan_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,17 +111,17 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 using (SqlConnection cn = Conexion.Instancia.Conectar())
                 {
-                    string consulta = "SELECT VelocidadMbps, LimiteDatosGB, PrecioMensualSoles, TipoServicio, Caracteristicas FROM PlanesInternet WHERE PlanNombre = @planNombre";
+                    string consulta = "SELECT PlanDeServicioID, VelocidadMbps, precio, TipoServicio, Caracteristicas FROM PlanDeServicio WHERE NombrePlanServicio = @NombrePlanServicio";
                     SqlCommand cmd = new SqlCommand(consulta, cn);
-                    cmd.Parameters.AddWithValue("@planNombre", planSeleccionado);
+                    cmd.Parameters.AddWithValue("@NombrePlanServicio", planSeleccionado);
                     cn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
+                        labelCodigoServicio.Text = reader["PlanDeServicioID"].ToString();
                         velocidadLabel.Text = reader["VelocidadMbps"].ToString();
-                        limiteLabel.Text = reader["LimiteDatosGB"].ToString();
-                        precioLabel.Text = reader["PrecioMensualSoles"].ToString();
+                        precioLabel.Text = reader["Precio"].ToString();
                         tipoLabel.Text = reader["TipoServicio"].ToString();
                         caracteristicasLabel.Text = reader["Caracteristicas"].ToString();
                     }
@@ -151,7 +143,7 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 using (SqlConnection cn = Conexion.Instancia.Conectar())
                 {
-                    string consulta = "Select codigo, direccion, telefono, dni, estado from Clientes where nombre = @nombre";
+                    string consulta = "Select ClienteID, dirección, telefono, dni, estado from Cliente where nombre = @nombre";
                     SqlCommand cmd = new SqlCommand(consulta, cn);
                     cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
                     cn.Open();
@@ -159,8 +151,8 @@ namespace Proyecto_MOANSO_Grupo_05
 
                     while (reader.Read())
                     {
-                        codigoLabel.Text = reader["codigo"].ToString();
-                        direccionLabel.Text = reader["direccion"].ToString();
+                        labelcodigocliente.Text = reader["ClienteID"].ToString();
+                        direccionLabel.Text = reader["dirección"].ToString();
                         telefonoLabel.Text = reader["telefono"].ToString();
                         estadoLabel.Text = reader["estado"].ToString();
                         dniLabel.Text = reader["dni"].ToString();

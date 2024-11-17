@@ -34,12 +34,11 @@ namespace CapaDatos
                 while (dr.Read())
                 {
                     entContrato con = new entContrato();
-                    con.nombre_cliente = dr["cliente_nombre"].ToString();
-                    con.fechaInicio = Convert.ToDateTime(dr["fecha_inicio"]);
+                    con.id_cliente = Convert.ToInt32(dr["ClienteID"]);
+                    con.fechaInicio = Convert.ToDateTime(dr["fechainicio"]);
                     con.estado = dr["estado"].ToString();
-                    con.tipo_plan = dr["tipo_plan"].ToString();
-                    con.duracion = dr["duracion"].ToString();
-                    con.clausula = dr["clausulas"].ToString();
+                    con.id_servicio = Convert.ToInt32(dr["PlanDeServicioID"]);
+                    con.duracion = Convert.ToInt32(dr["duración"]);
                     lista.Add(con);
                 }
             }
@@ -65,12 +64,11 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_AÑADIR_CONTRATO", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@nombreCliente", contrato.nombre_cliente);
+                cmd.Parameters.AddWithValue("@nombreCliente", contrato.id_cliente);
                 cmd.Parameters.AddWithValue("@fechaInicio", contrato.fechaInicio);
                 cmd.Parameters.AddWithValue("@Estado", contrato.estado);
-                cmd.Parameters.AddWithValue("@tipoPlan", contrato.tipo_plan);
+                cmd.Parameters.AddWithValue("@tipoPlan", contrato.id_servicio);
                 cmd.Parameters.AddWithValue("@duracion", contrato.duracion);
-                cmd.Parameters.AddWithValue("@clausulas", contrato.clausula);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
@@ -134,7 +132,7 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_ANULAR_CONTRATO", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@nombreCliente", contrato.nombre_cliente);
+                cmd.Parameters.AddWithValue("@nombreCliente", contrato.id_cliente);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();

@@ -47,7 +47,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
                 while (reader.Read())
                 {
-                    cbPlan.Items.Add(reader["PlanNombre"].ToString());
+                    cbPlan.Items.Add(reader["NombrePlanServicio"].ToString());
                 }
 
                 reader.Close();

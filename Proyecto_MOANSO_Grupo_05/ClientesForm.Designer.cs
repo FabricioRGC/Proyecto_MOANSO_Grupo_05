@@ -133,7 +133,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(20, 138);
+            this.label4.Location = new System.Drawing.Point(15, 138);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
@@ -157,7 +157,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(9, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(260, 444);
             this.groupBox1.TabIndex = 16;
@@ -210,7 +210,7 @@
             this.groupBox2.Controls.Add(this.txtBuscarNombre);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(293, 11);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(628, 77);
             this.groupBox2.TabIndex = 18;
@@ -221,7 +221,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(5, 37);
+            this.label6.Location = new System.Drawing.Point(17, 37);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 13);
@@ -230,7 +230,7 @@
             // 
             // txtBuscarNombre
             // 
-            this.txtBuscarNombre.Location = new System.Drawing.Point(111, 34);
+            this.txtBuscarNombre.Location = new System.Drawing.Point(123, 34);
             this.txtBuscarNombre.Name = "txtBuscarNombre";
             this.txtBuscarNombre.Size = new System.Drawing.Size(116, 20);
             this.txtBuscarNombre.TabIndex = 15;
