@@ -46,7 +46,7 @@ namespace CapaDatos
                         Nombre = dr["Nombre"].ToString(),
                         Apellido = dr["Apellido"].ToString(),
                         DNI = dr["DNI"].ToString(),
-                        Teléfono = Convert.ToInt32(dr["Teléfono"]),
+                        Teléfono = Convert.ToInt32(dr["Télefono"]),
                         Estado = dr["Estado"].ToString(),
                         Cargo = dr["Cargo"].ToString(),
                         AreaTrabajo = dr["AreaTrabajo"].ToString()

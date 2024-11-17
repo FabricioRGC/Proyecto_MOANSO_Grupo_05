@@ -334,5 +334,11 @@ namespace Proyecto_MOANSO_Grupo_05
             AbrirPrueba2(new ZonasDeCoberturaForm());
 
         }
+
+        private void vOLVERALAPRIMERAINTERFAZToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new Form1();
+            formulario.Show();
+        }
     }
 }

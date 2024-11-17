@@ -58,6 +58,7 @@
             this.pLANESYZONAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zonaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.serviciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
@@ -142,6 +143,7 @@
             this.aLMACENToolStripMenuItem,
             this.mANTENIMIENTOToolStripMenuItem,
             this.pLANESYZONAToolStripMenuItem,
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -212,8 +214,9 @@
             this.ordenesDePedidoDeInstalaciónToolStripMenuItem1,
             this.ordenesDePedidoDeMaterialesToolStripMenuItem1,
             this.ordenesDePedidoDeRepuestosToolStripMenuItem1});
+            this.pEDIDOSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pEDIDOSToolStripMenuItem.Image")));
             this.pEDIDOSToolStripMenuItem.Name = "pEDIDOSToolStripMenuItem";
-            this.pEDIDOSToolStripMenuItem.Size = new System.Drawing.Size(91, 25);
+            this.pEDIDOSToolStripMenuItem.Size = new System.Drawing.Size(107, 25);
             this.pEDIDOSToolStripMenuItem.Text = "PEDIDOS";
             // 
             // ordenesDePedidoDeInstalaciónToolStripMenuItem1
@@ -241,14 +244,15 @@
             // 
             this.pERSONALToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.personalToolStripMenuItem2});
+            this.pERSONALToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("pERSONALToolStripMenuItem1.Image")));
             this.pERSONALToolStripMenuItem1.Name = "pERSONALToolStripMenuItem1";
-            this.pERSONALToolStripMenuItem1.Size = new System.Drawing.Size(104, 25);
+            this.pERSONALToolStripMenuItem1.Size = new System.Drawing.Size(120, 25);
             this.pERSONALToolStripMenuItem1.Text = "PERSONAL";
             // 
             // personalToolStripMenuItem2
             // 
             this.personalToolStripMenuItem2.Name = "personalToolStripMenuItem2";
-            this.personalToolStripMenuItem2.Size = new System.Drawing.Size(146, 26);
+            this.personalToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
             this.personalToolStripMenuItem2.Text = "Personal";
             this.personalToolStripMenuItem2.Click += new System.EventHandler(this.personalToolStripMenuItem2_Click);
             // 
@@ -290,8 +294,9 @@
             // 
             this.mANTENIMIENTOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sSToolStripMenuItem});
+            this.mANTENIMIENTOToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("mANTENIMIENTOToolStripMenuItem.Image")));
             this.mANTENIMIENTOToolStripMenuItem.Name = "mANTENIMIENTOToolStripMenuItem";
-            this.mANTENIMIENTOToolStripMenuItem.Size = new System.Drawing.Size(159, 25);
+            this.mANTENIMIENTOToolStripMenuItem.Size = new System.Drawing.Size(175, 25);
             this.mANTENIMIENTOToolStripMenuItem.Text = "MANTENIMIENTO";
             // 
             // sSToolStripMenuItem
@@ -306,29 +311,41 @@
             this.pLANESYZONAToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.zonaToolStripMenuItem1,
             this.serviciosToolStripMenuItem});
+            this.pLANESYZONAToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pLANESYZONAToolStripMenuItem.Image")));
             this.pLANESYZONAToolStripMenuItem.Name = "pLANESYZONAToolStripMenuItem";
-            this.pLANESYZONAToolStripMenuItem.Size = new System.Drawing.Size(182, 25);
+            this.pLANESYZONAToolStripMenuItem.Size = new System.Drawing.Size(198, 25);
             this.pLANESYZONAToolStripMenuItem.Text = "PLANES DE SERVICIO";
             // 
             // zonaToolStripMenuItem1
             // 
             this.zonaToolStripMenuItem1.Name = "zonaToolStripMenuItem1";
-            this.zonaToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.zonaToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.zonaToolStripMenuItem1.Text = "Zona";
             this.zonaToolStripMenuItem1.Click += new System.EventHandler(this.zonaToolStripMenuItem1_Click);
             // 
             // serviciosToolStripMenuItem
             // 
             this.serviciosToolStripMenuItem.Name = "serviciosToolStripMenuItem";
-            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.serviciosToolStripMenuItem.Text = "Servicios";
+            // 
+            // vOLVERALAPRIMERAINTERFAZToolStripMenuItem
+            // 
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("vOLVERALAPRIMERAINTERFAZToolStripMenuItem.Image")));
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.Name = "vOLVERALAPRIMERAINTERFAZToolStripMenuItem";
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.Size = new System.Drawing.Size(98, 25);
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.Text = "VOLVER";
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.Click += new System.EventHandler(this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.salirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("salirToolStripMenuItem.Image")));
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(56, 25);
-            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(81, 25);
+            this.salirToolStripMenuItem.Text = "SALIR";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
@@ -393,6 +410,7 @@
         private System.Windows.Forms.ToolStripMenuItem pLANESYZONAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zonaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem serviciosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vOLVERALAPRIMERAINTERFAZToolStripMenuItem;
     }
 }
 
