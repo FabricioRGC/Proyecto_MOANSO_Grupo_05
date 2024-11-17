@@ -12,6 +12,9 @@ using CapaEntidad;
 using CapaDatos;
 using static CapaEntidad.Personal;
 using static CapaEntidad.Cliente;
+using iTextSharp.text.pdf.codec.wmf;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using System.Net;
 
 
 namespace Proyecto_MOANSO_Grupo_05
@@ -32,38 +35,52 @@ namespace Proyecto_MOANSO_Grupo_05
 
             private void LimpiarVariables()
             {
-                txtNombre.Text = "";
-                txtApellidos.Text = "";
-                txtDNI.Text = "";
-                txtTelefono.Text = "";
-                cbEstado.Text = "";
+            txtNombre.Text = "";
+            txtApellidos.Text = "";
+            txtDNI.Text = "";
+            txtTelefono.Text = "";
+            cbEstado.SelectedIndex = -1;
+            cbTipoEncargado.SelectedIndex = -1;
+            cbAreaTrabajo.SelectedIndex = -1;
 
-            }
+        }
 
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
             try
             {
-                entPersonal personal = new entPersonal();
-                personal.nombre = txtNombre.Text.Trim();
-                personal.apellidos = txtApellidos.Text.Trim();
-                personal.dni = txtDNI.Text.Trim();
-                personal.telefono = txtTelefono.Text.Trim();
-                personal.disponibilidad = cbEstado.Text.Trim();
-                personal.tipo_encargado = cbTipoEncargado.SelectedItem.ToString();
-                personal.area_trabajo = cbAreaTrabajo.SelectedItem.ToString();
+                // Validar campos obligatorios
+                if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtDNI.Text))
+                {
+                    MessageBox.Show("El nombre y el DNI son obligatorios.");
+                    return;
+                }
 
+                entPersonal personal = new entPersonal
+                {
+                    Nombre = txtNombre.Text.Trim(),
+                    Apellido = txtApellidos.Text.Trim(),
+                    DNI = txtDNI.Text.Trim(),
+                    Teléfono = int.Parse(txtTelefono.Text.Trim()), // Convertir a entero
+                    Estado = cbEstado.SelectedItem.ToString(),
+                    Cargo = cbTipoEncargado.SelectedItem.ToString(),
+                    AreaTrabajo = cbAreaTrabajo.SelectedItem.ToString()
+                };
 
                 logPersonal.Instancia.InsertarPersonal(personal);
+                MessageBox.Show("Personal añadido correctamente.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error al añadir personal: " + ex.Message);
             }
-            LimpiarVariables();
-            listarPersonal();
-        }
+            finally
+            {
+                LimpiarVariables();
+                listarPersonal();
+            }
+            }
 
 
         private void btnInhabilitar_Click(object sender, EventArgs e)
@@ -91,23 +108,29 @@ namespace Proyecto_MOANSO_Grupo_05
         private void btnInhabilitar_Click_1(object sender, EventArgs e)
         {
             string dni = txtBuscar.Text.Trim();
-            if (!string.IsNullOrEmpty(dni))
+
+            if (string.IsNullOrEmpty(dni))
+            {
+                MessageBox.Show("Ingrese un DNI para inhabilitar.");
+                return;
+            }
+
+            try
             {
                 var personal = logPersonal.Instancia.listarPersonal()
-                                .FirstOrDefault(p => p.dni == dni);
+                                .FirstOrDefault(p => p.DNI == dni);
 
                 if (personal != null)
                 {
-                    if (personal.disponibilidad == "Habilitado")
+                    if (personal.Estado == "Activo")
                     {
-                        personal.disponibilidad = "Inhabilitado";
+                        personal.Estado = "Inactivo";
                         logPersonal.Instancia.DeshabilitarPersonal(personal);
-                        MessageBox.Show("El estado del personal ha sido cambiado a Inhabilitado.");
-                        listarPersonal(); // Actualiza la lista después del cambio
+                        MessageBox.Show("El personal ha sido inhabilitado correctamente.");
                     }
                     else
                     {
-                        MessageBox.Show("El personal ya está Inhabilitado.");
+                        MessageBox.Show("El personal ya está inactivo.");
                     }
                 }
                 else
@@ -115,9 +138,13 @@ namespace Proyecto_MOANSO_Grupo_05
                     MessageBox.Show("No se encontró ningún registro con ese DNI.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Por favor, ingrese un DNI para inhabilitar.");
+                MessageBox.Show("Error al inhabilitar personal: " + ex.Message);
+            }
+            finally
+            {
+                listarPersonal();
             }
         }
 
@@ -129,26 +156,33 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
-            string dni = txtBuscar.Text.Trim();
-            if (!string.IsNullOrEmpty(dni))
+            string criterio = txtBuscar.Text.Trim();
+
+            if (string.IsNullOrEmpty(criterio))
+            {
+                MessageBox.Show("Por favor, ingrese un criterio de búsqueda.");
+                return;
+            }
+
+            try
             {
                 var personal = logPersonal.Instancia.listarPersonal()
-                                .Where(p => p.dni == dni)
+                                .Where(p => p.DNI.Contains(criterio) || p.Nombre.Contains(criterio))
                                 .ToList();
 
-                if (personal.Count > 0)
+                if (personal.Any())
                 {
-                    tablaPersonal.DataSource = personal; // Muestra los resultados en el DataGridView
+                    tablaPersonal.DataSource = personal;
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró ningún registro con ese DNI.");
-                    tablaPersonal.DataSource = null; // Limpia el DataGridView si no hay resultados
+                    MessageBox.Show("No se encontró ningún registro.");
+                    tablaPersonal.DataSource = null; // Limpia la tabla si no hay resultados
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Por favor, ingrese un DNI para buscar.");
+                MessageBox.Show("Error al buscar personal: " + ex.Message);
             }
         }
     }

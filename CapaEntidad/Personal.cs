@@ -12,13 +12,14 @@ namespace CapaEntidad
     {
         public class entPersonal
         {
-            public string nombre { get; set; }
-            public string apellidos { get; set; }
-            public string dni { get; set; }
-            public string telefono { get; set; }
-            public string disponibilidad { get; set; }
-            public string tipo_encargado { get; set; } // Nuevo campo
-            public string area_trabajo { get; set; } // Nuevo campo
+            public int PersonalID { get; set; } // ID único de la persona
+            public string Nombre { get; set; }
+            public string Apellido { get; set; }
+            public string DNI { get; set; }
+            public int Teléfono { get; set; }
+            public string Estado { get; set; }
+            public string Cargo { get; set; }
+            public string AreaTrabajo { get; set; }
         }
     }
 
