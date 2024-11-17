@@ -60,6 +60,7 @@
             this.serviciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -142,6 +143,7 @@
             this.aLMACENToolStripMenuItem,
             this.mANTENIMIENTOToolStripMenuItem,
             this.pLANESYZONAToolStripMenuItem,
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -313,28 +315,37 @@
             // zonaToolStripMenuItem1
             // 
             this.zonaToolStripMenuItem1.Name = "zonaToolStripMenuItem1";
-            this.zonaToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.zonaToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.zonaToolStripMenuItem1.Text = "Zona";
             this.zonaToolStripMenuItem1.Click += new System.EventHandler(this.zonaToolStripMenuItem1_Click);
             // 
             // serviciosToolStripMenuItem
             // 
             this.serviciosToolStripMenuItem.Name = "serviciosToolStripMenuItem";
-            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.serviciosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.serviciosToolStripMenuItem.Text = "Servicios";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(56, 25);
-            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(65, 25);
+            this.salirToolStripMenuItem.Text = "SALIR";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // vOLVERALAPRIMERAINTERFAZToolStripMenuItem
+            // 
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.Name = "vOLVERALAPRIMERAINTERFAZToolStripMenuItem";
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.Size = new System.Drawing.Size(82, 25);
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.Text = "VOLVER";
+            this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem.Click += new System.EventHandler(this.vOLVERALAPRIMERAINTERFAZToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -393,6 +404,7 @@
         private System.Windows.Forms.ToolStripMenuItem pLANESYZONAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zonaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem serviciosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vOLVERALAPRIMERAINTERFAZToolStripMenuItem;
     }
 }
 
