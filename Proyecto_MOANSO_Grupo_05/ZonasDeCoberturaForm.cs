@@ -68,7 +68,7 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entZonas zon = new entZonas();
-                zon.Distrito = textBoxDistritos.Text.Trim();
+                zon.Distrito = txtInhabilitarZon.Text.Trim();
                 logZonaDeCobertura.Instancia.DeshabilitarZona(zon);
             }
             catch (Exception ex)
@@ -76,7 +76,6 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
             ListarZona();
-            textBox5.Text = "";
         }
 
         private void btnModificarZon_Click(object sender, EventArgs e)
