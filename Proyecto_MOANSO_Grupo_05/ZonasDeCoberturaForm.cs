@@ -28,7 +28,7 @@ namespace Proyecto_MOANSO_Grupo_05
         }
         private void LimpiarVariables()
         {
-           textBoxDistritos.Text = "";
+            textBoxDistritos.Text = "";
             comboBoxVelocidad.SelectedIndex = -1;
             cmbxTipoCobertura.SelectedIndex = -1;
 
@@ -43,13 +43,11 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-             entZonas zon = new entZonas();
+                entZonas zon = new entZonas();
                 zon.Distrito = textBoxDistritos.Text.Trim();
-                zon.VelocidadDeCobertura = comboBoxVelocidad.SelectedItem.ToString();
-                zon.TipoZona = cmbxTipoCobertura.SelectedItem.ToString();
-                //mat.fechaInicio = dateTimePicker1.Value.Date;
-                zon.Estado = "ACTIVO";
-                // mat.estado = CBMateriales.SelectedItem.ToString();
+                zon.TipoConexion = comboBoxVelocidad.SelectedItem.ToString();
+                zon.TipoServicio = cmbxTipoCobertura.SelectedItem.ToString();
+                zon.Estado_zona = "ACTIVO";
                 logZonaDeCobertura.Instancia.InsertarZona(zon);
             }
             catch (Exception ex)
@@ -70,7 +68,7 @@ namespace Proyecto_MOANSO_Grupo_05
             try
             {
                 entZonas zon = new entZonas();
-                zon.CodigoPostal = int.Parse(textBox5.Text);
+                zon.Distrito = textBoxDistritos.Text.Trim();
                 logZonaDeCobertura.Instancia.DeshabilitarZona(zon);
             }
             catch (Exception ex)
@@ -85,9 +83,10 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-               entZonas zon = new entZonas();
-                zon.VelocidadDeCobertura = comboBoxVelocidad.SelectedItem.ToString();
-                zon.TipoZona = cmbxTipoCobertura.SelectedItem.ToString();
+                entZonas zon = new entZonas();
+                zon.Distrito = textBoxDistritos.Text.Trim();
+                zon.TipoConexion = comboBoxVelocidad.SelectedItem.ToString();
+                zon.TipoServicio = cmbxTipoCobertura.SelectedItem.ToString();
                 logZonaDeCobertura.Instancia.EditarZona(zon);
             }
             catch (Exception ex)
@@ -96,15 +95,6 @@ namespace Proyecto_MOANSO_Grupo_05
             }
             LimpiarVariables();
             ListarZona();
-        }
-
-        private void textBoxPostal_TextChanged(object sender, EventArgs e)
-        {
-            string Dist = buscarTxt.Text;
-
-            var ZonaFiltrados = logZonaDeCobertura.Instancia.ListarZona().Where(zon => zon.Distrito.Contains(Dist)).ToList();
-
-            dataGridView1.DataSource = ZonaFiltrados;
         }
 
         private void buscarTxt_TextChanged(object sender, EventArgs e)
