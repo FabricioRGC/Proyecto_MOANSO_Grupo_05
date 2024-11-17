@@ -38,11 +38,9 @@ namespace CapaDatos
                 {
                     entZonas zon = new entZonas();
                     zon.Distrito = dr["Distrito"].ToString();
-                    zon.VelocidadDeCobertura = dr["VelocidadDeCobertura"].ToString();
-                    zon.TipoZona = dr["TipoZona"].ToString();
-                    zon.CodigoPostal = int.Parse(dr["CodigoPostal"].ToString());
-                    zon.Tipo = dr["Tipo"].ToString();
-                    zon.Estado = dr["Estado"].ToString();
+                    zon.Estado_zona = dr["Estado_zona"].ToString();
+                    zon.TipoConexion = dr["TipoConexión"].ToString();
+                    zon.TipoServicio = dr["TipoServicio"].ToString();
                     lista.Add(zon);
                 }
             }
@@ -68,13 +66,12 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_AÑADIR_Zona", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Distrito", zonas.Distrito);
-                cmd.Parameters.AddWithValue("@VelocidadDeCobertura", zonas.VelocidadDeCobertura);
-                cmd.Parameters.AddWithValue("@TipoZona", zonas.TipoZona);
-                cmd.Parameters.AddWithValue("@CodigoPostal", zonas.CodigoPostal);
-                cmd.Parameters.AddWithValue("@Tipo", zonas.Tipo);
-                cmd.Parameters.AddWithValue("@Estado", zonas.Estado);
-                // cmd.Parameters.AddWithValue("@fechaRegistro", materiales.fechaInicio);
+                cmd.Parameters.AddWithValue("@nombredistrito", zonas.Distrito);
+                cmd.Parameters.AddWithValue("@estadozon", zonas.Estado_zona);
+                cmd.Parameters.AddWithValue("@tipconexion", zonas.TipoConexion);
+                cmd.Parameters.AddWithValue("@tipservicio", zonas.TipoServicio);
+
+
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
@@ -106,10 +103,9 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_EDITAR_Zona", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@VelocidadDeCobertura", zonas.VelocidadDeCobertura);
-                cmd.Parameters.AddWithValue("@TipoZona", zonas.TipoZona);
-                cmd.Parameters.AddWithValue("@CodigoPostal", zonas.CodigoPostal);
-                cmd.Parameters.AddWithValue("@Tipo", zonas.Tipo);
+                cmd.Parameters.AddWithValue("@nombredistrito", zonas.Distrito);
+                cmd.Parameters.AddWithValue("@tipconexion", zonas.TipoConexion);
+                cmd.Parameters.AddWithValue("@tipservicio", zonas.TipoServicio);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
@@ -139,7 +135,7 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_DESHABILITAR_Zona", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CodigoPostal", zon.CodigoPostal);
+                cmd.Parameters.AddWithValue("@nombredistrito", zon.Distrito);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
