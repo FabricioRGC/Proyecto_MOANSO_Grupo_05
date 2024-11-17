@@ -15,6 +15,8 @@ using static CapaEntidad.Cliente;
 using iTextSharp.text.pdf.codec.wmf;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using System.Net;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static CapaEntidad.Material;
 
 
 namespace Proyecto_MOANSO_Grupo_05
@@ -22,24 +24,24 @@ namespace Proyecto_MOANSO_Grupo_05
     public partial class PersonalForm : Form
     {
 
-        
-            public PersonalForm()
-            {
-                InitializeComponent();
-                listarPersonal();
-            }
-            public void listarPersonal()
-            {
-                tablaPersonal.DataSource = logPersonal.Instancia.listarPersonal();
-            }
 
-            private void LimpiarVariables()
-            {
+        public PersonalForm()
+        {
+            InitializeComponent();
+            listarPersonal();
+        }
+        public void listarPersonal()
+        {
+            tablaPersonal.DataSource = logPersonal.Instancia.listarPersonal();
+        }
+
+        private void LimpiarVariables()
+        {
             txtNombre.Text = "";
             txtApellidos.Text = "";
             txtDNI.Text = "";
             txtTelefono.Text = "";
-            cbEstado.SelectedIndex = -1;
+
             cbTipoEncargado.SelectedIndex = -1;
             cbAreaTrabajo.SelectedIndex = -1;
 
@@ -63,7 +65,7 @@ namespace Proyecto_MOANSO_Grupo_05
                     Apellido = txtApellidos.Text.Trim(),
                     DNI = txtDNI.Text.Trim(),
                     Teléfono = int.Parse(txtTelefono.Text.Trim()), // Convertir a entero
-                    Estado = cbEstado.SelectedItem.ToString(),
+                    Estado = "Activo",
                     Cargo = cbTipoEncargado.SelectedItem.ToString(),
                     AreaTrabajo = cbAreaTrabajo.SelectedItem.ToString()
                 };
@@ -80,13 +82,13 @@ namespace Proyecto_MOANSO_Grupo_05
                 LimpiarVariables();
                 listarPersonal();
             }
-            }
+        }
 
 
         private void btnInhabilitar_Click(object sender, EventArgs e)
-            {
-                
-            }
+        {
+
+        }
 
         private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
         {
@@ -101,51 +103,25 @@ namespace Proyecto_MOANSO_Grupo_05
 
 
         private void btnBuscar_Click(object sender, EventArgs e)
-            {
+        {
 
-            }
+        }
 
         private void btnInhabilitar_Click_1(object sender, EventArgs e)
         {
-            string dni = txtBuscar.Text.Trim();
-
-            if (string.IsNullOrEmpty(dni))
-            {
-                MessageBox.Show("Ingrese un DNI para inhabilitar.");
-                return;
-            }
 
             try
             {
-                var personal = logPersonal.Instancia.listarPersonal()
-                                .FirstOrDefault(p => p.DNI == dni);
-
-                if (personal != null)
-                {
-                    if (personal.Estado == "Activo")
-                    {
-                        personal.Estado = "Inactivo";
-                        logPersonal.Instancia.DeshabilitarPersonal(personal);
-                        MessageBox.Show("El personal ha sido inhabilitado correctamente.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("El personal ya está inactivo.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró ningún registro con ese DNI.");
-                }
+                entPersonal mat = new entPersonal();
+                mat.DNI = txtInhabilitar.Text.Trim();
+                logPersonal.Instancia.DeshabilitarPersonal(mat);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al inhabilitar personal: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
-            finally
-            {
-                listarPersonal();
-            }
+            listarPersonal();
+            txtInhabilitar.Text = "";
         }
 
 
@@ -185,8 +161,16 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error al buscar personal: " + ex.Message);
             }
         }
-    }
 
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string codigo = txtBuscar.Text;
+
+            var MaterialesFiltrados = logPersonal.Instancia.listarPersonal().Where(Mate => Mate.DNI.Contains(codigo)).ToList();
+
+            tablaPersonal.DataSource = MaterialesFiltrados;
+        }
+    }
 }
 
 
