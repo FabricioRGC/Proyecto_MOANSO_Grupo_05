@@ -30,11 +30,6 @@ namespace Proyecto_MOANSO_Grupo_05
             tablaProformas.DataSource = logProforma.Instancia.ListarProforma();
         }
 
-
-        private void limpiarVariables()
-        {
-        }
-
         public void cargarPlanes()
         {
             string consulta = "SELECT NombrePlanServicio FROM PlanDeServicio";
@@ -80,35 +75,27 @@ namespace Proyecto_MOANSO_Grupo_05
         // Boton Añadir
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    entProformaVenta pro = new entProformaVenta();
-            //    pro.cliente_id = labelcodigocliente.Text;
-            //    pro.fecha_inicio = DateTime.Now;
-            //    pro.tipo_plan = cbPlan.SelectedItem.ToString();
-            //    pro.precio = float.Parse(precioLabel.Text);
-            //    pro.estado = "ACTIVO";
-            //    pro.asesor = cbAsesor.SelectedItem.ToString();
+            try
+            {
+                entProformaVenta pro = new entProformaVenta();
+                pro.fecha_inicio = fechaInicioPicker.Value.Date;
+                pro.cliente_id = Convert.ToInt32(labelcodigocliente.Text);
+                pro.servicio_id = Convert.ToInt32(labelCodigoServicio.Text);
+                pro.fecha_fin = fechaFinPicker.Value.Date;
+                pro.personal_id = Convert.ToInt32(labelAsesorID.Text);
 
-            //    logProforma.Instancia.InsertaProforma(pro);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error: " + ex.Message);
-            //}
-            //limpiarVariables();
-            //listarProforma();
+                logProforma.Instancia.InsertaProforma(pro);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            listarProforma();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnHistorial_Click(object sender, EventArgs e)
-        {
-            Form historial = new ProformaHistorialForm();
-            historial.Show();
         }
 
         private void cargarClientes()
@@ -130,7 +117,6 @@ namespace Proyecto_MOANSO_Grupo_05
 
             }
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string asesorSeleccionado = cbAsesor.SelectedItem.ToString();
@@ -139,7 +125,7 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 using (SqlConnection cn = Conexion.Instancia.Conectar())
                 {
-                    string consulta = "SELECT DNI, Telefono FROM PersonalTecnico WHERE Nombre = @nombre";
+                    string consulta = "SELECT DNI, Teléfono, PersonalID FROM Personal WHERE Nombre = @nombre";
                     SqlCommand cmd = new SqlCommand(consulta, cn);
                     cmd.Parameters.AddWithValue("@nombre", asesorSeleccionado);
                     cn.Open();
@@ -148,7 +134,8 @@ namespace Proyecto_MOANSO_Grupo_05
                     while (reader.Read())
                     {
                         labelAD.Text = reader["DNI"].ToString();
-                        labelAT.Text = reader["Telefono"].ToString();
+                        labelAT.Text = reader["Teléfono"].ToString();
+                        labelAsesorID.Text = reader["PersonalID"].ToString();
                     }
 
                     reader.Close();

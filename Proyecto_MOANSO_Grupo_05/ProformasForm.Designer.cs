@@ -63,16 +63,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbPlan = new System.Windows.Forms.ComboBox();
+            this.fechaInicioPicker = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.fechaFinPicker = new System.Windows.Forms.DateTimePicker();
+            this.labelAsesorID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProformas)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAñadir
             // 
             this.btnAñadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAñadir.Location = new System.Drawing.Point(428, 301);
+            this.btnAñadir.Location = new System.Drawing.Point(523, 388);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(150, 47);
             this.btnAñadir.TabIndex = 21;
@@ -91,7 +98,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(12, 225);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(566, 70);
+            this.groupBox1.Size = new System.Drawing.Size(661, 70);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle del Asesor";
@@ -100,7 +107,7 @@
             // 
             this.labelAT.AutoSize = true;
             this.labelAT.ForeColor = System.Drawing.Color.Black;
-            this.labelAT.Location = new System.Drawing.Point(438, 30);
+            this.labelAT.Location = new System.Drawing.Point(496, 30);
             this.labelAT.Name = "labelAT";
             this.labelAT.Size = new System.Drawing.Size(0, 13);
             this.labelAT.TabIndex = 56;
@@ -109,7 +116,7 @@
             // 
             this.labelAD.AutoSize = true;
             this.labelAD.ForeColor = System.Drawing.Color.Black;
-            this.labelAD.Location = new System.Drawing.Point(285, 30);
+            this.labelAD.Location = new System.Drawing.Point(343, 30);
             this.labelAD.Name = "labelAD";
             this.labelAD.Size = new System.Drawing.Size(0, 13);
             this.labelAD.TabIndex = 55;
@@ -118,7 +125,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(380, 30);
+            this.label14.Location = new System.Drawing.Point(438, 30);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 13);
             this.label14.TabIndex = 54;
@@ -128,7 +135,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(253, 30);
+            this.label2.Location = new System.Drawing.Point(311, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 53;
@@ -138,7 +145,7 @@
             // 
             this.cbAsesor.ForeColor = System.Drawing.Color.Black;
             this.cbAsesor.FormattingEnabled = true;
-            this.cbAsesor.Location = new System.Drawing.Point(113, 27);
+            this.cbAsesor.Location = new System.Drawing.Point(139, 27);
             this.cbAsesor.Name = "cbAsesor";
             this.cbAsesor.Size = new System.Drawing.Size(121, 21);
             this.cbAsesor.TabIndex = 53;
@@ -157,16 +164,16 @@
             // tablaProformas
             // 
             this.tablaProformas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaProformas.Location = new System.Drawing.Point(12, 354);
+            this.tablaProformas.Location = new System.Drawing.Point(17, 450);
             this.tablaProformas.Name = "tablaProformas";
-            this.tablaProformas.Size = new System.Drawing.Size(566, 256);
+            this.tablaProformas.Size = new System.Drawing.Size(656, 290);
             this.tablaProformas.TabIndex = 54;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(12, 318);
+            this.label16.Location = new System.Drawing.Point(14, 405);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(43, 13);
             this.label16.TabIndex = 56;
@@ -176,7 +183,7 @@
             // txtCodigoCliente
             // 
             this.txtCodigoCliente.ForeColor = System.Drawing.Color.Black;
-            this.txtCodigoCliente.Location = new System.Drawing.Point(61, 315);
+            this.txtCodigoCliente.Location = new System.Drawing.Point(63, 402);
             this.txtCodigoCliente.Name = "txtCodigoCliente";
             this.txtCodigoCliente.Size = new System.Drawing.Size(105, 20);
             this.txtCodigoCliente.TabIndex = 55;
@@ -198,7 +205,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(260, 207);
+            this.groupBox2.Size = new System.Drawing.Size(308, 207);
             this.groupBox2.TabIndex = 57;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles del Cliente";
@@ -329,9 +336,9 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.cbPlan);
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(278, 12);
+            this.groupBox3.Location = new System.Drawing.Point(326, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(300, 207);
+            this.groupBox3.Size = new System.Drawing.Size(347, 211);
             this.groupBox3.TabIndex = 58;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles del Servicio:";
@@ -446,12 +453,74 @@
             this.cbPlan.TabIndex = 32;
             this.cbPlan.SelectedIndexChanged += new System.EventHandler(this.cbPlan_SelectedIndexChanged_1);
             // 
+            // fechaInicioPicker
+            // 
+            this.fechaInicioPicker.Location = new System.Drawing.Point(108, 30);
+            this.fechaInicioPicker.Name = "fechaInicioPicker";
+            this.fechaInicioPicker.Size = new System.Drawing.Size(200, 20);
+            this.fechaInicioPicker.TabIndex = 60;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(19, 33);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 13);
+            this.label6.TabIndex = 59;
+            this.label6.Text = "Fecha de Inicio:";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.fechaFinPicker);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.fechaInicioPicker);
+            this.groupBox4.ForeColor = System.Drawing.Color.Black;
+            this.groupBox4.Location = new System.Drawing.Point(12, 301);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(661, 70);
+            this.groupBox4.TabIndex = 57;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Detalle del Asesor";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(322, 33);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(116, 13);
+            this.label10.TabIndex = 61;
+            this.label10.Text = "Fecha de Vencimiento:";
+            // 
+            // fechaFinPicker
+            // 
+            this.fechaFinPicker.Location = new System.Drawing.Point(441, 30);
+            this.fechaFinPicker.Name = "fechaFinPicker";
+            this.fechaFinPicker.Size = new System.Drawing.Size(200, 20);
+            this.fechaFinPicker.TabIndex = 62;
+            // 
+            // labelAsesorID
+            // 
+            this.labelAsesorID.AutoSize = true;
+            this.labelAsesorID.BackColor = System.Drawing.Color.Transparent;
+            this.labelAsesorID.ForeColor = System.Drawing.Color.Transparent;
+            this.labelAsesorID.Location = new System.Drawing.Point(262, 402);
+            this.labelAsesorID.Name = "labelAsesorID";
+            this.labelAsesorID.Size = new System.Drawing.Size(0, 13);
+            this.labelAsesorID.TabIndex = 63;
+            // 
             // ProformasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(590, 622);
+            this.ClientSize = new System.Drawing.Size(1317, 751);
+            this.Controls.Add(this.labelAsesorID);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label16);
@@ -469,6 +538,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,5 +581,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbPlan;
+        private System.Windows.Forms.DateTimePicker fechaInicioPicker;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker fechaFinPicker;
+        private System.Windows.Forms.Label labelAsesorID;
     }
 }
