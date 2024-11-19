@@ -301,7 +301,7 @@
     <None Include="Resources\LUNNYS_PNG.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\proformaventa.html" />
+    <None Include="Resources\proformaventa.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -100,5 +100,35 @@ namespace Proyecto_MOANSO_Grupo_05.Properties {
                 return ResourceManager.GetString("plantilla", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;es&quot;&gt;
+        ///  &lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        ///    &lt;title&gt;Factura Proforma&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///      body {
+        ///        font-family: Arial, sans-serif;
+        ///        margin: 0;
+        ///        padding: 0;
+        ///      }
+        ///      .invoice-container {
+        ///        width: 80%;
+        ///        margin: 20px auto;
+        ///
+        ///        padding: 20px;
+        ///        border-radius: 10px;
+        ///      }
+        ///      .header {
+        ///        text-align: center;
+        ///        margin-b [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string proformaventa {
+            get {
+                return ResourceManager.GetString("proformaventa", resourceCulture);
+            }
+        }
     }
 }

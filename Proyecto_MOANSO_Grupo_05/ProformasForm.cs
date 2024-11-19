@@ -12,6 +12,13 @@ using CapaEntidad;
 using static CapaEntidad.ProformaVenta;
 using System.Data.SqlClient;
 using CapaDatos;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.xml;
+using System.IO;
+using iTextSharp.tool.xml;
 
 namespace Proyecto_MOANSO_Grupo_05
 {
@@ -224,7 +231,50 @@ namespace Proyecto_MOANSO_Grupo_05
                 AddExtension = true
             };
 
-            string html = Properties.Resources.plantilla.ToString();
+            string html = Properties.Resources.proformaventa.ToString();
+            html = html.Replace("@NOMBRECLIENTE", cbCliente.SelectedItem.ToString());
+            html = html.Replace("@DIRECCION", direccionLabel.Text);
+            html = html.Replace("@TELEFONO", telefonoLabel.Text);
+            html = html.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yy"));
+            html = html.Replace("@METODOPAGO", "Efectivo");
+            html = html.Replace("@SERVICIO", labelCodigoServicio.Text);
+            html = html.Replace("@MONTO", precioLabel.Text);
+            html = html.Replace("@SUBTOTAL", precioLabel.Text);
+            html = html.Replace("@IGV", "0.18");
+            double monto;
+            if (double.TryParse(precioLabel.Text, out monto))
+            {
+                html = html.Replace("@igv", (monto * 0.18).ToString());
+            }
+            else
+            {
+                MessageBox.Show("Error: Monto no válido");
+            }
+            html = html.Replace("@TOTAL", (monto + (monto * 0.18)).ToString());
+
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream fs = new FileStream(guardar.FileName, FileMode.Create))
+                {
+                    Document doc = new Document(PageSize.A4, 25, 25, 30, 30);
+                    PdfWriter writer = PdfWriter.GetInstance(doc, fs);
+                    doc.Open();
+
+                    iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(Properties.Resources.LUNNYS_PNG, System.Drawing.Imaging.ImageFormat.Png);
+                    logo.ScaleToFit(120, 100);
+                    logo.Alignment = iTextSharp.text.Image.UNDERLYING;
+                    logo.SetAbsolutePosition(doc.LeftMargin, doc.Top - 60);
+                    doc.Add(logo);
+
+                    using (StringReader sr = new StringReader(html))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, doc, sr);
+                    }
+
+                    doc.Close();
+                    fs.Close();
+                }
+            }
         }
     }
 }

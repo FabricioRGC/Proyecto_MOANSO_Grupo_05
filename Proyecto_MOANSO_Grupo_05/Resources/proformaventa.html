@@ -1,149 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Factura Proforma</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      .invoice-container {
-        width: 80%;
-        margin: 20px auto;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-        padding: 20px;
-        border-radius: 10px;
-      }
-      .header {
-        text-align: center;
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: center;
-      }
-      .header h1 {
-        margin: 0;
-        font-size: 24px;
-      }
-      .header img {
-        max-width: 100px;
-        margin-left: auto;
-      }
-      .details {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-      }
-      .details .client-data,
-      .details .company-data {
-        width: 45%;
-      }
-      .details h2 {
-        font-size: 16px;
-        margin-bottom: 10px;
-      }
-      .details p {
-        margin: 5px 0;
-        font-size: 14px;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-      }
-      table th,
-      table td {
-        border: 1px solid #ccc;
-        padding: 10px;
-        text-align: left;
-        font-size: 14px;
-      }
-      table th {
-        background-color: #f8f8f8;
-      }
-      .totals {
-        display: flex;
-        justify-content: flex-end;
-      }
-      .totals table {
-        width: 50%;
-        border: none;
-      }
-      .totals td {
-        text-align: right;
-        padding: 5px 10px;
-      }
-      .comments {
-        margin-top: 20px;
-      }
-      .comments p {
-        font-size: 14px;
-        margin: 0;
-      }
-      .payment-methods {
-        margin-top: 10px;
-        font-size: 14px;
-      }
+        .invoice-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+            .header h1 {
+                margin: 0;
+                font-size: 24px;
+            }
+
+            .header img {
+                max-width: 100px;
+                margin-left: auto;
+            }
+
+        .details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+            .details .client-data,
+            .details .company-data {
+                width: 45%;
+            }
+
+            .details h2 {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            .details p {
+                margin: 5px 0;
+                font-size: 14px;
+            }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+            table th,
+            table td {
+                border: 1px solid #ccc;
+                padding: 10px;
+                text-align: left;
+                font-size: 14px;
+            }
+
+            table th {
+                background-color: #f8f8f8;
+            }
+
+        .totals {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+            .totals table {
+                width: 50%;
+                border: none;
+            }
+
+            .totals td {
+                text-align: right;
+                padding: 5px 10px;
+            }
+
+        .comments {
+            margin-top: 20px;
+        }
+
+            .comments p {
+                font-size: 14px;
+                margin: 0;
+            }
+
+        .payment-methods {
+            margin-top: 10px;
+            font-size: 14px;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="invoice-container">
-      <div class="header">
-        <h1>FACTURA PROFORMA</h1>
-        <img src="tu-logo-aqui.png" alt="EL LOGO VA A QUI :V" />
-      </div>
-
-      <div class="details">
-        <div class="client-data">
-          <h2>Datos del Cliente:</h2>
-          <p><strong>@NOMBRECLIENTE</strong></p>
-          <p>@DIRECCION</p>
-          <p>@TELEFONO</p>
+        <div class="header">
+            <h1>FACTURA PROFORMA</h1>
+            <img src="tu-logo-aqui.png" alt="EL LOGO VA A QUI :V" />
         </div>
-        <div class="company-data">
-          <h2>Datos:</h2>
-          <p><strong>LUNNYS PERU R2D E.I.R.L.</strong></p>
-          <p>20607812536</p>
-          <p>Mza. a' Lote. 5 a. H. San Francisco de Asís I</p>
-          <p>[Email]</p>
+
+        <div class="details">
+            <div class="client-data">
+                <h2>Datos del Cliente:</h2>
+                <p><strong>@NOMBRECLIENTE</strong></p>
+                <p>@DIRECCION</p>
+                <p>@TELEFONO</p>
+            </div>
+            <div class="company-data">
+                <h2>Datos:</h2>
+                <p><strong>LUNNYS PERU R2D E.I.R.L.</strong></p>
+                <p>20607812536</p>
+                <p>Mza. a' Lote. 5 a. H. San Francisco de Asís I</p>
+                <p>lunnysperur2deirl@gmail.com</p>
+            </div>
         </div>
-      </div>
 
-      <p><strong>Fecha:</strong> @FECHA</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Descripción</th>
-            <th>Moneda</th>
-            <th>Monto</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>@SERVICIO</td>
-            <td>@MONEDA</td>
-            <td>@MONTO</td>
-            <td>@SUBTOTAL</td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="3">IGV (18%):</td>
-            <td>@IGV</td>
-          </tr>
-          <tr>
-            <td colspan="3"><strong>Total:</strong></td>
-            <td><strong>@TOTAL</strong></td>
-          </tr>
-        </tfoot>
-      </table>
+        <p><strong>Fecha:</strong> @FECHA</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descripción</th>
 
-      <div class="payment-methods">
-        <p><strong>Método de pago:</strong> @METODOPAGO</p>
-      </div>
+                    <th>Monto</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@SERVICIO</td>
+
+                    <td>@MONTO</td>
+                    <td>@SUBTOTAL</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">IGV (18%):</td>
+                    <td>@IGV</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Total:</strong></td>
+                    <td><strong>@TOTAL</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="payment-methods">
+            <p><strong>Método de pago:</strong> @METODOPAGO</p>
+        </div>
     </div>
-  </body>
+</body>
 </html>
