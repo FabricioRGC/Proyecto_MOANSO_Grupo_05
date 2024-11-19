@@ -213,5 +213,18 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog guardar = new SaveFileDialog
+            {
+                FileName = "PROFORMA_" + DateTime.Now.ToString("yyyyMMdd") + "_" + cbCliente.SelectedItem.ToString(),
+                Filter = "PDF Files (*.pdf)|*.pdf",
+                DefaultExt = "pdf",
+                AddExtension = true
+            };
+
+            string html = Properties.Resources.plantilla.ToString();
+        }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnAñadir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelAT = new System.Windows.Forms.Label();
             this.labelAD = new System.Windows.Forms.Label();
@@ -69,23 +68,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.fechaFinPicker = new System.Windows.Forms.DateTimePicker();
             this.labelAsesorID = new System.Windows.Forms.Label();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnAñadir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProformas)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnAñadir
-            // 
-            this.btnAñadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAñadir.Location = new System.Drawing.Point(523, 388);
-            this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(150, 47);
-            this.btnAñadir.TabIndex = 21;
-            this.btnAñadir.Text = "Añadir";
-            this.btnAñadir.UseVisualStyleBackColor = false;
-            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // groupBox1
             // 
@@ -513,12 +503,36 @@
             this.labelAsesorID.Size = new System.Drawing.Size(0, 13);
             this.labelAsesorID.TabIndex = 63;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(96)))), ((int)(((byte)(175)))));
+            this.btnImprimir.ForeColor = System.Drawing.Color.Black;
+            this.btnImprimir.Location = new System.Drawing.Point(317, 389);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(200, 44);
+            this.btnImprimir.TabIndex = 64;
+            this.btnImprimir.Text = "Generar Comprobante";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnAñadir
+            // 
+            this.btnAñadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAñadir.Location = new System.Drawing.Point(523, 388);
+            this.btnAñadir.Name = "btnAñadir";
+            this.btnAñadir.Size = new System.Drawing.Size(150, 47);
+            this.btnAñadir.TabIndex = 21;
+            this.btnAñadir.Text = "Añadir";
+            this.btnAñadir.UseVisualStyleBackColor = false;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
+            // 
             // ProformasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1317, 751);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.labelAsesorID);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -546,7 +560,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnAñadir;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbAsesor;
@@ -587,5 +600,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker fechaFinPicker;
         private System.Windows.Forms.Label labelAsesorID;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnAñadir;
     }
 }

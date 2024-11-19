@@ -240,13 +240,5 @@ namespace Proyecto_MOANSO_Grupo_05
             }
             
         }
-
-        // 18% igv
-
-        private void btnHistorial_Click(object sender, EventArgs e)
-        {
-            Form historial = new PagosHistorialForm();
-            historial.Show();
-        }
     }
 }

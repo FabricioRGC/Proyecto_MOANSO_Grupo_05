@@ -167,12 +167,6 @@
     <Compile Include="PlanificacionMantenimientoForm.Designer.cs">
       <DependentUpon>PlanificacionMantenimientoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProformaHistorialForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProformaHistorialForm.Designer.cs">
-      <DependentUpon>ProformaHistorialForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ProformasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,9 +244,6 @@
     <EmbeddedResource Include="PlanificacionMantenimientoForm.resx">
       <DependentUpon>PlanificacionMantenimientoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProformaHistorialForm.resx">
-      <DependentUpon>ProformaHistorialForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ProformasForm.resx">
       <DependentUpon>ProformasForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +299,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LUNNYS_PNG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\proformaventa.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
