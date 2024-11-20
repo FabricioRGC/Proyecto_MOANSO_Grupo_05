@@ -78,9 +78,9 @@ namespace Proyecto_MOANSO_Grupo_05
 
                 entPlanificacionMantenimiento nuevaPlanificacion = new entPlanificacionMantenimiento
                 {
-                    Fecha = datePickerFecha.Value,
+                    FechaProgramacion = datePickerFecha.Value,
                     Estado = "Planificado",
-                    NombreCliente = cbPersonal.Text // Captura el nombre seleccionado del ComboBox
+
                 };
 
                 logPlanificacionMantenimiento.Instancia.InsertarPlanificacion(nuevaPlanificacion);
