@@ -30,10 +30,12 @@ namespace CapaDatos
                 while (dr.Read())
                 {
                     entPlanificacionMantenimiento planificacion = new entPlanificacionMantenimiento();
-                    planificacion.Id = Convert.ToInt32(dr["id"]);
-                    planificacion.Fecha = Convert.ToDateTime(dr["fecha"]);
-                    planificacion.Estado = dr["estado"].ToString();
-                    planificacion.NombreCliente = dr["NombreCliente"].ToString();
+                    planificacion.Id = Convert.ToInt32(dr["P_MantenimientoPreventivoID"]);
+                    planificacion.FechaProgramacion = Convert.ToDateTime(dr["FechaProgramacion"]);
+                    planificacion.Estado = dr["Estado"].ToString();
+                    planificacion.ContratoID = Convert.ToInt32(dr["ContratoID"]);
+                    planificacion.RepuestosID = Convert.ToInt32(dr["RepuestosID"]);
+                    planificacion.Frecuencia = dr["Frecuencia"].ToString();
                     lista.Add(planificacion);
                 }
             }
@@ -64,9 +66,12 @@ namespace CapaDatos
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Añadir los parámetros con sus valores, utilizando las propiedades correctas
-                cmd.Parameters.AddWithValue("@Fecha", planificacion.Fecha);
+                cmd.Parameters.AddWithValue("@FechaProgramacion", planificacion.FechaProgramacion);
                 cmd.Parameters.AddWithValue("@Estado", "planificado"); // Estado por defecto al añadir
-                cmd.Parameters.AddWithValue("@NombreCliente", planificacion.NombreCliente);
+                cmd.Parameters.AddWithValue("@ContratoID", planificacion.ContratoID);
+                cmd.Parameters.AddWithValue("@RepuestosID", planificacion.RepuestosID);
+                cmd.Parameters.AddWithValue("@Frecuencia", planificacion.Frecuencia);
+
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)

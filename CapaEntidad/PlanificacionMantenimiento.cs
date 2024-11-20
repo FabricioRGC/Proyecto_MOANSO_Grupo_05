@@ -8,11 +8,12 @@ namespace CapaEntidad
 {
     public class entPlanificacionMantenimiento
     {
-        public int Id { get; set; }
-        public DateTime Fecha { get; set; }
+        public int Id { get; set; }  // P_MantenimientoPreventivoID
+        public DateTime FechaProgramacion { get; set; }
         public string Estado { get; set; }
-
-        public string NombreCliente { get; set; }
+        public string Frecuencia { get; set; }
+        public int ContratoID { get; set; }
+        public int RepuestosID { get; set; }
     }
 }
 
