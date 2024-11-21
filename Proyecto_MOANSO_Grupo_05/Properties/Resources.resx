@@ -124,6 +124,9 @@
   <data name="plantilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plantilla.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="plantillaContrato" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plantillaContrato.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="proformaventa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proformaventa.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

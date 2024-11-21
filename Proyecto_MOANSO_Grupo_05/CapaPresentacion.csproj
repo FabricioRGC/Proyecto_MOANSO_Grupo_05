@@ -303,5 +303,8 @@
   <ItemGroup>
     <None Include="Resources\proformaventa.html" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plantillaContrato.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

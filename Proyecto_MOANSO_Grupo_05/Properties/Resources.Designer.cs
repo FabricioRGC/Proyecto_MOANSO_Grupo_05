@@ -104,26 +104,53 @@ namespace Proyecto_MOANSO_Grupo_05.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;es&quot;&gt;
-        ///  &lt;head&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        ///    &lt;title&gt;Contrato de Servicios a Lunnys Perú&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        body {
+        ///            font-family: Arial, sans-serif;
+        ///            line-height: 1.6;
+        ///            margin: 20px;
+        ///            background-color: #f9f9f9;
+        ///        }
+        ///        header {
+        ///            text-align: center;
+        ///            margin-bottom: 30px;
+        ///        }
+        ///        .container {
+        ///         [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string plantillaContrato {
+            get {
+                return ResourceManager.GetString("plantillaContrato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;es&quot;&gt;
+        ///&lt;head&gt;
         ///    &lt;meta charset=&quot;UTF-8&quot; /&gt;
         ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
         ///    &lt;title&gt;Factura Proforma&lt;/title&gt;
         ///    &lt;style&gt;
-        ///      body {
-        ///        font-family: Arial, sans-serif;
-        ///        margin: 0;
-        ///        padding: 0;
-        ///      }
-        ///      .invoice-container {
-        ///        width: 80%;
-        ///        margin: 20px auto;
+        ///        body {
+        ///            font-family: Arial, sans-serif;
+        ///            margin: 0;
+        ///            padding: 0;
+        ///        }
         ///
-        ///        padding: 20px;
-        ///        border-radius: 10px;
-        ///      }
-        ///      .header {
-        ///        text-align: center;
-        ///        margin-b [resto de la cadena truncado]&quot;;.
+        ///        .invoice-container {
+        ///            width: 80%;
+        ///            margin: 20px auto;
+        ///            padding: 20px;
+        ///            border-radius: 10px;
+        ///        }
+        ///
+        ///        .header {
+        ///        [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string proformaventa {
             get {
