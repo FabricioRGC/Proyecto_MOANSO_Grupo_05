@@ -32,19 +32,20 @@
             this.txtcaractplan = new System.Windows.Forms.TextBox();
             this.txttipser = new System.Windows.Forms.TextBox();
             this.txtpreciomen = new System.Windows.Forms.TextBox();
-            this.txtlimites = new System.Windows.Forms.TextBox();
             this.txtVelocidadmbps = new System.Windows.Forms.TextBox();
             this.txtnomplan = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewplan = new System.Windows.Forms.DataGridView();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewplan)).BeginInit();
             this.SuspendLayout();
@@ -52,31 +53,32 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Peru;
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.txtcaractplan);
             this.groupBox1.Controls.Add(this.txttipser);
             this.groupBox1.Controls.Add(this.txtpreciomen);
-            this.groupBox1.Controls.Add(this.txtlimites);
             this.groupBox1.Controls.Add(this.txtVelocidadmbps);
             this.groupBox1.Controls.Add(this.txtnomplan);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(22, 37);
+            this.groupBox1.Location = new System.Drawing.Point(25, 13);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(323, 329);
+            this.groupBox1.Size = new System.Drawing.Size(323, 353);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Servicios de internet";
             // 
             // txtcaractplan
             // 
-            this.txtcaractplan.Location = new System.Drawing.Point(164, 251);
+            this.txtcaractplan.Location = new System.Drawing.Point(164, 205);
             this.txtcaractplan.Margin = new System.Windows.Forms.Padding(4);
             this.txtcaractplan.Name = "txtcaractplan";
             this.txtcaractplan.Size = new System.Drawing.Size(132, 22);
@@ -84,7 +86,7 @@
             // 
             // txttipser
             // 
-            this.txttipser.Location = new System.Drawing.Point(164, 202);
+            this.txttipser.Location = new System.Drawing.Point(164, 156);
             this.txttipser.Margin = new System.Windows.Forms.Padding(4);
             this.txttipser.Name = "txttipser";
             this.txttipser.Size = new System.Drawing.Size(132, 22);
@@ -92,19 +94,11 @@
             // 
             // txtpreciomen
             // 
-            this.txtpreciomen.Location = new System.Drawing.Point(164, 160);
+            this.txtpreciomen.Location = new System.Drawing.Point(164, 114);
             this.txtpreciomen.Margin = new System.Windows.Forms.Padding(4);
             this.txtpreciomen.Name = "txtpreciomen";
             this.txtpreciomen.Size = new System.Drawing.Size(132, 22);
             this.txtpreciomen.TabIndex = 9;
-            // 
-            // txtlimites
-            // 
-            this.txtlimites.Location = new System.Drawing.Point(164, 112);
-            this.txtlimites.Margin = new System.Windows.Forms.Padding(4);
-            this.txtlimites.Name = "txtlimites";
-            this.txtlimites.Size = new System.Drawing.Size(132, 22);
-            this.txtlimites.TabIndex = 8;
             // 
             // txtVelocidadmbps
             // 
@@ -127,7 +121,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Linen;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 164);
+            this.label4.Location = new System.Drawing.Point(21, 119);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 17);
@@ -139,7 +133,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Linen;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 210);
+            this.label5.Location = new System.Drawing.Point(18, 161);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 17);
@@ -151,24 +145,12 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Linen;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 255);
+            this.label6.Location = new System.Drawing.Point(26, 210);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 17);
             this.label6.TabIndex = 3;
             this.label6.Text = "Caracteristicas";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Linen;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 121);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Limites de datos";
             // 
             // label2
             // 
@@ -187,7 +169,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Linen;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 32);
+            this.label1.Location = new System.Drawing.Point(16, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 17);
@@ -199,7 +181,7 @@
             this.button3.BackColor = System.Drawing.Color.SaddleBrown;
             this.button3.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(811, 25);
+            this.button3.Location = new System.Drawing.Point(817, 25);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 36);
@@ -246,6 +228,37 @@
             this.dataGridViewplan.Size = new System.Drawing.Size(679, 276);
             this.dataGridViewplan.TabIndex = 18;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.checkBox1.Location = new System.Drawing.Point(182, 288);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(72, 20);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Estado";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Linen;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(79, 291);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Estado";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(164, 244);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(132, 24);
+            this.comboBox1.TabIndex = 14;
+            // 
             // PlanesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -271,18 +284,19 @@
         private System.Windows.Forms.TextBox txtcaractplan;
         private System.Windows.Forms.TextBox txttipser;
         private System.Windows.Forms.TextBox txtpreciomen;
-        private System.Windows.Forms.TextBox txtlimites;
         private System.Windows.Forms.TextBox txtVelocidadmbps;
         private System.Windows.Forms.TextBox txtnomplan;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewplan;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

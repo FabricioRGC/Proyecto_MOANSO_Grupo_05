@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static CapaEntidad.Planes;
 using CapaLogica;
+using CapaDatos;
+using CapaEntidad;
+using System.Data.SqlClient;
+using iTextSharp.text.pdf.codec.wmf;
 
 namespace Proyecto_MOANSO_Grupo_05
 {
@@ -18,7 +22,29 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             InitializeComponent();
             ListarPlanes();
+            cargarClientes();
         }
+
+        private void cargarClientes()
+        {
+            string consulta = "SELECT ZonaDeCoberturaID FROM ZonaDeCobertura";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    comboBox1.Items.Add(reader["ZonaDeCoberturaID"].ToString());
+                }
+
+                reader.Close();
+
+            }
+        }
+
         public void ListarPlanes()
         {
             dataGridViewplan.DataSource = logPlanes.Instancia.ListarPlanes();
@@ -27,7 +53,6 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             txtnomplan.Text = "";
             txtVelocidadmbps.Text = "";
-            txtlimites.Text = "";
             txtpreciomen.Text = "";
             txttipser.Text = "";
             txtcaractplan.Text = "";
@@ -39,12 +64,12 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 entPlanes plan = new entPlanes();
                 plan.PlanNombre = txtnomplan.Text.Trim();
-                plan.VelocidadMbps = int.Parse(txtVelocidadmbps.Text);
-                plan.LimiteDeDatos = int.Parse(txtlimites.Text);
+                plan.VelocidadMbps = txtVelocidadmbps.Text;
                 plan.PrecioMensual = float.Parse(txtpreciomen.Text);
                 plan.TipoServicio = txttipser.Text.Trim();
                 plan.Caracteristicas = txtcaractplan.Text.Trim();
-                plan.estado = "ACTIVO";
+                plan.Zona_de_cobertura_id = int.Parse(comboBox1.SelectedItem.ToString());
+                plan.estado = checkBox1.Checked ? "ACTIVO" : "INACTIVO";
 
                 logPlanes.Instancia.InsertarPlanes(plan);
             }
@@ -62,11 +87,12 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 entPlanes plan = new entPlanes();
                 plan.PlanNombre = txtnomplan.Text.Trim();
-                plan.VelocidadMbps = int.Parse(txtVelocidadmbps.Text);
-                plan.LimiteDeDatos = int.Parse(txtlimites.Text);
+                plan.VelocidadMbps = txtVelocidadmbps.Text;
                 plan.PrecioMensual = float.Parse(txtpreciomen.Text);
                 plan.TipoServicio = txttipser.Text.Trim();
                 plan.Caracteristicas = txtcaractplan.Text.Trim();
+                plan.Zona_de_cobertura_id = int.Parse(comboBox1.SelectedItem.ToString());
+                plan.estado = checkBox1.Checked ? "ACTIVO" : "INACTIVO";
 
                 logPlanes.Instancia.EditarPlanes(plan);
             }

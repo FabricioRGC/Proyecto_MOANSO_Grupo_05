@@ -340,5 +340,10 @@ namespace Proyecto_MOANSO_Grupo_05
             Form formulario = new Form1();
             formulario.Show();
         }
+
+        private void planesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirPrueba2(new PlanesForm());
+        }
     }
 }

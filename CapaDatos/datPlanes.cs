@@ -33,13 +33,14 @@ namespace CapaDatos
                 while (dr.Read())
                 {
                     entPlanes plan = new entPlanes();
-                    plan.PlanNombre = dr["PlanNombre"].ToString();
-                    plan.VelocidadMbps = int.Parse(dr["VelocidadMbps"].ToString());
-                    plan.LimiteDeDatos = int.Parse(dr["LimiteDatosGB"].ToString());
-                    plan.PrecioMensual = Convert.ToInt32(dr["PrecioMensualSoles"]);
+                    plan.PlanNombre = dr["NombrePlanServicio"].ToString();
+                    plan.VelocidadMbps = dr["VelocidadMbps"].ToString();
+                    plan.PrecioMensual = Convert.ToInt32(dr["Precio"]);
                     plan.TipoServicio = dr["TipoServicio"].ToString();
                     plan.Caracteristicas = dr["Caracteristicas"].ToString();
                     plan.estado = dr["estado"].ToString();
+                    plan.Zona_de_cobertura_id = Convert.ToInt32(dr["ZonaDeCoberturaID"]);
+
 
                     lista.Add(plan);
                 }
@@ -69,11 +70,11 @@ namespace CapaDatos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@planNombre", planes.PlanNombre);
                 cmd.Parameters.AddWithValue("@velocidadMbps", planes.VelocidadMbps);
-                cmd.Parameters.AddWithValue("@limiteGB", planes.LimiteDeDatos);
                 cmd.Parameters.AddWithValue("@precioMen", planes.PrecioMensual);
                 cmd.Parameters.AddWithValue("@tipoSer", planes.TipoServicio);
                 cmd.Parameters.AddWithValue("@caracteristicas", planes.Caracteristicas);
                 cmd.Parameters.AddWithValue("@estado", planes.estado);
+                cmd.Parameters.AddWithValue("@zona_de_covertura", planes.Zona_de_cobertura_id);
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
@@ -106,10 +107,11 @@ namespace CapaDatos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@planNombre", planes.PlanNombre);
                 cmd.Parameters.AddWithValue("@velocidadMbps", planes.VelocidadMbps);
-                cmd.Parameters.AddWithValue("@limiteGB", planes.LimiteDeDatos);
                 cmd.Parameters.AddWithValue("@precioMen", planes.PrecioMensual);
                 cmd.Parameters.AddWithValue("@tipoSer", planes.TipoServicio);
                 cmd.Parameters.AddWithValue("@caracteristicas", planes.Caracteristicas);
+                cmd.Parameters.AddWithValue("@estado", planes.estado);
+                cmd.Parameters.AddWithValue("@zona_de_covertura", planes.Zona_de_cobertura_id);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
@@ -138,7 +140,7 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("SP_DESHABILITAR_Planes", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@planNombre", pla.PlanNombre);
+                cmd.Parameters.AddWithValue("@nombre", pla.PlanNombre);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
