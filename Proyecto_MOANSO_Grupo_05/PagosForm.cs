@@ -194,7 +194,7 @@ namespace Proyecto_MOANSO_Grupo_05
            string html = Properties.Resources.plantilla.ToString();
             html = html.Replace("@CLIENTE", cbCliente.SelectedItem.ToString());
             html = html.Replace("@DOCUMENTO", labelDni.Text);
-            html = html.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yy"));
+            html = html.Replace("@FECHA", fechaPicker.Value.ToString("dd/MM/yyyy"));
             html = html.Replace("@codigocliente", labelCodigo.Text);
             html = html.Replace("@direccioncliente", labelDireccion.Text);
             html = html.Replace("@telefonocliente", labelTelefono.Text);

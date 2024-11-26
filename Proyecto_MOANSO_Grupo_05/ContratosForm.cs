@@ -99,6 +99,8 @@ namespace Proyecto_MOANSO_Grupo_05
             }
             LimpiarVariables();
             listarContrato();
+
+
         }
 
         // Actualizar Información
