@@ -63,9 +63,6 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
-
-
-
         private bool cargandoDatos = false;
 
         private void cargarPersonalTecnico()
@@ -89,6 +86,61 @@ namespace Proyecto_MOANSO_Grupo_05
                 cboTecnicoAsignado.SelectedIndex = -1; // Ningún elemento seleccionado inicialmente
                 cargandoDatos = false; // Bandera desactivada
             }
+        }
+
+        private bool RestarStockRepuesto(int repuestosID, int stockSolicitado)
+        {
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                cn.Open();
+                SqlTransaction transaction = cn.BeginTransaction();
+
+                try
+                {
+                    // Obtener el stock actual
+                    string consultaStock = "SELECT Stock FROM Repuestos WHERE RepuestosID = @RepuestosID";
+                    SqlCommand cmdStock = new SqlCommand(consultaStock, cn, transaction);
+                    cmdStock.Parameters.AddWithValue("@RepuestosID", repuestosID);
+
+                    int stockActual = Convert.ToInt32(cmdStock.ExecuteScalar());
+
+                    // Validar si hay suficiente stock
+                    if (stockSolicitado > stockActual)
+                    {
+                        MessageBox.Show($"No hay suficiente stock. Disponible: {stockActual}");
+                        transaction.Rollback(); // Deshacer cambios
+                        return false;
+                    }
+
+                    // Actualizar el stock
+                    string actualizarStock = "UPDATE Repuestos SET Stock = Stock - @StockSolicitado WHERE RepuestosID = @RepuestosID";
+                    SqlCommand cmdActualizar = new SqlCommand(actualizarStock, cn, transaction);
+                    cmdActualizar.Parameters.AddWithValue("@StockSolicitado", stockSolicitado);
+                    cmdActualizar.Parameters.AddWithValue("@RepuestosID", repuestosID);
+                    cmdActualizar.ExecuteNonQuery();
+
+                    transaction.Commit(); // Confirmar los cambios
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback(); // Deshacer cambios en caso de error
+                    MessageBox.Show($"Error al restar stock: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
+        private void LimpiarInformacionRepuesto()
+        {
+            CodigoRepuesto.Text = string.Empty;
+            stockRepuesto.Text = string.Empty;
+            labelCategoriaID.Text = string.Empty;
+
+            // Forzar la actualización de la interfaz si es necesario
+            CodigoRepuesto.Refresh();
+            stockRepuesto.Refresh();
+            labelCategoriaID.Refresh();
         }
 
 
@@ -117,21 +169,41 @@ namespace Proyecto_MOANSO_Grupo_05
                 }
 
                 // Validar que el stock sea un número válido
-                if (!int.TryParse(txtStockPedidoRep.Text, out int stock))
+                if (!int.TryParse(txtStockPedidoRep.Text, out int stockSolicitado))
                 {
                     MessageBox.Show("El stock debe ser un número válido.");
                     return;
                 }
 
+                if (cboNomRepuestos.SelectedValue == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un repuesto válido.");
+                    return;
+                }
+
+                if (cboTecnicoAsignado.SelectedValue == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un técnico válido.");
+                    return;
+                }
+
+
+                int repuestosID = Convert.ToInt32(cboNomRepuestos.SelectedValue);
+
+                // Llamar al método para restar stock
+                if (!RestarStockRepuesto(repuestosID, stockSolicitado))
+                {
+                    return; 
+                }
+
                 // Crear el objeto PedidoRepuesto y asignar los valores
                 entPedidoRepuestos PedidoRepuesto = new entPedidoRepuestos
                 {
-               
                     Estado = "Pendiente", // Estado fijo como "Pendiente"
                     FechaRealizacion = dtpFechaRealizacion.Value,
                     FechaEntrega = dtpFechaEntrega.Value,
-                    Stock = Convert.ToInt32(txtStockPedidoRep.Text),
-                    RepuestosID = Convert.ToInt32(cboNomRepuestos.SelectedValue),
+                    Stock = stockSolicitado,
+                    RepuestosID = repuestosID,
                     PersonalID = Convert.ToInt32(cboTecnicoAsignado.SelectedValue)
                 };
 
@@ -146,6 +218,8 @@ namespace Proyecto_MOANSO_Grupo_05
             finally
             {
                 ListarPedidosRepuesto();
+                cargarRepuestos();
+                LimpiarInformacionRepuesto();
             }
         }
 
@@ -192,6 +266,7 @@ namespace Proyecto_MOANSO_Grupo_05
                         }
                         else
                         {
+                            LimpiarInformacionRepuesto();
                             MessageBox.Show("No se encontró información para el repuesto seleccionado.");
                         }
                     }
@@ -258,7 +333,12 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void txtIdRepuestos_TextChanged(object sender, EventArgs e)
         {
-         
+            string textoBusqueda = txtRepuestos.Text.Trim();
+            List<PedidoRepuestos.entPedidoRepuestos> listaPedidoRepuestos = logPedidoRepuestos.Instancia.ListarPedidosRepuestos();
+            var listaFiltrada = listaPedidoRepuestos
+                .Where(r => r.PedidoDeRepuestosID.ToString().Contains(textoBusqueda))
+                .ToList();
+            dataGridRepuestos.DataSource = listaFiltrada;
         }
 
 
@@ -273,25 +353,25 @@ namespace Proyecto_MOANSO_Grupo_05
                     int idPedido = ordenSeleccionada.PedidoDeRepuestosID;
 
                     var confirmResult = MessageBox.Show("¿Está seguro de que desea terminar este pedido?",
-                                                         "Confirmar finalizacion",
-                                                         MessageBoxButtons.YesNo);
+                                                         "Confirmar finalización",
+                                                         MessageBoxButtons.YesNo,
+                                                         MessageBoxIcon.Question);
                     if (confirmResult == DialogResult.Yes)
                     {
                         logPedidoRepuestos.Instancia.TerminarPedidoRepuesto(idPedido);
-                        MessageBox.Show("Pedido terminado exitosamente.");
                         ListarPedidosRepuesto();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, seleccione un pedido para terminar.");
+                    MessageBox.Show("Debe seleccionar una fila antes de intentar terminar un pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Se produjo un error al intentar terminar el pedido: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
 
+        }
     }
 }
