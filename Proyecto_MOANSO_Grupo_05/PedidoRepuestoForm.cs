@@ -33,46 +33,62 @@ namespace Proyecto_MOANSO_Grupo_05
             dataGridRepuestos.DataSource = logPedidoRepuestos.Instancia.ListarPedidosRepuestos();
         }
 
+        private bool cargandoRepuestos = false;
+
         private void cargarRepuestos()
         {
-            string consulta = "select NombreRepuesto from Repuestos";
+            string consulta = "SELECT RepuestosID, NombreRepuesto FROM Repuestos";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
                 SqlCommand cmd = new SqlCommand(consulta, cn);
-                cn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                try
                 {
-                    cboNomRepuestos.Items.Add(reader["NombreRepuesto"].ToString());
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    cboNomRepuestos.DataSource = dt;
+                    cboNomRepuestos.DisplayMember = "NombreRepuesto"; // Lo que se mostrará al usuario
+                    cboNomRepuestos.ValueMember = "RepuestosID";      // El valor real (ID)
+                    cboNomRepuestos.SelectedIndex = -1;              // Sin selección inicial
+                    cargandoRepuestos = false;
                 }
-
-                reader.Close();
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar repuestos: " + ex.Message);
+                }
             }
         }
 
+
+        private bool cargandoDatos = false;
+
         private void cargarPersonalTecnico()
         {
-            string consulta = "SELECT Nombre FROM Personal WHERE Cargo = @Cargo";
+            string consulta = "SELECT PersonalID, Nombre FROM Personal WHERE Cargo = @Cargo";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
                 SqlCommand cmd = new SqlCommand(consulta, cn);
                 cmd.Parameters.AddWithValue("@Cargo", "Jefe de soporte tecnico");
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
 
+                cargandoDatos = true; // Bandera activada
                 cn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                adapter.Fill(dt);
 
-                while (reader.Read())
-                {
-                    cboTecnicoAsignado.Items.Add(reader["Nombre"].ToString());
-                }
-
-                reader.Close();
+                cboTecnicoAsignado.DataSource = dt;
+                cboTecnicoAsignado.DisplayMember = "Nombre";
+                cboTecnicoAsignado.ValueMember = "PersonalID";
+                cboTecnicoAsignado.SelectedIndex = -1; // Ningún elemento seleccionado inicialmente
+                cargandoDatos = false; // Bandera desactivada
             }
         }
+
 
 
         private void btnAñadir_Click(object sender, EventArgs e)
@@ -127,19 +143,31 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void cboRepuestos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Evitar lógica si estamos cargando datos o no hay selección válida
+            if (cargandoRepuestos || cboNomRepuestos.SelectedIndex == -1)
+                return;
+
+            if (cboNomRepuestos.SelectedItem == null)
+            {
+                MessageBox.Show("Seleccione un repuesto válido.");
+                return;
+            }
+
+            int repuestoID;
+
             string repuestoSeleccionado = cboNomRepuestos.SelectedItem.ToString();
 
             try
             {
-                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                if (int.TryParse(cboNomRepuestos.SelectedValue.ToString(), out repuestoID))
                 {
-                    // Consulta modificada para incluir el nombre de la categoría
-                    string consulta = @"
+                    using (SqlConnection cn = Conexion.Instancia.Conectar())
+                    {
+                        string consulta = @"
                     SELECT 
                         r.CódigoRepuesto, 
                         r.Stock, 
-                        r.CategoriaRepuestoID, 
-                        c.CategoriaRepuesto  -- Nombre de la categoría
+                        c.CategoriaRepuesto
                     FROM 
                         Repuestos r
                     INNER JOIN 
@@ -147,19 +175,25 @@ namespace Proyecto_MOANSO_Grupo_05
                     WHERE 
                         r.NombreRepuesto = @NombreRepuesto";
 
-                    SqlCommand cmd = new SqlCommand(consulta, cn);
-                    cmd.Parameters.AddWithValue("@NombreRepuesto", repuestoSeleccionado);
+                        SqlCommand cmd = new SqlCommand(consulta, cn);
+                        cmd.Parameters.AddWithValue("@NombreRepuesto", repuestoSeleccionado);
 
-                    cn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
+                        cn.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
 
-                    while (reader.Read())
-                    {
-                        CodigoRepuesto.Text = reader["CódigoRepuesto"].ToString();
-                        stockRepuesto.Text = reader["Stock"].ToString();
-                        labelCategoriaID.Text = reader["CategoriaRepuesto"].ToString(); 
+                        if (reader.Read())
+                        {
+                            CodigoRepuesto.Text = reader["CódigoRepuesto"].ToString();
+                            stockRepuesto.Text = reader["Stock"].ToString();
+                            labelCategoriaID.Text = reader["CategoriaRepuesto"].ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró información para el repuesto seleccionado.");
+                        }
                     }
                 }
+                    
             }
             catch (Exception ex)
             {
@@ -167,28 +201,51 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
+
         private void cboTecnico_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string personalTecnicoSeleccionado = cboTecnicoAsignado.SelectedItem.ToString();
+            // No hacer nada si estamos cargando datos
+            if (cargandoDatos || cboTecnicoAsignado.SelectedIndex == -1)
+                return;
 
+            // Asegúrate de que hay un valor seleccionado
+            if (cboTecnicoAsignado.SelectedValue == null)
+            {
+                MessageBox.Show("Seleccione un técnico válido.");
+                return;
+            }
+
+            int personalID;
             try
             {
-                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                // Verifica y convierte correctamente el valor seleccionado
+                if (int.TryParse(cboTecnicoAsignado.SelectedValue.ToString(), out personalID))
                 {
-                    string consulta = "SELECT DNI, Télefono, Estado, Cargo, AreaTrabajo FROM Personal WHERE Nombre = @Nombre";
-                    SqlCommand cmd = new SqlCommand(consulta, cn);
-                    cmd.Parameters.AddWithValue("@Nombre", personalTecnicoSeleccionado);
-                    cn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
+                    using (SqlConnection cn = Conexion.Instancia.Conectar())
                     {
-                        dniLabel.Text = reader["DNI"].ToString();
-                        telefonoLabel.Text = reader["Télefono"].ToString();
-                        estadoLabel.Text = reader["Estado"].ToString();
-                        tipoCargoLabel.Text = reader["Cargo"].ToString();
-                        areaTrabajoLabel.Text = reader["AreaTrabajo"].ToString();
+                        string consulta = "SELECT DNI, Télefono, Estado, Cargo, AreaTrabajo FROM Personal WHERE PersonalID = @PersonalID";
+                        SqlCommand cmd = new SqlCommand(consulta, cn);
+                        cmd.Parameters.AddWithValue("@PersonalID", personalID);
+                        cn.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            dniLabel.Text = reader["DNI"].ToString();
+                            telefonoLabel.Text = reader["Télefono"].ToString();
+                            estadoLabel.Text = reader["Estado"].ToString();
+                            tipoCargoLabel.Text = reader["Cargo"].ToString();
+                            areaTrabajoLabel.Text = reader["AreaTrabajo"].ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró información para el técnico seleccionado.");
+                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("El valor seleccionado no es válido.");
                 }
             }
             catch (Exception ex)
