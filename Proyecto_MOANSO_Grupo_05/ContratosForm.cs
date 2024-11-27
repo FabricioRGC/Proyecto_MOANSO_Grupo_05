@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,10 @@ using System.Windows.Forms;
 using CapaDatos;
 using CapaEntidad;
 using CapaLogica;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
+using iTextSharp.tool.xml.html;
+using iTextSharp.tool.xml;
 using static CapaEntidad.Cliente;
 using static CapaEntidad.Contrato;
 
@@ -158,7 +163,7 @@ namespace Proyecto_MOANSO_Grupo_05
                         telefonoLabel.Text = reader["telefono"].ToString();
                         estadoLabel.Text = reader["estado"].ToString();
                         dniLabel.Text = reader["dni"].ToString();
-                    }           
+                    }
                 }
             }
             catch (Exception ex)
@@ -172,30 +177,58 @@ namespace Proyecto_MOANSO_Grupo_05
 
         }
 
-        // Anular Contrato
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnImprimir_Click(object sender, EventArgs e)
         {
-            try
+            SaveFileDialog guardar = new SaveFileDialog
             {
-                entContrato entContrato = new entContrato();
-                entContrato.id_cliente = Convert.ToInt32(textBox1.Text);
-                logContrato.Instancia.AnularContrato(entContrato);
-            }
-            catch (Exception ex)
+                FileName = "CONTRATO_" + DateTime.Now.ToString("yyyyMMdd") + "_" + cbCliente.SelectedItem.ToString(),
+                Filter = "PDF Files (*.pdf)|*.pdf",
+                DefaultExt = "pdf",
+                AddExtension = true
+            };
+
+            string html = Properties.Resources.plantillaContrato.ToString();
+            html = html.Replace("@FECHA", fechaPicker.Value.ToString("dd/MM/yyyy"));
+            html = html.Replace("@NOMBRECLIENTE", cbCliente.SelectedItem.ToString());
+            html = html.Replace("@DNI", dniLabel.Text);
+            html = html.Replace("@DIRECCION", direccionLabel.Text);
+            html = html.Replace("@TELEFONO", telefonoLabel.Text);
+            html = html.Replace("@SERVICIO", cbPlan.SelectedItem.ToString());
+            html = html.Replace("@VELOCIDAD", velocidadLabel.Text);
+            html = html.Replace("@COSTO", precioLabel.Text);
+            html = html.Replace("@MESES", txtDuracion.Text);
+
+            if (guardar.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                using (FileStream fs = new FileStream(guardar.FileName, FileMode.Create))
+                {
+                    Document pdf = new Document(PageSize.A4, 25, 25, 25, 25);
+
+                    PdfWriter writer = PdfWriter.GetInstance(pdf, fs);
+                    pdf.Open();
+                    pdf.Add(new Phrase(""));
+
+                    using (StringReader sr = new StringReader(html))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdf, sr);
+                    }
+
+
+                    pdf.Close();
+                    fs.Close();
+                }
             }
-            listarContrato();
+
+            // Filtrar por Cliente
+            //private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
+            //{
+            //    string nombre = txtBuscarCliente.Text;
+
+            //    var contratosFiltrados = logContrato.Instancia.ListarContrato().Where(c => c.clienteId.Contains(nombre)).ToList();
+
+            //    tablaContratos.DataSource = contratosFiltrados;
+            //}
         }
-
-        // Filtrar por Cliente
-        //private void txtBuscarNombre_TextChanged(object sender, EventArgs e)
-        //{
-        //    string nombre = txtBuscarCliente.Text;
-
-        //    var contratosFiltrados = logContrato.Instancia.ListarContrato().Where(c => c.clienteId.Contains(nombre)).ToList();
-
-        //    tablaContratos.DataSource = contratosFiltrados;
-        //}
     }
 }
