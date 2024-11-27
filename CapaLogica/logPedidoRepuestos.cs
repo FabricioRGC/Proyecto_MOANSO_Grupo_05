@@ -18,21 +18,21 @@ namespace CapaLogica
         }
 
         // Método para listar pedidos de repuestos
-        public List<PedidoRepuestos.entOrdenPedidoRepuestos> ListarPedidosRepuestos()
+        public List<PedidoRepuestos.entPedidoRepuestos> ListarPedidosRepuestos()
         {
-            return datPedidoRepuestos.Instancia.ListarPedidosRepuestos();
+            return datPedidoRepuestos.Instancia.ListarPedidoRepuestos();
         }
 
         // Método para añadir un pedido de repuestos
-        public void InsertarPedidoRepuesto(PedidoRepuestos.entOrdenPedidoRepuestos pedido)
+        public void InsertarPedidoRepuesto(PedidoRepuestos.entPedidoRepuestos pedido)
         {
             datPedidoRepuestos.Instancia.RegistrarPedidoRepuesto(pedido);
         }
 
-        // Método para anular un pedido de repuestos
-        public void TerminarPedidoRepuesto(long id)
+        // Método para terminar un pedido de repuestos
+        public void TerminarPedidoRepuesto(int idPedido)
         {
-            datPedidoRepuestos.Instancia.TerminarPedidoRepuesto(id);
+            datPedidoRepuestos.Instancia.TerminarPedidoRepuesto(idPedido);
         }
     }
 }

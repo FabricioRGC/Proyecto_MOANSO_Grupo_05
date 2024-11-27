@@ -8,14 +8,15 @@ namespace CapaEntidad
 {
     public class PedidoRepuestos
     {
-        public class entOrdenPedidoRepuestos
+        public class entPedidoRepuestos
         {
-            public long id { get; set; }
-            public string nombreRepuesto { get; set; }
-            public string nombreTecnico { get; set; }
-            public DateTime fecha { get; set; }
-            public DateTime? fecha_entrega { get; set; }
-            public string estado { get; set; }
+            public int PedidoDeRepuestosID { get; set; }
+            public int Stock { get; set; }
+            public int RepuestosID { get; set; }
+            public int PersonalID { get; set; }
+            public DateTime FechaRealizacion { get; set; }
+            public DateTime? FechaEntrega { get; set; }
+            public string Estado { get; set; }
         }
     }
 }

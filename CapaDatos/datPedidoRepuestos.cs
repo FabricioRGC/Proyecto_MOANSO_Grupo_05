@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaEntidad;
+using static CapaEntidad.Repuesto;
+using static CapaEntidad.PedidoRepuestos;
 
 namespace CapaDatos
 {
@@ -20,96 +22,114 @@ namespace CapaDatos
         }
 
 
-        // Método para registrar un pedido de repuestos
-        public void RegistrarPedidoRepuesto(PedidoRepuestos.entOrdenPedidoRepuestos pedido)
+        // Método para mostrar los pedidos de repuesto
+        public List<PedidoRepuestos.entPedidoRepuestos> ListarPedidoRepuestos()
         {
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            SqlCommand cmd = null;
+            List<PedidoRepuestos.entPedidoRepuestos> lista = new List<PedidoRepuestos.entPedidoRepuestos>();
+            try
             {
-                using (SqlCommand cmd = new SqlCommand("SP_REGISTRAR_PEDIDO_REPUESTOS", cn))
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("SP_MOSTRAR_PEDIDO_REPUESTOS", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@nombreRepuesto", SqlDbType.NVarChar, 30).Value = pedido.nombreRepuesto;
-                    cmd.Parameters.Add("@nombreTecnico", SqlDbType.NVarChar, 30).Value = pedido.nombreTecnico;
-                    cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = pedido.fecha == DateTime.MinValue ? (object)DBNull.Value : pedido.fecha;
-                    cmd.Parameters.Add("@fecha_entrega", SqlDbType.Date).Value = pedido.fecha_entrega == DateTime.MinValue ? (object)DBNull.Value : pedido.fecha_entrega;
-                    cmd.Parameters.Add("@estado", SqlDbType.NVarChar, 20).Value = "Pendiente";
-
-                    try
-                    {
-                        cn.Open();
-                        cmd.ExecuteNonQuery();
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show("Error al registrar el pedido de repuestos: " + ex.Message);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
+                    entPedidoRepuestos PedidoRepuesto = new entPedidoRepuestos();
+                    PedidoRepuesto.PedidoDeRepuestosID = Convert.ToInt32(dr["PedidoDeRepuestosID"]);
+                    PedidoRepuesto.Stock = Convert.ToInt32(dr["Stock"]);
+                    PedidoRepuesto.FechaRealizacion = Convert.ToDateTime(dr["FechaRealizacion"]);
+                    PedidoRepuesto.FechaEntrega = dr["FechaEntrega"] != DBNull.Value ? Convert.ToDateTime(dr["FechaEntrega"]) : (DateTime?)null;
+                    PedidoRepuesto.Estado = dr["Estado"].ToString();
+                    PedidoRepuesto.RepuestosID = Convert.ToInt32(dr["RepuestosID"]);
+                    PedidoRepuesto.PersonalID = Convert.ToInt32(dr["PersonalID"]);
+                    lista.Add(PedidoRepuesto);
                 }
             }
-        }
-
-
-        public void TerminarPedidoRepuesto(long idPedido)
-        {
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            catch (Exception ex)
             {
-                using (SqlCommand cmd = new SqlCommand("SP_TERMINAR_PEDIDO_REPUESTOS", cn))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", idPedido);
-
-                    try
-                    {
-                        cn.Open();
-                        cmd.ExecuteNonQuery();
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show("Error al terminar el pedido: " + ex.Message);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
-                }
+                throw ex;
             }
-        }
-
-
-        public List<PedidoRepuestos.entOrdenPedidoRepuestos> ListarPedidosRepuestos()
-        {
-            List<PedidoRepuestos.entOrdenPedidoRepuestos> lista = new List<PedidoRepuestos.entOrdenPedidoRepuestos>();
-
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            finally
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM ordenespedidorepuestos", cn))
+                if (cmd != null && cmd.Connection != null)
                 {
-                    cn.Open();
-                    using (SqlDataReader dr = cmd.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            PedidoRepuestos.entOrdenPedidoRepuestos pedidoRepuesto = new PedidoRepuestos.entOrdenPedidoRepuestos
-                            {
-                                id = Convert.ToInt64(dr["id"]),
-                                nombreRepuesto = dr["nombreRepuesto"].ToString(),
-                                nombreTecnico = dr["nombreTecnico"].ToString(),
-                                fecha = Convert.ToDateTime(dr["fecha"]),
-                                fecha_entrega = dr["fecha_entrega"] != DBNull.Value ? Convert.ToDateTime(dr["fecha_entrega"]) : (DateTime?)null,
-                                estado = dr["estado"].ToString()
-                            };
-
-                            lista.Add(pedidoRepuesto);
-                        }
-                    }
+                    cmd.Connection.Close();
                 }
             }
             return lista;
         }
 
+        // Método para registrar un nuevo pedido de repuesto
+        public bool RegistrarPedidoRepuesto(PedidoRepuestos.entPedidoRepuestos pedidoRepuesto)
+        {
+            SqlCommand cmd = null;
+            bool registrado = false;
+
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("SP_REGISTRAR_PEDIDOS_REPUESTOS", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Añadir parámetros al StoredProcedure
+                cmd.Parameters.AddWithValue("@Stock", pedidoRepuesto.Stock);
+                cmd.Parameters.AddWithValue("@RepuestosID", pedidoRepuesto.RepuestosID);
+                cmd.Parameters.AddWithValue("@PersonalID", pedidoRepuesto.PersonalID);
+                cmd.Parameters.AddWithValue("@Estado", pedidoRepuesto.Estado);
+                cmd.Parameters.AddWithValue("@FechaRealizacion", pedidoRepuesto.FechaRealizacion);
+                cmd.Parameters.AddWithValue("@FechaEntrega", pedidoRepuesto.FechaEntrega.HasValue ? (object)pedidoRepuesto.FechaEntrega.Value : DBNull.Value);
+
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    registrado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar el pedido de repuesto: " + ex.Message);
+            }
+            finally
+            {
+                if (cmd != null && cmd.Connection != null)
+                {
+                    cmd.Connection.Close();
+                }
+            }
+
+            return registrado;
+        }
+
+
+        // Método para terminar un pedido de repuesto
+        public void TerminarPedidoRepuesto(int idPedido)
+        {
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_ANULAR_PEDIDO_REPUESTOS", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@PedidoDeRepuestosID", idPedido);
+
+                    try
+                    {
+                        cn.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Pedido finalizado correctamente.");
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Error al finalizar el pedido: " + ex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
+        }
     }
 }

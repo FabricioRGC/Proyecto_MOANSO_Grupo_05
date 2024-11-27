@@ -13,6 +13,8 @@ using static CapaEntidad.PedidoRepuestos;
 using static CapaEntidad.PedidoMateriales;
 using CapaDatos;
 using System.Data.SqlClient;
+using static CapaEntidad.Repuesto;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Proyecto_MOANSO_Grupo_05
 {
@@ -33,7 +35,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void cargarRepuestos()
         {
-            string consulta = "select nombre from repuestos";
+            string consulta = "select NombreRepuesto from Repuestos";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
@@ -43,7 +45,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
                 while (reader.Read())
                 {
-                    cboRepuestos.Items.Add(reader["nombre"].ToString());
+                    cboNomRepuestos.Items.Add(reader["NombreRepuesto"].ToString());
                 }
 
                 reader.Close();
@@ -53,86 +55,109 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void cargarPersonalTecnico()
         {
-            string consulta = "select nombre from personaltecnico";
+            string consulta = "SELECT Nombre FROM Personal WHERE Cargo = @Cargo";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
                 SqlCommand cmd = new SqlCommand(consulta, cn);
+                cmd.Parameters.AddWithValue("@Cargo", "Jefe de soporte tecnico");
+
                 cn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    cboTecnico.Items.Add(reader["nombre"].ToString());
+                    cboTecnicoAsignado.Items.Add(reader["Nombre"].ToString());
                 }
 
                 reader.Close();
-
             }
         }
+
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
             try
             {
-                // Validar que los campos no estén vacíos
-                if (cboRepuestos.SelectedIndex == -1 || cboTecnico.SelectedIndex == -1)
+                // Validar si los campos están vacíos
+                if (string.IsNullOrWhiteSpace(txtStockPedidoRep.Text))
                 {
-                    MessageBox.Show("Por favor, complete todos los campos.");
+                    MessageBox.Show("Por favor, ingrese el stock del repuesto.");
                     return;
                 }
 
-                // Crear la instancia del pedido con el estado como 'Pendiente' por defecto
-                entOrdenPedidoRepuestos pedidoRepuestos = new entOrdenPedidoRepuestos
+
+                if (dtpFechaRealizacion.Value == null || dtpFechaRealizacion.Value == DateTime.MinValue)
                 {
-                    nombreRepuesto = cboRepuestos.SelectedItem.ToString(),
-                    nombreTecnico = cboTecnico.SelectedItem.ToString(),
-                    fecha = dtpFechaRealizacion.Value.Date,
-                    fecha_entrega = dtpFechaEntrega.Value.Date,
-                    estado = "Pendiente"
+                    MessageBox.Show("Por favor, seleccione la fecha de realización.");
+                    return;
+                }
+
+                if (dtpFechaEntrega.Value == null || dtpFechaEntrega.Value == DateTime.MinValue)
+                {
+                    MessageBox.Show("Por favor, seleccione la fecha de entrega.");
+                    return;
+                }
+
+                // Crear el objeto PedidoRepuesto y asignar los valores
+                entPedidoRepuestos PedidoRepuesto = new entPedidoRepuestos
+                {
+               
+                    Estado = "Pendiente", // Estado fijo como "Pendiente"
+                    FechaRealizacion = dtpFechaRealizacion.Value,
+                    FechaEntrega = dtpFechaEntrega.Value,
+                    RepuestosID = Convert.ToInt32(cboNomRepuestos.SelectedValue),
+                    PersonalID = Convert.ToInt32(cboTecnicoAsignado.SelectedValue)
                 };
 
-                // Registrar el pedido
-                logPedidoRepuestos.Instancia.InsertarPedidoRepuesto(pedidoRepuestos);
-                MessageBox.Show("Pedido de Repuesto añadido exitosamente.");
+                // Insertar el Pedido de Repuesto
+                logPedidoRepuestos.Instancia.InsertarPedidoRepuesto(PedidoRepuesto);
+                MessageBox.Show("Pedido Repuesto insertado correctamente.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error al insertar el Pedido Repuesto: " + ex.Message);
+            }
+            finally
+            {
+                ListarPedidosRepuesto();
             }
         }
 
 
         private void cboRepuestos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string repuestoSeleccionado = cboRepuestos.SelectedItem.ToString();
+            string repuestoSeleccionado = cboNomRepuestos.SelectedItem.ToString();
 
             try
             {
                 using (SqlConnection cn = Conexion.Instancia.Conectar())
                 {
-                    string consulta = "SELECT codigo, fecha_registro, stock FROM repuestos WHERE nombre = @nombre";
+                    // Consulta modificada para incluir el nombre de la categoría
+                    string consulta = @"
+                SELECT 
+                    r.CódigoRepuesto, 
+                    r.Stock, 
+                    r.CategoriaRepuestoID, 
+                    c.CategoriaRepuesto  -- Nombre de la categoría
+                FROM 
+                    Repuestos r
+                INNER JOIN 
+                    CategoriaRepuesto c ON r.CategoriaRepuestoID = c.CategoriaRepuestoID
+                WHERE 
+                    r.NombreRepuesto = @NombreRepuesto";
+
                     SqlCommand cmd = new SqlCommand(consulta, cn);
-                    cmd.Parameters.AddWithValue("@nombre", repuestoSeleccionado);
+                    cmd.Parameters.AddWithValue("@NombreRepuesto", repuestoSeleccionado);
+
                     cn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        CodigoRepuesto.Text = reader["codigo"].ToString();
-
-                        DateTime fechaRegistro;
-                        if (DateTime.TryParse(reader["fecha_registro"].ToString(), out fechaRegistro))
-                        {
-                            dtpFechaRegistroRepuesto.Value = fechaRegistro;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Fecha de registro no válida.");
-                        }
-
-                        // Asigna el valor de stock
-                        stockRepuesto.Text = reader["stock"].ToString();
+                        CodigoRepuesto.Text = reader["CódigoRepuesto"].ToString();
+                        stockRepuesto.Text = reader["Stock"].ToString();
+                        labelCategoriaID.Text = reader["CategoriaRepuesto"].ToString(); 
                     }
                 }
             }
@@ -144,25 +169,25 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void cboTecnico_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string personalTecnicoSeleccionado = cboTecnico.SelectedItem.ToString();
+            string personalTecnicoSeleccionado = cboTecnicoAsignado.SelectedItem.ToString();
 
             try
             {
                 using (SqlConnection cn = Conexion.Instancia.Conectar())
                 {
-                    string consulta = "SELECT dni, telefono, disponibilidad, tipo_encargado, area_trabajo FROM personaltecnico WHERE nombre = @nombre";
+                    string consulta = "SELECT DNI, Télefono, Estado, Cargo, AreaTrabajo FROM Personal WHERE Nombre = @Nombre";
                     SqlCommand cmd = new SqlCommand(consulta, cn);
-                    cmd.Parameters.AddWithValue("@nombre", personalTecnicoSeleccionado);
+                    cmd.Parameters.AddWithValue("@Nombre", personalTecnicoSeleccionado);
                     cn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        dniLabel.Text = reader["dni"].ToString();
-                        telefonoLabel.Text = reader["telefono"].ToString();
-                        estadoLabel.Text = reader["disponibilidad"].ToString();
-                        tipoCargoLabel.Text = reader["tipo_encargado"].ToString();
-                        areaTrabajoLabel.Text = reader["area_trabajo"].ToString();
+                        dniLabel.Text = reader["DNI"].ToString();
+                        telefonoLabel.Text = reader["Télefono"].ToString();
+                        estadoLabel.Text = reader["Estado"].ToString();
+                        tipoCargoLabel.Text = reader["Cargo"].ToString();
+                        areaTrabajoLabel.Text = reader["AreaTrabajo"].ToString();
                     }
                 }
             }
@@ -174,10 +199,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void txtIdRepuestos_TextChanged(object sender, EventArgs e)
         {
-            string textoBusqueda = txtRepuestos.Text.Trim();
-            List<PedidoRepuestos.entOrdenPedidoRepuestos> listaRepuestos = logPedidoRepuestos.Instancia.ListarPedidosRepuestos();
-            var listaFiltrada = listaRepuestos.Where(r => r.nombreRepuesto.Contains(textoBusqueda)).ToList();
-            dataGridRepuestos.DataSource = listaFiltrada;
+         
         }
 
         private void btnTerminarPedido_Click(object sender, EventArgs e)
@@ -187,8 +209,8 @@ namespace Proyecto_MOANSO_Grupo_05
                 // Verificar que se haya seleccionado un pedido
                 if (dataGridRepuestos.CurrentRow != null)
                 {
-                    var ordenSeleccionada = (entOrdenPedidoRepuestos)dataGridRepuestos.CurrentRow.DataBoundItem;
-                    long idPedido = ordenSeleccionada.id;
+                    var ordenSeleccionada = (entPedidoRepuestos)dataGridRepuestos.CurrentRow.DataBoundItem;
+                    int idPedido = ordenSeleccionada.PedidoDeRepuestosID;
 
                     var confirmResult = MessageBox.Show("¿Está seguro de que desea terminar este pedido?",
                                                          "Confirmar finalizacion",
@@ -209,6 +231,11 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void btnTerminarPedido_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
