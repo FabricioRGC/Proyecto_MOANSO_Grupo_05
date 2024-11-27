@@ -131,7 +131,7 @@ namespace CapaDatos
             return edito;
         }
 
-        // Metodo para inhabilitar un cliente
+        // Metodo para inhabilitar un material
         public Boolean DeshabilitarMateriales(entMateriales mat)
         {
             SqlCommand cmd = null;

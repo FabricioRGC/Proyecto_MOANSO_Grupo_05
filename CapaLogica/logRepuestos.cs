@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CapaEntidad.Material;
 
 namespace CapaLogica
 {
@@ -29,10 +30,16 @@ namespace CapaLogica
             datRepuestos.Instancia.InsertarRepuesto(repuesto);
         }
 
-        // Método para deshabilitar un repuesto
-        public void DeshabilitarRepuestos(int idRepuesto)
+        // Metodo para actualizar un repuesto
+        public void EditarRepuestos(Repuesto.entRepuesto repuesto)
         {
-            datRepuestos.Instancia.DeshabilitarRepuestos(idRepuesto);
+            datRepuestos.Instancia.EditarRepuestos(repuesto);
+        }
+
+        // Método para deshabilitar un repuesto
+        public void DeshabilitarRepuestos(Repuesto.entRepuesto repuesto)
+        {
+            datRepuestos.Instancia.DeshabilitarRepuestos(repuesto);
         }
     }
 }

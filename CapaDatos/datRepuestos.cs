@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static CapaEntidad.Repuesto;
+using static CapaEntidad.Material;
 
 namespace CapaDatos
 {
@@ -33,16 +34,13 @@ namespace CapaDatos
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    Repuesto.entRepuesto repuesto = new Repuesto.entRepuesto
-                    {
-                        id = long.Parse(dr["id"].ToString()),
-                        codigo = dr["codigo"].ToString(),
-                        nombre = dr["nombre"].ToString(),
-                        descripcion = dr["descripcion"].ToString(),
-                        stock = int.Parse(dr["stock"].ToString()),
-                        estado = dr["estado"].ToString(),
-                        fecha_registro = DateTime.Parse(dr["fecha_registro"].ToString())
-                    };
+                    entRepuesto repuesto = new entRepuesto();
+                    repuesto.CódigoRepuesto = dr["CódigoRepuesto"].ToString();
+                    repuesto.NombreRepuesto = dr["NombreRepuesto"].ToString();
+                    repuesto.Descripcion = dr["Descripción"].ToString();
+                    repuesto.Stock = int.Parse(dr["Stock"].ToString());
+                    repuesto.Estado = dr["Estado"].ToString();
+                    repuesto.CategoriaRepuestoID = dr["CategoriaRepuestoID"].ToString();
                     lista.Add(repuesto);
                 }
             }
@@ -70,15 +68,15 @@ namespace CapaDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_AÑADIR_REPUESTOS", cn);
+                cmd = new SqlCommand("SP_AÑADIR_Repuesto", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@codigo", repuesto.codigo);
-                cmd.Parameters.AddWithValue("@nombre", repuesto.nombre);
-                cmd.Parameters.AddWithValue("@descripcion", repuesto.descripcion);
-                cmd.Parameters.AddWithValue("@stock", repuesto.stock);
-                cmd.Parameters.AddWithValue("@estado", "Registrado");
-                cmd.Parameters.AddWithValue("@fecha_registro", repuesto.fecha_registro);
+                cmd.Parameters.AddWithValue("@CodigoRepuesto", repuesto.CódigoRepuesto);
+                cmd.Parameters.AddWithValue("@NombreRepuesto", repuesto.NombreRepuesto);
+                cmd.Parameters.AddWithValue("@Descripcion", repuesto.Descripcion);
+                cmd.Parameters.AddWithValue("@Estado", repuesto.Estado);
+                cmd.Parameters.AddWithValue("@Stock", repuesto.Stock);
+                cmd.Parameters.AddWithValue("@CategoriaRepuestoID", repuesto.CategoriaRepuestoID);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
@@ -93,34 +91,77 @@ namespace CapaDatos
             }
             finally
             {
-                cmd?.Connection.Close();
+                cmd.Connection.Close();
             }
             return inserto;
         }
 
-        // Método para inhabilitar un repuesto
-        public void DeshabilitarRepuestos(long idRepuesto)
+        // Metodo para editar un repuesto
+        public Boolean EditarRepuestos(entRepuesto repuesto)
         {
             SqlCommand cmd = null;
+            Boolean edito = false;
+
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_ANULAR_REPUESTOS", cn);
+                cmd = new SqlCommand("SP_EDITAR_Repuestos", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", idRepuesto); // Aquí usamos el id
+                cmd.Parameters.AddWithValue("@CódigoRepuesto", repuesto.CódigoRepuesto);
+                cmd.Parameters.AddWithValue("@NombreRepuesto", repuesto.NombreRepuesto);
+                cmd.Parameters.AddWithValue("@Stock", repuesto.Stock);
+                cmd.Parameters.AddWithValue("@Descripción", repuesto.Descripcion);
+                cmd.Parameters.AddWithValue("@CategoriaRepuestoID", repuesto.CategoriaRepuestoID);
+
 
                 cn.Open();
-                cmd.ExecuteNonQuery();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)  
+                {
+                    edito = true;
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al deshabilitar el repuesto: " + ex.Message);
+                throw ex;
             }
             finally
             {
-                cmd?.Connection.Close();
+                cmd.Connection.Close();
             }
+            return edito;
         }
 
+        // Método para inhabilitar un repuesto
+        public Boolean DeshabilitarRepuestos(entRepuesto repuesto)
+        {
+            SqlCommand cmd = null;
+            Boolean deshabilito = false;
+
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("SP_DESHABILITAR_Repuestos", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CódigoRepuesto", repuesto.CódigoRepuesto);
+
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    deshabilito = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return deshabilito;
+        }
     }
+
 }

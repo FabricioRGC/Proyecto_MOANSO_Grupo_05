@@ -64,12 +64,13 @@
             // dataGridRepuestos2
             // 
             this.dataGridRepuestos2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridRepuestos2.Location = new System.Drawing.Point(172, 538);
+            this.dataGridRepuestos2.Location = new System.Drawing.Point(129, 532);
             this.dataGridRepuestos2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridRepuestos2.Name = "dataGridRepuestos2";
             this.dataGridRepuestos2.RowHeadersWidth = 57;
-            this.dataGridRepuestos2.Size = new System.Drawing.Size(742, 187);
+            this.dataGridRepuestos2.Size = new System.Drawing.Size(876, 187);
             this.dataGridRepuestos2.TabIndex = 37;
+            this.dataGridRepuestos2.SelectionChanged += new System.EventHandler(this.dataGridRepuestos2_SelectionChanged);
             // 
             // txtNombreRepuesto
             // 
@@ -218,6 +219,7 @@
             this.btnAñadir.TabIndex = 44;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = false;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // label6
             // 
@@ -244,6 +246,7 @@
             this.btnModificar.TabIndex = 46;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnInhabilitar
             // 
@@ -257,6 +260,7 @@
             this.btnInhabilitar.TabIndex = 49;
             this.btnInhabilitar.Text = "Inhabilitar";
             this.btnInhabilitar.UseVisualStyleBackColor = false;
+            this.btnInhabilitar.Click += new System.EventHandler(this.btnInhabilitar_Click);
             // 
             // label2
             // 
@@ -284,7 +288,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(1030, 747);
+            this.ClientSize = new System.Drawing.Size(1115, 747);
             this.Controls.Add(this.dataGridRepuestos2);
             this.Controls.Add(this.btnInhabilitar);
             this.Controls.Add(this.label2);

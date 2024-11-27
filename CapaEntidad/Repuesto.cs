@@ -10,13 +10,12 @@ namespace CapaEntidad
     {
         public class entRepuesto
         {
-            public long id { get; set; }
-            public string codigo { get; set; }
-            public string nombre { get; set; }
-            public string descripcion { get; set; }
-            public int stock { get; set; }
-            public string estado { get; set; }
-            public DateTime fecha_registro { get; set; }
+            public string CódigoRepuesto { get; set; }
+            public string NombreRepuesto { get; set; }
+            public int Stock { get; set; }
+            public string Estado { get; set; }
+            public string Descripcion { get; set; }
+            public string CategoriaRepuestoID { get; set; }
         }
     }
 }
