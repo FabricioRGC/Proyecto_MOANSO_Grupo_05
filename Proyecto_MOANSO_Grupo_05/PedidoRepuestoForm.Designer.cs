@@ -30,15 +30,18 @@
         {
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtRepuestos = new System.Windows.Forms.TextBox();
-            this.btnAñadir = new System.Windows.Forms.Button();
+            this.txtStockPedidoRep = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFechaRealizacion = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtRepuestos = new System.Windows.Forms.TextBox();
+            this.btnAñadir = new System.Windows.Forms.Button();
             this.cboNomRepuestos = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.labelCategoriaID = new System.Windows.Forms.Label();
             this.CodigoRepuesto = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.stockRepuesto = new System.Windows.Forms.Label();
@@ -57,9 +60,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.labelCategoriaID = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtStockPedidoRep = new System.Windows.Forms.TextBox();
             this.dataGridRepuestos = new System.Windows.Forms.DataGridView();
             this.btnTerminarPedido = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
@@ -97,40 +97,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles del Pedido";
             // 
-            // label4
+            // txtStockPedidoRep
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.YellowGreen;
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(29, 481);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 16);
-            this.label4.TabIndex = 46;
-            this.label4.Text = "Buscar:\r\n";
+            this.txtStockPedidoRep.Location = new System.Drawing.Point(187, 68);
+            this.txtStockPedidoRep.Name = "txtStockPedidoRep";
+            this.txtStockPedidoRep.Size = new System.Drawing.Size(200, 22);
+            this.txtStockPedidoRep.TabIndex = 48;
             // 
-            // txtRepuestos
+            // label5
             // 
-            this.txtRepuestos.Location = new System.Drawing.Point(89, 478);
-            this.txtRepuestos.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRepuestos.Name = "txtRepuestos";
-            this.txtRepuestos.Size = new System.Drawing.Size(208, 22);
-            this.txtRepuestos.TabIndex = 45;
-            this.txtRepuestos.TextChanged += new System.EventHandler(this.txtIdRepuestos_TextChanged);
-            // 
-            // btnAñadir
-            // 
-            this.btnAñadir.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnAñadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAñadir.ForeColor = System.Drawing.Color.Black;
-            this.btnAñadir.Location = new System.Drawing.Point(322, 470);
-            this.btnAñadir.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(209, 36);
-            this.btnAñadir.TabIndex = 40;
-            this.btnAñadir.Text = "Añadir";
-            this.btnAñadir.UseVisualStyleBackColor = false;
-            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.YellowGreen;
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(97, 71);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 16);
+            this.label5.TabIndex = 47;
+            this.label5.Text = "Stock:";
             // 
             // dtpFechaEntrega
             // 
@@ -170,6 +154,41 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Fecha Realizacion:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.YellowGreen;
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(29, 481);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 16);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "Buscar:\r\n";
+            // 
+            // txtRepuestos
+            // 
+            this.txtRepuestos.Location = new System.Drawing.Point(89, 478);
+            this.txtRepuestos.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRepuestos.Name = "txtRepuestos";
+            this.txtRepuestos.Size = new System.Drawing.Size(208, 22);
+            this.txtRepuestos.TabIndex = 45;
+            this.txtRepuestos.TextChanged += new System.EventHandler(this.txtIdRepuestos_TextChanged);
+            // 
+            // btnAñadir
+            // 
+            this.btnAñadir.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnAñadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.059701F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadir.ForeColor = System.Drawing.Color.Black;
+            this.btnAñadir.Location = new System.Drawing.Point(322, 470);
+            this.btnAñadir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAñadir.Name = "btnAñadir";
+            this.btnAñadir.Size = new System.Drawing.Size(209, 36);
+            this.btnAñadir.TabIndex = 40;
+            this.btnAñadir.Text = "Añadir";
+            this.btnAñadir.UseVisualStyleBackColor = false;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
+            // 
             // cboNomRepuestos
             // 
             this.cboNomRepuestos.FormattingEnabled = true;
@@ -198,6 +217,16 @@
             this.groupBox4.TabIndex = 42;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Detalles del Repuesto";
+            // 
+            // labelCategoriaID
+            // 
+            this.labelCategoriaID.AutoSize = true;
+            this.labelCategoriaID.ForeColor = System.Drawing.Color.White;
+            this.labelCategoriaID.Location = new System.Drawing.Point(187, 150);
+            this.labelCategoriaID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCategoriaID.Name = "labelCategoriaID";
+            this.labelCategoriaID.Size = new System.Drawing.Size(0, 16);
+            this.labelCategoriaID.TabIndex = 56;
             // 
             // CodigoRepuesto
             // 
@@ -410,35 +439,6 @@
             this.label10.Size = new System.Drawing.Size(78, 16);
             this.label10.TabIndex = 43;
             this.label10.Text = "Tipo Cargo:";
-            // 
-            // labelCategoriaID
-            // 
-            this.labelCategoriaID.AutoSize = true;
-            this.labelCategoriaID.ForeColor = System.Drawing.Color.White;
-            this.labelCategoriaID.Location = new System.Drawing.Point(187, 150);
-            this.labelCategoriaID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelCategoriaID.Name = "labelCategoriaID";
-            this.labelCategoriaID.Size = new System.Drawing.Size(0, 16);
-            this.labelCategoriaID.TabIndex = 56;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.YellowGreen;
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(97, 71);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 16);
-            this.label5.TabIndex = 47;
-            this.label5.Text = "Stock:";
-            // 
-            // txtStockPedidoRep
-            // 
-            this.txtStockPedidoRep.Location = new System.Drawing.Point(187, 68);
-            this.txtStockPedidoRep.Name = "txtStockPedidoRep";
-            this.txtStockPedidoRep.Size = new System.Drawing.Size(200, 22);
-            this.txtStockPedidoRep.TabIndex = 48;
             // 
             // dataGridRepuestos
             // 

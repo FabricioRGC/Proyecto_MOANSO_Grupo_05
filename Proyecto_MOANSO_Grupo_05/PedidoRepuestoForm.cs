@@ -135,17 +135,17 @@ namespace Proyecto_MOANSO_Grupo_05
                 {
                     // Consulta modificada para incluir el nombre de la categoría
                     string consulta = @"
-                SELECT 
-                    r.CódigoRepuesto, 
-                    r.Stock, 
-                    r.CategoriaRepuestoID, 
-                    c.CategoriaRepuesto  -- Nombre de la categoría
-                FROM 
-                    Repuestos r
-                INNER JOIN 
-                    CategoriaRepuesto c ON r.CategoriaRepuestoID = c.CategoriaRepuestoID
-                WHERE 
-                    r.NombreRepuesto = @NombreRepuesto";
+                    SELECT 
+                        r.CódigoRepuesto, 
+                        r.Stock, 
+                        r.CategoriaRepuestoID, 
+                        c.CategoriaRepuesto  -- Nombre de la categoría
+                    FROM 
+                        Repuestos r
+                    INNER JOIN 
+                        CategoriaRepuesto c ON r.CategoriaRepuestoID = c.CategoriaRepuestoID
+                    WHERE 
+                        r.NombreRepuesto = @NombreRepuesto";
 
                     SqlCommand cmd = new SqlCommand(consulta, cn);
                     cmd.Parameters.AddWithValue("@NombreRepuesto", repuestoSeleccionado);
@@ -202,7 +202,8 @@ namespace Proyecto_MOANSO_Grupo_05
          
         }
 
-        private void btnTerminarPedido_Click(object sender, EventArgs e)
+
+        private void btnTerminarPedido_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -233,9 +234,5 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
-        private void btnTerminarPedido_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
