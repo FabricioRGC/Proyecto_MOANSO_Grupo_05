@@ -45,8 +45,8 @@
     <Compile Include="logContrato.cs" />
     <Compile Include="logMateriales.cs" />
     <Compile Include="LogNotaDeSalida.cs" />
-    <Compile Include="logOrdenPedidoMaterial.cs" />
-    <Compile Include="logOrdenPedidoRepuestos.cs" />
+    <Compile Include="logPedidoMateriales.cs" />
+    <Compile Include="logPedidoRepuestos.cs" />
     <Compile Include="logPago.cs" />
     <Compile Include="logPedidoInstalacion.cs" />
     <Compile Include="logPersonal.cs" />

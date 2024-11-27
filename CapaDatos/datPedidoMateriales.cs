@@ -7,15 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaEntidad;
 using System.Windows.Forms;
-using static CapaEntidad.OrdenPedidoMaterial;
+using static CapaEntidad.PedidoMateriales;
 
 namespace CapaDatos
 {
-    public class datOrdenPedidoMaterial
+    public class datPedidoMateriales
     {
-        private static readonly datOrdenPedidoMaterial _instancia = new datOrdenPedidoMaterial();
+        private static readonly datPedidoMateriales _instancia = new datPedidoMateriales();
 
-        public static datOrdenPedidoMaterial Instancia
+        public static datPedidoMateriales Instancia
         {
             get { return _instancia; }
         }
@@ -82,9 +82,9 @@ namespace CapaDatos
 
 
         // Método para listar todos los pedidos de materiales
-        public List<OrdenPedidoMaterial.entOrdenPedidoMateriales> ListarPedidosMateriales()
+        public List<PedidoMateriales.entOrdenPedidoMateriales> ListarPedidosMateriales()
         {
-            List<OrdenPedidoMaterial.entOrdenPedidoMateriales> lista = new List<OrdenPedidoMaterial.entOrdenPedidoMateriales>();
+            List<PedidoMateriales.entOrdenPedidoMateriales> lista = new List<PedidoMateriales.entOrdenPedidoMateriales>();
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
@@ -95,7 +95,7 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            OrdenPedidoMaterial.entOrdenPedidoMateriales pedido = new OrdenPedidoMaterial.entOrdenPedidoMateriales
+                            PedidoMateriales.entOrdenPedidoMateriales pedido = new PedidoMateriales.entOrdenPedidoMateriales
                             {
                                 id = Convert.ToInt64(dr["id"]),
                                 nombreMaterial = dr["nombreMaterial"].ToString(),

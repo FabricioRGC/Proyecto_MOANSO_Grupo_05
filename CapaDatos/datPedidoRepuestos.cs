@@ -10,18 +10,18 @@ using CapaEntidad;
 
 namespace CapaDatos
 {
-    public class datOrdenPedidoRepuestos
+    public class datPedidoRepuestos
     {
-        private static readonly datOrdenPedidoRepuestos _instancia = new datOrdenPedidoRepuestos();
+        private static readonly datPedidoRepuestos _instancia = new datPedidoRepuestos();
 
-        public static datOrdenPedidoRepuestos Instancia
+        public static datPedidoRepuestos Instancia
         {
-            get { return datOrdenPedidoRepuestos._instancia; }
+            get { return datPedidoRepuestos._instancia; }
         }
 
 
         // Método para registrar un pedido de repuestos
-        public void RegistrarPedidoRepuesto(OrdenPedidoRepuestos.entOrdenPedidoRepuestos pedido)
+        public void RegistrarPedidoRepuesto(PedidoRepuestos.entOrdenPedidoRepuestos pedido)
         {
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
@@ -80,9 +80,9 @@ namespace CapaDatos
         }
 
 
-        public List<OrdenPedidoRepuestos.entOrdenPedidoRepuestos> ListarPedidosRepuestos()
+        public List<PedidoRepuestos.entOrdenPedidoRepuestos> ListarPedidosRepuestos()
         {
-            List<OrdenPedidoRepuestos.entOrdenPedidoRepuestos> lista = new List<OrdenPedidoRepuestos.entOrdenPedidoRepuestos>();
+            List<PedidoRepuestos.entOrdenPedidoRepuestos> lista = new List<PedidoRepuestos.entOrdenPedidoRepuestos>();
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
@@ -93,7 +93,7 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            OrdenPedidoRepuestos.entOrdenPedidoRepuestos pedidoRepuesto = new OrdenPedidoRepuestos.entOrdenPedidoRepuestos
+                            PedidoRepuestos.entOrdenPedidoRepuestos pedidoRepuesto = new PedidoRepuestos.entOrdenPedidoRepuestos
                             {
                                 id = Convert.ToInt64(dr["id"]),
                                 nombreRepuesto = dr["nombreRepuesto"].ToString(),

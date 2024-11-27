@@ -1,16 +1,16 @@
 ﻿using CapaDatos;
-using static CapaEntidad.OrdenPedidoMaterial;
+using static CapaEntidad.PedidoMateriales;
 using System.Collections.Generic;
 using System;
 
 namespace CapaLogica
 {
-    public class logOrdenPedidoMaterial
+    public class logPedidoMateriales
     {
         // Singleton
-        private static readonly logOrdenPedidoMaterial _instancia = new logOrdenPedidoMaterial();
+        private static readonly logPedidoMateriales _instancia = new logPedidoMateriales();
 
-        public static logOrdenPedidoMaterial Instancia
+        public static logPedidoMateriales Instancia
         {
             get { return _instancia; }
         }
@@ -18,20 +18,20 @@ namespace CapaLogica
         // Método para listar pedidos de materiales
         public List<entOrdenPedidoMateriales> ListarPedidosMaterial()
         {
-            return datOrdenPedidoMaterial.Instancia.ListarPedidosMateriales();
+            return datPedidoMateriales.Instancia.ListarPedidosMateriales();
         }
 
         // Método para registrar un pedido de materiales
         public void RegistrarPedidoMaterial(entOrdenPedidoMateriales pedido)
         {
             // Registrar el pedido
-            datOrdenPedidoMaterial.Instancia.RegistrarPedidoMaterial(pedido);
+            datPedidoMateriales.Instancia.RegistrarPedidoMaterial(pedido);
         }
 
         // Método para terminar un pedido de materiales
         public void TerminarPedidoMaterial(long idPedido)
         {
-            datOrdenPedidoMaterial.Instancia.TerminarPedidoMaterial(idPedido);
+            datPedidoMateriales.Instancia.TerminarPedidoMaterial(idPedido);
         }
     }
 }

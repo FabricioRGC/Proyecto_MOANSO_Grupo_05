@@ -119,23 +119,23 @@
     <Compile Include="OrdenDeTrabajocs.Designer.cs">
       <DependentUpon>OrdenDeTrabajocs.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrdenesPedidoInstalacionForm.cs">
+    <Compile Include="PedidoInstalacionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrdenesPedidoInstalacionForm.Designer.cs">
-      <DependentUpon>OrdenesPedidoInstalacionForm.cs</DependentUpon>
+    <Compile Include="PedidoInstalacionForm.Designer.cs">
+      <DependentUpon>PedidoInstalacionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrdenPedidoMaterialForm.cs">
+    <Compile Include="PedidoMaterialesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrdenPedidoMaterialForm.Designer.cs">
-      <DependentUpon>OrdenPedidoMaterialForm.cs</DependentUpon>
+    <Compile Include="PedidoMaterialesForm.Designer.cs">
+      <DependentUpon>PedidoMaterialesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrdenPedidoRepuestoForm.cs">
+    <Compile Include="PedidoRepuestoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrdenPedidoRepuestoForm.Designer.cs">
-      <DependentUpon>OrdenPedidoRepuestoForm.cs</DependentUpon>
+    <Compile Include="PedidoRepuestoForm.Designer.cs">
+      <DependentUpon>PedidoRepuestoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PagosForm.cs">
       <SubType>Form</SubType>
@@ -220,14 +220,14 @@
     <EmbeddedResource Include="OrdenDeTrabajocs.resx">
       <DependentUpon>OrdenDeTrabajocs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrdenesPedidoInstalacionForm.resx">
-      <DependentUpon>OrdenesPedidoInstalacionForm.cs</DependentUpon>
+    <EmbeddedResource Include="PedidoInstalacionForm.resx">
+      <DependentUpon>PedidoInstalacionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrdenPedidoMaterialForm.resx">
-      <DependentUpon>OrdenPedidoMaterialForm.cs</DependentUpon>
+    <EmbeddedResource Include="PedidoMaterialesForm.resx">
+      <DependentUpon>PedidoMaterialesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrdenPedidoRepuestoForm.resx">
-      <DependentUpon>OrdenPedidoRepuestoForm.cs</DependentUpon>
+    <EmbeddedResource Include="PedidoRepuestoForm.resx">
+      <DependentUpon>PedidoRepuestoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PagosForm.resx">
       <DependentUpon>PagosForm.cs</DependentUpon>

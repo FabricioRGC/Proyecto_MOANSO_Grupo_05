@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_MOANSO_Grupo_05
 {
-    partial class OrdenesPedidoInstalacionForm
+    partial class PedidoInstalacionForm
     {
         /// <summary>
         /// Required designer variable.

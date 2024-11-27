@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    public class OrdenPedidoMaterial
+    public class PedidoRepuestos
     {
-        public class entOrdenPedidoMateriales
+        public class entOrdenPedidoRepuestos
         {
             public long id { get; set; }
-            public string nombreMaterial { get; set; }
+            public string nombreRepuesto { get; set; }
             public string nombreTecnico { get; set; }
             public DateTime fecha { get; set; }
             public DateTime? fecha_entrega { get; set; }

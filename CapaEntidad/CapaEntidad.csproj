@@ -47,8 +47,8 @@
     <Compile Include="Contrato.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="NotaDeSalida.cs" />
-    <Compile Include="OrdenPedidoMaterial.cs" />
-    <Compile Include="OrdenPedidoRepuestos.cs" />
+    <Compile Include="PedidoMateriales.cs" />
+    <Compile Include="PedidoRepuestos.cs" />
     <Compile Include="Pago.cs" />
     <Compile Include="PedidoInstalacion.cs" />
     <Compile Include="Personal.cs" />

@@ -105,7 +105,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Form formulario = new OrdenesPedidoInstalacionForm();
+            Form formulario = new PedidoInstalacionForm();
             formulario.Show();
         }
 
@@ -308,7 +308,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void ordenesDePedidoDeInstalaciónToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AbrirPrueba2(new OrdenesPedidoInstalacionForm());
+            AbrirPrueba2(new PedidoInstalacionForm());
 
         }
 
@@ -319,13 +319,13 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void ordenesDePedidoDeMaterialesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AbrirPrueba2(new OrdenPedidoMaterialForm());
+            AbrirPrueba2(new PedidoMaterialesForm());
 
         }
 
         private void ordenesDePedidoDeRepuestosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AbrirPrueba2(new OrdenPedidoRepuestoForm());
+            AbrirPrueba2(new PedidoRepuestoForm());
 
         }
 

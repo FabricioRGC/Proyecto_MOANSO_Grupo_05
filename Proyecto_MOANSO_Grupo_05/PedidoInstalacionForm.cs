@@ -11,16 +11,16 @@ using CapaLogica;
 using CapaEntidad;
 using static CapaEntidad.PedidoInstalacion;
 using static CapaEntidad.Repuesto;
-using static CapaEntidad.OrdenPedidoMaterial;
+using static CapaEntidad.PedidoMateriales;
 using CapaDatos;
 using System.Data.SqlClient;
 using static CapaEntidad.Material;
 
 namespace Proyecto_MOANSO_Grupo_05
 {
-    public partial class OrdenesPedidoInstalacionForm : Form
+    public partial class PedidoInstalacionForm : Form
     {
-        public OrdenesPedidoInstalacionForm()
+        public PedidoInstalacionForm()
         {
             InitializeComponent();
             ListarPedidosInstalacion();
