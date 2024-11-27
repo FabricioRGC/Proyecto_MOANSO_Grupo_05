@@ -8,14 +8,15 @@ namespace CapaEntidad
 {
     public class PedidoMateriales
     {
-        public class entOrdenPedidoMateriales
+        public class entnPedidoMateriales
         {
-            public long id { get; set; }
-            public string nombreMaterial { get; set; }
-            public string nombreTecnico { get; set; }
-            public DateTime fecha { get; set; }
-            public DateTime? fecha_entrega { get; set; }
-            public string estado { get; set; }
+            public int PedidoMaterialesID { get; set; }
+            public int Stock { get; set; }
+            public int MaterialID { get; set; }
+            public int PersonalID { get; set; }
+            public DateTime FechaRealizacion { get; set; }
+            public DateTime? FechaEntrega { get; set; }
+            public string Estado { get; set; }
         }
     }
 }
