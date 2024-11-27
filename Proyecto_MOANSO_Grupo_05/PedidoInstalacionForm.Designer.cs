@@ -37,8 +37,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtPedidoInstalacion = new System.Windows.Forms.TextBox();
             this.dataGridOrPeInstalacion = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNumOrden = new System.Windows.Forms.TextBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.cboTipoInstalacion = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -77,10 +75,10 @@
             // 
             // btnTerminarPedido
             // 
-            this.btnTerminarPedido.Location = new System.Drawing.Point(657, 332);
+            this.btnTerminarPedido.Location = new System.Drawing.Point(704, 647);
             this.btnTerminarPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTerminarPedido.Name = "btnTerminarPedido";
-            this.btnTerminarPedido.Size = new System.Drawing.Size(161, 26);
+            this.btnTerminarPedido.Size = new System.Drawing.Size(159, 32);
             this.btnTerminarPedido.TabIndex = 34;
             this.btnTerminarPedido.Text = "Terminar Pedido";
             this.btnTerminarPedido.UseVisualStyleBackColor = true;
@@ -88,7 +86,7 @@
             // 
             // dtpFin
             // 
-            this.dtpFin.Location = new System.Drawing.Point(583, 64);
+            this.dtpFin.Location = new System.Drawing.Point(175, 64);
             this.dtpFin.Name = "dtpFin";
             this.dtpFin.Size = new System.Drawing.Size(198, 22);
             this.dtpFin.TabIndex = 20;
@@ -97,7 +95,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(472, 69);
+            this.label8.Location = new System.Drawing.Point(64, 69);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 16);
             this.label8.TabIndex = 19;
@@ -107,7 +105,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(69, 72);
+            this.label2.Location = new System.Drawing.Point(58, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 16);
             this.label2.TabIndex = 12;
@@ -115,20 +113,13 @@
             // 
             // dtpInicio
             // 
-            this.dtpInicio.Location = new System.Drawing.Point(186, 64);
+            this.dtpInicio.Location = new System.Drawing.Point(175, 31);
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(200, 22);
             this.dtpInicio.TabIndex = 18;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.txtPedidoInstalacion);
-            this.groupBox2.Controls.Add(this.dataGridOrPeInstalacion);
-            this.groupBox2.Controls.Add(this.btnTerminarPedido);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtNumOrden);
-            this.groupBox2.Controls.Add(this.btnRegistrar);
             this.groupBox2.Controls.Add(this.dtpFin);
             this.groupBox2.Controls.Add(this.cboTipoInstalacion);
             this.groupBox2.Controls.Add(this.label8);
@@ -137,11 +128,11 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.dtpInicio);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(16, 364);
+            this.groupBox2.Location = new System.Drawing.Point(16, 353);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(847, 370);
+            this.groupBox2.Size = new System.Drawing.Size(847, 111);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles de la Instalación:";
@@ -150,7 +141,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(28, 124);
+            this.label7.Location = new System.Drawing.Point(19, 484);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 16);
@@ -159,7 +150,7 @@
             // 
             // txtPedidoInstalacion
             // 
-            this.txtPedidoInstalacion.Location = new System.Drawing.Point(128, 121);
+            this.txtPedidoInstalacion.Location = new System.Drawing.Point(119, 481);
             this.txtPedidoInstalacion.Margin = new System.Windows.Forms.Padding(4);
             this.txtPedidoInstalacion.Name = "txtPedidoInstalacion";
             this.txtPedidoInstalacion.Size = new System.Drawing.Size(195, 22);
@@ -169,39 +160,19 @@
             // dataGridOrPeInstalacion
             // 
             this.dataGridOrPeInstalacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridOrPeInstalacion.Location = new System.Drawing.Point(24, 151);
+            this.dataGridOrPeInstalacion.Location = new System.Drawing.Point(22, 517);
             this.dataGridOrPeInstalacion.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridOrPeInstalacion.Name = "dataGridOrPeInstalacion";
             this.dataGridOrPeInstalacion.RowHeadersWidth = 57;
-            this.dataGridOrPeInstalacion.Size = new System.Drawing.Size(794, 172);
+            this.dataGridOrPeInstalacion.Size = new System.Drawing.Size(841, 124);
             this.dataGridOrPeInstalacion.TabIndex = 22;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(63, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 16);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Número de Orden:";
-            // 
-            // txtNumOrden
-            // 
-            this.txtNumOrden.Enabled = false;
-            this.txtNumOrden.ForeColor = System.Drawing.SystemColors.Control;
-            this.txtNumOrden.Location = new System.Drawing.Point(186, 27);
-            this.txtNumOrden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNumOrden.Name = "txtNumOrden";
-            this.txtNumOrden.Size = new System.Drawing.Size(200, 22);
-            this.txtNumOrden.TabIndex = 16;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(490, 332);
+            this.btnRegistrar.Location = new System.Drawing.Point(334, 473);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(161, 26);
+            this.btnRegistrar.Size = new System.Drawing.Size(163, 38);
             this.btnRegistrar.TabIndex = 29;
             this.btnRegistrar.Text = "Agregar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -210,7 +181,7 @@
             // cboTipoInstalacion
             // 
             this.cboTipoInstalacion.FormattingEnabled = true;
-            this.cboTipoInstalacion.Location = new System.Drawing.Point(583, 27);
+            this.cboTipoInstalacion.Location = new System.Drawing.Point(544, 43);
             this.cboTipoInstalacion.Name = "cboTipoInstalacion";
             this.cboTipoInstalacion.Size = new System.Drawing.Size(198, 24);
             this.cboTipoInstalacion.TabIndex = 21;
@@ -219,7 +190,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(453, 31);
+            this.label10.Location = new System.Drawing.Point(414, 47);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(124, 16);
             this.label10.TabIndex = 15;
@@ -250,7 +221,7 @@
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(16, 13);
+            this.groupBox3.Location = new System.Drawing.Point(16, 2);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -551,9 +522,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OliveDrab;
-            this.ClientSize = new System.Drawing.Size(878, 747);
+            this.ClientSize = new System.Drawing.Size(878, 687);
+            this.Controls.Add(this.btnRegistrar);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.txtPedidoInstalacion);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.dataGridOrPeInstalacion);
+            this.Controls.Add(this.btnTerminarPedido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PedidoInstalacionForm";
@@ -567,6 +543,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -580,8 +557,6 @@
         private System.Windows.Forms.ComboBox cboTipoInstalacion;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNumOrden;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label dniLabel;
