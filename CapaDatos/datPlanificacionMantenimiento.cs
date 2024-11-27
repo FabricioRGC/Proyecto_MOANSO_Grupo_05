@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
 using CapaEntidad;
+using static CapaEntidad.entPlanificacionMantenimiento;
 
 namespace CapaDatos
 {
@@ -23,7 +24,7 @@ namespace CapaDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_LISTAR_PLANIFICACIONES", cn);
+                cmd = new SqlCommand("SP_MOSTRAR_PLANIFICACION_MANTENIMIENTO", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -31,11 +32,11 @@ namespace CapaDatos
                 {
                     entPlanificacionMantenimiento planificacion = new entPlanificacionMantenimiento();
                     planificacion.Id = Convert.ToInt32(dr["P_MantenimientoPreventivoID"]);
-                    planificacion.FechaProgramacion = Convert.ToDateTime(dr["FechaProgramacion"]);
+                    planificacion.FechaProgramacion = Convert.ToDateTime(dr["FechaProgramación"]);
                     planificacion.Estado = dr["Estado"].ToString();
                     planificacion.ContratoID = Convert.ToInt32(dr["ContratoID"]);
                     planificacion.RepuestosID = Convert.ToInt32(dr["RepuestosID"]);
-                    planificacion.Frecuencia = dr["Frecuencia"].ToString();
+                    planificacion.Frecuencia = Convert.ToInt32(dr["Frecuencia"]);
                     lista.Add(planificacion);
                 }
             }
@@ -62,7 +63,7 @@ namespace CapaDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_INSERTAR_PLANIFICACION", cn);
+                cmd = new SqlCommand("SP_AÑADIR_PLANIFICACION_MANTENIMIENTO", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Añadir los parámetros con sus valores, utilizando las propiedades correctas
@@ -100,9 +101,9 @@ namespace CapaDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_INHABILITAR_PLANIFICACION", cn);
+                cmd = new SqlCommand("SP_DESHABILITAR_PLANIFICACION_MANTENIMIENTO", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Id", idPlanificacion); // Cambiado a idPlanificacion
+                cmd.Parameters.AddWithValue("@P_MantenimientoPreventivoID", idPlanificacion); // Cambiado a idPlanificacion
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();

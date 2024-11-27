@@ -1,9 +1,11 @@
-﻿using CapaEntidad;
+﻿using CapaDatos;
+using CapaEntidad;
 using CapaLogica;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,50 +21,55 @@ namespace Proyecto_MOANSO_Grupo_05
         public PlanificacionMantenimientoForm()
         {
             InitializeComponent();
-            CargarPlanificaciones();
-            CargarPersonalComboBox();
-            CargarPersonal();
+            Cargarcontrato();
+            cargarRespuesto();
+            ListarPlanificaciones();
         }
         private void PlanificacionMantenimientoForm_Load(object sender, EventArgs e)
         {
-            CargarPlanificaciones(); // Llama al método para cargar planificaciones al iniciar el formulario
-            CargarPersonalComboBox();
-        }
-        private void CargarPersonalComboBox()
-        {
-            try
-            {
-                // Supongamos que tienes una capa lógica llamada logCliente con el método listarClientes()
-                List<entCliente> clienteList = logCliente.Instancia.ListarCliente();
-                cbPersonal.Items.Clear(); // Limpia el ComboBox antes de cargar nuevos datos
+            //CargarPlanificaciones(); // Llama al método para cargar planificaciones al iniciar el formulario
 
-                foreach (var cliente in clienteList)
+        }
+        public void ListarPlanificaciones()
+        {
+            dgvMante.DataSource = logPlanificacionMantenimiento.Instancia.ListarPlanificaciones();
+        }
+        private void cargarRespuesto()
+        {
+            string consulta = "SELECT RepuestosID FROM Repuestos";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    cbPersonal.Items.Add(cliente.nombre); // Añade solo el nombre del cliente al ComboBox
+                    cbPersonal.Items.Add(reader["RepuestosID"].ToString());
                 }
 
-                if (cbPersonal.Items.Count > 0)
-                {
-                    cbPersonal.SelectedIndex = 0; // Selecciona el primer ítem por defecto si hay elementos
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar los datos del cliente: " + ex.Message);
+                reader.Close();
+
             }
         }
-        private void CargarPlanificaciones()
+        private void Cargarcontrato()
         {
+            string consulta = "SELECT ContratoID FROM Contrato";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                try
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    var planificaciones = logPlanificacionMantenimiento.Instancia.ListarPlanificaciones();
-                    dgvMante.DataSource = planificaciones;
+                    comboBox1.Items.Add(reader["ContratoID"].ToString());
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al cargar las planificaciones: " + ex.Message);
-                }
+
+                reader.Close();
+
             }
         }
 
@@ -70,58 +77,75 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(cbPersonal.Text))
-                {
-                    MessageBox.Show("Por favor, selecciona un cliente antes de añadir una planificación.");
-                    return;
-                }
-
-                entPlanificacionMantenimiento nuevaPlanificacion = new entPlanificacionMantenimiento
-                {
-                    FechaProgramacion = datePickerFecha.Value,
-                    Estado = "Planificado",
-
-                };
-
-                logPlanificacionMantenimiento.Instancia.InsertarPlanificacion(nuevaPlanificacion);
-
-                MessageBox.Show("La planificación de mantenimiento ha sido añadida con éxito.");
-                datePickerFecha.Value = DateTime.Now;
-                CargarPlanificaciones();
+                entPlanificacionMantenimiento entContrato = new entPlanificacionMantenimiento();
+                entContrato.FechaProgramacion = datePickerFecha.Value.Date;
+                entContrato.Frecuencia = Convert.ToInt32(textBox1.Text);
+                entContrato.ContratoID = Convert.ToInt32(comboBox1.Text);
+                entContrato.RepuestosID = Convert.ToInt32(cbPersonal.Text);
+                entContrato.Estado = "ACTIVO";
+                logPlanificacionMantenimiento.Instancia.InsertarPlanificacion(entContrato);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al añadir la planificación: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
+
+            //LimpiarVariables();
+            ListarPlanificaciones();
+
         }
 
         private void btnInhabilitar_Click(object sender, EventArgs e)
         {
-            if (dgvMante.SelectedRows.Count > 0)
+            try
             {
-                int idPlanificacion = Convert.ToInt32(dgvMante.SelectedRows[0].Cells["Id"].Value);
-
-                try
-                {
-                    logPlanificacionMantenimiento.Instancia.DeshabilitarPlanificacion(idPlanificacion);
-                    MessageBox.Show("Planificación inhabilitada exitosamente.");
-                    CargarPlanificaciones(); // Refresca el DataGridView
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al inhabilitar la planificación: " + ex.Message);
-                }
+                entPlanificacionMantenimiento la = new entPlanificacionMantenimiento();
+                la.Id = Convert.ToInt32(textBox2.Text);
+                logPlanificacionMantenimiento.Instancia.DeshabilitarPlanificacion(la);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione una planificación para inhabilitar.");
+                MessageBox.Show("Error: " + ex.Message);
             }
+            ListarPlanificaciones();
+            textBox2.Text = "";
         }
-        private void CargarPersonal()
+
+        private void btnInhabilitar_Click_1(object sender, EventArgs e)
         {
-            cbPersonal.DataSource = logCliente.Instancia.ListarCliente();
-            cbPersonal.DisplayMember = "nombre"; // Campo que se muestra en el ComboBox
-            cbPersonal.ValueMember = "nombre"; // Este podría ser "Id" si usas el ID como valor
+            try
+            {
+                entPlanificacionMantenimiento la = new entPlanificacionMantenimiento();
+                la.Id = Convert.ToInt32(textBox2.Text);
+                logPlanificacionMantenimiento.Instancia.DeshabilitarPlanificacion(la);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            ListarPlanificaciones();
+            textBox2.Text = "";
+        }
+
+        private void btnAñadir_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                entPlanificacionMantenimiento entContrato = new entPlanificacionMantenimiento();
+                entContrato.FechaProgramacion = datePickerFecha.Value.Date;
+                entContrato.Frecuencia = Convert.ToInt32(textBox1.Text);
+                entContrato.ContratoID = Convert.ToInt32(comboBox1.Text);
+                entContrato.RepuestosID = Convert.ToInt32(cbPersonal.Text);
+                entContrato.Estado = "ACTIVO";
+                logPlanificacionMantenimiento.Instancia.InsertarPlanificacion(entContrato);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            //LimpiarVariables();
+            ListarPlanificaciones();
         }
     }
 }

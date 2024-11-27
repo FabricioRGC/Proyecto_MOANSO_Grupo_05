@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using CapaDatos;
 using CapaEntidad;
+using static CapaEntidad.entPlanificacionMantenimiento;
 
-namespace CapaLogica
-{
-    public class logPlanificacionMantenimiento
+public class logPlanificacionMantenimiento
     {
         // Singleton para garantizar una única instancia de logPlanificacionMantenimiento
         private static readonly logPlanificacionMantenimiento _instancia = new logPlanificacionMantenimiento();
@@ -29,9 +28,8 @@ namespace CapaLogica
         }
 
         // Método para deshabilitar una planificación de mantenimiento
-        public void DeshabilitarPlanificacion(int idPlanificacion)
+        public void DeshabilitarPlanificacion(entPlanificacionMantenimiento las)
         {
-            datPlanificacionMantenimiento.Instancia.DeshabilitarPlanificacion(idPlanificacion);
+            datPlanificacionMantenimiento.Instancia.DeshabilitarPlanificacion(las.Id);
         }
     }
-}
