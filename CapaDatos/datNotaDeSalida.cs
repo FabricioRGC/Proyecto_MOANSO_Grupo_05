@@ -156,5 +156,65 @@ namespace CapaDatos
             }
             return deshabilito;
         }
+
+        public Boolean ReducirStockRepuestos(entNotadesalida mat)
+        {
+            SqlCommand cmd = null;
+            Boolean deshabilito = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("reducir_stock_Repuestos", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_pedidorepuestos", mat.PedidiRepuestosID);
+
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    deshabilito = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return deshabilito;
+        }
+
+        public Boolean ReducirStockMateriales(entNotadesalida mat)
+        {
+            SqlCommand cmd = null;
+            Boolean deshabilito = false;
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("reducir_stock_Materiales", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id_pedidomateriales", mat.PedidiMaterialesID);
+
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    deshabilito = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return deshabilito;
+        }
+
+
     }
 }

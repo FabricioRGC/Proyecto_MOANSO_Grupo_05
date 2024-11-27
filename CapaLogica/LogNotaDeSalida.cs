@@ -39,5 +39,13 @@ namespace CapaLogica
         {
             datNotaDeSalida.Instancia.DeshabilitarNotadeSalida(cli);
         }
+        public void ReducirStockMateriales(entNotadesalida cli)
+        {
+            datNotaDeSalida.Instancia.ReducirStockMateriales(cli);
+        }
+        public void ReducirStockRepuestos(entNotadesalida cli)
+        {
+            datNotaDeSalida.Instancia.ReducirStockRepuestos(cli);
+        }
     }
 }

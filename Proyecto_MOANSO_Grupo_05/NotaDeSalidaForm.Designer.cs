@@ -28,226 +28,204 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.TXTAREA = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CANTIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UNIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DETALLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.labelCantidad = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelProducto = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelEmpleado = new System.Windows.Forms.Label();
+            this.gbEleccionPedido = new System.Windows.Forms.GroupBox();
+            this.cbMateriales = new System.Windows.Forms.ComboBox();
+            this.cbRepuestos = new System.Windows.Forms.ComboBox();
+            this.cbPedidoMateriales = new System.Windows.Forms.CheckBox();
+            this.cbPedidoRepuestos = new System.Windows.Forms.CheckBox();
+            this.btAgregar = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gbEleccionPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // labelCantidad
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.YellowGreen;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 199);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nº PEDIDO";
+            this.labelCantidad.AutoSize = true;
+            this.labelCantidad.Location = new System.Drawing.Point(231, 286);
+            this.labelCantidad.Name = "labelCantidad";
+            this.labelCantidad.Size = new System.Drawing.Size(63, 16);
+            this.labelCantidad.TabIndex = 44;
+            this.labelCantidad.Text = "--------------";
             // 
-            // TXTAREA
+            // label10
             // 
-            this.TXTAREA.Location = new System.Drawing.Point(195, 196);
-            this.TXTAREA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.TXTAREA.Name = "TXTAREA";
-            this.TXTAREA.Size = new System.Drawing.Size(113, 20);
-            this.TXTAREA.TabIndex = 2;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.YellowGreen;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(40, 286);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 16);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Cantidad:";
             // 
-            // dataGridView1
+            // label4
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CANTIDAD,
-            this.UNIDAD,
-            this.DETALLE});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 282);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(434, 207);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.YellowGreen;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(40, 239);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 16);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "--------------";
             // 
-            // CANTIDAD
+            // labelProducto
             // 
-            this.CANTIDAD.HeaderText = "CANTIDAD";
-            this.CANTIDAD.MinimumWidth = 6;
-            this.CANTIDAD.Name = "CANTIDAD";
-            this.CANTIDAD.Width = 125;
-            // 
-            // UNIDAD
-            // 
-            this.UNIDAD.HeaderText = "UNIDAD";
-            this.UNIDAD.MinimumWidth = 6;
-            this.UNIDAD.Name = "UNIDAD";
-            this.UNIDAD.Width = 125;
-            // 
-            // DETALLE
-            // 
-            this.DETALLE.HeaderText = "NOMBRE DEL ARTICULO";
-            this.DETALLE.MinimumWidth = 6;
-            this.DETALLE.Name = "DETALLE";
-            this.DETALLE.Width = 125;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(307, 345);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 13);
-            this.label3.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.YellowGreen;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 97);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 15);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "FECHA \r\n";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(269, 225);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
-            this.label6.TabIndex = 10;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(157, 97);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(185, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.labelProducto.AutoSize = true;
+            this.labelProducto.Location = new System.Drawing.Point(231, 239);
+            this.labelProducto.Name = "labelProducto";
+            this.labelProducto.Size = new System.Drawing.Size(63, 16);
+            this.labelProducto.TabIndex = 40;
+            this.labelProducto.Text = "--------------";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.YellowGreen;
-            this.label7.Location = new System.Drawing.Point(4, 15);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(40, 196);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 13);
-            this.label7.TabIndex = 12;
+            this.label7.Size = new System.Drawing.Size(124, 16);
+            this.label7.TabIndex = 32;
             this.label7.Text = "SOLICITADO POR :";
             // 
-            // groupBox1
+            // labelEmpleado
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.OliveDrab;
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(403, 152);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(352, 115);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.labelEmpleado.AutoSize = true;
+            this.labelEmpleado.Location = new System.Drawing.Point(231, 196);
+            this.labelEmpleado.Name = "labelEmpleado";
+            this.labelEmpleado.Size = new System.Drawing.Size(63, 16);
+            this.labelEmpleado.TabIndex = 41;
+            this.labelEmpleado.Text = "--------------";
             // 
-            // label9
+            // gbEleccionPedido
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.YellowGreen;
-            this.label9.Location = new System.Drawing.Point(250, 15);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 13);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "RECIBIDO POR :";
+            this.gbEleccionPedido.Controls.Add(this.cbMateriales);
+            this.gbEleccionPedido.Controls.Add(this.cbRepuestos);
+            this.gbEleccionPedido.Controls.Add(this.cbPedidoMateriales);
+            this.gbEleccionPedido.Controls.Add(this.cbPedidoRepuestos);
+            this.gbEleccionPedido.Location = new System.Drawing.Point(30, 28);
+            this.gbEleccionPedido.Name = "gbEleccionPedido";
+            this.gbEleccionPedido.Size = new System.Drawing.Size(685, 86);
+            this.gbEleccionPedido.TabIndex = 39;
+            this.gbEleccionPedido.TabStop = false;
             // 
-            // label8
+            // cbMateriales
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.YellowGreen;
-            this.label8.Location = new System.Drawing.Point(123, 15);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "ENTREGADO POR :";
+            this.cbMateriales.FormattingEnabled = true;
+            this.cbMateriales.Location = new System.Drawing.Point(497, 36);
+            this.cbMateriales.Name = "cbMateriales";
+            this.cbMateriales.Size = new System.Drawing.Size(169, 24);
+            this.cbMateriales.TabIndex = 29;
             // 
-            // button1
+            // cbRepuestos
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button1.Location = new System.Drawing.Point(637, 84);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 30);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "GENERAR";
-            this.button1.UseVisualStyleBackColor = false;
+            this.cbRepuestos.FormattingEnabled = true;
+            this.cbRepuestos.Location = new System.Drawing.Point(289, 36);
+            this.cbRepuestos.Name = "cbRepuestos";
+            this.cbRepuestos.Size = new System.Drawing.Size(169, 24);
+            this.cbRepuestos.TabIndex = 28;
             // 
-            // checkBox1
+            // cbPedidoMateriales
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(346, 70);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbPedidoMateriales.AutoSize = true;
+            this.cbPedidoMateriales.Location = new System.Drawing.Point(147, 38);
+            this.cbPedidoMateriales.Name = "cbPedidoMateriales";
+            this.cbPedidoMateriales.Size = new System.Drawing.Size(92, 20);
+            this.cbPedidoMateriales.TabIndex = 27;
+            this.cbPedidoMateriales.Text = "Materiales";
+            this.cbPedidoMateriales.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // cbPedidoRepuestos
             // 
-            this.groupBox2.Location = new System.Drawing.Point(442, 46);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(150, 81);
-            this.groupBox2.TabIndex = 16;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.cbPedidoRepuestos.AutoSize = true;
+            this.cbPedidoRepuestos.Location = new System.Drawing.Point(29, 38);
+            this.cbPedidoRepuestos.Name = "cbPedidoRepuestos";
+            this.cbPedidoRepuestos.Size = new System.Drawing.Size(95, 20);
+            this.cbPedidoRepuestos.TabIndex = 26;
+            this.cbPedidoRepuestos.Text = "Repuestos";
+            this.cbPedidoRepuestos.UseVisualStyleBackColor = true;
+            // 
+            // btAgregar
+            // 
+            this.btAgregar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btAgregar.Location = new System.Drawing.Point(586, 265);
+            this.btAgregar.Name = "btAgregar";
+            this.btAgregar.Size = new System.Drawing.Size(110, 37);
+            this.btAgregar.TabIndex = 38;
+            this.btAgregar.Text = "Grabar";
+            this.btAgregar.UseVisualStyleBackColor = false;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(234, 140);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(245, 22);
+            this.dateTimePicker1.TabIndex = 37;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.YellowGreen;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(40, 145);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 16);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "FECHA \r\n";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(468, 439);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 16);
+            this.label3.TabIndex = 34;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 368);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(712, 251);
+            this.dataGridView1.TabIndex = 45;
             // 
             // NotaDeSalidaForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.ForestGreen;
-            this.ClientSize = new System.Drawing.Size(800, 500);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(750, 653);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.labelCantidad);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelProducto);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.labelEmpleado);
+            this.Controls.Add(this.gbEleccionPedido);
+            this.Controls.Add(this.btAgregar);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.TXTAREA);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NotaDeSalidaForm";
             this.Text = "NotaDeSalidaForm";
+            this.gbEleccionPedido.ResumeLayout(false);
+            this.gbEleccionPedido.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,22 +233,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TXTAREA;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CANTIDAD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UNIDAD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DETALLE;
+        private System.Windows.Forms.Label labelCantidad;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelProducto;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label labelEmpleado;
+        private System.Windows.Forms.GroupBox gbEleccionPedido;
+        private System.Windows.Forms.ComboBox cbMateriales;
+        private System.Windows.Forms.ComboBox cbRepuestos;
+        private System.Windows.Forms.CheckBox cbPedidoMateriales;
+        private System.Windows.Forms.CheckBox cbPedidoRepuestos;
+        private System.Windows.Forms.Button btAgregar;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
