@@ -30,6 +30,7 @@
         {
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.codigoClientelabel = new System.Windows.Forms.Label();
             this.labelTelefono = new System.Windows.Forms.Label();
             this.labelCodigo = new System.Windows.Forms.Label();
             this.labelEstado = new System.Windows.Forms.Label();
@@ -50,11 +51,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbPago = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.fechaPicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMonto = new System.Windows.Forms.TextBox();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.labelCodigoContrato = new System.Windows.Forms.Label();
@@ -63,7 +64,8 @@
             this.labelFechaContrato = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tablaPagos = new System.Windows.Forms.DataGridView();
-            this.codigoClientelabel = new System.Windows.Forms.Label();
+            this.labelMONTOCONTRATO = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -108,6 +110,16 @@
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles del Cliente";
+            // 
+            // codigoClientelabel
+            // 
+            this.codigoClientelabel.AutoSize = true;
+            this.codigoClientelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.codigoClientelabel.ForeColor = System.Drawing.Color.Transparent;
+            this.codigoClientelabel.Location = new System.Drawing.Point(143, 33);
+            this.codigoClientelabel.Name = "codigoClientelabel";
+            this.codigoClientelabel.Size = new System.Drawing.Size(0, 13);
+            this.codigoClientelabel.TabIndex = 58;
             // 
             // labelTelefono
             // 
@@ -320,18 +332,6 @@
             this.label6.TabIndex = 55;
             this.label6.Text = "Método de Pago:";
             // 
-            // btnImprimir
-            // 
-            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(96)))), ((int)(((byte)(175)))));
-            this.btnImprimir.ForeColor = System.Drawing.Color.Black;
-            this.btnImprimir.Location = new System.Drawing.Point(12, 332);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(200, 47);
-            this.btnImprimir.TabIndex = 54;
-            this.btnImprimir.Text = "Generar Comprobante";
-            this.btnImprimir.UseVisualStyleBackColor = false;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
             // fechaPicker
             // 
             this.fechaPicker.Location = new System.Drawing.Point(85, 116);
@@ -366,6 +366,18 @@
             this.txtMonto.Size = new System.Drawing.Size(83, 20);
             this.txtMonto.TabIndex = 50;
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(96)))), ((int)(((byte)(175)))));
+            this.btnImprimir.ForeColor = System.Drawing.Color.Black;
+            this.btnImprimir.Location = new System.Drawing.Point(12, 332);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(200, 47);
+            this.btnImprimir.TabIndex = 54;
+            this.btnImprimir.Text = "Generar Comprobante";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // btnAñadir
             // 
             this.btnAñadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
@@ -380,6 +392,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.labelMONTOCONTRATO);
+            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.labelCodigoContrato);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.labelPlan);
@@ -450,15 +464,24 @@
             this.tablaPagos.Size = new System.Drawing.Size(506, 256);
             this.tablaPagos.TabIndex = 41;
             // 
-            // codigoClientelabel
+            // labelMONTOCONTRATO
             // 
-            this.codigoClientelabel.AutoSize = true;
-            this.codigoClientelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.codigoClientelabel.ForeColor = System.Drawing.Color.Transparent;
-            this.codigoClientelabel.Location = new System.Drawing.Point(143, 33);
-            this.codigoClientelabel.Name = "codigoClientelabel";
-            this.codigoClientelabel.Size = new System.Drawing.Size(0, 13);
-            this.codigoClientelabel.TabIndex = 58;
+            this.labelMONTOCONTRATO.AutoSize = true;
+            this.labelMONTOCONTRATO.ForeColor = System.Drawing.Color.Black;
+            this.labelMONTOCONTRATO.Location = new System.Drawing.Point(330, 68);
+            this.labelMONTOCONTRATO.Name = "labelMONTOCONTRATO";
+            this.labelMONTOCONTRATO.Size = new System.Drawing.Size(0, 13);
+            this.labelMONTOCONTRATO.TabIndex = 33;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(237, 68);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 13);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Monto Mensual:";
             // 
             // PagosForm
             // 
@@ -523,5 +546,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView tablaPagos;
         private System.Windows.Forms.Label codigoClientelabel;
+        private System.Windows.Forms.Label labelMONTOCONTRATO;
+        private System.Windows.Forms.Label label9;
     }
 }

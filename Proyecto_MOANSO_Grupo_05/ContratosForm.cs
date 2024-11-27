@@ -177,8 +177,6 @@ namespace Proyecto_MOANSO_Grupo_05
 
         }
 
-
-
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             SaveFileDialog guardar = new SaveFileDialog

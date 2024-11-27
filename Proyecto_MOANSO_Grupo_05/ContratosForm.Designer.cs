@@ -422,7 +422,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(750, 626);
+            this.ClientSize = new System.Drawing.Size(751, 626);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.txtBuscarContrato);
             this.Controls.Add(this.label6);

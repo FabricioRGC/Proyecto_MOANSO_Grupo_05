@@ -154,7 +154,12 @@ namespace Proyecto_MOANSO_Grupo_05
 
                         reader.Close();
 
-                        string consultaContrato = "SELECT fechaInicio, plandeservicioID, contratoID FROM Contrato WHERE clienteid = @nombreCliente";
+                        string consultaContrato = @"
+                        SELECT c.FechaInicio, c.PlanDeServicioID, c.ContratoID, s.Precio 
+                        FROM Contrato c
+                        inner join PlanDeServicio s on c.PlanDeServicioID = s.PlanDeServicioID
+                        WHERE c.clienteid = @nombreCliente";
+
                         SqlCommand cmdContrato = new SqlCommand(consultaContrato, cn);
                         cmdContrato.Parameters.AddWithValue("@nombreCliente", codigoClientelabel.Text);
                         SqlDataReader readerContrato = cmdContrato.ExecuteReader();
@@ -165,6 +170,7 @@ namespace Proyecto_MOANSO_Grupo_05
                             DateTime fechaInicio = (DateTime)readerContrato["fechaInicio"];
                             labelFechaContrato.Text = fechaInicio.ToString("dd/MM/yyyy");
                             labelCodigoContrato.Text = readerContrato["contratoID"].ToString();
+                            labelMONTOCONTRATO.Text = readerContrato["precio"].ToString();
                         }
 
                         readerContrato.Close();

@@ -156,7 +156,7 @@
             this.tablaProformas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaProformas.Location = new System.Drawing.Point(17, 450);
             this.tablaProformas.Name = "tablaProformas";
-            this.tablaProformas.Size = new System.Drawing.Size(656, 290);
+            this.tablaProformas.Size = new System.Drawing.Size(1288, 290);
             this.tablaProformas.TabIndex = 54;
             // 
             // label16
