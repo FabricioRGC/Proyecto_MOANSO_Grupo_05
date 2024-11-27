@@ -125,7 +125,7 @@
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.Black;
             this.button9.Location = new System.Drawing.Point(1200, 597);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(156, 36);
             this.button9.TabIndex = 42;
@@ -317,12 +317,13 @@
             this.pLANESYZONAToolStripMenuItem.Name = "pLANESYZONAToolStripMenuItem";
             this.pLANESYZONAToolStripMenuItem.Size = new System.Drawing.Size(202, 25);
             this.pLANESYZONAToolStripMenuItem.Text = "PLANES DE SERVICIO";
+            this.pLANESYZONAToolStripMenuItem.Click += new System.EventHandler(this.pLANESYZONAToolStripMenuItem_Click);
             // 
             // zonaToolStripMenuItem1
             // 
             this.zonaToolStripMenuItem1.Name = "zonaToolStripMenuItem1";
-            this.zonaToolStripMenuItem1.Size = new System.Drawing.Size(217, 26);
-            this.zonaToolStripMenuItem1.Text = "Zona";
+            this.zonaToolStripMenuItem1.Size = new System.Drawing.Size(229, 26);
+            this.zonaToolStripMenuItem1.Text = "Zonas de Cobertura";
             this.zonaToolStripMenuItem1.Click += new System.EventHandler(this.zonaToolStripMenuItem1_Click);
             // 
             // planesToolStripMenuItem
@@ -371,7 +372,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
