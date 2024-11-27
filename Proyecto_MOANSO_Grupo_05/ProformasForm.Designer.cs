@@ -70,11 +70,22 @@
             this.labelAsesorID = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAñadir = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.labelEstadoZona = new System.Windows.Forms.Label();
+            this.labelTipoServicio = new System.Windows.Forms.Label();
+            this.labelTipoConexion = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.cbZona = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProformas)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -154,16 +165,16 @@
             // tablaProformas
             // 
             this.tablaProformas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaProformas.Location = new System.Drawing.Point(17, 450);
+            this.tablaProformas.Location = new System.Drawing.Point(12, 388);
             this.tablaProformas.Name = "tablaProformas";
-            this.tablaProformas.Size = new System.Drawing.Size(1288, 290);
+            this.tablaProformas.Size = new System.Drawing.Size(1014, 290);
             this.tablaProformas.TabIndex = 54;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(14, 405);
+            this.label16.Location = new System.Drawing.Point(688, 334);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(43, 13);
             this.label16.TabIndex = 56;
@@ -173,7 +184,7 @@
             // txtCodigoCliente
             // 
             this.txtCodigoCliente.ForeColor = System.Drawing.Color.Black;
-            this.txtCodigoCliente.Location = new System.Drawing.Point(63, 402);
+            this.txtCodigoCliente.Location = new System.Drawing.Point(737, 331);
             this.txtCodigoCliente.Name = "txtCodigoCliente";
             this.txtCodigoCliente.Size = new System.Drawing.Size(105, 20);
             this.txtCodigoCliente.TabIndex = 55;
@@ -193,7 +204,7 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(718, 16);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(308, 207);
             this.groupBox2.TabIndex = 57;
@@ -326,7 +337,7 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.cbPlan);
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(326, 12);
+            this.groupBox3.Location = new System.Drawing.Point(365, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(347, 211);
             this.groupBox3.TabIndex = 58;
@@ -473,7 +484,7 @@
             this.groupBox4.Size = new System.Drawing.Size(661, 70);
             this.groupBox4.TabIndex = 57;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Detalle del Asesor";
+            this.groupBox4.Text = "Detalle de la Proforma De Ventas";
             // 
             // label10
             // 
@@ -498,7 +509,7 @@
             this.labelAsesorID.AutoSize = true;
             this.labelAsesorID.BackColor = System.Drawing.Color.Transparent;
             this.labelAsesorID.ForeColor = System.Drawing.Color.Transparent;
-            this.labelAsesorID.Location = new System.Drawing.Point(262, 402);
+            this.labelAsesorID.Location = new System.Drawing.Point(1225, 252);
             this.labelAsesorID.Name = "labelAsesorID";
             this.labelAsesorID.Size = new System.Drawing.Size(0, 13);
             this.labelAsesorID.TabIndex = 63;
@@ -507,9 +518,9 @@
             // 
             this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(96)))), ((int)(((byte)(175)))));
             this.btnImprimir.ForeColor = System.Drawing.Color.Black;
-            this.btnImprimir.Location = new System.Drawing.Point(317, 389);
+            this.btnImprimir.Location = new System.Drawing.Point(679, 236);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(200, 44);
+            this.btnImprimir.Size = new System.Drawing.Size(168, 44);
             this.btnImprimir.TabIndex = 64;
             this.btnImprimir.Text = "Generar Comprobante";
             this.btnImprimir.UseVisualStyleBackColor = false;
@@ -518,20 +529,130 @@
             // btnAñadir
             // 
             this.btnAñadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnAñadir.Location = new System.Drawing.Point(523, 388);
+            this.btnAñadir.Location = new System.Drawing.Point(858, 236);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(150, 47);
+            this.btnAñadir.Size = new System.Drawing.Size(168, 44);
             this.btnAñadir.TabIndex = 21;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = false;
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
+            this.groupBox5.Controls.Add(this.label17);
+            this.groupBox5.Controls.Add(this.labelEstadoZona);
+            this.groupBox5.Controls.Add(this.labelTipoServicio);
+            this.groupBox5.Controls.Add(this.labelTipoConexion);
+            this.groupBox5.Controls.Add(this.label23);
+            this.groupBox5.Controls.Add(this.label24);
+            this.groupBox5.Controls.Add(this.label25);
+            this.groupBox5.Controls.Add(this.label26);
+            this.groupBox5.Controls.Add(this.cbZona);
+            this.groupBox5.ForeColor = System.Drawing.Color.Black;
+            this.groupBox5.Location = new System.Drawing.Point(12, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(347, 211);
+            this.groupBox5.TabIndex = 59;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Detalles del Zona de Cobertura:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
+            this.label17.Location = new System.Drawing.Point(298, 33);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(0, 13);
+            this.label17.TabIndex = 54;
+            // 
+            // labelEstadoZona
+            // 
+            this.labelEstadoZona.AutoSize = true;
+            this.labelEstadoZona.ForeColor = System.Drawing.Color.Black;
+            this.labelEstadoZona.Location = new System.Drawing.Point(102, 147);
+            this.labelEstadoZona.Name = "labelEstadoZona";
+            this.labelEstadoZona.Size = new System.Drawing.Size(0, 13);
+            this.labelEstadoZona.TabIndex = 41;
+            // 
+            // labelTipoServicio
+            // 
+            this.labelTipoServicio.AutoSize = true;
+            this.labelTipoServicio.ForeColor = System.Drawing.Color.Black;
+            this.labelTipoServicio.Location = new System.Drawing.Point(102, 114);
+            this.labelTipoServicio.Name = "labelTipoServicio";
+            this.labelTipoServicio.Size = new System.Drawing.Size(0, 13);
+            this.labelTipoServicio.TabIndex = 40;
+            // 
+            // labelTipoConexion
+            // 
+            this.labelTipoConexion.AutoSize = true;
+            this.labelTipoConexion.ForeColor = System.Drawing.Color.Black;
+            this.labelTipoConexion.Location = new System.Drawing.Point(102, 80);
+            this.labelTipoConexion.Name = "labelTipoConexion";
+            this.labelTipoConexion.Size = new System.Drawing.Size(0, 13);
+            this.labelTipoConexion.TabIndex = 38;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(21, 147);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(43, 13);
+            this.label23.TabIndex = 36;
+            this.label23.Text = "Estado:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(21, 114);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(69, 13);
+            this.label24.TabIndex = 35;
+            this.label24.Text = "TipoServicio:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(21, 80);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(75, 13);
+            this.label25.TabIndex = 33;
+            this.label25.Text = "TipoConexión:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(21, 33);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(42, 13);
+            this.label26.TabIndex = 26;
+            this.label26.Text = "Distrito:";
+            // 
+            // cbZona
+            // 
+            this.cbZona.FormattingEnabled = true;
+            this.cbZona.Location = new System.Drawing.Point(146, 30);
+            this.cbZona.Name = "cbZona";
+            this.cbZona.Size = new System.Drawing.Size(121, 21);
+            this.cbZona.TabIndex = 32;
             // 
             // ProformasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1317, 751);
+            this.ClientSize = new System.Drawing.Size(1038, 690);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.labelAsesorID);
             this.Controls.Add(this.groupBox4);
@@ -554,6 +675,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,5 +725,15 @@
         private System.Windows.Forms.Label labelAsesorID;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnAñadir;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label labelEstadoZona;
+        private System.Windows.Forms.Label labelTipoServicio;
+        private System.Windows.Forms.Label labelTipoConexion;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox cbZona;
     }
 }

@@ -31,6 +31,7 @@ namespace Proyecto_MOANSO_Grupo_05
             cargarPlanes();
             cargarAsesores();
             listarProforma();
+            cargarZonas();
         }
         public void listarProforma()
         {
@@ -59,7 +60,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         public void cargarAsesores()
         {
-            string consulta= "SELECT Nombre from Personal where Cargo = 'Asesor de Ventas'";
+            string consulta = "SELECT Nombre from Personal where Cargo = 'Asesor de Ventas'";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
@@ -77,10 +78,30 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
-        // ----- ACCIONES -----
+        public void cargarZonas()
+        {
+            string consulta = "SELECT DISTRITO FROM ZONADECOBERTURA";
 
-        // Boton Añadir
-        private void btnAñadir_Click(object sender, EventArgs e)
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                cn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cbZona.Items.Add(reader["DISTRITO"].ToString());
+                }
+
+                reader.Close();
+
+            }
+        }
+
+            // ----- ACCIONES -----
+
+            // Boton Añadir
+            private void btnAñadir_Click(object sender, EventArgs e)
         {
             try
             {
@@ -90,6 +111,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 pro.servicio_id = Convert.ToInt32(labelCodigoServicio.Text);
                 pro.fecha_fin = fechaFinPicker.Value.Date;
                 pro.personal_id = Convert.ToInt32(labelAsesorID.Text);
+                pro.distrito = cbZona.SelectedItem.ToString();
 
                 logProforma.Instancia.InsertaProforma(pro);
             }

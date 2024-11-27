@@ -15,6 +15,7 @@ namespace CapaEntidad
             public DateTime fecha_fin { get; set; }
             public int servicio_id { get; set; }
             public int personal_id { get; set; }
+            public string distrito { get; set; }
         }
     }
 }

@@ -41,6 +41,7 @@ namespace CapaDatos
                     pro.fecha_fin = Convert.ToDateTime(dr["FechaVencimiento"]);
                     pro.servicio_id = Convert.ToInt32(dr["PlanDeServicioID"]);
                     pro.personal_id = Convert.ToInt32(dr["PersonalID"]);
+                    pro.distrito = dr["Distrito"].ToString();
 
                     lista.Add(pro);
                 }
@@ -71,6 +72,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@tipoPlan", proforma.servicio_id);
                 cmd.Parameters.AddWithValue("@fecha_vencimiento", proforma.fecha_fin);
                 cmd.Parameters.AddWithValue("@personal", proforma.personal_id);
+                cmd.Parameters.AddWithValue("@zona", proforma.distrito);
 
                 cn.Open();
                 int i = cmd.ExecuteNonQuery();
