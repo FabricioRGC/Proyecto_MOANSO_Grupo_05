@@ -16,13 +16,13 @@ namespace CapaLogica
         }
 
         // Método para listar pedidos de materiales
-        public List<entnPedidoMateriales> ListarPedidosMaterial()
+        public List<entPedidoMateriales> ListarPedidosMaterial()
         {
             return datPedidoMateriales.Instancia.ListarPedidosMateriales();
         }
 
         // Método para registrar un pedido de materiales
-        public void RegistrarPedidoMaterial(entnPedidoMateriales pedido)
+        public void RegistrarPedidoMaterial(entPedidoMateriales pedido)
         {
             // Registrar el pedido
             datPedidoMateriales.Instancia.RegistrarPedidoMaterial(pedido);

@@ -8,7 +8,7 @@ namespace CapaEntidad
 {
     public class PedidoMateriales
     {
-        public class entnPedidoMateriales
+        public class entPedidoMateriales
         {
             public int PedidoMaterialesID { get; set; }
             public int Stock { get; set; }

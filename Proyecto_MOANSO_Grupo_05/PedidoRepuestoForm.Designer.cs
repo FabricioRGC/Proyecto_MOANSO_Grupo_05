@@ -200,6 +200,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.Olive;
             this.groupBox4.Controls.Add(this.labelCategoriaID);
             this.groupBox4.Controls.Add(this.CodigoRepuesto);
             this.groupBox4.Controls.Add(this.cboNomRepuestos);

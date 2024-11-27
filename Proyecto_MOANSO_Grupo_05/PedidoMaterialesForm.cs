@@ -91,7 +91,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 }
 
                 // Crear la instancia del pedido con el estado como 'Pendiente' por defecto
-                entOrdenPedidoMateriales pedidoMateriales = new entOrdenPedidoMateriales
+                entPedidoMateriales pedidoMateriales = new entPedidoMateriales
                 {
                     nombreMaterial = cboMateriales.SelectedItem.ToString(),
                     nombreTecnico = cboTecnico.SelectedItem.ToString(),
@@ -173,7 +173,7 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 if (dataGridMateriales.CurrentRow != null)
                 {
-                    var ordenSeleccionada = (entOrdenPedidoMateriales)dataGridMateriales.CurrentRow.DataBoundItem;
+                    var ordenSeleccionada = (entPedidoMateriales)dataGridMateriales.CurrentRow.DataBoundItem;
                     long idPedido = ordenSeleccionada.id;
 
                     var confirmResult = MessageBox.Show("¿Está seguro de que desea terminar este pedido?",
@@ -200,7 +200,7 @@ namespace Proyecto_MOANSO_Grupo_05
         private void txtMateriales_TextChanged(object sender, EventArgs e)
         {
             string textoBusqueda = txtMateriales.Text.Trim();
-            List<PedidoMateriales.entOrdenPedidoMateriales> listaMateriales = logPedidoMateriales.Instancia.ListarPedidosMaterial();
+            List<PedidoMateriales.entPedidoMateriales> listaMateriales = logPedidoMateriales.Instancia.ListarPedidosMaterial();
             var listaFiltrada = listaMateriales.Where(r => r.nombreMaterial.Contains(textoBusqueda)).ToList();
             dataGridMateriales.DataSource = listaFiltrada;
         }

@@ -21,7 +21,7 @@ namespace CapaDatos
         }
 
         // Método para registrar un pedido de materiales
-        public void RegistrarPedidoMaterial(entnPedidoMateriales pedido)
+        public void RegistrarPedidoMaterial(entPedidoMateriales pedido)
         {
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
@@ -82,9 +82,9 @@ namespace CapaDatos
 
 
         // Método para listar todos los pedidos de materiales
-        public List<PedidoMateriales.entnPedidoMateriales> ListarPedidosMateriales()
+        public List<PedidoMateriales.entPedidoMateriales> ListarPedidosMateriales()
         {
-            List<PedidoMateriales.entnPedidoMateriales> lista = new List<PedidoMateriales.entnPedidoMateriales>();
+            List<PedidoMateriales.entPedidoMateriales> lista = new List<PedidoMateriales.entPedidoMateriales>();
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
@@ -95,7 +95,7 @@ namespace CapaDatos
                     {
                         while (dr.Read())
                         {
-                            PedidoMateriales.entnPedidoMateriales pedido = new PedidoMateriales.entnPedidoMateriales
+                            PedidoMateriales.entPedidoMateriales pedido = new PedidoMateriales.entPedidoMateriales
                             {
                                 id = Convert.ToInt64(dr["id"]),
                                 nombreMaterial = dr["nombreMaterial"].ToString(),
