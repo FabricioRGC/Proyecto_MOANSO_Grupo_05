@@ -348,7 +348,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void pLANESYZONAToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            //
         }
     }
 }
