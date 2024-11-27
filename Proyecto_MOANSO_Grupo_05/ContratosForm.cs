@@ -37,8 +37,7 @@ namespace Proyecto_MOANSO_Grupo_05
         }
 
         public void LimpiarVariables()
-        {
-
+        { 
             cbCliente.SelectedIndex = 0;
             cbPlan.SelectedIndex = 0;
             txtDuracion.Text = "";

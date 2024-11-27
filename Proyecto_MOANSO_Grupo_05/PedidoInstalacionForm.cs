@@ -122,7 +122,7 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 // Obtener el último número de orden y mostrar el siguiente en el TextBox
                 int ultimoNumeroOrden = logPedidoInstalacion.Instancia.ObtenerUltimoNumeroOrden();
-                txtNumOrden.Text = (ultimoNumeroOrden + 1).ToString();
+                //txtNumOrden.Text = (ultimoNumeroOrden + 1).ToString();
             }
             catch (Exception ex)
             {
