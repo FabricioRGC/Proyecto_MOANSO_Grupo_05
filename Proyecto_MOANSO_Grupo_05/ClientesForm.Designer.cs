@@ -44,7 +44,8 @@
             this.tablaClientes = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtBuscarNombre = new System.Windows.Forms.TextBox();
+            this.txtBuscarDni = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -206,8 +207,9 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
+            this.groupBox2.Controls.Add(this.btnBuscar);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.txtBuscarNombre);
+            this.groupBox2.Controls.Add(this.txtBuscarDni);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(293, 11);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
@@ -221,27 +223,39 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(17, 37);
+            this.label6.Location = new System.Drawing.Point(17, 36);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "Buscar por Nombre:";
             // 
-            // txtBuscarNombre
+            // txtBuscarDni
             // 
-            this.txtBuscarNombre.Location = new System.Drawing.Point(123, 34);
-            this.txtBuscarNombre.Name = "txtBuscarNombre";
-            this.txtBuscarNombre.Size = new System.Drawing.Size(116, 20);
-            this.txtBuscarNombre.TabIndex = 15;
-            this.txtBuscarNombre.TextChanged += new System.EventHandler(this.txtBuscarNombre_TextChanged_1);
+            this.txtBuscarDni.Location = new System.Drawing.Point(123, 33);
+            this.txtBuscarDni.Name = "txtBuscarDni";
+            this.txtBuscarDni.Size = new System.Drawing.Size(116, 20);
+            this.txtBuscarDni.TabIndex = 15;
+            this.txtBuscarDni.TextChanged += new System.EventHandler(this.txtBuscarNombre_TextChanged_1);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
+            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscar.Location = new System.Drawing.Point(260, 19);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(161, 47);
+            this.btnBuscar.TabIndex = 14;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(949, 485);
+            this.ClientSize = new System.Drawing.Size(949, 469);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tablaClientes);
             this.Controls.Add(this.groupBox1);
@@ -277,6 +291,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBuscarNombre;
+        private System.Windows.Forms.TextBox txtBuscarDni;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using CapaLogica;
 using CapaEntidad;
 using static CapaEntidad.Cliente;
+using System.Data.SqlClient;
+using CapaDatos;
 
 namespace Proyecto_MOANSO_Grupo_05
 {
@@ -22,6 +24,7 @@ namespace Proyecto_MOANSO_Grupo_05
             listarCliente();
         }
 
+        // CARGAR COMBOBOX
         public void listarCliente()
         {
             tablaClientes.DataSource = logCliente.Instancia.ListarCliente();
@@ -35,9 +38,9 @@ namespace Proyecto_MOANSO_Grupo_05
             txtDni.Text = "";
         }
 
-        // ----- ACCIONES -----
+        // ----- ACCIONES DE BOTONES -----
 
-        // Boton Añadir
+        // BOTON AÑADIR
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -48,7 +51,6 @@ namespace Proyecto_MOANSO_Grupo_05
                 cli.telefono = txtTelefono.Text.Trim();
                 cli.dni = txtDni.Text.Trim();
                 logCliente.Instancia.InsertaCliente(cli);
-
             }
             catch (Exception ex)
             {
@@ -58,22 +60,7 @@ namespace Proyecto_MOANSO_Grupo_05
             listarCliente();
         }
 
-        private void ClientesForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // Boton Modificar
+        // BOTON MODIFICAR
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -93,7 +80,7 @@ namespace Proyecto_MOANSO_Grupo_05
             listarCliente();
         }
 
-        // Boton Deshabilitar
+        // BOTON DESHABILITAR
         private void button3_Click(object sender, EventArgs e)
         {
             try
@@ -110,19 +97,6 @@ namespace Proyecto_MOANSO_Grupo_05
             listarCliente();
         }
 
-        // Filtrar por Nombre
-
-        private void txtBuscarNombre_TextChanged_1(object sender, EventArgs e)
-        {
-            string nombresFiltrados = txtBuscarNombre.Text;
-
-            var clientesFiltrados = logCliente.Instancia.ListarCliente()
-                .Where(cliente => cliente.nombre.Contains(nombresFiltrados))
-                .ToList();
-
-            tablaClientes.DataSource = clientesFiltrados;
-        }
-
         private void tablaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow fila = tablaClientes.Rows[e.RowIndex];
@@ -131,6 +105,45 @@ namespace Proyecto_MOANSO_Grupo_05
             txtDireccion.Text = Convert.ToString(fila.Cells[1].Value);
             txtTelefono.Text = Convert.ToString(fila.Cells[2].Value);
             txtDni.Text = Convert.ToString(fila.Cells[4].Value);
+        }
+
+        // BOTON BUSCAR
+
+        private void txtBuscarNombre_TextChanged_1(object sender, EventArgs e)
+        {
+            string nombresFiltrados = txtBuscarDni.Text;
+
+            var clientesFiltrados = logCliente.Instancia.ListarCliente()
+                .Where(cliente => cliente.nombre.Contains(nombresFiltrados))
+                .ToList();
+
+            tablaClientes.DataSource = clientesFiltrados;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string dniBuscado = txtBuscarDni.Text.Trim();
+
+            if (string.IsNullOrEmpty(dniBuscado))
+            {
+                MessageBox.Show("Por favor, ingresa un DNI.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void ClientesForm_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void txtDni_TextChanged(object sender, EventArgs e)
