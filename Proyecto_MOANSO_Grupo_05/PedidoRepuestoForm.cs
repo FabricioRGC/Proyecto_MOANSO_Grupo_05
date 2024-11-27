@@ -15,6 +15,7 @@ using CapaDatos;
 using System.Data.SqlClient;
 using static CapaEntidad.Repuesto;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using iTextSharp.text;
 
 namespace Proyecto_MOANSO_Grupo_05
 {
@@ -50,11 +51,10 @@ namespace Proyecto_MOANSO_Grupo_05
                     DataTable dt = new DataTable();
                     dt.Load(reader);
 
-                    cboNomRepuestos.DataSource = dt;
-                    cboNomRepuestos.DisplayMember = "NombreRepuesto"; // Lo que se mostrará al usuario
-                    cboNomRepuestos.ValueMember = "RepuestosID";      // El valor real (ID)
+                    cboNomRepuestos.DataSource = dt;               // Vincula el DataTable
+                    cboNomRepuestos.DisplayMember = "NombreRepuesto"; // Muestra el nombre
+                    cboNomRepuestos.ValueMember = "RepuestosID";      // Usa el ID como valor
                     cboNomRepuestos.SelectedIndex = -1;              // Sin selección inicial
-                    cargandoRepuestos = false;
                 }
                 catch (Exception ex)
                 {
@@ -62,6 +62,8 @@ namespace Proyecto_MOANSO_Grupo_05
                 }
             }
         }
+
+
 
 
         private bool cargandoDatos = false;
@@ -102,7 +104,6 @@ namespace Proyecto_MOANSO_Grupo_05
                     return;
                 }
 
-
                 if (dtpFechaRealizacion.Value == null || dtpFechaRealizacion.Value == DateTime.MinValue)
                 {
                     MessageBox.Show("Por favor, seleccione la fecha de realización.");
@@ -115,6 +116,13 @@ namespace Proyecto_MOANSO_Grupo_05
                     return;
                 }
 
+                // Validar que el stock sea un número válido
+                if (!int.TryParse(txtStockPedidoRep.Text, out int stock))
+                {
+                    MessageBox.Show("El stock debe ser un número válido.");
+                    return;
+                }
+
                 // Crear el objeto PedidoRepuesto y asignar los valores
                 entPedidoRepuestos PedidoRepuesto = new entPedidoRepuestos
                 {
@@ -122,6 +130,7 @@ namespace Proyecto_MOANSO_Grupo_05
                     Estado = "Pendiente", // Estado fijo como "Pendiente"
                     FechaRealizacion = dtpFechaRealizacion.Value,
                     FechaEntrega = dtpFechaEntrega.Value,
+                    Stock = Convert.ToInt32(txtStockPedidoRep.Text),
                     RepuestosID = Convert.ToInt32(cboNomRepuestos.SelectedValue),
                     PersonalID = Convert.ToInt32(cboTecnicoAsignado.SelectedValue)
                 };
@@ -143,42 +152,36 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void cboRepuestos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Evitar lógica si estamos cargando datos o no hay selección válida
-            if (cargandoRepuestos || cboNomRepuestos.SelectedIndex == -1)
+            // Evitar lógica si no hay selección válida
+            if (cboNomRepuestos.SelectedIndex == -1 || cboNomRepuestos.SelectedValue == null)
                 return;
 
-            if (cboNomRepuestos.SelectedItem == null)
-            {
-                MessageBox.Show("Seleccione un repuesto válido.");
-                return;
-            }
-
-            int repuestoID;
-
-            string repuestoSeleccionado = cboNomRepuestos.SelectedItem.ToString();
+            // Obtener el ID seleccionado
+            int repuestosID;
 
             try
             {
-                if (int.TryParse(cboNomRepuestos.SelectedValue.ToString(), out repuestoID))
+
+                if (int.TryParse(cboNomRepuestos.SelectedValue.ToString(), out repuestosID))
                 {
                     using (SqlConnection cn = Conexion.Instancia.Conectar())
                     {
                         string consulta = @"
-                    SELECT 
-                        r.CódigoRepuesto, 
-                        r.Stock, 
-                        c.CategoriaRepuesto
-                    FROM 
-                        Repuestos r
-                    INNER JOIN 
-                        CategoriaRepuesto c ON r.CategoriaRepuestoID = c.CategoriaRepuestoID
-                    WHERE 
-                        r.NombreRepuesto = @NombreRepuesto";
+                        SELECT 
+                            r.CódigoRepuesto, 
+                            r.Stock, 
+                            c.CategoriaRepuesto
+                        FROM 
+                            Repuestos r
+                        INNER JOIN 
+                            CategoriaRepuesto c ON r.CategoriaRepuestoID = c.CategoriaRepuestoID
+                        WHERE 
+                            r.RepuestosID = @RepuestosID";
 
                         SqlCommand cmd = new SqlCommand(consulta, cn);
-                        cmd.Parameters.AddWithValue("@NombreRepuesto", repuestoSeleccionado);
-
+                        cmd.Parameters.AddWithValue("@RepuestosID", repuestosID);
                         cn.Open();
+
                         SqlDataReader reader = cmd.ExecuteReader();
 
                         if (reader.Read())
@@ -192,8 +195,7 @@ namespace Proyecto_MOANSO_Grupo_05
                             MessageBox.Show("No se encontró información para el repuesto seleccionado.");
                         }
                     }
-                }
-                    
+                }  
             }
             catch (Exception ex)
             {
