@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using CapaEntidad;
 using System.Windows.Forms;
 using static CapaEntidad.PedidoMateriales;
+using static CapaEntidad.PedidoRepuestos;
 
 namespace CapaDatos
 {
@@ -20,57 +21,107 @@ namespace CapaDatos
             get { return _instancia; }
         }
 
-        // Método para registrar un pedido de materiales
-        public void RegistrarPedidoMaterial(entPedidoMateriales pedido)
+        // Método para mostrar los pedidos de materiales
+        public List<PedidoMateriales.entPedidoMateriales> ListarPedidoMateriales()
         {
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            SqlCommand cmd = null;
+            List<PedidoMateriales.entPedidoMateriales> lista = new List<PedidoMateriales.entPedidoMateriales>();
+            try
             {
-                using (SqlCommand cmd = new SqlCommand("SP_REGISTRAR_PEDIDO_MATERIALES", cn))
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("SP_MOSTRAR_PEDIDO_MATERIALES", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@nombreMaterial", SqlDbType.NVarChar, 30).Value = pedido.nombreMaterial;
-                    cmd.Parameters.Add("@nombreTecnico", SqlDbType.NVarChar, 30).Value = pedido.nombreTecnico;
-                    cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = pedido.fecha == DateTime.MinValue ? (object)DBNull.Value : pedido.fecha;
-                    cmd.Parameters.Add("@fecha_entrega", SqlDbType.Date).Value = pedido.fecha_entrega == DateTime.MinValue ? (object)DBNull.Value : pedido.fecha_entrega;
-                    cmd.Parameters.Add("@estado", SqlDbType.NVarChar, 20).Value = "Pendiente";
-
-                    try
-                    {
-                        cn.Open();
-                        cmd.ExecuteNonQuery();
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show("Error al registrar el pedido de material: " + ex.Message);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
+                    entPedidoMateriales PedidoMateriales = new entPedidoMateriales();
+                    PedidoMateriales.PedidoMaterialesID = Convert.ToInt32(dr["PedidoMaterialesID"]);
+                    PedidoMateriales.Stock = Convert.ToInt32(dr["Stock"]);
+                    PedidoMateriales.FechaRealizacion = Convert.ToDateTime(dr["FechaRealizacion"]);
+                    PedidoMateriales.FechaEntrega = dr["FechaEntrega"] != DBNull.Value ? Convert.ToDateTime(dr["FechaEntrega"]) : (DateTime?)null;
+                    PedidoMateriales.Estado = dr["Estado"].ToString();
+                    PedidoMateriales.MaterialID = Convert.ToInt32(dr["MaterialID"]);
+                    PedidoMateriales.PersonalID = Convert.ToInt32(dr["PersonalID"]);
+                    lista.Add(PedidoMateriales);
                 }
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (cmd != null && cmd.Connection != null)
+                {
+                    cmd.Connection.Close();
+                }
+            }
+            return lista;
+        }
+
+        // Método para registrar un nuevo pedido de materiales
+        public bool RegistrarPedidoMateriales(PedidoMateriales.entPedidoMateriales pedidoMateriales)
+        {
+            SqlCommand cmd = null;
+            bool registrado = false;
+
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("SP_REGISTRAR_PEDIDOS_MATERIALES", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Añadir parámetros al StoredProcedure
+                cmd.Parameters.AddWithValue("@Stock", pedidoMateriales.Stock);
+                cmd.Parameters.AddWithValue("@MaterialID", pedidoMateriales.MaterialID);
+                cmd.Parameters.AddWithValue("@PersonalID", pedidoMateriales.PersonalID);
+                cmd.Parameters.AddWithValue("@Estado", pedidoMateriales.Estado);
+                cmd.Parameters.AddWithValue("@FechaRealizacion", pedidoMateriales.FechaRealizacion);
+                cmd.Parameters.AddWithValue("@FechaEntrega", pedidoMateriales.FechaEntrega.HasValue ? (object)pedidoMateriales.FechaEntrega.Value : DBNull.Value);
+
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    registrado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar el pedido de repuesto: " + ex.Message);
+            }
+            finally
+            {
+                if (cmd != null && cmd.Connection != null)
+                {
+                    cmd.Connection.Close();
+                }
+            }
+
+            return registrado;
         }
 
 
         // Método para terminar un pedido de materiales
-        public void TerminarPedidoMaterial(long idPedido)
+        public void TerminarPedidoMateriales(int idPedido)
         {
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                using (SqlCommand cmd = new SqlCommand("SP_TERMINAR_PEDIDO_MATERIALES", cn))
+                using (SqlCommand cmd = new SqlCommand("SP_ANULAR_PEDIDO_MATERIALES", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", idPedido);
+                    cmd.Parameters.AddWithValue("@PedidoMaterialesID", idPedido);
 
                     try
                     {
                         cn.Open();
                         cmd.ExecuteNonQuery();
+                        MessageBox.Show("Pedido finalizado correctamente.");
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("Error al terminar el pedido: " + ex.Message);
+                        MessageBox.Show("Error al finalizar el pedido: " + ex.Message);
                     }
                     catch (Exception ex)
                     {
@@ -78,38 +129,6 @@ namespace CapaDatos
                     }
                 }
             }
-        }
-
-
-        // Método para listar todos los pedidos de materiales
-        public List<PedidoMateriales.entPedidoMateriales> ListarPedidosMateriales()
-        {
-            List<PedidoMateriales.entPedidoMateriales> lista = new List<PedidoMateriales.entPedidoMateriales>();
-
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM ordenespedidomateriales", cn))
-                {
-                    cn.Open();
-                    using (SqlDataReader dr = cmd.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            PedidoMateriales.entPedidoMateriales pedido = new PedidoMateriales.entPedidoMateriales
-                            {
-                                id = Convert.ToInt64(dr["id"]),
-                                nombreMaterial = dr["nombreMaterial"].ToString(),
-                                nombreTecnico = dr["nombreTecnico"].ToString(),
-                                fecha = Convert.ToDateTime(dr["fecha"]),
-                                fecha_entrega = dr["fecha_entrega"] != DBNull.Value ? Convert.ToDateTime(dr["fecha_entrega"]) : (DateTime?)null,
-                                estado = dr["estado"].ToString()
-                            };
-                            lista.Add(pedido);
-                        }
-                    }
-                }
-            }
-            return lista;
         }
 
     }

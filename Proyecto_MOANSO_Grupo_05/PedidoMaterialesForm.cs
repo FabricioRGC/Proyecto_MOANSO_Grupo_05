@@ -27,111 +27,246 @@ namespace Proyecto_MOANSO_Grupo_05
             cargarPersonalTecnico();
         }
 
+        public void ListarPedidosMateriales()
+        {
+            dataGridMateriales.DataSource = logPedidoMateriales.Instancia.ListarPedidosMaterial();
+        }
+
         private void limpiarVariables()
         {
             dtpFechaEntrega.Value = DateTime.Now;
             dtpFechaRealizacion.Value = DateTime.Now;
         }
 
+        private void LimpiarInformacionRepuesto()
+        {
+            CodigoMaterial.Text = string.Empty;
+            stockMaterial.Text = string.Empty;
+            labelCategoriaMat.Text = string.Empty;
+
+            // Forzar la actualización de la interfaz si es necesario
+            CodigoMaterial.Refresh();
+            stockMaterial.Refresh();
+            labelCategoriaMat.Refresh();
+        }
+
         private void cargarMateriales()
         {
-            string consulta = "select nombre from materiales";
+            string consulta = "SELECT MaterialID, NombreMaterial FROM Material";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
                 SqlCommand cmd = new SqlCommand(consulta, cn);
-                cn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                try
                 {
-                    cboMateriales.Items.Add(reader["nombre"].ToString());
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    cboMateriales.DataSource = dt;               // Vincula el DataTable
+                    cboMateriales.DisplayMember = "NombreMaterial"; // Muestra el nombre
+                    cboMateriales.ValueMember = "MaterialID";      // Usa el ID como valor
+                    cboMateriales.SelectedIndex = -1;              // Sin selección inicial
                 }
-
-                reader.Close();
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar repuestos: " + ex.Message);
+                }
             }
         }
 
-
+        private bool cargandoDatos = false;
         private void cargarPersonalTecnico()
         {
-            string consulta = "select nombre from personaltecnico";
+            string consulta = "SELECT PersonalID, Nombre FROM Personal WHERE Cargo = @Cargo";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
                 SqlCommand cmd = new SqlCommand(consulta, cn);
+                cmd.Parameters.AddWithValue("@Cargo", "Jefe de soporte tecnico");
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+
+                cargandoDatos = true; // Bandera activada
                 cn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                adapter.Fill(dt);
 
-                while (reader.Read())
-                {
-                    cboTecnico.Items.Add(reader["nombre"].ToString());
-                }
-
-                reader.Close();
-
+                cboTecnico.DataSource = dt;
+                cboTecnico.DisplayMember = "Nombre";
+                cboTecnico.ValueMember = "PersonalID";
+                cboTecnico.SelectedIndex = -1; // Ningún elemento seleccionado inicialmente
+                cargandoDatos = false; // Bandera desactivada
             }
         }
 
-        public void ListarPedidosMateriales()
+        private bool RestarStockMateriales(int materialID, int stockSolicitado)
         {
-            dataGridMateriales.DataSource = logPedidoMateriales.Instancia.ListarPedidosMaterial();
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                cn.Open();
+                SqlTransaction transaction = cn.BeginTransaction();
+
+                try
+                {
+                    // Obtener el stock actual
+                    string consultaStock = "SELECT Stock FROM Material WHERE MaterialID = @MaterialID";
+                    SqlCommand cmdStock = new SqlCommand(consultaStock, cn, transaction);
+                    cmdStock.Parameters.AddWithValue("@MaterialID", materialID);
+
+                    int stockActual = Convert.ToInt32(cmdStock.ExecuteScalar());
+
+                    // Validar si hay suficiente stock
+                    if (stockSolicitado > stockActual)
+                    {
+                        MessageBox.Show($"No hay suficiente stock. Disponible: {stockActual}");
+                        transaction.Rollback(); // Deshacer cambios
+                        return false;
+                    }
+
+                    // Actualizar el stock
+                    string actualizarStock = "UPDATE Material SET Stock = Stock - @StockSolicitado WHERE MaterialID = @MaterialID";
+                    SqlCommand cmdActualizar = new SqlCommand(actualizarStock, cn, transaction);
+                    cmdActualizar.Parameters.AddWithValue("@StockSolicitado", stockSolicitado);
+                    cmdActualizar.Parameters.AddWithValue("@MaterialID", materialID);
+                    cmdActualizar.ExecuteNonQuery();
+
+                    transaction.Commit(); // Confirmar los cambios
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback(); // Deshacer cambios en caso de error
+                    MessageBox.Show($"Error al restar stock: {ex.Message}");
+                    return false;
+                }
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             try
             {
-                // Validar que los campos no estén vacíos
-                if (cboMateriales.SelectedIndex == -1 || cboTecnico.SelectedIndex == -1)
+                // Validar si los campos están vacíos
+                if (string.IsNullOrWhiteSpace(txtStockPedidoMat.Text))
                 {
-                    MessageBox.Show("Por favor, complete todos los campos.");
+                    MessageBox.Show("Por favor, ingrese el stock del material.");
                     return;
                 }
 
-                // Crear la instancia del pedido con el estado como 'Pendiente' por defecto
-                entPedidoMateriales pedidoMateriales = new entPedidoMateriales
+                if (dtpFechaRealizacion.Value == null || dtpFechaRealizacion.Value == DateTime.MinValue)
                 {
-                    nombreMaterial = cboMateriales.SelectedItem.ToString(),
-                    nombreTecnico = cboTecnico.SelectedItem.ToString(),
-                    fecha = dtpFechaRealizacion.Value.Date,
-                    fecha_entrega = dtpFechaEntrega.Value.Date,
-                    estado = "Pendiente"
+                    MessageBox.Show("Por favor, seleccione la fecha de realización.");
+                    return;
+                }
+
+                if (dtpFechaEntrega.Value == null || dtpFechaEntrega.Value == DateTime.MinValue)
+                {
+                    MessageBox.Show("Por favor, seleccione la fecha de entrega.");
+                    return;
+                }
+
+                // Validar que el stock sea un número válido
+                if (!int.TryParse(txtStockPedidoMat.Text, out int stockSolicitado))
+                {
+                    MessageBox.Show("El stock debe ser un número válido.");
+                    return;
+                }
+
+                if (cboMateriales.SelectedValue == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un material válido.");
+                    return;
+                }
+
+                if (cboTecnico.SelectedValue == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un técnico válido.");
+                    return;
+                }
+
+
+                int materialID = Convert.ToInt32(cboMateriales.SelectedValue);
+
+                // Llamar al método para restar stock
+                if (!RestarStockMateriales(materialID, stockSolicitado))
+                {
+                    return;
+                }
+
+                // Crear el objeto PedidoMaterial y asignar los valores
+                entPedidoMateriales PedidoMaterial = new entPedidoMateriales
+                {
+                    Estado = "Pendiente", // Estado fijo como "Pendiente"
+                    FechaRealizacion = dtpFechaRealizacion.Value,
+                    FechaEntrega = dtpFechaEntrega.Value,
+                    Stock = stockSolicitado,
+                    MaterialID = materialID,
+                    PersonalID = Convert.ToInt32(cboTecnico.SelectedValue)
                 };
 
-                // Registrar el pedido
-                logPedidoMateriales.Instancia.RegistrarPedidoMaterial(pedidoMateriales);
-                MessageBox.Show("Pedido de Material añadido exitosamente.");
+                // Insertar el Pedido de Repuesto
+                logPedidoMateriales.Instancia.RegistrarPedidoMaterial(PedidoMaterial);
+                MessageBox.Show("Pedido material insertado correctamente.");
+                txtStockPedidoMat.Clear();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error al insertar el Pedido material: " + ex.Message);
+            }
+            finally
+            {
+                ListarPedidosMateriales();
+                cargarMateriales();
+                LimpiarInformacionRepuesto();
             }
         }
 
         private void cboTecnico_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String personalTecnicoSeleccionado = cboTecnico.SelectedItem.ToString();
+            // No hacer nada si estamos cargando datos
+            if (cargandoDatos || cboTecnico.SelectedIndex == -1)
+                return;
 
+            // Asegúrate de que hay un valor seleccionado
+            if (cboTecnico.SelectedValue == null)
+            {
+                MessageBox.Show("Seleccione un técnico válido.");
+                return;
+            }
+
+            int personalID;
             try
             {
-                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                // Verifica y convierte correctamente el valor seleccionado
+                if (int.TryParse(cboTecnico.SelectedValue.ToString(), out personalID))
                 {
-                    string consulta = "SELECT dni, telefono, disponibilidad, tipo_encargado, area_trabajo FROM personaltecnico WHERE nombre = @nombre";
-                    SqlCommand cmd = new SqlCommand(consulta, cn);
-                    cmd.Parameters.AddWithValue("@nombre", personalTecnicoSeleccionado);
-                    cn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
+                    using (SqlConnection cn = Conexion.Instancia.Conectar())
                     {
-                        dniLabel.Text = reader["dni"].ToString();
-                        telefonoLabel.Text = reader["telefono"].ToString();
-                        estadoLabel.Text = reader["disponibilidad"].ToString();
-                        tipoCargoLabel.Text = reader["tipo_encargado"].ToString();
-                        areaTrabajoLabel.Text = reader["area_trabajo"].ToString();
+                        string consulta = "SELECT DNI, Télefono, Estado, Cargo, AreaTrabajo FROM Personal WHERE PersonalID = @PersonalID";
+                        SqlCommand cmd = new SqlCommand(consulta, cn);
+                        cmd.Parameters.AddWithValue("@PersonalID", personalID);
+                        cn.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            dniLabel.Text = reader["DNI"].ToString();
+                            telefonoLabel.Text = reader["Télefono"].ToString();
+                            estadoLabel.Text = reader["Estado"].ToString();
+                            tipoCargoLabel.Text = reader["Cargo"].ToString();
+                            areaTrabajoLabel.Text = reader["AreaTrabajo"].ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró información para el técnico seleccionado.");
+                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("El valor seleccionado no es válido.");
                 }
             }
             catch (Exception ex)
@@ -142,22 +277,49 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void cboMateriales_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string repuestoSeleccionado = cboMateriales.SelectedItem.ToString();
+            // Evitar lógica si no hay selección válida
+            if (cboMateriales.SelectedIndex == -1 || cboMateriales.SelectedValue == null)
+                return;
+
+            // Obtener el ID seleccionado
+            int materialID;
 
             try
             {
-                using (SqlConnection cn = Conexion.Instancia.Conectar())
-                {
-                    string consulta = "SELECT codigo, stock FROM materiales WHERE nombre = @nombre";
-                    SqlCommand cmd = new SqlCommand(consulta, cn);
-                    cmd.Parameters.AddWithValue("@nombre", repuestoSeleccionado);
-                    cn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
 
-                    while (reader.Read())
+                if (int.TryParse(cboMateriales.SelectedValue.ToString(), out materialID))
+                {
+                    using (SqlConnection cn = Conexion.Instancia.Conectar())
                     {
-                        CodigoMaterial.Text = reader["codigo"].ToString();
-                        stockMaterial.Text = reader["stock"].ToString();
+                        string consulta = @"
+                        SELECT 
+                            m.CodigoMaterial, 
+                            m.Stock, 
+                            c.CategoriaMaterial
+                        FROM 
+                            Material m
+                        INNER JOIN 
+                            CategoriaMaterial c ON m.CategoriaMaterialID = c.CategoriaMaterialID
+                        WHERE 
+                            m.MaterialID = @MaterialID";
+
+                        SqlCommand cmd = new SqlCommand(consulta, cn);
+                        cmd.Parameters.AddWithValue("@MaterialID", materialID);
+                        cn.Open();
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            CodigoMaterial.Text = reader["CodigoMaterial"].ToString();
+                            stockMaterial.Text = reader["Stock"].ToString();
+                            labelCategoriaMat.Text = reader["CategoriaMaterial"].ToString();
+                        }
+                        else
+                        {
+                            LimpiarInformacionRepuesto();
+                            MessageBox.Show("No se encontró información para el repuesto seleccionado.");
+                        }
                     }
                 }
             }
@@ -171,37 +333,40 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
+                // Verificar que se haya seleccionado un pedido
                 if (dataGridMateriales.CurrentRow != null)
                 {
                     var ordenSeleccionada = (entPedidoMateriales)dataGridMateriales.CurrentRow.DataBoundItem;
-                    long idPedido = ordenSeleccionada.id;
+                    int idPedido = ordenSeleccionada.PedidoMaterialesID;
 
                     var confirmResult = MessageBox.Show("¿Está seguro de que desea terminar este pedido?",
-                                                         "Confirmar finalizacion",
-                                                         MessageBoxButtons.YesNo);
+                                                         "Confirmar finalización",
+                                                         MessageBoxButtons.YesNo,
+                                                         MessageBoxIcon.Question);
                     if (confirmResult == DialogResult.Yes)
                     {
-                        logPedidoMateriales.Instancia.TerminarPedidoMaterial(idPedido);
-                        MessageBox.Show("Pedido terminado exitosamente.");
+                        logPedidoMateriales.Instancia.TerminarPedidoMateriales(idPedido);
                         ListarPedidosMateriales();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Por favor, seleccione un pedido para terminar.");
+                    MessageBox.Show("Debe seleccionar una fila antes de intentar terminar un pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Se produjo un error al intentar terminar el pedido: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txtMateriales_TextChanged(object sender, EventArgs e)
         {
             string textoBusqueda = txtMateriales.Text.Trim();
-            List<PedidoMateriales.entPedidoMateriales> listaMateriales = logPedidoMateriales.Instancia.ListarPedidosMaterial();
-            var listaFiltrada = listaMateriales.Where(r => r.nombreMaterial.Contains(textoBusqueda)).ToList();
+            List<PedidoMateriales.entPedidoMateriales> listaPedidoMateriales = logPedidoMateriales.Instancia.ListarPedidosMaterial();
+            var listaFiltrada = listaPedidoMateriales
+                .Where(r => r.PedidoMaterialesID.ToString().Contains(textoBusqueda))
+                .ToList();
             dataGridMateriales.DataSource = listaFiltrada;
         }
     }

@@ -18,20 +18,20 @@ namespace CapaLogica
         // Método para listar pedidos de materiales
         public List<entPedidoMateriales> ListarPedidosMaterial()
         {
-            return datPedidoMateriales.Instancia.ListarPedidosMateriales();
+            return datPedidoMateriales.Instancia.ListarPedidoMateriales();
         }
 
         // Método para registrar un pedido de materiales
         public void RegistrarPedidoMaterial(entPedidoMateriales pedido)
         {
             // Registrar el pedido
-            datPedidoMateriales.Instancia.RegistrarPedidoMaterial(pedido);
+            datPedidoMateriales.Instancia.RegistrarPedidoMateriales(pedido);
         }
 
         // Método para terminar un pedido de materiales
-        public void TerminarPedidoMaterial(long idPedido)
+        public void TerminarPedidoMateriales(int idPedido)
         {
-            datPedidoMateriales.Instancia.TerminarPedidoMaterial(idPedido);
+            datPedidoMateriales.Instancia.TerminarPedidoMateriales(idPedido);
         }
     }
 }
