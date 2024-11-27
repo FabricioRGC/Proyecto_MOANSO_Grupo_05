@@ -101,49 +101,6 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
-        private bool RestarStockMateriales(int materialID, int stockSolicitado)
-        {
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
-            {
-                cn.Open();
-                SqlTransaction transaction = cn.BeginTransaction();
-
-                try
-                {
-                    // Obtener el stock actual
-                    string consultaStock = "SELECT Stock FROM Material WHERE MaterialID = @MaterialID";
-                    SqlCommand cmdStock = new SqlCommand(consultaStock, cn, transaction);
-                    cmdStock.Parameters.AddWithValue("@MaterialID", materialID);
-
-                    int stockActual = Convert.ToInt32(cmdStock.ExecuteScalar());
-
-                    // Validar si hay suficiente stock
-                    if (stockSolicitado > stockActual)
-                    {
-                        MessageBox.Show($"No hay suficiente stock. Disponible: {stockActual}");
-                        transaction.Rollback(); // Deshacer cambios
-                        return false;
-                    }
-
-                    // Actualizar el stock
-                    string actualizarStock = "UPDATE Material SET Stock = Stock - @StockSolicitado WHERE MaterialID = @MaterialID";
-                    SqlCommand cmdActualizar = new SqlCommand(actualizarStock, cn, transaction);
-                    cmdActualizar.Parameters.AddWithValue("@StockSolicitado", stockSolicitado);
-                    cmdActualizar.Parameters.AddWithValue("@MaterialID", materialID);
-                    cmdActualizar.ExecuteNonQuery();
-
-                    transaction.Commit(); // Confirmar los cambios
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback(); // Deshacer cambios en caso de error
-                    MessageBox.Show($"Error al restar stock: {ex.Message}");
-                    return false;
-                }
-            }
-        }
-
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             try
@@ -188,12 +145,6 @@ namespace Proyecto_MOANSO_Grupo_05
 
 
                 int materialID = Convert.ToInt32(cboMateriales.SelectedValue);
-
-                // Llamar al método para restar stock
-                if (!RestarStockMateriales(materialID, stockSolicitado))
-                {
-                    return;
-                }
 
                 // Crear el objeto PedidoMaterial y asignar los valores
                 entPedidoMateriales PedidoMaterial = new entPedidoMateriales

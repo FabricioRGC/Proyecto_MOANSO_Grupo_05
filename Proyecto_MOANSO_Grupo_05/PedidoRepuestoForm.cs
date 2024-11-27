@@ -15,7 +15,6 @@ using CapaDatos;
 using System.Data.SqlClient;
 using static CapaEntidad.Repuesto;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-using iTextSharp.text;
 
 namespace Proyecto_MOANSO_Grupo_05
 {
@@ -88,49 +87,7 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
-        private bool RestarStockRepuesto(int repuestosID, int stockSolicitado)
-        {
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
-            {
-                cn.Open();
-                SqlTransaction transaction = cn.BeginTransaction();
-
-                try
-                {
-                    // Obtener el stock actual
-                    string consultaStock = "SELECT Stock FROM Repuestos WHERE RepuestosID = @RepuestosID";
-                    SqlCommand cmdStock = new SqlCommand(consultaStock, cn, transaction);
-                    cmdStock.Parameters.AddWithValue("@RepuestosID", repuestosID);
-
-                    int stockActual = Convert.ToInt32(cmdStock.ExecuteScalar());
-
-                    // Validar si hay suficiente stock
-                    if (stockSolicitado > stockActual)
-                    {
-                        MessageBox.Show($"No hay suficiente stock. Disponible: {stockActual}");
-                        transaction.Rollback(); // Deshacer cambios
-                        return false;
-                    }
-
-                    // Actualizar el stock
-                    string actualizarStock = "UPDATE Repuestos SET Stock = Stock - @StockSolicitado WHERE RepuestosID = @RepuestosID";
-                    SqlCommand cmdActualizar = new SqlCommand(actualizarStock, cn, transaction);
-                    cmdActualizar.Parameters.AddWithValue("@StockSolicitado", stockSolicitado);
-                    cmdActualizar.Parameters.AddWithValue("@RepuestosID", repuestosID);
-                    cmdActualizar.ExecuteNonQuery();
-
-                    transaction.Commit(); // Confirmar los cambios
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback(); // Deshacer cambios en caso de error
-                    MessageBox.Show($"Error al restar stock: {ex.Message}");
-                    return false;
-                }
-            }
-        }
-
+        
         private void LimpiarInformacionRepuesto()
         {
             CodigoRepuesto.Text = string.Empty;
@@ -189,12 +146,6 @@ namespace Proyecto_MOANSO_Grupo_05
 
 
                 int repuestosID = Convert.ToInt32(cboNomRepuestos.SelectedValue);
-
-                // Llamar al método para restar stock
-                if (!RestarStockRepuesto(repuestosID, stockSolicitado))
-                {
-                    return; 
-                }
 
                 // Crear el objeto PedidoRepuesto y asignar los valores
                 entPedidoRepuestos PedidoRepuesto = new entPedidoRepuestos
