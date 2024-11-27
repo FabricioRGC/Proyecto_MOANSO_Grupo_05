@@ -97,6 +97,7 @@ namespace Proyecto_MOANSO_Grupo_05
             listarCliente();
         }
 
+
         private void tablaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow fila = tablaClientes.Rows[e.RowIndex];
