@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaLogica;
-using CapaEntidad;
+using CapaEntidad; 
 using static CapaEntidad.PedidoInstalacion;
 using static CapaEntidad.Repuesto;
 using static CapaEntidad.PedidoMateriales;
