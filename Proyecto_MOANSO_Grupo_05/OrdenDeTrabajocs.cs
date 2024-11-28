@@ -193,5 +193,34 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void comboBoxPedInstaOrde_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string clienteSeleccionado = comboBoxPedInstaOrde.SelectedItem.ToString();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "Select  FechaRegistro,FechaFin, Estado, TipoInstalación, estado from PedidoDeInstalación where PedidoDeInstalaciónID = @nombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        label14.Text = reader["FechaRegistro"].ToString();
+                        label16.Text = reader["FechaFin"].ToString();
+                        label17.Text = reader["Estado"].ToString();
+                        label18.Text = reader["TipoInstalación"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }

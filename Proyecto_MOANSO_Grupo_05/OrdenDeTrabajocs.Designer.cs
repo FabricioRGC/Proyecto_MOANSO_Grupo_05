@@ -64,6 +64,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrden)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -83,6 +87,10 @@
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
+            this.groupBox6.Controls.Add(this.label18);
+            this.groupBox6.Controls.Add(this.label17);
+            this.groupBox6.Controls.Add(this.label16);
+            this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.comboBoxPedInstaOrde);
             this.groupBox6.Controls.Add(this.label3);
             this.groupBox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -103,6 +111,7 @@
             this.comboBoxPedInstaOrde.Name = "comboBoxPedInstaOrde";
             this.comboBoxPedInstaOrde.Size = new System.Drawing.Size(129, 21);
             this.comboBoxPedInstaOrde.TabIndex = 6;
+            this.comboBoxPedInstaOrde.SelectedIndexChanged += new System.EventHandler(this.comboBoxPedInstaOrde_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -477,6 +486,42 @@
             this.label10.TabIndex = 62;
             this.label10.Text = "Nombre";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(42, 78);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 13);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "label14";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(42, 96);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "label16";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(42, 120);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 13);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "label17";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(42, 147);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 13);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "label18";
+            // 
             // OrdenDeTrabajocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -547,5 +592,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label nombre;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label14;
     }
 }
