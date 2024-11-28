@@ -63,6 +63,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrden)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -89,7 +90,7 @@
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Size = new System.Drawing.Size(315, 69);
+            this.groupBox6.Size = new System.Drawing.Size(315, 198);
             this.groupBox6.TabIndex = 42;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Detalles Pedido de instalación";
@@ -119,6 +120,7 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
+            this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.nombre);
             this.groupBox4.Controls.Add(this.dniLabel);
             this.groupBox4.Controls.Add(this.label15);
@@ -460,18 +462,27 @@
             // nombre
             // 
             this.nombre.AutoSize = true;
-            this.nombre.Location = new System.Drawing.Point(199, 69);
+            this.nombre.Location = new System.Drawing.Point(226, 62);
             this.nombre.Name = "nombre";
             this.nombre.Size = new System.Drawing.Size(10, 13);
             this.nombre.TabIndex = 61;
             this.nombre.Text = " ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(176, 62);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 13);
+            this.label10.TabIndex = 62;
+            this.label10.Text = "Nombre";
             // 
             // OrdenDeTrabajocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(676, 835);
+            this.ClientSize = new System.Drawing.Size(679, 835);
             this.Controls.Add(this.dataGridViewOrden);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);
@@ -535,5 +546,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label nombre;
+        private System.Windows.Forms.Label label10;
     }
 }
