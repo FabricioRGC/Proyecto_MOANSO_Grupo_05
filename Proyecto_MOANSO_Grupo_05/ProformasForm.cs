@@ -253,6 +253,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 AddExtension = true
             };
 
+
             string html = Properties.Resources.proformaventa.ToString();
             html = html.Replace("@NOMBRECLIENTE", cbCliente.SelectedItem.ToString());
             html = html.Replace("@DIRECCION", direccionLabel.Text);
