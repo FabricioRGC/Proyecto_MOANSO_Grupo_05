@@ -36,7 +36,7 @@ namespace CapaDatos
                     planificacion.Estado = dr["Estado"].ToString();
                     planificacion.ContratoID = Convert.ToInt32(dr["ContratoID"]);
                     planificacion.RepuestosID = Convert.ToInt32(dr["RepuestosID"]);
-                    planificacion.Frecuencia = Convert.ToInt32(dr["Frecuencia"]);
+                    planificacion.Frecuencia = dr["Frecuencia"].ToString();
                     lista.Add(planificacion);
                 }
             }

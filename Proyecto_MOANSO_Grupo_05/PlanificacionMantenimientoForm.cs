@@ -75,24 +75,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            try
-            {
-                entPlanificacionMantenimiento entContrato = new entPlanificacionMantenimiento();
-                entContrato.FechaProgramacion = datePickerFecha.Value.Date;
-                entContrato.Frecuencia = Convert.ToInt32(textBox1.Text);
-                entContrato.ContratoID = Convert.ToInt32(comboBox1.Text);
-                entContrato.RepuestosID = Convert.ToInt32(cbPersonal.Text);
-                entContrato.Estado = "ACTIVO";
-                logPlanificacionMantenimiento.Instancia.InsertarPlanificacion(entContrato);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-
-            //LimpiarVariables();
-            ListarPlanificaciones();
-
+           
         }
 
         private void btnInhabilitar_Click(object sender, EventArgs e)
@@ -133,9 +116,9 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 entPlanificacionMantenimiento entContrato = new entPlanificacionMantenimiento();
                 entContrato.FechaProgramacion = datePickerFecha.Value.Date;
-                entContrato.Frecuencia = Convert.ToInt32(textBox1.Text);
-                entContrato.ContratoID = Convert.ToInt32(comboBox1.Text);
-                entContrato.RepuestosID = Convert.ToInt32(cbPersonal.Text);
+                entContrato.Frecuencia = textBox1.Text;
+                entContrato.ContratoID = Convert.ToInt32(comboBox1.SelectedItem.ToString());
+                entContrato.RepuestosID = Convert.ToInt32(cbPersonal.SelectedItem.ToString());
                 entContrato.Estado = "ACTIVO";
                 logPlanificacionMantenimiento.Instancia.InsertarPlanificacion(entContrato);
             }
