@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using CapaEntidad;
 using CapaLogica;
 using System;
 using System.Collections.Generic;
@@ -161,6 +162,36 @@ namespace Proyecto_MOANSO_Grupo_05
             }
             ListarOrdenDeTrabajo();
             textBox2.Text = "";
+        }
+
+        private void comboBoxClienteOrde_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string clienteSeleccionado = comboBoxClienteOrde.SelectedItem.ToString();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "Select  nombre,dirección, telefono, dni, estado from Cliente where ClienteID = @nombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        nombre.Text = reader["nombre"].ToString();
+                        direccionLabel.Text = reader["dirección"].ToString();
+                        telefonoLabel.Text = reader["telefono"].ToString();
+                        estadoLabel.Text = reader["estado"].ToString();
+                        dniLabel.Text = reader["dni"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

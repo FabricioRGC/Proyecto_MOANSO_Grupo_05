@@ -54,6 +54,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxManteOrde = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dniLabel = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.estadoLabel = new System.Windows.Forms.Label();
+            this.telefonoLabel = new System.Windows.Forms.Label();
+            this.direccionLabel = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.nombre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrden)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -65,7 +74,7 @@
             // dataGridViewOrden
             // 
             this.dataGridViewOrden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOrden.Location = new System.Drawing.Point(12, 448);
+            this.dataGridViewOrden.Location = new System.Drawing.Point(12, 584);
             this.dataGridViewOrden.Name = "dataGridViewOrden";
             this.dataGridViewOrden.Size = new System.Drawing.Size(650, 213);
             this.dataGridViewOrden.TabIndex = 43;
@@ -110,6 +119,15 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
+            this.groupBox4.Controls.Add(this.nombre);
+            this.groupBox4.Controls.Add(this.dniLabel);
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.estadoLabel);
+            this.groupBox4.Controls.Add(this.telefonoLabel);
+            this.groupBox4.Controls.Add(this.direccionLabel);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.comboBoxClienteOrde);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -117,7 +135,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(309, 67);
+            this.groupBox4.Size = new System.Drawing.Size(309, 198);
             this.groupBox4.TabIndex = 41;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Detalles de Cliente";
@@ -130,6 +148,7 @@
             this.comboBoxClienteOrde.Name = "comboBoxClienteOrde";
             this.comboBoxClienteOrde.Size = new System.Drawing.Size(106, 21);
             this.comboBoxClienteOrde.TabIndex = 6;
+            this.comboBoxClienteOrde.SelectedIndexChanged += new System.EventHandler(this.comboBoxClienteOrde_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -166,7 +185,7 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(33, 214);
+            this.groupBox3.Location = new System.Drawing.Point(11, 330);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -358,12 +377,101 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ID Mantenimiento Preventivo";
             // 
+            // dniLabel
+            // 
+            this.dniLabel.AutoSize = true;
+            this.dniLabel.ForeColor = System.Drawing.Color.Black;
+            this.dniLabel.Location = new System.Drawing.Point(87, 62);
+            this.dniLabel.Name = "dniLabel";
+            this.dniLabel.Size = new System.Drawing.Size(0, 13);
+            this.dniLabel.TabIndex = 60;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(20, 62);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(26, 13);
+            this.label15.TabIndex = 59;
+            this.label15.Text = "Dni:";
+            // 
+            // estadoLabel
+            // 
+            this.estadoLabel.AutoSize = true;
+            this.estadoLabel.ForeColor = System.Drawing.Color.Black;
+            this.estadoLabel.Location = new System.Drawing.Point(87, 161);
+            this.estadoLabel.Name = "estadoLabel";
+            this.estadoLabel.Size = new System.Drawing.Size(0, 13);
+            this.estadoLabel.TabIndex = 58;
+            // 
+            // telefonoLabel
+            // 
+            this.telefonoLabel.AutoSize = true;
+            this.telefonoLabel.ForeColor = System.Drawing.Color.Black;
+            this.telefonoLabel.Location = new System.Drawing.Point(87, 129);
+            this.telefonoLabel.Name = "telefonoLabel";
+            this.telefonoLabel.Size = new System.Drawing.Size(0, 13);
+            this.telefonoLabel.TabIndex = 57;
+            // 
+            // direccionLabel
+            // 
+            this.direccionLabel.AutoSize = true;
+            this.direccionLabel.ForeColor = System.Drawing.Color.Black;
+            this.direccionLabel.Location = new System.Drawing.Point(87, 96);
+            this.direccionLabel.Name = "direccionLabel";
+            this.direccionLabel.Size = new System.Drawing.Size(0, 13);
+            this.direccionLabel.TabIndex = 56;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(20, 161);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.TabIndex = 55;
+            this.label13.Text = "Estado:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(20, 129);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 13);
+            this.label12.TabIndex = 54;
+            this.label12.Text = "Teléfono:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(20, 96);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.TabIndex = 53;
+            this.label11.Text = "Dirección:";
+            // 
+            // nombre
+            // 
+            this.nombre.AutoSize = true;
+            this.nombre.Location = new System.Drawing.Point(199, 69);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(10, 13);
+            this.nombre.TabIndex = 61;
+            this.nombre.Text = " ";
+            // 
             // OrdenDeTrabajocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(676, 729);
+            this.ClientSize = new System.Drawing.Size(676, 835);
             this.Controls.Add(this.dataGridViewOrden);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);
@@ -418,5 +526,14 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxManteOrde;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label dniLabel;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label estadoLabel;
+        private System.Windows.Forms.Label telefonoLabel;
+        private System.Windows.Forms.Label direccionLabel;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label nombre;
     }
 }
