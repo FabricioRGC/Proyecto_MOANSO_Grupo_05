@@ -23,6 +23,7 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             InitializeComponent();
             ListarPedidosMateriales();
+            cargarOrdenTrabajo();
             cargarMateriales();
             cargarPersonalTecnico();
         }
@@ -48,6 +49,33 @@ namespace Proyecto_MOANSO_Grupo_05
             CodigoMaterial.Refresh();
             stockMaterial.Refresh();
             labelCategoriaMat.Refresh();
+        }
+
+        private void cargarOrdenTrabajo()
+        {
+            string consulta = "SELECT OrdenDeTrabajoID FROM OrdenDeTrabajo";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                try
+                {
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    cboOrdenTrabajo.DataSource = dt;               // Vincula el DataTable
+                    cboOrdenTrabajo.DisplayMember = "OrdenDeTrabajoID"; // Muestra el nombre
+                    cboOrdenTrabajo.ValueMember = "OrdenDeTrabajoID";      // Usa el ID como valor
+                    cboOrdenTrabajo.SelectedIndex = -1;              // Sin selección inicial
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar repuestos: " + ex.Message);
+                }
+            }
         }
 
         private void cargarMateriales()
