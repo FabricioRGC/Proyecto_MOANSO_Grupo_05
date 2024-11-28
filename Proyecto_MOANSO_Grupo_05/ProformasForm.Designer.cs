@@ -204,9 +204,9 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(718, 16);
+            this.groupBox2.Location = new System.Drawing.Point(803, 16);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(308, 207);
+            this.groupBox2.Size = new System.Drawing.Size(223, 207);
             this.groupBox2.TabIndex = 57;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles del Cliente";
@@ -245,7 +245,7 @@
             // 
             this.cbCliente.ForeColor = System.Drawing.Color.Black;
             this.cbCliente.FormattingEnabled = true;
-            this.cbCliente.Location = new System.Drawing.Point(97, 30);
+            this.cbCliente.Location = new System.Drawing.Point(81, 30);
             this.cbCliente.Name = "cbCliente";
             this.cbCliente.Size = new System.Drawing.Size(121, 21);
             this.cbCliente.TabIndex = 43;
@@ -337,9 +337,9 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.cbPlan);
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(365, 12);
+            this.groupBox3.Location = new System.Drawing.Point(285, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(347, 211);
+            this.groupBox3.Size = new System.Drawing.Size(512, 211);
             this.groupBox3.TabIndex = 58;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles del Servicio:";
@@ -552,7 +552,7 @@
             this.groupBox5.ForeColor = System.Drawing.Color.Black;
             this.groupBox5.Location = new System.Drawing.Point(12, 12);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(347, 211);
+            this.groupBox5.Size = new System.Drawing.Size(267, 211);
             this.groupBox5.TabIndex = 59;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Detalles del Zona de Cobertura:";
@@ -571,7 +571,7 @@
             // 
             this.labelEstadoZona.AutoSize = true;
             this.labelEstadoZona.ForeColor = System.Drawing.Color.Black;
-            this.labelEstadoZona.Location = new System.Drawing.Point(102, 147);
+            this.labelEstadoZona.Location = new System.Drawing.Point(114, 151);
             this.labelEstadoZona.Name = "labelEstadoZona";
             this.labelEstadoZona.Size = new System.Drawing.Size(0, 13);
             this.labelEstadoZona.TabIndex = 41;
@@ -580,7 +580,7 @@
             // 
             this.labelTipoServicio.AutoSize = true;
             this.labelTipoServicio.ForeColor = System.Drawing.Color.Black;
-            this.labelTipoServicio.Location = new System.Drawing.Point(102, 114);
+            this.labelTipoServicio.Location = new System.Drawing.Point(112, 114);
             this.labelTipoServicio.Name = "labelTipoServicio";
             this.labelTipoServicio.Size = new System.Drawing.Size(0, 13);
             this.labelTipoServicio.TabIndex = 40;
@@ -589,7 +589,7 @@
             // 
             this.labelTipoConexion.AutoSize = true;
             this.labelTipoConexion.ForeColor = System.Drawing.Color.Black;
-            this.labelTipoConexion.Location = new System.Drawing.Point(102, 80);
+            this.labelTipoConexion.Location = new System.Drawing.Point(112, 80);
             this.labelTipoConexion.Name = "labelTipoConexion";
             this.labelTipoConexion.Size = new System.Drawing.Size(0, 13);
             this.labelTipoConexion.TabIndex = 38;
@@ -599,7 +599,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(21, 147);
+            this.label23.Location = new System.Drawing.Point(21, 151);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(43, 13);
             this.label23.TabIndex = 36;
@@ -612,9 +612,9 @@
             this.label24.ForeColor = System.Drawing.Color.Black;
             this.label24.Location = new System.Drawing.Point(21, 114);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(69, 13);
+            this.label24.Size = new System.Drawing.Size(87, 13);
             this.label24.TabIndex = 35;
-            this.label24.Text = "TipoServicio:";
+            this.label24.Text = "Tipo de Servicio:";
             // 
             // label25
             // 
@@ -623,9 +623,9 @@
             this.label25.ForeColor = System.Drawing.Color.Black;
             this.label25.Location = new System.Drawing.Point(21, 80);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(75, 13);
+            this.label25.Size = new System.Drawing.Size(93, 13);
             this.label25.TabIndex = 33;
-            this.label25.Text = "TipoConexión:";
+            this.label25.Text = "Tipo de Conexión:";
             // 
             // label26
             // 
@@ -641,10 +641,11 @@
             // cbZona
             // 
             this.cbZona.FormattingEnabled = true;
-            this.cbZona.Location = new System.Drawing.Point(146, 30);
+            this.cbZona.Location = new System.Drawing.Point(115, 25);
             this.cbZona.Name = "cbZona";
             this.cbZona.Size = new System.Drawing.Size(121, 21);
             this.cbZona.TabIndex = 32;
+            this.cbZona.SelectedIndexChanged += new System.EventHandler(this.cbZona_SelectedIndexChanged);
             // 
             // ProformasForm
             // 
