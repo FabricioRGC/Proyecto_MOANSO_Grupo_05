@@ -122,11 +122,11 @@
             this.groupBox6.Controls.Add(this.comboBoxPedInstaOrde);
             this.groupBox6.Controls.Add(this.label3);
             this.groupBox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox6.Location = new System.Drawing.Point(346, 196);
+            this.groupBox6.Location = new System.Drawing.Point(21, 202);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Size = new System.Drawing.Size(315, 213);
+            this.groupBox6.Size = new System.Drawing.Size(315, 178);
             this.groupBox6.TabIndex = 42;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Detalles Pedido de instalación";
@@ -170,11 +170,11 @@
             this.groupBox4.Controls.Add(this.comboBoxClienteOrde);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox4.Location = new System.Drawing.Point(15, 196);
+            this.groupBox4.Location = new System.Drawing.Point(17, 11);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(309, 198);
+            this.groupBox4.Size = new System.Drawing.Size(309, 186);
             this.groupBox4.TabIndex = 41;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Detalles de Cliente";
@@ -360,7 +360,7 @@
             this.groupBox2.Controls.Add(this.comboBoxTecOrde);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(346, 11);
+            this.groupBox2.Location = new System.Drawing.Point(350, 28);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -406,7 +406,7 @@
             this.groupBox1.Controls.Add(this.comboBoxManteOrde);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(15, 11);
+            this.groupBox1.Location = new System.Drawing.Point(350, 211);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
