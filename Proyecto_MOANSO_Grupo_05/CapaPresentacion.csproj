@@ -101,12 +101,6 @@
     <Compile Include="MaterialesForm.Designer.cs">
       <DependentUpon>MaterialesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaterialesHistorialForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MaterialesHistorialForm.Designer.cs">
-      <DependentUpon>MaterialesHistorialForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="NotaDeSalidaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,12 +136,6 @@
     </Compile>
     <Compile Include="PagosForm.Designer.cs">
       <DependentUpon>PagosForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PagosHistorialForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PagosHistorialForm.Designer.cs">
-      <DependentUpon>PagosHistorialForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PersonalForm.cs">
       <SubType>Form</SubType>
@@ -211,9 +199,6 @@
     <EmbeddedResource Include="MaterialesForm.resx">
       <DependentUpon>MaterialesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaterialesHistorialForm.resx">
-      <DependentUpon>MaterialesHistorialForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NotaDeSalidaForm.resx">
       <DependentUpon>NotaDeSalidaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,9 +216,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PagosForm.resx">
       <DependentUpon>PagosForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PagosHistorialForm.resx">
-      <DependentUpon>PagosHistorialForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonalForm.resx">
       <DependentUpon>PersonalForm.cs</DependentUpon>
