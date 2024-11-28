@@ -35,12 +35,8 @@ namespace CapaDatos
                 {
                     entNotadesalida mat = new entNotadesalida();
                     mat.NotadeSalidaID = int.Parse(dr["NotaDeSalidaID"].ToString());
-                    mat.PedidiMaterialesID = int.Parse(dr["PedidoMaterialesID"].ToString());
-                    mat.PedidiRepuestosID = int.Parse(dr["PedidoDeRepuestosID"].ToString());
                     mat.FechadeEmision = Convert.ToDateTime(dr["FechaEmisión"]);
-                    mat.Estado = int.Parse(dr["Estado"].ToString());
-                    mat.MaterialID = int.Parse(dr["RepuestosID"].ToString());
-                    mat.RepuestoID = int.Parse(dr["MaterialID"].ToString());
+                    mat.Estado = dr["Estado"].ToString();
 
                     lista.Add(mat);
                 }

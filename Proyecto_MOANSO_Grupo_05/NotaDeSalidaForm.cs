@@ -25,8 +25,6 @@ namespace Proyecto_MOANSO_Grupo_05
             CargarPedidoRepuestos();
             CargarPedidoMateriales();
 
-            //cbRepuestos.Visible = false;
-            //cbMateriales.Visible = false;
         }
 
         public void listarNotaSalida()
@@ -81,8 +79,6 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 if (rbPedidoMateriales.Checked)
                 {
-                    cbRepuestos.Visible = false;
-                    cbMateriales.Visible = true;
                     lbProduct.Text = "Material";
                 }
             }
@@ -92,8 +88,6 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             if (rbPedidoRepuestos.Checked)
             {
-                cbMateriales.Visible = false;
-                cbRepuestos.Visible = true;
                 lbProduct.Text = "Repuesto";
 
             }
@@ -109,13 +103,16 @@ namespace Proyecto_MOANSO_Grupo_05
                 try
                 {
                     entNotadesalida entNotadesalida = new entNotadesalida();
-                    entNotadesalida.PedidiRepuestosID = Convert.ToInt32(labelProducto.Text);
+                    entNotadesalida.PedidiRepuestosID = Convert.ToInt32(cbRepuestos.Text);
+                    entNotadesalida.RepuestoID = Convert.ToInt32(labelProducto.Text);
                     entNotadesalida.FechadeEmision = dateTimePicker1.Value.Date;
-                    entNotadesalida.Estado = 1;
+                    entNotadesalida.Estado = "1";
                     LogNotaDeSalida.Instancia.InsertarNotaSalidaRepuestos(entNotadesalida);
 
+
+
                     entNotadesalida entNotadesalida2 = new entNotadesalida();
-                    entNotadesalida2.PedidiRepuestosID = Convert.ToInt32(labelProducto.Text);
+                    entNotadesalida2.PedidiRepuestosID = Convert.ToInt32(cbMateriales.Text);
                     LogNotaDeSalida.Instancia.ReducirStockRepuestos(entNotadesalida2);
                 }
                 catch (Exception ex)
@@ -128,13 +125,15 @@ namespace Proyecto_MOANSO_Grupo_05
                 try
                 {
                     entNotadesalida entNotadesalida = new entNotadesalida();
-                    entNotadesalida.PedidiMaterialesID = Convert.ToInt32(labelProducto.Text);
+                    entNotadesalida.PedidiMaterialesID = Convert.ToInt32(cbMateriales.Text);
                     entNotadesalida.FechadeEmision = dateTimePicker1.Value.Date;
-                    entNotadesalida.Estado = 1;
+                    entNotadesalida.MaterialID = Convert.ToInt32(labelProducto.Text);
+      
+                    entNotadesalida.Estado = "1";
                     LogNotaDeSalida.Instancia.InsertarNotaSalidaMateriales(entNotadesalida);
 
                     entNotadesalida entNotadesalida3 = new entNotadesalida();
-                    entNotadesalida3.PedidiMaterialesID = Convert.ToInt32(labelProducto.Text);
+                    entNotadesalida3.PedidiMaterialesID = Convert.ToInt32(cbMateriales.Text);
                     LogNotaDeSalida.Instancia.ReducirStockMateriales(entNotadesalida3);
                 }
                 catch (Exception ex)
@@ -153,13 +152,10 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void Butonbuscar_Click(object sender, EventArgs e)
         {
-            int valorSeleccionado;
-            int valorSeleccionado2;
             if (rbPedidoMateriales.Checked)
             {
-                cbRepuestos.Visible = false;
-                cbMateriales.Visible = true;
-                lbProduct.Text = "Material";
+
+                int valorSeleccionado;
                 valorSeleccionado = int.Parse(cbMateriales.SelectedItem.ToString());
 
 
@@ -175,7 +171,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
                         while (reader.Read())
                         {
-                            labelCantidad.Text = reader["PersonalID"].ToString();
+                            labelEmpleado.Text = reader["PersonalID"].ToString();
                             labelProducto.Text = reader["MaterialID"].ToString();
                             labelCantidad.Text = reader["Stock"].ToString();
                         }
@@ -186,38 +182,37 @@ namespace Proyecto_MOANSO_Grupo_05
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
-
-
             else if (rbPedidoRepuestos.Checked)
+            {
+                int valorSeleccionado2;
+                valorSeleccionado2 = int.Parse(cbRepuestos.SelectedItem.ToString());
+
+                try
                 {
-
-                    valorSeleccionado2 = int.Parse(cbRepuestos.SelectedItem.ToString());
-
-                    try
+                    using (SqlConnection cn = Conexion.Instancia.Conectar())
                     {
-                        using (SqlConnection cn = Conexion.Instancia.Conectar())
-                        {
-                            string consulta = "Select RepuestosID, Stock, PersonalID from PedidoDeRepuestos where PedidoDeRepuestosID = @ID";
-                            SqlCommand cmd = new SqlCommand(consulta, cn);
-                            cmd.Parameters.AddWithValue("@ID", valorSeleccionado2);
-                            cn.Open();
-                            SqlDataReader reader = cmd.ExecuteReader();
+                        string consulta = "Select RepuestosID, Stock, PersonalID from PedidoDeRepuestos where PedidoDeRepuestosID = @ID";
+                        SqlCommand cmd = new SqlCommand(consulta, cn);
+                        cmd.Parameters.AddWithValue("@ID", valorSeleccionado2);
+                        cn.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
 
-                            while (reader.Read())
-                            {
-                                labelCantidad.Text = reader["PersonalID"].ToString();
-                                labelProducto.Text = reader["MaterialID"].ToString();
-                                labelCantidad.Text = reader["Stock"].ToString();
-                            }
+                        while (reader.Read())
+                        {
+                            labelEmpleado.Text = reader["PersonalID"].ToString();
+                            labelProducto.Text = reader["RepuestosID"].ToString();
+                            labelCantidad.Text = reader["Stock"].ToString();
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+
             }
         }
+    }
 }
 
 
