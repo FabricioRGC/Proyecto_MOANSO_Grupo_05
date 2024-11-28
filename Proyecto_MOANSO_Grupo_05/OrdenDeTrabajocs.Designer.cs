@@ -65,17 +65,17 @@
             // dataGridViewOrden
             // 
             this.dataGridViewOrden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOrden.Location = new System.Drawing.Point(12, 439);
+            this.dataGridViewOrden.Location = new System.Drawing.Point(12, 448);
             this.dataGridViewOrden.Name = "dataGridViewOrden";
             this.dataGridViewOrden.Size = new System.Drawing.Size(650, 213);
             this.dataGridViewOrden.TabIndex = 43;
             // 
             // groupBox6
             // 
-            this.groupBox6.BackColor = System.Drawing.Color.OliveDrab;
+            this.groupBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.groupBox6.Controls.Add(this.comboBoxPedInstaOrde);
             this.groupBox6.Controls.Add(this.label3);
-            this.groupBox6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox6.Location = new System.Drawing.Point(347, 128);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
@@ -97,7 +97,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.YellowGreen;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(7, 35);
@@ -109,10 +109,10 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.BackColor = System.Drawing.Color.OliveDrab;
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.groupBox4.Controls.Add(this.comboBoxClienteOrde);
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox4.Location = new System.Drawing.Point(17, 128);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
@@ -134,7 +134,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.YellowGreen;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(20, 30);
@@ -154,7 +154,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.OliveDrab;
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.textBox2);
             this.groupBox3.Controls.Add(this.button1);
@@ -165,7 +165,7 @@
             this.groupBox3.Controls.Add(this.btnEnviar);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.ForeColor = System.Drawing.Color.Black;
             this.groupBox3.Location = new System.Drawing.Point(33, 214);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
@@ -178,7 +178,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.YellowGreen;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(182, 179);
@@ -197,11 +197,12 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(502, 170);
+            this.button1.Location = new System.Drawing.Point(502, 171);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(94, 27);
             this.button1.TabIndex = 30;
             this.button1.Text = "Terminado";
             this.button1.UseVisualStyleBackColor = false;
@@ -217,7 +218,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.YellowGreen;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(22, 120);
@@ -238,7 +239,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.YellowGreen;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(20, 87);
@@ -250,9 +251,10 @@
             // 
             // btnEnviar
             // 
-            this.btnEnviar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.Black;
-            this.btnEnviar.Location = new System.Drawing.Point(23, 168);
+            this.btnEnviar.Location = new System.Drawing.Point(25, 170);
             this.btnEnviar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(79, 29);
@@ -264,7 +266,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.YellowGreen;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(20, 55);
@@ -284,10 +286,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.OliveDrab;
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.groupBox2.Controls.Add(this.comboBoxTecOrde);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(347, 28);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
@@ -309,7 +311,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.YellowGreen;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(15, 35);
@@ -321,10 +323,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.OliveDrab;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.groupBox1.Controls.Add(this.comboBoxManteOrde);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.Location = new System.Drawing.Point(15, 28);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
@@ -346,7 +348,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.YellowGreen;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(17, 40);
@@ -360,8 +362,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.ForestGreen;
-            this.ClientSize = new System.Drawing.Size(679, 729);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
+            this.ClientSize = new System.Drawing.Size(676, 729);
             this.Controls.Add(this.dataGridViewOrden);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);
@@ -370,7 +372,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "OrdenDeTrabajocs";
             this.Text = "OrdenDeTrabajocs";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrden)).EndInit();

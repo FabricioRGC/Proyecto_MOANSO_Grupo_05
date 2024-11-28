@@ -54,7 +54,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Location = new System.Drawing.Point(740, 378);
@@ -88,7 +88,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.OliveDrab;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.groupBox1.Controls.Add(this.comboBoxCategoriaMat);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtDescripciónMateriales);
@@ -100,7 +100,7 @@
             this.groupBox1.Controls.Add(this.txtNombreM);
             this.groupBox1.Controls.Add(this.txtCodigoM);
             this.groupBox1.Controls.Add(this.txtstockM);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(273, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(558, 351);
@@ -119,7 +119,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.YellowGreen;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(20, 99);
             this.label1.Name = "label1";
@@ -130,7 +130,7 @@
             // txtDescripciónMateriales
             // 
             this.txtDescripciónMateriales.Location = new System.Drawing.Point(19, 216);
-            this.txtDescripciónMateriales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripciónMateriales.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripciónMateriales.Name = "txtDescripciónMateriales";
             this.txtDescripciónMateriales.Size = new System.Drawing.Size(516, 113);
             this.txtDescripciónMateriales.TabIndex = 12;
@@ -147,7 +147,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.YellowGreen;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(20, 137);
             this.label9.Name = "label9";
@@ -158,7 +158,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.YellowGreen;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(20, 182);
             this.label10.Name = "label10";
@@ -169,7 +169,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.YellowGreen;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(20, 26);
             this.label11.Name = "label11";
@@ -180,7 +180,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.YellowGreen;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(20, 64);
             this.label13.Name = "label13";
@@ -191,7 +191,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Location = new System.Drawing.Point(495, 421);
@@ -205,7 +205,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.YellowGreen;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(263, 441);
@@ -232,7 +232,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.YellowGreen;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(270, 391);
@@ -253,7 +253,7 @@
             // 
             // buttonModi
             // 
-            this.buttonModi.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.buttonModi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
             this.buttonModi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModi.ForeColor = System.Drawing.Color.Black;
             this.buttonModi.Location = new System.Drawing.Point(456, 379);
@@ -268,7 +268,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.ForestGreen;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(1130, 865);
             this.Controls.Add(this.buttonModi);
             this.Controls.Add(this.button3);

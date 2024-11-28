@@ -30,6 +30,16 @@
         {
             this.dgvMante = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -42,16 +52,6 @@
             this.cbPersonal = new System.Windows.Forms.ComboBox();
             this.btnInhabilitar = new System.Windows.Forms.Button();
             this.datePickerFecha = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMante)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +100,96 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Del Mantenimiento";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(203, 130);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(91, 13);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "PlanDeServicioID";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(16, 206);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(50, 13);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "ClienteID";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(16, 177);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(40, 13);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Estado";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 152);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 13);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Duración";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 130);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 13);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Fecha Inicio";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(320, 130);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(13, 13);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "  ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(86, 206);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(10, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = " ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(71, 177);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(10, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = " ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(71, 152);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(10, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = " ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(87, 130);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(10, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = " ";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -128,13 +218,15 @@
             // 
             // btnAñadir
             // 
-            this.btnAñadir.Location = new System.Drawing.Point(340, 259);
+            this.btnAñadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAñadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAñadir.Location = new System.Drawing.Point(323, 248);
             this.btnAñadir.Margin = new System.Windows.Forms.Padding(2);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(53, 19);
+            this.btnAñadir.Size = new System.Drawing.Size(76, 31);
             this.btnAñadir.TabIndex = 1;
             this.btnAñadir.Text = "Insertar";
-            this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.UseVisualStyleBackColor = false;
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click_1);
             // 
             // comboBox1
@@ -193,13 +285,15 @@
             // 
             // btnInhabilitar
             // 
-            this.btnInhabilitar.Location = new System.Drawing.Point(491, 44);
+            this.btnInhabilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            this.btnInhabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInhabilitar.Location = new System.Drawing.Point(492, 35);
             this.btnInhabilitar.Margin = new System.Windows.Forms.Padding(2);
             this.btnInhabilitar.Name = "btnInhabilitar";
-            this.btnInhabilitar.Size = new System.Drawing.Size(71, 19);
+            this.btnInhabilitar.Size = new System.Drawing.Size(78, 33);
             this.btnInhabilitar.TabIndex = 2;
             this.btnInhabilitar.Text = "Terminado";
-            this.btnInhabilitar.UseVisualStyleBackColor = true;
+            this.btnInhabilitar.UseVisualStyleBackColor = false;
             this.btnInhabilitar.Click += new System.EventHandler(this.btnInhabilitar_Click_1);
             // 
             // datePickerFecha
@@ -210,100 +304,11 @@
             this.datePickerFecha.Size = new System.Drawing.Size(151, 20);
             this.datePickerFecha.TabIndex = 0;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(96, 121);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(10, 13);
-            this.label7.TabIndex = 21;
-            this.label7.Text = " ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(96, 152);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(10, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = " ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(86, 177);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(10, 13);
-            this.label9.TabIndex = 23;
-            this.label9.Text = " ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(105, 206);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(10, 13);
-            this.label10.TabIndex = 24;
-            this.label10.Text = " ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(320, 121);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 13);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "  ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 121);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 13);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "Fecha Inicio";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(19, 152);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 13);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Duración";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(19, 177);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 13);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "Estado";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(23, 206);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 13);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "ClienteID";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(206, 121);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(91, 13);
-            this.label15.TabIndex = 30;
-            this.label15.Text = "PlanDeServicioID";
-            // 
             // PlanificacionMantenimientoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(702, 548);
             this.Controls.Add(this.dgvMante);
             this.Controls.Add(this.groupBox2);
