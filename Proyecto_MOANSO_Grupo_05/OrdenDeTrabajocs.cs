@@ -222,5 +222,67 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void comboBoxTecOrde_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string clienteSeleccionado = comboBoxTecOrde.SelectedItem.ToString();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "Select Nombre,  Apellido,DNI, Télefono, Estado, Cargo from Personal where PersonalID = @nombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        label23.Text = reader["Nombre"].ToString();
+                        label24.Text = reader["Apellido"].ToString();
+                        label25.Text = reader["DNI"].ToString();
+                        label26.Text = reader["Télefono"].ToString();
+                        label27.Text = reader["Estado"].ToString();
+                        label28.Text = reader["Cargo"].ToString();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void comboBoxManteOrde_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string clienteSeleccionado = comboBoxManteOrde.SelectedItem.ToString();
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "Select ContratoID, FechaProgramación,Frecuencia, RepuestosID from PlanificaciónMantenimientoPreventivo where P_MantenimientoPreventivoID = @nombre";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        label29.Text = reader["ContratoID"].ToString();
+                        label30.Text = reader["FechaProgramación"].ToString();
+                        label31.Text = reader["Frecuencia"].ToString();
+                        label32.Text = reader["RepuestosID"].ToString();
+                     
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }
