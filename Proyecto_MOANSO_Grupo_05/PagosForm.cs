@@ -113,7 +113,6 @@ namespace Proyecto_MOANSO_Grupo_05
                 pag.monto = txtMonto.Text;
                 pag.fecha = fechaPicker.Value.Date;
                 pag.metodo_pago = cbPago.SelectedItem.ToString();
-                //pag.nombre_cliente = cbCliente.SelectedItem.ToString();
                 pag.estado = "ACTIVO";
                 logPago.Instancia.InsertarPago(pag);
             }
@@ -121,14 +120,11 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            limpiarVariables();
             listarPagos();
         }
 
         private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
             if (cbCliente.SelectedIndex != -1)
             {
                 string clienteSeleccionado = cbCliente.SelectedItem.ToString();
@@ -143,6 +139,17 @@ namespace Proyecto_MOANSO_Grupo_05
                         cn.Open();
                         SqlDataReader reader = cmd.ExecuteReader();
 
+                        // Limpia siempre los datos de cliente y contrato
+                        codigoClientelabel.Text = string.Empty;
+                        labelDireccion.Text = string.Empty;
+                        labelTelefono.Text = string.Empty;
+                        labelEstado.Text = string.Empty;
+                        labelDni.Text = string.Empty;
+                        labelPlan.Text = string.Empty;
+                        labelFechaContrato.Text = string.Empty;
+                        labelCodigoContrato.Text = string.Empty;
+                        labelMONTOCONTRATO.Text = string.Empty;
+
                         while (reader.Read())
                         {
                             codigoClientelabel.Text = reader["clienteid"].ToString();
@@ -154,26 +161,30 @@ namespace Proyecto_MOANSO_Grupo_05
 
                         reader.Close();
 
-                        string consultaContrato = @"
-                        SELECT c.FechaInicio, c.PlanDeServicioID, c.ContratoID, s.Precio 
-                        FROM Contrato c
-                        inner join PlanDeServicio s on c.PlanDeServicioID = s.PlanDeServicioID
-                        WHERE c.clienteid = @nombreCliente";
-
-                        SqlCommand cmdContrato = new SqlCommand(consultaContrato, cn);
-                        cmdContrato.Parameters.AddWithValue("@nombreCliente", codigoClientelabel.Text);
-                        SqlDataReader readerContrato = cmdContrato.ExecuteReader();
-
-                        if (readerContrato.Read())
+                        if (!string.IsNullOrEmpty(codigoClientelabel.Text)) // Si el cliente tiene código
                         {
-                            labelPlan.Text = readerContrato["plandeservicioID"].ToString();
-                            DateTime fechaInicio = (DateTime)readerContrato["fechaInicio"];
-                            labelFechaContrato.Text = fechaInicio.ToString("dd/MM/yyyy");
-                            labelCodigoContrato.Text = readerContrato["contratoID"].ToString();
-                            labelMONTOCONTRATO.Text = readerContrato["precio"].ToString();
+                            string consultaContrato = @"
+                            SELECT c.FechaInicio, s.NombrePlanServicio, c.ContratoID, s.Precio 
+                            FROM Contrato c
+                            INNER JOIN PlanDeServicio s ON c.PlanDeServicioID = s.PlanDeServicioID
+                            WHERE c.clienteid = @nombreCliente";
+
+                            SqlCommand cmdContrato = new SqlCommand(consultaContrato, cn);
+                            cmdContrato.Parameters.AddWithValue("@nombreCliente", codigoClientelabel.Text);
+                            SqlDataReader readerContrato = cmdContrato.ExecuteReader();
+
+                            if (readerContrato.Read())
+                            {
+                                labelPlan.Text = readerContrato["NombrePlanServicio"].ToString(); // Muestra el nombre del plan
+                                DateTime fechaInicio = (DateTime)readerContrato["FechaInicio"];
+                                labelFechaContrato.Text = fechaInicio.ToString("dd/MM/yyyy");
+                                labelCodigoContrato.Text = readerContrato["ContratoID"].ToString();
+                                labelMONTOCONTRATO.Text = readerContrato["Precio"].ToString();
+                            }
+
+                            readerContrato.Close();
                         }
 
-                        readerContrato.Close();
                     }
                 }
                 catch (Exception ex)
@@ -204,7 +215,7 @@ namespace Proyecto_MOANSO_Grupo_05
             html = html.Replace("@codigocliente", labelCodigo.Text);
             html = html.Replace("@direccioncliente", labelDireccion.Text);
             html = html.Replace("@telefonocliente", labelTelefono.Text);
-            html = html.Replace("@contratoid", labelCodigoContrato.Text);
+            html = html.Replace("@contratoid", labelCodigoContrato.Text); 
             double monto;
             if (double.TryParse(txtMonto.Text, out monto))
             {
@@ -214,7 +225,7 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 MessageBox.Show("Error: Monto no válido");
             }
-            html = html.Replace("@tipoplan", labelPlan.Text);
+            html = html.Replace("@tipoplan", labelPlan.Text); // ACACACA
             html = html.Replace("@pago", txtMonto.Text);
             html = html.Replace("@TOTAL", (monto + (monto * 0.18)).ToString());
 

@@ -101,10 +101,7 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            LimpiarVariables();
             listarContrato();
-
-
         }
 
         // Actualizar Información
