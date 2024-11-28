@@ -77,10 +77,10 @@ namespace Proyecto_MOANSO_Grupo_05
                     DataTable dt = new DataTable();
                     dt.Load(reader);
 
-                    cboNomRepuestos.DataSource = dt;               // Vincula el DataTable
-                    cboNomRepuestos.DisplayMember = "OrdenDeTrabajoID"; // Muestra el nombre
-                    cboNomRepuestos.ValueMember = "OrdenDeTrabajoID";      // Usa el ID como valor
-                    cboNomRepuestos.SelectedIndex = -1;              // Sin selección inicial
+                    cboOrdenTrabajo.DataSource = dt;               // Vincula el DataTable
+                    cboOrdenTrabajo.DisplayMember = "OrdenDeTrabajoID"; // Muestra el nombre
+                    cboOrdenTrabajo.ValueMember = "OrdenDeTrabajoID";      // Usa el ID como valor
+                    cboOrdenTrabajo.SelectedIndex = -1;              // Sin selección inicial
                 }
                 catch (Exception ex)
                 {
