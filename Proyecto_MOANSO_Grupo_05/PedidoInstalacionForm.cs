@@ -39,13 +39,20 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void limpiarVariables()
         {
-            // Limpiar valores de Labels
+            // Limpiar valores de los clientes
             codigoClienteLabel.Text = string.Empty;
             direccionClienteLabel.Text = string.Empty;
             telefonoClienteLabel.Text = string.Empty;
             estadoClienteLabel.Text = string.Empty;
             dniClienteLabel.Text = string.Empty;
             labelContratoID.Text = string.Empty;
+
+            // Limpiar valores de los tecnicos
+            dniLabel.Text = string.Empty;
+            telefonoLabel.Text = string.Empty;
+            estadoLabel.Text = string.Empty;
+            tipoCargoLabel.Text = string.Empty;
+            areaTrabajoLabel.Text = string.Empty;
 
             // Limpiar valores de DateTimePickers
             dtpInicio.Value = DateTime.Now;
@@ -62,23 +69,36 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void cargarClientes()
         {
-            string consulta = "SELECT Nombre FROM Cliente";
+            string consulta = @"
+            SELECT DISTINCT c.ClienteID, c.Nombre
+            FROM Cliente c
+            LEFT JOIN Contrato con ON c.ClienteID = con.ClienteID
+            WHERE c.Estado = 'ACTIVO' AND con.Estado = 'ACTIVO'";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                SqlCommand cmd = new SqlCommand(consulta, cn);
-                cn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
+                try
                 {
-                    cboCliente.Items.Add(reader["Nombre"].ToString());
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    cboCliente.Items.Clear(); // Limpiar antes de cargar nuevos datos
+
+                    while (reader.Read())
+                    {
+                        cboCliente.Items.Add(reader["Nombre"].ToString());
+                    }
+
+                    reader.Close();
                 }
-
-                reader.Close();
-
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar clientes: " + ex.Message);
+                }
             }
         }
+
 
         private bool cargandoDatos = false;
         private void cargarPersonalTecnico()
@@ -106,43 +126,25 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            // Validar que todos los campos estén llenos
+            if (dtpInicio.Value == null || dtpInicio.Value == DateTime.MinValue ||
+                dtpFin.Value == null || dtpFin.Value == DateTime.MinValue ||
+                cboTecnicos.SelectedValue == null ||
+                string.IsNullOrEmpty(cboTipoInstalacion.Text) ||
+                contratoIDSeleccionado == 0)
+            {
+                // Mostrar mensaje de error en una ventana emergente
+                MessageBox.Show(
+                    "Error al ingresar datos al pedido instalación, campos nulos.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return;
+            }
+
             try
             {
-                // Validar Fecha de Inicio
-                if (dtpInicio.Value == null || dtpInicio.Value == DateTime.MinValue)
-                {
-                    MessageBox.Show("Por favor, seleccione la fecha de inicio.");
-                    return;
-                }
-
-                // Validar Fecha de Fin
-                if (dtpFin.Value == null || dtpFin.Value == DateTime.MinValue)
-                {
-                    MessageBox.Show("Por favor, seleccione la fecha de fin.");
-                    return;
-                }
-
-                // Validar Técnico
-                if (cboTecnicos.SelectedValue == null)
-                {
-                    MessageBox.Show("Por favor, seleccione un técnico válido.");
-                    return;
-                }
-
-                // Validar Tipo de Instalación
-                if (string.IsNullOrEmpty(cboTipoInstalacion.Text))
-                {
-                    MessageBox.Show("Por favor, seleccione un tipo de instalación.");
-                    return;
-                }
-
-                // Validar si hay un contrato asociado
-                if (contratoIDSeleccionado == 0)
-                {
-                    MessageBox.Show("El cliente seleccionado no tiene un contrato asociado.");
-                    return;
-                }
-
                 // Crear el objeto PedidoInstalacion y asignar los valores
                 entPedidoInstalacion PedidoInstalacion = new entPedidoInstalacion
                 {
@@ -160,7 +162,13 @@ namespace Proyecto_MOANSO_Grupo_05
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al insertar el Pedido de instalación: " + ex.Message);
+                // Mostrar mensaje de error en ventana emergente si ocurre una excepción
+                MessageBox.Show(
+                    "Error al insertar el Pedido de instalación: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
             finally
             {
