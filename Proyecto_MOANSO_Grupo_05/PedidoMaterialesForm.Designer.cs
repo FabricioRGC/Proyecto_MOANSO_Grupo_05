@@ -31,6 +31,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dniLabel = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.labelCategoriaMat = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.CodigoMaterial = new System.Windows.Forms.Label();
             this.cboMateriales = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -49,19 +51,19 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtStockPedidoMat = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dtpFechaRealizacion = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtMateriales = new System.Windows.Forms.TextBox();
             this.dataGridMateriales = new System.Windows.Forms.DataGridView();
             this.btnTerminarMaterial = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
-            this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
-            this.label18 = new System.Windows.Forms.Label();
-            this.dtpFechaRealizacion = new System.Windows.Forms.DateTimePicker();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelCategoriaMat = new System.Windows.Forms.Label();
-            this.txtStockPedidoMat = new System.Windows.Forms.TextBox();
+            this.cboOrdenTrabajo = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -124,6 +126,29 @@
             this.groupBox4.TabIndex = 42;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Detalles del Material";
+            // 
+            // labelCategoriaMat
+            // 
+            this.labelCategoriaMat.AutoSize = true;
+            this.labelCategoriaMat.ForeColor = System.Drawing.Color.White;
+            this.labelCategoriaMat.Location = new System.Drawing.Point(187, 152);
+            this.labelCategoriaMat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCategoriaMat.Name = "labelCategoriaMat";
+            this.labelCategoriaMat.Size = new System.Drawing.Size(0, 16);
+            this.labelCategoriaMat.TabIndex = 57;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.YellowGreen;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(55, 150);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 18);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "Categoria:";
             // 
             // CodigoMaterial
             // 
@@ -322,6 +347,8 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.OliveDrab;
+            this.groupBox5.Controls.Add(this.label3);
+            this.groupBox5.Controls.Add(this.cboOrdenTrabajo);
             this.groupBox5.Controls.Add(this.txtStockPedidoMat);
             this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Controls.Add(this.dtpFechaEntrega);
@@ -337,6 +364,65 @@
             this.groupBox5.TabIndex = 44;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Detalles del Pedido";
+            // 
+            // txtStockPedidoMat
+            // 
+            this.txtStockPedidoMat.Location = new System.Drawing.Point(293, 80);
+            this.txtStockPedidoMat.Name = "txtStockPedidoMat";
+            this.txtStockPedidoMat.Size = new System.Drawing.Size(200, 22);
+            this.txtStockPedidoMat.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.YellowGreen;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(185, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 18);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Stock:";
+            // 
+            // dtpFechaEntrega
+            // 
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(703, 37);
+            this.dtpFechaEntrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFechaEntrega.Name = "dtpFechaEntrega";
+            this.dtpFechaEntrega.Size = new System.Drawing.Size(200, 22);
+            this.dtpFechaEntrega.TabIndex = 22;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.YellowGreen;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(567, 40);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(122, 18);
+            this.label18.TabIndex = 21;
+            this.label18.Text = "Fecha Entrega:";
+            // 
+            // dtpFechaRealizacion
+            // 
+            this.dtpFechaRealizacion.Location = new System.Drawing.Point(293, 39);
+            this.dtpFechaRealizacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpFechaRealizacion.Name = "dtpFechaRealizacion";
+            this.dtpFechaRealizacion.Size = new System.Drawing.Size(200, 22);
+            this.dtpFechaRealizacion.TabIndex = 20;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.YellowGreen;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(135, 41);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(152, 18);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "Fecha Realizacion:";
             // 
             // label17
             // 
@@ -399,87 +485,25 @@
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
-            // dtpFechaEntrega
+            // cboOrdenTrabajo
             // 
-            this.dtpFechaEntrega.Location = new System.Drawing.Point(703, 53);
-            this.dtpFechaEntrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpFechaEntrega.Name = "dtpFechaEntrega";
-            this.dtpFechaEntrega.Size = new System.Drawing.Size(200, 22);
-            this.dtpFechaEntrega.TabIndex = 22;
+            this.cboOrdenTrabajo.FormattingEnabled = true;
+            this.cboOrdenTrabajo.Location = new System.Drawing.Point(707, 74);
+            this.cboOrdenTrabajo.Name = "cboOrdenTrabajo";
+            this.cboOrdenTrabajo.Size = new System.Drawing.Size(200, 24);
+            this.cboOrdenTrabajo.TabIndex = 52;
             // 
-            // label18
+            // label3
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.YellowGreen;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(567, 56);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(122, 18);
-            this.label18.TabIndex = 21;
-            this.label18.Text = "Fecha Entrega:";
-            // 
-            // dtpFechaRealizacion
-            // 
-            this.dtpFechaRealizacion.Location = new System.Drawing.Point(293, 39);
-            this.dtpFechaRealizacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpFechaRealizacion.Name = "dtpFechaRealizacion";
-            this.dtpFechaRealizacion.Size = new System.Drawing.Size(200, 22);
-            this.dtpFechaRealizacion.TabIndex = 20;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.YellowGreen;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(135, 41);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(152, 18);
-            this.label19.TabIndex = 19;
-            this.label19.Text = "Fecha Realizacion:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.YellowGreen;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(185, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 18);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Stock:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.YellowGreen;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(55, 150);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 18);
-            this.label2.TabIndex = 56;
-            this.label2.Text = "Categoria:";
-            // 
-            // labelCategoriaMat
-            // 
-            this.labelCategoriaMat.AutoSize = true;
-            this.labelCategoriaMat.ForeColor = System.Drawing.Color.White;
-            this.labelCategoriaMat.Location = new System.Drawing.Point(187, 152);
-            this.labelCategoriaMat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelCategoriaMat.Name = "labelCategoriaMat";
-            this.labelCategoriaMat.Size = new System.Drawing.Size(0, 16);
-            this.labelCategoriaMat.TabIndex = 57;
-            // 
-            // txtStockPedidoMat
-            // 
-            this.txtStockPedidoMat.Location = new System.Drawing.Point(293, 80);
-            this.txtStockPedidoMat.Name = "txtStockPedidoMat";
-            this.txtStockPedidoMat.Size = new System.Drawing.Size(200, 22);
-            this.txtStockPedidoMat.TabIndex = 24;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.YellowGreen;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(553, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 18);
+            this.label3.TabIndex = 53;
+            this.label3.Text = "ID Orden Trabajo:";
             // 
             // PedidoMaterialesForm
             // 
@@ -545,5 +569,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelCategoriaMat;
         private System.Windows.Forms.TextBox txtStockPedidoMat;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboOrdenTrabajo;
     }
 }

@@ -43,6 +43,7 @@ namespace CapaDatos
                     PedidoMateriales.Estado = dr["Estado"].ToString();
                     PedidoMateriales.MaterialID = Convert.ToInt32(dr["MaterialID"]);
                     PedidoMateriales.PersonalID = Convert.ToInt32(dr["PersonalID"]);
+                    PedidoMateriales.OrdenDeTrabajoID = Convert.ToInt32(dr["OrdenDeTrabajoID"]);
                     lista.Add(PedidoMateriales);
                 }
             }
@@ -76,6 +77,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@Stock", pedidoMateriales.Stock);
                 cmd.Parameters.AddWithValue("@MaterialID", pedidoMateriales.MaterialID);
                 cmd.Parameters.AddWithValue("@PersonalID", pedidoMateriales.PersonalID);
+                cmd.Parameters.AddWithValue("@OrdenDeTrabajoID", pedidoMateriales.OrdenDeTrabajoID);
                 cmd.Parameters.AddWithValue("@Estado", pedidoMateriales.Estado);
                 cmd.Parameters.AddWithValue("@FechaRealizacion", pedidoMateriales.FechaRealizacion);
                 cmd.Parameters.AddWithValue("@FechaEntrega", pedidoMateriales.FechaEntrega.HasValue ? (object)pedidoMateriales.FechaEntrega.Value : DBNull.Value);
