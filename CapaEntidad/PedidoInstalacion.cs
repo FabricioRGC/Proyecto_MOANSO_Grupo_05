@@ -15,7 +15,7 @@ namespace CapaEntidad
             public int PersonalID { get; set; }
             public DateTime FechaRegistro { get; set; }
             public DateTime? FechaFin { get; set; }
-            public string TipoInstalacion { get; set; }
+            public string TipoInstalación { get; set; }
             public string Estado { get; set; }
         }
     }

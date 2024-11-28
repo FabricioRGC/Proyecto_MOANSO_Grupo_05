@@ -40,7 +40,7 @@ namespace CapaDatos
                     PedidoInstalacion.FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"]);
                     PedidoInstalacion.FechaFin = dr["FechaFin"] != DBNull.Value ? Convert.ToDateTime(dr["FechaFin"]) : (DateTime?)null;
                     PedidoInstalacion.Estado = dr["Estado"].ToString();
-                    PedidoInstalacion.TipoInstalacion = dr["TipoInstalacion"].ToString();
+                    PedidoInstalacion.TipoInstalación = dr["TipoInstalación"].ToString();
                     PedidoInstalacion.PersonalID = Convert.ToInt32(dr["PersonalID"]);
                     PedidoInstalacion.ContratoID = Convert.ToInt32(dr["ContratoID"]);
                     lista.Add(PedidoInstalacion);
@@ -77,7 +77,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@ContratoID", pedidoInstalacion.ContratoID);
                 cmd.Parameters.AddWithValue("@PersonalID", pedidoInstalacion.PersonalID);
                 cmd.Parameters.AddWithValue("@Estado", pedidoInstalacion.Estado);
-                cmd.Parameters.AddWithValue("@TipoInstalación", pedidoInstalacion.TipoInstalacion);
+                cmd.Parameters.AddWithValue("@TipoInstalación", pedidoInstalacion.TipoInstalación);
                 cmd.Parameters.AddWithValue("@FechaRegistro", pedidoInstalacion.FechaRegistro);
                 cmd.Parameters.AddWithValue("@FechaFin", pedidoInstalacion.FechaFin.HasValue ? (object)pedidoInstalacion.FechaFin.Value : DBNull.Value);
 

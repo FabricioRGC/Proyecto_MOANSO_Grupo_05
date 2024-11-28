@@ -39,7 +39,25 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void limpiarVariables()
         {
+            // Limpiar valores de Labels
+            codigoClienteLabel.Text = string.Empty;
+            direccionClienteLabel.Text = string.Empty;
+            telefonoClienteLabel.Text = string.Empty;
+            estadoClienteLabel.Text = string.Empty;
+            dniClienteLabel.Text = string.Empty;
+            labelContratoID.Text = string.Empty;
 
+            // Limpiar valores de DateTimePickers
+            dtpInicio.Value = DateTime.Now;
+            dtpFin.Value = DateTime.Now;
+
+            // Limpiar valores de ComboBoxes
+            cboCliente.SelectedIndex = -1;
+            cboTecnicos.SelectedIndex = -1;
+            cboTipoInstalacion.SelectedIndex = -1;
+
+            // Reiniciar variables internas
+            contratoIDSeleccionado = 0;
         }
 
         private void cargarClientes()
@@ -88,17 +106,78 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            
-        }
+            try
+            {
+                // Validar Fecha de Inicio
+                if (dtpInicio.Value == null || dtpInicio.Value == DateTime.MinValue)
+                {
+                    MessageBox.Show("Por favor, seleccione la fecha de inicio.");
+                    return;
+                }
 
-        private void OrdenesPedidoInstalacionForm_Load(object sender, EventArgs e)
-        {
-            
+                // Validar Fecha de Fin
+                if (dtpFin.Value == null || dtpFin.Value == DateTime.MinValue)
+                {
+                    MessageBox.Show("Por favor, seleccione la fecha de fin.");
+                    return;
+                }
+
+                // Validar Técnico
+                if (cboTecnicos.SelectedValue == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un técnico válido.");
+                    return;
+                }
+
+                // Validar Tipo de Instalación
+                if (string.IsNullOrEmpty(cboTipoInstalacion.Text))
+                {
+                    MessageBox.Show("Por favor, seleccione un tipo de instalación.");
+                    return;
+                }
+
+                // Validar si hay un contrato asociado
+                if (contratoIDSeleccionado == 0)
+                {
+                    MessageBox.Show("El cliente seleccionado no tiene un contrato asociado.");
+                    return;
+                }
+
+                // Crear el objeto PedidoInstalacion y asignar los valores
+                entPedidoInstalacion PedidoInstalacion = new entPedidoInstalacion
+                {
+                    Estado = "Pendiente", // Estado fijo como "Pendiente"
+                    FechaRegistro = dtpInicio.Value,
+                    FechaFin = dtpFin.Value,
+                    ContratoID = contratoIDSeleccionado, // Se usa el contrato almacenado internamente
+                    PersonalID = Convert.ToInt32(cboTecnicos.SelectedValue),
+                    TipoInstalación = cboTipoInstalacion.Text,
+                };
+
+                // Insertar el Pedido de instalación
+                logPedidoInstalacion.Instancia.InsertarPedidoInstalacion(PedidoInstalacion);
+                MessageBox.Show("Pedido de instalación insertado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar el Pedido de instalación: " + ex.Message);
+            }
+            finally
+            {
+                ListarPedidosInstalacion();
+                limpiarVariables();
+                cargarClientes();
+            }
         }
 
         private void txtPedidoInstalacion_TextChanged(object sender, EventArgs e)
         {
-            
+            string textoBusqueda = txtPedidoInstalacion.Text.Trim();
+            List<PedidoInstalacion.entPedidoInstalacion> listaPedidoInstalacion = logPedidoInstalacion.Instancia.ListarPedidosInstalacion();
+            var listaFiltrada = listaPedidoInstalacion
+                .Where(r => r.PedidoDeInstalaciónID.ToString().Contains(textoBusqueda))
+                .ToList();
+            dataGridOrPeInstalacion.DataSource = listaFiltrada;
         }
 
         private void cboTecnico_SelectedIndexChanged(object sender, EventArgs e)
@@ -152,7 +231,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-
+        private int contratoIDSeleccionado = 0;
         private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboCliente.SelectedIndex != -1)
@@ -188,7 +267,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
                         reader.Close();
 
-                        // 2. Obtener el contrato asociado al cliente
+                        // Obtener el contrato asociado al cliente
                         string consultaContrato = @"
                         SELECT TOP 1 ContratoID 
                         FROM Contrato 
@@ -199,16 +278,17 @@ namespace Proyecto_MOANSO_Grupo_05
 
                         object contratoIdObj = cmdContrato.ExecuteScalar();
 
-                        // Validar si existe un contrato asociado
                         if (contratoIdObj == null)
                         {
-                            // Mostrar en el label si no hay contrato
+                            // No hay contrato asociado
+                            contratoIDSeleccionado = 0;
                             labelContratoID.Text = "Sin Contrato";
                         }
                         else
                         {
-                            // Mostrar el ID del contrato si existe
-                            labelContratoID.Text = $"Con Contrato";
+                            // Contrato asociado encontrado
+                            contratoIDSeleccionado = Convert.ToInt32(contratoIdObj);
+                            labelContratoID.Text = "Con Contrato";
                         }
                     }
                 }
@@ -221,9 +301,33 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void btnTerminarPedido_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                // Verificar que se haya seleccionado un pedido
+                if (dataGridOrPeInstalacion.CurrentRow != null)
+                {
+                    var ordenSeleccionada = (entPedidoInstalacion)dataGridOrPeInstalacion.CurrentRow.DataBoundItem;
+                    int idPedido = ordenSeleccionada.PedidoDeInstalaciónID;
 
-
+                    var confirmResult = MessageBox.Show("¿Está seguro de que desea terminar este pedido?",
+                                                         "Confirmar finalización",
+                                                         MessageBoxButtons.YesNo,
+                                                         MessageBoxIcon.Question);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        logPedidoInstalacion.Instancia.TerminarPedidoRepuesto(idPedido);
+                        ListarPedidosInstalacion();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una fila antes de intentar terminar un pedido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se produjo un error al intentar terminar el pedido: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

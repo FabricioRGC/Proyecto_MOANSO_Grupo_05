@@ -146,7 +146,7 @@
             // cboTipoInstalacion
             // 
             this.cboTipoInstalacion.FormattingEnabled = true;
-            this.cboTipoInstalacion.Location = new System.Drawing.Point(634, 45);
+            this.cboTipoInstalacion.Location = new System.Drawing.Point(641, 45);
             this.cboTipoInstalacion.Name = "cboTipoInstalacion";
             this.cboTipoInstalacion.Size = new System.Drawing.Size(198, 24);
             this.cboTipoInstalacion.TabIndex = 21;
@@ -258,11 +258,11 @@
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(425, 31);
+            this.groupBox4.Location = new System.Drawing.Point(401, 36);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(490, 265);
+            this.groupBox4.Size = new System.Drawing.Size(514, 249);
             this.groupBox4.TabIndex = 57;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Detalles del Cliente";
@@ -425,7 +425,7 @@
             // 
             this.dniLabel.AutoSize = true;
             this.dniLabel.ForeColor = System.Drawing.Color.White;
-            this.dniLabel.Location = new System.Drawing.Point(168, 84);
+            this.dniLabel.Location = new System.Drawing.Point(148, 84);
             this.dniLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dniLabel.Name = "dniLabel";
             this.dniLabel.Size = new System.Drawing.Size(0, 16);
@@ -434,7 +434,7 @@
             // cboTecnicos
             // 
             this.cboTecnicos.FormattingEnabled = true;
-            this.cboTecnicos.Location = new System.Drawing.Point(205, 42);
+            this.cboTecnicos.Location = new System.Drawing.Point(185, 42);
             this.cboTecnicos.Name = "cboTecnicos";
             this.cboTecnicos.Size = new System.Drawing.Size(188, 24);
             this.cboTecnicos.TabIndex = 56;
@@ -445,7 +445,7 @@
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.YellowGreen;
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(64, 84);
+            this.label15.Location = new System.Drawing.Point(44, 84);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(30, 16);
@@ -457,7 +457,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.YellowGreen;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(64, 45);
+            this.label4.Location = new System.Drawing.Point(44, 45);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 16);
@@ -468,7 +468,7 @@
             // 
             this.estadoLabel.AutoSize = true;
             this.estadoLabel.ForeColor = System.Drawing.Color.White;
-            this.estadoLabel.Location = new System.Drawing.Point(169, 172);
+            this.estadoLabel.Location = new System.Drawing.Point(149, 172);
             this.estadoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.estadoLabel.Name = "estadoLabel";
             this.estadoLabel.Size = new System.Drawing.Size(0, 16);
@@ -478,7 +478,7 @@
             // 
             this.telefonoLabel.AutoSize = true;
             this.telefonoLabel.ForeColor = System.Drawing.Color.White;
-            this.telefonoLabel.Location = new System.Drawing.Point(169, 127);
+            this.telefonoLabel.Location = new System.Drawing.Point(149, 127);
             this.telefonoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.telefonoLabel.Name = "telefonoLabel";
             this.telefonoLabel.Size = new System.Drawing.Size(0, 16);
@@ -488,7 +488,7 @@
             // 
             this.areaTrabajoLabel.AutoSize = true;
             this.areaTrabajoLabel.ForeColor = System.Drawing.Color.White;
-            this.areaTrabajoLabel.Location = new System.Drawing.Point(171, 264);
+            this.areaTrabajoLabel.Location = new System.Drawing.Point(151, 264);
             this.areaTrabajoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.areaTrabajoLabel.Name = "areaTrabajoLabel";
             this.areaTrabajoLabel.Size = new System.Drawing.Size(0, 16);
@@ -498,7 +498,7 @@
             // 
             this.tipoCargoLabel.AutoSize = true;
             this.tipoCargoLabel.ForeColor = System.Drawing.Color.White;
-            this.tipoCargoLabel.Location = new System.Drawing.Point(169, 218);
+            this.tipoCargoLabel.Location = new System.Drawing.Point(149, 218);
             this.tipoCargoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tipoCargoLabel.Name = "tipoCargoLabel";
             this.tipoCargoLabel.Size = new System.Drawing.Size(0, 16);
@@ -509,7 +509,7 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.YellowGreen;
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(64, 172);
+            this.label13.Location = new System.Drawing.Point(44, 172);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(53, 16);
@@ -521,7 +521,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.YellowGreen;
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(64, 127);
+            this.label12.Location = new System.Drawing.Point(44, 127);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(64, 16);
@@ -533,7 +533,7 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.YellowGreen;
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(66, 264);
+            this.label14.Location = new System.Drawing.Point(46, 264);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(90, 16);
@@ -545,7 +545,7 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.YellowGreen;
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(64, 218);
+            this.label16.Location = new System.Drawing.Point(44, 218);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(78, 16);
@@ -569,7 +569,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PedidoInstalacionForm";
             this.Text = "OrdenesPedidoInstalacionForm";
-            this.Load += new System.EventHandler(this.OrdenesPedidoInstalacionForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrPeInstalacion)).EndInit();
