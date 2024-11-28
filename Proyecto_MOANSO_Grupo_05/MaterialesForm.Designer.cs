@@ -256,7 +256,7 @@
             this.buttonModi.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.buttonModi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonModi.ForeColor = System.Drawing.Color.Black;
-            this.buttonModi.Location = new System.Drawing.Point(440, 379);
+            this.buttonModi.Location = new System.Drawing.Point(456, 379);
             this.buttonModi.Name = "buttonModi";
             this.buttonModi.Size = new System.Drawing.Size(97, 36);
             this.buttonModi.TabIndex = 24;
