@@ -125,8 +125,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void buttonHistorialMat_Click(object sender, EventArgs e)
         {
-            Form historial = new MaterialesHistorialForm();
-            historial.Show();
+           
         }
         private void CargarCategorias()
         {

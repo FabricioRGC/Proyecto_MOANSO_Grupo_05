@@ -35,7 +35,6 @@ namespace Proyecto_MOANSO_Grupo_05
             dataGridRepuestos.DataSource = logPedidoRepuestos.Instancia.ListarPedidosRepuestos();
         }
 
-        private bool cargandoRepuestos = false;
         private void cargarRepuestos()
         {
             string consulta = "SELECT RepuestosID, NombreRepuesto FROM Repuestos";

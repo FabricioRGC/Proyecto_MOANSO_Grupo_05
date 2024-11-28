@@ -12,9 +12,9 @@ using CapaLogica;
 
 namespace Proyecto_MOANSO_Grupo_05
 {
-    public partial class Form1 : Form
+    public partial class PrincipalForm : Form
     {
-        public Form1()
+        public PrincipalForm()
         {
             InitializeComponent();
         }
@@ -115,26 +115,7 @@ namespace Proyecto_MOANSO_Grupo_05
             formulario.Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            AbrirPrueba2(new Form2());
-        }
-
-        private void buttonOrdenes_Click(object sender, EventArgs e)
-        {
-            AbrirPrueba2(new Form3());
-        }
-
-
-        private void buttonAlmyTra_Click(object sender, EventArgs e)
-        {
-            AbrirPrueba2(new Form4());
-        }
-
-        private void buttonMantFr_Click(object sender, EventArgs e)
-        {
-            AbrirPrueba2(new Form5());
-        }
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -337,7 +318,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void vOLVERALAPRIMERAINTERFAZToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formulario = new Form1();
+            Form formulario = new PrincipalForm();
             formulario.Show();
         }
 
