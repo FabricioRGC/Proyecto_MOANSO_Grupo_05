@@ -9,8 +9,6 @@ using static CapaDatos.datPersonal;
 using CapaEntidad;
 using static CapaEntidad.Personal;
 using static CapaEntidad.Cliente;
-
-
 namespace CapaDatos
 {
 
@@ -45,7 +43,7 @@ namespace CapaDatos
                         PersonalID = Convert.ToInt32(dr["PersonalID"]),
                         Nombre = dr["Nombre"].ToString(),
                         Apellido = dr["Apellido"].ToString(),
-                        DNI = dr["DNI"].ToString(),
+                        DNI = Convert.ToInt32(dr["DNI"]),
                         Teléfono = Convert.ToInt32(dr["Télefono"]),
                         Estado = dr["Estado"].ToString(),
                         Cargo = dr["Cargo"].ToString(),
@@ -143,6 +141,40 @@ namespace CapaDatos
                 }
             }
             return deshabilito;
+        }
+        public Boolean EDITARPersonal(entPersonal personal)
+        {
+            SqlCommand cmd = null;
+            Boolean edito = false;
+
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("SP_EDITAR_Personal", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Nombre", personal.Nombre);
+                cmd.Parameters.AddWithValue("@Apellido", personal.Apellido);
+                cmd.Parameters.AddWithValue("@DNI", personal.DNI);
+                cmd.Parameters.AddWithValue("@Teléfono", personal.Teléfono);
+                cmd.Parameters.AddWithValue("@Cargo", personal.Cargo);
+                cmd.Parameters.AddWithValue("@AreaTrabajo", personal.AreaTrabajo);
+
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    edito = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return edito;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace CapaEntidad
             public int PersonalID { get; set; } // ID único de la persona
             public string Nombre { get; set; }
             public string Apellido { get; set; }
-            public string DNI { get; set; }
+            public int DNI { get; set; }
             public int Teléfono { get; set; }
             public string Estado { get; set; }
             public string Cargo { get; set; }

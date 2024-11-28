@@ -63,7 +63,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 {
                     Nombre = txtNombre.Text.Trim(),
                     Apellido = txtApellidos.Text.Trim(),
-                    DNI = txtDNI.Text.Trim(),
+                    DNI = int.Parse(txtDNI.Text.Trim()),
                     Teléfono = int.Parse(txtTelefono.Text.Trim()), // Convertir a entero
                     Estado = "Activo",
                     Cargo = cbTipoEncargado.SelectedItem.ToString(),
@@ -112,9 +112,9 @@ namespace Proyecto_MOANSO_Grupo_05
 
             try
             {
-                entPersonal mat = new entPersonal();
-                mat.DNI = txtInhabilitar.Text.Trim();
-                logPersonal.Instancia.DeshabilitarPersonal(mat);
+                entPersonal la = new entPersonal();
+                la.DNI = Convert.ToInt32(txtInhabilitar.Text);
+                logPersonal.Instancia.DeshabilitaPersonal(la);
             }
             catch (Exception ex)
             {
@@ -132,43 +132,40 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
-            string criterio = txtBuscar.Text.Trim();
-
-            if (string.IsNullOrEmpty(criterio))
-            {
-                MessageBox.Show("Por favor, ingrese un criterio de búsqueda.");
-                return;
-            }
-
-            try
-            {
-                var personal = logPersonal.Instancia.listarPersonal()
-                                .Where(p => p.DNI.Contains(criterio) || p.Nombre.Contains(criterio))
-                                .ToList();
-
-                if (personal.Any())
-                {
-                    tablaPersonal.DataSource = personal;
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró ningún registro.");
-                    tablaPersonal.DataSource = null; // Limpia la tabla si no hay resultados
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al buscar personal: " + ex.Message);
-            }
+            
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             string codigo = txtBuscar.Text;
 
-            var MaterialesFiltrados = logPersonal.Instancia.listarPersonal().Where(Mate => Mate.DNI.Contains(codigo)).ToList();
+             var MaterialesFiltrados = logPersonal.Instancia.listarPersonal().Where(Mate => Mate.DNI.ToString().Contains(codigo)).ToList();
 
             tablaPersonal.DataSource = MaterialesFiltrados;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                entPersonal mat = new entPersonal();
+                mat.Nombre = txtNombre.Text.Trim();
+                mat.DNI = int.Parse(txtDNI.Text);
+                mat.Apellido = txtApellidos.Text.Trim();
+                mat.Teléfono = int.Parse(txtTelefono.Text);
+                mat.Cargo = cbTipoEncargado.SelectedItem.ToString();
+                mat.AreaTrabajo = cbAreaTrabajo.SelectedItem.ToString();
+
+                logPersonal.Instancia.EDITARPersonal(mat);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            LimpiarVariables();
+            listarPersonal();
+
+
         }
     }
 }

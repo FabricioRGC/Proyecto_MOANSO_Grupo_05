@@ -7,6 +7,7 @@ using CapaDatos;
 using static CapaEntidad.Cliente;
 using static CapaEntidad.Personal;
 using CapaEntidad;
+using static CapaEntidad.Material;
 
 namespace CapaLogica
 {
@@ -33,10 +34,15 @@ namespace CapaLogica
         }
 
         // Método para deshabilitar un personal
-        public void DeshabilitarPersonal(entPersonal personal)
+        public void DeshabilitaPersonal(entPersonal personal)
         {
             datPersonal.Instancia.DeshabilitaPersonal(personal);
         }
+        public void EDITARPersonal(entPersonal mat)
+        {
+            datPersonal.Instancia.EDITARPersonal(mat);
+        }
+
     }
 }
 
