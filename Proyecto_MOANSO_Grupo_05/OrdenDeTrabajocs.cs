@@ -284,5 +284,10 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void label30_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
