@@ -26,37 +26,14 @@ namespace CapaLogica
         // Método para añadir un pedido de instalación
         public void InsertarPedidoInstalacion(PedidoInstalacion.entPedidoInstalacion pedido)
         {
-            datPedidoInstalacion.Instancia.InsertarPedidoInstalacion(pedido);
+            datPedidoInstalacion.Instancia.RegistrarPedidoInstalacion(pedido);
             PedidoInstalacionAgregado?.Invoke();
         }
 
         // Método para terminar un pedido de instalación
         public void TerminarPedidoRepuesto(int numeroOrden)
         {
-            datPedidoInstalacion.Instancia.TerminarPedidoRepuesto(numeroOrden);
-        }
-
-        public int ObtenerUltimoNumeroOrden()
-        {
-            int ultimoNumeroOrden = 0;
-            SqlCommand cmd = new SqlCommand("SELECT MAX(NumeroOrden) FROM pedidosinstalacion", Conexion.Instancia.Conectar());
-
-            try
-            {
-                cmd.Connection.Open();
-                object resultado = cmd.ExecuteScalar();
-                ultimoNumeroOrden = resultado != DBNull.Value ? Convert.ToInt32(resultado) : 0;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al obtener el último número de orden: " + ex.Message, ex);
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
-
-            return ultimoNumeroOrden;
+            datPedidoInstalacion.Instancia.TerminarPedidoInstalacion(numeroOrden);
         }
 
     }

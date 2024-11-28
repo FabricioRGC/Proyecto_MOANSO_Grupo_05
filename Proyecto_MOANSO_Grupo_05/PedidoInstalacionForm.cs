@@ -44,7 +44,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void cargarClientes()
         {
-            string consulta = "SELECT NOMBRE FROM CLIENTES";
+            string consulta = "SELECT Nombre FROM Cliente";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
@@ -54,7 +54,7 @@ namespace Proyecto_MOANSO_Grupo_05
 
                 while (reader.Read())
                 {
-                    cboCliente.Items.Add(reader["NOMBRE"].ToString());
+                    cboCliente.Items.Add(reader["Nombre"].ToString());
                 }
 
                 reader.Close();
@@ -62,115 +62,89 @@ namespace Proyecto_MOANSO_Grupo_05
             }
         }
 
+        private bool cargandoDatos = false;
         private void cargarPersonalTecnico()
         {
-            string consulta = "select nombre from personaltecnico";
+            string consulta = "SELECT PersonalID, Nombre FROM Personal WHERE Cargo = @Cargo";
 
             using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
                 SqlCommand cmd = new SqlCommand(consulta, cn);
+                cmd.Parameters.AddWithValue("@Cargo", "Jefe de soporte tecnico");
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+
+                cargandoDatos = true; // Bandera activada
                 cn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                adapter.Fill(dt);
 
-                while (reader.Read())
-                {
-                    cboTecnico.Items.Add(reader["nombre"].ToString());
-                }
-
-                reader.Close();
-
+                cboTecnicos.DataSource = dt;
+                cboTecnicos.DisplayMember = "Nombre";
+                cboTecnicos.ValueMember = "PersonalID";
+                cboTecnicos.SelectedIndex = -1; // Ningún elemento seleccionado inicialmente
+                cargandoDatos = false; // Bandera desactivada
             }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                // Validar que los campos no estén vacíos
-                if (cboTecnico.SelectedIndex == -1 || cboCliente.SelectedIndex == -1 || cboTipoInstalacion.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Por favor, complete todos los campos.");
-                    return;
-                }
-                
-                // Crear la instancia del pedido con el estado como 'Pendiente' por defecto
-                entPedidoInstalacion pedidoInstalacion = new entPedidoInstalacion
-                {
-                    nombreCliente = cboCliente.SelectedItem.ToString(),
-                    nombreTecnico = cboTecnico.SelectedItem.ToString(),
-                    TipoInstalacion = cboTipoInstalacion.SelectedItem.ToString(),
-                    FechaInicio = dtpInicio.Value.Date,
-                    FechaFin = dtpFin.Value.Date,
-                    Estado = "Pendiente"
-                };
-
-                // Registrar el pedido
-                logPedidoInstalacion.Instancia.InsertarPedidoInstalacion(pedidoInstalacion);
-                MessageBox.Show("Pedido de instalacion añadido exitosamente.");
-                ListarPedidosInstalacion();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            
         }
 
         private void OrdenesPedidoInstalacionForm_Load(object sender, EventArgs e)
         {
-            try
-            {
-                // Obtener el último número de orden y mostrar el siguiente en el TextBox
-                int ultimoNumeroOrden = logPedidoInstalacion.Instancia.ObtenerUltimoNumeroOrden();
-                //txtNumOrden.Text = (ultimoNumeroOrden + 1).ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar el formulario: " + ex.Message);
-            }
+            
         }
 
         private void txtPedidoInstalacion_TextChanged(object sender, EventArgs e)
         {
-            // Verifica si el texto no está vacío y si es un número válido
-            if (int.TryParse(txtPedidoInstalacion.Text, out int idInstalacion))
-            {
-                // Filtrar los materiales por ID
-                var InstalacionesFiltradas = logPedidoInstalacion.Instancia.ListarPedidosInstalacion()
-                    .Where(mate => mate.NumeroOrden == idInstalacion)
-                    .ToList();
-
-                dataGridOrPeInstalacion.DataSource = InstalacionesFiltradas;
-            }
-            else
-            {
-                // Si el ID no es válido o está vacío, limpiar el DataGrid o mostrar todos los materiales
-                dataGridOrPeInstalacion.DataSource = logPedidoInstalacion.Instancia.ListarPedidosInstalacion(); // Mostrar todos los materiales
-            }
+            
         }
 
         private void cboTecnico_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String personalTecnicoSeleccionado = cboTecnico.SelectedItem.ToString();
+            // No hacer nada si estamos cargando datos
+            if (cargandoDatos || cboTecnicos.SelectedIndex == -1)
+                return;
 
+            // Asegúrate de que hay un valor seleccionado
+            if (cboTecnicos.SelectedValue == null)
+            {
+                MessageBox.Show("Seleccione un técnico válido.");
+                return;
+            }
+
+            int personalID;
             try
             {
-                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                // Verifica y convierte correctamente el valor seleccionado
+                if (int.TryParse(cboTecnicos.SelectedValue.ToString(), out personalID))
                 {
-                    string consulta = "SELECT dni, telefono, disponibilidad, tipo_encargado, area_trabajo FROM personaltecnico WHERE nombre = @nombre";
-                    SqlCommand cmd = new SqlCommand(consulta, cn);
-                    cmd.Parameters.AddWithValue("@nombre", personalTecnicoSeleccionado);
-                    cn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
+                    using (SqlConnection cn = Conexion.Instancia.Conectar())
                     {
-                        dniLabel.Text = reader["dni"].ToString();
-                        telefonoLabel.Text = reader["telefono"].ToString();
-                        estadoLabel.Text = reader["disponibilidad"].ToString();
-                        tipoCargoLabel.Text = reader["tipo_encargado"].ToString();
-                        areaTrabajoLabel.Text = reader["area_trabajo"].ToString();
+                        string consulta = "SELECT DNI, Télefono, Estado, Cargo, AreaTrabajo FROM Personal WHERE PersonalID = @PersonalID";
+                        SqlCommand cmd = new SqlCommand(consulta, cn);
+                        cmd.Parameters.AddWithValue("@PersonalID", personalID);
+                        cn.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            dniLabel.Text = reader["DNI"].ToString();
+                            telefonoLabel.Text = reader["Télefono"].ToString();
+                            estadoLabel.Text = reader["Estado"].ToString();
+                            tipoCargoLabel.Text = reader["Cargo"].ToString();
+                            areaTrabajoLabel.Text = reader["AreaTrabajo"].ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró información para el técnico seleccionado.");
+                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("El valor seleccionado no es válido.");
                 }
             }
             catch (Exception ex)
@@ -181,62 +155,73 @@ namespace Proyecto_MOANSO_Grupo_05
 
         private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string clienteSeleccionado = cboCliente.SelectedItem.ToString();
-
-            try
+            if (cboCliente.SelectedIndex != -1)
             {
-                using (SqlConnection cn = Conexion.Instancia.Conectar())
-                {
-                    string consulta = "Select codigo, direccion, telefono, dni, estado from Clientes where nombre = @nombre";
-                    SqlCommand cmd = new SqlCommand(consulta, cn);
-                    cmd.Parameters.AddWithValue("@nombre", clienteSeleccionado);
-                    cn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
+                string clienteSeleccionado = cboCliente.SelectedItem.ToString();
 
-                    while (reader.Read())
+                try
+                {
+                    using (SqlConnection cn = Conexion.Instancia.Conectar())
                     {
-                        codigoClienteLabel.Text = reader["codigo"].ToString();
-                        direccionClienteLabel.Text = reader["direccion"].ToString();
-                        telefonoClienteLabel.Text = reader["telefono"].ToString();
-                        estadoClienteLabel.Text = reader["estado"].ToString();
-                        dniClienteLabel.Text = reader["dni"].ToString();
+                        // 1. Obtener los datos del cliente
+                        string consultaCliente = "SELECT clienteid, direccion, telefono, dni, estado FROM Cliente WHERE nombre = @nombre";
+                        SqlCommand cmdCliente = new SqlCommand(consultaCliente, cn);
+                        cmdCliente.Parameters.AddWithValue("@nombre", clienteSeleccionado);
+                        cn.Open();
+
+                        SqlDataReader reader = cmdCliente.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            // Mostrar los datos del cliente en los Labels
+                            codigoClienteLabel.Text = reader["clienteid"].ToString();
+                            direccionClienteLabel.Text = reader["direccion"].ToString();
+                            telefonoClienteLabel.Text = reader["telefono"].ToString();
+                            estadoClienteLabel.Text = reader["estado"].ToString();
+                            dniClienteLabel.Text = reader["dni"].ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró información para el cliente seleccionado.");
+                            return;
+                        }
+
+                        reader.Close();
+
+                        // 2. Obtener el contrato asociado al cliente
+                        string consultaContrato = @"
+                        SELECT TOP 1 ContratoID 
+                        FROM Contrato 
+                        WHERE ClienteID = @clienteID
+                        ORDER BY FechaInicio DESC";
+                        SqlCommand cmdContrato = new SqlCommand(consultaContrato, cn);
+                        cmdContrato.Parameters.AddWithValue("@clienteID", codigoClienteLabel.Text);
+
+                        object contratoIdObj = cmdContrato.ExecuteScalar();
+
+                        // Validar si existe un contrato asociado
+                        if (contratoIdObj == null)
+                        {
+                            // Mostrar en el label si no hay contrato
+                            labelContratoID.Text = "Sin Contrato";
+                        }
+                        else
+                        {
+                            // Mostrar el ID del contrato si existe
+                            labelContratoID.Text = $"Con Contrato";
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
 
         private void btnTerminarPedido_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dataGridOrPeInstalacion.CurrentRow != null)
-                {
-                    var ordenSeleccionada = (entPedidoInstalacion)dataGridOrPeInstalacion.CurrentRow.DataBoundItem;
-                    int idPedido = ordenSeleccionada.NumeroOrden;
-
-                    var confirmResult = MessageBox.Show("¿Está seguro de que desea terminar este pedido?",
-                                                         "Confirmar finalizacion",
-                                                         MessageBoxButtons.YesNo);
-                    if (confirmResult == DialogResult.Yes)
-                    {
-                        logPedidoInstalacion.Instancia.TerminarPedidoRepuesto(idPedido);
-                        MessageBox.Show("Pedido instalacion terminado exitosamente.");
-                        ListarPedidosInstalacion();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, seleccione un pedido para terminar.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            
         }
     }
 }

@@ -6,6 +6,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CapaEntidad.PedidoMateriales;
+using static CapaEntidad.PedidoInstalacion;
+using System.Windows.Forms;
 
 namespace CapaDatos
 {
@@ -18,65 +21,29 @@ namespace CapaDatos
             get { return datPedidoInstalacion._instancia; }
         }
 
-        // Método para listar pedidos de instalación
+        // Método para mostrar los pedidos de instalaciones
         public List<PedidoInstalacion.entPedidoInstalacion> ListarPedidoInstalacion()
         {
-            List<PedidoInstalacion.entPedidoInstalacion> lista = new List<PedidoInstalacion.entPedidoInstalacion>();
-
-            using (SqlConnection cn = Conexion.Instancia.Conectar())
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM pedidosinstalacion", cn))
-                {
-                    cn.Open();
-                    using (SqlDataReader dr = cmd.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            PedidoInstalacion.entPedidoInstalacion pedidoInstalacion = new PedidoInstalacion.entPedidoInstalacion
-                            {
-                                NumeroOrden = Convert.ToInt32(dr["numeroOrden"]),
-                                nombreCliente = dr["nombreCliente"].ToString(),
-                                nombreTecnico = dr["nombreTecnico"].ToString(),
-                                TipoInstalacion = dr["tipoInstalacion"].ToString(),
-                                FechaInicio = Convert.ToDateTime(dr["fechaInicio"]),
-                                FechaFin = dr["fechaFin"] != DBNull.Value ? Convert.ToDateTime(dr["fechaFin"]) : (DateTime?)null,
-                                Estado = dr["estado"].ToString()
-                            };
-
-                            lista.Add(pedidoInstalacion);
-                        }
-                    }
-                }
-            }
-            return lista;
-        }
-
-
-        // Método para añadir un pedido de instalación
-        public Boolean InsertarPedidoInstalacion(PedidoInstalacion.entPedidoInstalacion pedido)
-        {
             SqlCommand cmd = null;
-            Boolean inserto = false;
-
+            List<PedidoInstalacion.entPedidoInstalacion> lista = new List<PedidoInstalacion.entPedidoInstalacion>();
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_AÑADIR_PedidosInstalacion", cn);
+                cmd = new SqlCommand("SP_MOSTRAR_PEDIDOS_INSTALACION", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-
-                // Parámetros que coinciden con la tabla 'pedidosinstalacion'
-                cmd.Parameters.AddWithValue("@nombreCliente", pedido.nombreCliente);
-                cmd.Parameters.AddWithValue("@nombreTecnico", pedido.nombreTecnico);
-                cmd.Parameters.AddWithValue("@FechaInicio", pedido.FechaInicio);
-                cmd.Parameters.AddWithValue("@FechaFin", (object)pedido.FechaFin ?? DBNull.Value);
-                cmd.Parameters.AddWithValue("@TipoInstalacion", pedido.TipoInstalacion);
-                cmd.Parameters.AddWithValue("@Estado", pedido.Estado);
-
                 cn.Open();
-                int i = cmd.ExecuteNonQuery();
-                if (i > 0)
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
-                    inserto = true;
+                    entPedidoInstalacion PedidoInstalacion = new entPedidoInstalacion();
+                    PedidoInstalacion.PedidoDeInstalaciónID = Convert.ToInt32(dr["PedidoDeInstalaciónID"]);
+                    PedidoInstalacion.FechaRegistro = Convert.ToDateTime(dr["FechaRegistro"]);
+                    PedidoInstalacion.FechaFin = dr["FechaFin"] != DBNull.Value ? Convert.ToDateTime(dr["FechaFin"]) : (DateTime?)null;
+                    PedidoInstalacion.Estado = dr["Estado"].ToString();
+                    PedidoInstalacion.TipoInstalacion = dr["TipoInstalacion"].ToString();
+                    PedidoInstalacion.PersonalID = Convert.ToInt32(dr["PersonalID"]);
+                    PedidoInstalacion.ContratoID = Convert.ToInt32(dr["ContratoID"]);
+                    lista.Add(PedidoInstalacion);
                 }
             }
             catch (Exception ex)
@@ -85,35 +52,84 @@ namespace CapaDatos
             }
             finally
             {
-                cmd?.Connection.Close();
+                if (cmd != null && cmd.Connection != null)
+                {
+                    cmd.Connection.Close();
+                }
+            }
+            return lista;
+        }
+
+
+        // Método para registrar un nuevo pedido de instalacion
+        public bool RegistrarPedidoInstalacion(PedidoInstalacion.entPedidoInstalacion pedidoInstalacion)
+        {
+            SqlCommand cmd = null;
+            bool registrado = false;
+
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("SP_REGISTRAR_PEDIDO_INSTALACION", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Añadir parámetros al StoredProcedure
+                cmd.Parameters.AddWithValue("@ContratoID", pedidoInstalacion.ContratoID);
+                cmd.Parameters.AddWithValue("@PersonalID", pedidoInstalacion.PersonalID);
+                cmd.Parameters.AddWithValue("@Estado", pedidoInstalacion.Estado);
+                cmd.Parameters.AddWithValue("@TipoInstalación", pedidoInstalacion.TipoInstalacion);
+                cmd.Parameters.AddWithValue("@FechaRegistro", pedidoInstalacion.FechaRegistro);
+                cmd.Parameters.AddWithValue("@FechaFin", pedidoInstalacion.FechaFin.HasValue ? (object)pedidoInstalacion.FechaFin.Value : DBNull.Value);
+
+                cn.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    registrado = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al registrar el pedido de instalacion: " + ex.Message);
+            }
+            finally
+            {
+                if (cmd != null && cmd.Connection != null)
+                {
+                    cmd.Connection.Close();
+                }
             }
 
-            return inserto;
+            return registrado;
         }
 
 
 
-        // Método para terminar un pedido de instalación
-        public void TerminarPedidoRepuesto(int numeroOrden)
+        // Método para terminar un pedido de instalacion
+        public void TerminarPedidoInstalacion(int idPedido)
         {
-            SqlCommand cmd = null;
-            try
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
             {
-                SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("SP_TERMINAR_PEDIDOS_INSTALACION", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@NumeroOrden", numeroOrden);
+                using (SqlCommand cmd = new SqlCommand("SP_ANULAR_PEDIDO_INSTALACION", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@PedidoDeInstalaciónID", idPedido);
 
-                cn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al terminar el pedido de instalación: " + ex.Message, ex);
-            }
-            finally
-            {
-                cmd?.Connection.Close();
+                    try
+                    {
+                        cn.Open();
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Pedido finalizado correctamente.");
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Error al finalizar el pedido: " + ex.Message);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
             }
         }
 

@@ -10,10 +10,10 @@ namespace CapaEntidad
     {
         public class entPedidoInstalacion
         {
-            public int NumeroOrden { get; set; }
-            public string nombreCliente { get; set; }
-            public string nombreTecnico { get; set; }
-            public DateTime FechaInicio { get; set; }
+            public int PedidoDeInstalaciónID { get; set; }
+            public int ContratoID { get; set; }
+            public int PersonalID { get; set; }
+            public DateTime FechaRegistro { get; set; }
             public DateTime? FechaFin { get; set; }
             public string TipoInstalacion { get; set; }
             public string Estado { get; set; }
