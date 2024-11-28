@@ -130,5 +130,38 @@ namespace Proyecto_MOANSO_Grupo_05
             //LimpiarVariables();
             ListarPlanificaciones();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string planSeleccionado = comboBox1.SelectedItem.ToString();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "SELECT  FechaInicio, Duración, Estado, ClienteID, PlanDeServicioID FROM Contrato WHERE ContratoID = @ContratoID";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@ContratoID", planSeleccionado);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        //label6.Text = reader["ContratoID"].ToString();
+                        label7.Text = reader["FechaInicio"].ToString();
+                        label8.Text = reader["Duración"].ToString();
+                        label9.Text = reader["Estado"].ToString();
+                        label10.Text = reader["ClienteID"].ToString();
+                        label11.Text = reader["PlanDeServicioID"].ToString();
+                    }
+
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
     }
 }
