@@ -136,9 +136,11 @@ namespace CapaDatos
                 while (dr.Read())
                 {
                     entPago pag = new entPago();
+                    pag.contrato_id = dr["contratoID"].ToString();
                     pag.monto = dr["Monto"].ToString();
                     pag.fecha = Convert.ToDateTime(dr["FechaPago"]);
                     pag.estado = dr["Estado"].ToString();
+                    pag.metodo_pago = dr["MetodoPago"].ToString();
                     lista.Add(pag);
                 }
             }

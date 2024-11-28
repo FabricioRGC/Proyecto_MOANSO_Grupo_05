@@ -285,7 +285,6 @@ namespace Proyecto_MOANSO_Grupo_05
                     return;
                 }
 
-                // Llamar a la lógica para obtener los pagos
                 List<entPago> listaPagos = logPago.Instancia.ObtenerPagosPorDNI(dniCliente);
 
                 // Verificar si hay resultados
