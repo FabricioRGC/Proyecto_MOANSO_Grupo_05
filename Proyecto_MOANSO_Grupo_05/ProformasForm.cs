@@ -105,6 +105,17 @@ namespace Proyecto_MOANSO_Grupo_05
             {
                 try
                 {
+                    // Validar campos obligatorios
+                    if (string.IsNullOrWhiteSpace(labelcodigocliente.Text) ||
+                        string.IsNullOrWhiteSpace(labelCodigoServicio.Text) ||
+                        string.IsNullOrWhiteSpace(labelAsesorID.Text) ||
+                        cbZona.SelectedItem == null)
+                    {
+                        MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    
                     entProformaVenta pro = new entProformaVenta();
                     pro.fecha_inicio = fechaInicioPicker.Value.Date;
                     pro.cliente_id = Convert.ToInt32(labelcodigocliente.Text);
@@ -114,10 +125,12 @@ namespace Proyecto_MOANSO_Grupo_05
                     pro.distrito = cbZona.SelectedItem.ToString();
 
                     logProforma.Instancia.InsertaProforma(pro);
-                }
+
+                    MessageBox.Show("Proforma añadida exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 listarProforma();
             }

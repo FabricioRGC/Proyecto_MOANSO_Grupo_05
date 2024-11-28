@@ -89,13 +89,27 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
+                // Validar campos obligatorios
+                if (string.IsNullOrWhiteSpace(labelcodigocliente.Text) ||
+                    string.IsNullOrWhiteSpace(labelCodigoServicio.Text) ||
+                    string.IsNullOrWhiteSpace(txtDuracion.Text))
+                {
+                    MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Crear contrato
                 entContrato entContrato = new entContrato();
                 entContrato.id_cliente = Convert.ToInt32(labelcodigocliente.Text);
                 entContrato.id_servicio = Convert.ToInt32(labelCodigoServicio.Text);
                 entContrato.fechaInicio = fechaPicker.Value.Date;
                 entContrato.duracion = Convert.ToInt32(txtDuracion.Text);
                 entContrato.estado = "ACTIVO";
+
                 logContrato.Instancia.InsertaContrato(entContrato);
+
+                // Mostrar mensaje de éxito
+                MessageBox.Show("Contrato añadido exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

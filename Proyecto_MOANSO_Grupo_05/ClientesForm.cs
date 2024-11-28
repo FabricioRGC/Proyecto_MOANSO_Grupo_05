@@ -63,6 +63,10 @@ namespace Proyecto_MOANSO_Grupo_05
                 cli.dni = txtDni.Text.Trim();
                 logCliente.Instancia.InsertaCliente(cli);
 
+                // Mostrar mensaje de éxito
+                MessageBox.Show("Cliente añadido exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
                 // Limpiar y listar
                 LimpiarVariables();
                 listarCliente();
