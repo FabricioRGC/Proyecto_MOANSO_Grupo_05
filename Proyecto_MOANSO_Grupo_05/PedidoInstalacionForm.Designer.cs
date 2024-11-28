@@ -238,7 +238,7 @@
             this.groupBox3.Size = new System.Drawing.Size(937, 318);
             this.groupBox3.TabIndex = 46;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Detalles del Tecnico";
+            this.groupBox3.Text = "Detalles del Encargado";
             // 
             // groupBox4
             // 

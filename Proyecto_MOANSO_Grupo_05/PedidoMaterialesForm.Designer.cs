@@ -51,6 +51,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboOrdenTrabajo = new System.Windows.Forms.ComboBox();
             this.txtStockPedidoMat = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
@@ -62,8 +64,6 @@
             this.dataGridMateriales = new System.Windows.Forms.DataGridView();
             this.btnTerminarMaterial = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
-            this.cboOrdenTrabajo = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -94,7 +94,7 @@
             this.groupBox2.Size = new System.Drawing.Size(1039, 302);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Detalles del Tecnico";
+            this.groupBox2.Text = "Detalles del Encargado";
             // 
             // dniLabel
             // 
@@ -365,6 +365,26 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Detalles del Pedido";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.YellowGreen;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(553, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 18);
+            this.label3.TabIndex = 53;
+            this.label3.Text = "ID Orden Trabajo:";
+            // 
+            // cboOrdenTrabajo
+            // 
+            this.cboOrdenTrabajo.FormattingEnabled = true;
+            this.cboOrdenTrabajo.Location = new System.Drawing.Point(707, 74);
+            this.cboOrdenTrabajo.Name = "cboOrdenTrabajo";
+            this.cboOrdenTrabajo.Size = new System.Drawing.Size(200, 24);
+            this.cboOrdenTrabajo.TabIndex = 52;
+            // 
             // txtStockPedidoMat
             // 
             this.txtStockPedidoMat.Location = new System.Drawing.Point(293, 80);
@@ -484,26 +504,6 @@
             this.btnRegistrar.Text = "Añadir";
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // cboOrdenTrabajo
-            // 
-            this.cboOrdenTrabajo.FormattingEnabled = true;
-            this.cboOrdenTrabajo.Location = new System.Drawing.Point(707, 74);
-            this.cboOrdenTrabajo.Name = "cboOrdenTrabajo";
-            this.cboOrdenTrabajo.Size = new System.Drawing.Size(200, 24);
-            this.cboOrdenTrabajo.TabIndex = 52;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.YellowGreen;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(553, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 18);
-            this.label3.TabIndex = 53;
-            this.label3.Text = "ID Orden Trabajo:";
             // 
             // PedidoMaterialesForm
             // 
