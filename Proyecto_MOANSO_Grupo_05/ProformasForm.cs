@@ -102,25 +102,25 @@ namespace Proyecto_MOANSO_Grupo_05
 
             // Boton Añadir
             private void btnAñadir_Click(object sender, EventArgs e)
-        {
-            try
             {
-                entProformaVenta pro = new entProformaVenta();
-                pro.fecha_inicio = fechaInicioPicker.Value.Date;
-                pro.cliente_id = Convert.ToInt32(labelcodigocliente.Text);
-                pro.servicio_id = Convert.ToInt32(labelCodigoServicio.Text);
-                pro.fecha_fin = fechaFinPicker.Value.Date;
-                pro.personal_id = Convert.ToInt32(labelAsesorID.Text);
-                pro.distrito = cbZona.SelectedItem.ToString();
+                try
+                {
+                    entProformaVenta pro = new entProformaVenta();
+                    pro.fecha_inicio = fechaInicioPicker.Value.Date;
+                    pro.cliente_id = Convert.ToInt32(labelcodigocliente.Text);
+                    pro.servicio_id = Convert.ToInt32(labelCodigoServicio.Text);
+                    pro.fecha_fin = fechaFinPicker.Value.Date;
+                    pro.personal_id = Convert.ToInt32(labelAsesorID.Text);
+                    pro.distrito = cbZona.SelectedItem.ToString();
 
-                logProforma.Instancia.InsertaProforma(pro);
+                    logProforma.Instancia.InsertaProforma(pro);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                listarProforma();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            listarProforma();
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -259,7 +259,7 @@ namespace Proyecto_MOANSO_Grupo_05
             html = html.Replace("@TELEFONO", telefonoLabel.Text);
             html = html.Replace("@FECHA", DateTime.Now.ToString("dd/MM/yy"));
             html = html.Replace("@METODOPAGO", "Efectivo");
-            html = html.Replace("@SERVICIO", labelCodigoServicio.Text);
+            html = html.Replace("@SERVICIO", cbPlan.SelectedItem.ToString());
             html = html.Replace("@MONTO", precioLabel.Text);
             html = html.Replace("@SUBTOTAL", precioLabel.Text);
             html = html.Replace("@IGV", "0.18");
@@ -296,6 +296,36 @@ namespace Proyecto_MOANSO_Grupo_05
                     doc.Close();
                     fs.Close();
                 }
+            }
+        }
+
+        private void cbZona_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string zonaSeleccionada = cbZona.SelectedItem.ToString();
+
+            try
+            {
+                using (SqlConnection cn = Conexion.Instancia.Conectar())
+                {
+                    string consulta = "select TipoConexión, TipoServicio, Estado_zona from ZonaDeCobertura WHERE Distrito = @Distrito";
+                    SqlCommand cmd = new SqlCommand(consulta, cn);
+                    cmd.Parameters.AddWithValue("@Distrito", zonaSeleccionada);
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        labelTipoConexion.Text = reader["TipoConexión"].ToString();
+                        labelTipoServicio.Text = reader["TipoServicio"].ToString();
+                        labelEstadoZona.Text = reader["Estado_zona"].ToString();
+                    }
+
+                    reader.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
     }
