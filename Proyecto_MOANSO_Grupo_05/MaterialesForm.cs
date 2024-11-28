@@ -206,5 +206,18 @@ namespace Proyecto_MOANSO_Grupo_05
         {
 
         }
+
+        private void dataGriMateriales_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+                 DataGridViewRow fila = dataGriMateriales.Rows[e.RowIndex];
+
+             txtCodigoM.Text = Convert.ToString(fila.Cells[0].Value);
+             txtNombreM.Text = Convert.ToString(fila.Cells[1].Value);
+             txtstockM.Text = Convert.ToString(fila.Cells[3].Value);
+             txtDescripciónMateriales.Text = Convert.ToString(fila.Cells[2].Value);
+             comboBoxCategoriaMat.Text = Convert.ToString(fila.Cells[5].Value);
+          
+        }
     }
 }
