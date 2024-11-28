@@ -44,6 +44,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TablaNotadeSalida = new System.Windows.Forms.DataGridView();
+            this.Butonbuscar = new System.Windows.Forms.Button();
             this.gbEleccionPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TablaNotadeSalida)).BeginInit();
             this.SuspendLayout();
@@ -122,9 +123,9 @@
             this.gbEleccionPedido.Controls.Add(this.cbRepuestos);
             this.gbEleccionPedido.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.gbEleccionPedido.Location = new System.Drawing.Point(22, 23);
-            this.gbEleccionPedido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbEleccionPedido.Margin = new System.Windows.Forms.Padding(2);
             this.gbEleccionPedido.Name = "gbEleccionPedido";
-            this.gbEleccionPedido.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbEleccionPedido.Padding = new System.Windows.Forms.Padding(2);
             this.gbEleccionPedido.Size = new System.Drawing.Size(514, 70);
             this.gbEleccionPedido.TabIndex = 39;
             this.gbEleccionPedido.TabStop = false;
@@ -134,7 +135,7 @@
             this.rbPedidoMateriales.AutoSize = true;
             this.rbPedidoMateriales.Checked = true;
             this.rbPedidoMateriales.Location = new System.Drawing.Point(122, 31);
-            this.rbPedidoMateriales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbPedidoMateriales.Margin = new System.Windows.Forms.Padding(2);
             this.rbPedidoMateriales.Name = "rbPedidoMateriales";
             this.rbPedidoMateriales.Size = new System.Drawing.Size(62, 17);
             this.rbPedidoMateriales.TabIndex = 31;
@@ -147,7 +148,7 @@
             // 
             this.rbPedidoRepuestos.AutoSize = true;
             this.rbPedidoRepuestos.Location = new System.Drawing.Point(30, 31);
-            this.rbPedidoRepuestos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbPedidoRepuestos.Margin = new System.Windows.Forms.Padding(2);
             this.rbPedidoRepuestos.Name = "rbPedidoRepuestos";
             this.rbPedidoRepuestos.Size = new System.Drawing.Size(76, 17);
             this.rbPedidoRepuestos.TabIndex = 30;
@@ -159,7 +160,7 @@
             // 
             this.cbMateriales.FormattingEnabled = true;
             this.cbMateriales.Location = new System.Drawing.Point(373, 29);
-            this.cbMateriales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMateriales.Margin = new System.Windows.Forms.Padding(2);
             this.cbMateriales.Name = "cbMateriales";
             this.cbMateriales.Size = new System.Drawing.Size(128, 21);
             this.cbMateriales.TabIndex = 29;
@@ -168,7 +169,7 @@
             // 
             this.cbRepuestos.FormattingEnabled = true;
             this.cbRepuestos.Location = new System.Drawing.Point(217, 29);
-            this.cbRepuestos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbRepuestos.Margin = new System.Windows.Forms.Padding(2);
             this.cbRepuestos.Name = "cbRepuestos";
             this.cbRepuestos.Size = new System.Drawing.Size(128, 21);
             this.cbRepuestos.TabIndex = 28;
@@ -177,7 +178,7 @@
             // 
             this.btAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btAgregar.Location = new System.Drawing.Point(440, 215);
-            this.btAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(82, 30);
             this.btAgregar.TabIndex = 38;
@@ -188,7 +189,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(174, 219);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(185, 20);
             this.dateTimePicker1.TabIndex = 37;
@@ -218,12 +219,22 @@
             // 
             this.TablaNotadeSalida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TablaNotadeSalida.Location = new System.Drawing.Point(9, 299);
-            this.TablaNotadeSalida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TablaNotadeSalida.Margin = new System.Windows.Forms.Padding(2);
             this.TablaNotadeSalida.Name = "TablaNotadeSalida";
             this.TablaNotadeSalida.RowHeadersWidth = 51;
             this.TablaNotadeSalida.RowTemplate.Height = 24;
             this.TablaNotadeSalida.Size = new System.Drawing.Size(534, 204);
             this.TablaNotadeSalida.TabIndex = 45;
+            // 
+            // Butonbuscar
+            // 
+            this.Butonbuscar.Location = new System.Drawing.Point(344, 152);
+            this.Butonbuscar.Name = "Butonbuscar";
+            this.Butonbuscar.Size = new System.Drawing.Size(75, 23);
+            this.Butonbuscar.TabIndex = 46;
+            this.Butonbuscar.Text = "Buscar";
+            this.Butonbuscar.UseVisualStyleBackColor = true;
+            this.Butonbuscar.Click += new System.EventHandler(this.Butonbuscar_Click);
             // 
             // NotaDeSalidaForm
             // 
@@ -231,6 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(562, 531);
+            this.Controls.Add(this.Butonbuscar);
             this.Controls.Add(this.TablaNotadeSalida);
             this.Controls.Add(this.labelCantidad);
             this.Controls.Add(this.label10);
@@ -243,7 +255,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NotaDeSalidaForm";
             this.Text = "NotaDeSalidaForm";
             this.gbEleccionPedido.ResumeLayout(false);
@@ -272,5 +284,6 @@
         private System.Windows.Forms.DataGridView TablaNotadeSalida;
         private System.Windows.Forms.RadioButton rbPedidoMateriales;
         private System.Windows.Forms.RadioButton rbPedidoRepuestos;
+        private System.Windows.Forms.Button Butonbuscar;
     }
 }

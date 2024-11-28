@@ -77,73 +77,25 @@ namespace Proyecto_MOANSO_Grupo_05
 
 
         private void rbPedidoMateriales_CheckedChanged(object sender, EventArgs e)
-        { 
-            int valorSeleccionado;
-            if (rbPedidoMateriales.Checked)
+        {
             {
-                //cbRepuestos.Visible = false; 
-                //cbMateriales.Visible = true;
-                lbProduct.Text = "Material";
-                valorSeleccionado = int.Parse(cbMateriales.SelectedItem.ToString());
-
-
-                try
+                if (rbPedidoMateriales.Checked)
                 {
-                    using (SqlConnection cn = Conexion.Instancia.Conectar())
-                    {
-                        string consulta = "Select MaterialID, Stock, PersonalID from PedidoMateriales where PedidoMaterialesID = @ID";
-                        SqlCommand cmd = new SqlCommand(consulta, cn);
-                        cmd.Parameters.AddWithValue("@ID", valorSeleccionado);
-                        cn.Open();
-                        SqlDataReader reader = cmd.ExecuteReader();
-
-                        while (reader.Read())
-                        {
-                            labelCantidad.Text = reader["PersonalID"].ToString();
-                            labelProducto.Text = reader["MaterialID"].ToString();
-                            labelCantidad.Text = reader["Stock"].ToString();   
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
+                    cbRepuestos.Visible = false;
+                    cbMateriales.Visible = true;
+                    lbProduct.Text = "Material";
                 }
             }
         }
 
         private void rbPedidoRepuestos_CheckedChanged(object sender, EventArgs e)
         {
-            int valorSeleccionado2;
             if (rbPedidoRepuestos.Checked)
             {
-                //cbMateriales.Visible = false;  
-                //cbRepuestos.Visible = true;
+                cbMateriales.Visible = false;
+                cbRepuestos.Visible = true;
                 lbProduct.Text = "Repuesto";
-                valorSeleccionado2 = int.Parse(cbRepuestos.SelectedItem.ToString());
 
-                try
-                {
-                    using (SqlConnection cn = Conexion.Instancia.Conectar())
-                    {
-                        string consulta = "Select RepuestosID, Stock, PersonalID from PedidoDeRepuestos where PedidoDeRepuestosID = @ID";
-                        SqlCommand cmd = new SqlCommand(consulta, cn);
-                        cmd.Parameters.AddWithValue("@ID", valorSeleccionado2);
-                        cn.Open();
-                        SqlDataReader reader = cmd.ExecuteReader();
-
-                        while (reader.Read())
-                        {
-                            labelCantidad.Text = reader["PersonalID"].ToString();
-                            labelProducto.Text = reader["MaterialID"].ToString();
-                            labelCantidad.Text = reader["Stock"].ToString();
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
             }
         }
 
@@ -198,5 +150,74 @@ namespace Proyecto_MOANSO_Grupo_05
 
 
         }
-    }
+
+        private void Butonbuscar_Click(object sender, EventArgs e)
+        {
+            int valorSeleccionado;
+            int valorSeleccionado2;
+            if (rbPedidoMateriales.Checked)
+            {
+                cbRepuestos.Visible = false;
+                cbMateriales.Visible = true;
+                lbProduct.Text = "Material";
+                valorSeleccionado = int.Parse(cbMateriales.SelectedItem.ToString());
+
+
+                try
+                {
+                    using (SqlConnection cn = Conexion.Instancia.Conectar())
+                    {
+                        string consulta = "Select MaterialID, Stock, PersonalID from PedidoMateriales where PedidoMaterialesID = @ID";
+                        SqlCommand cmd = new SqlCommand(consulta, cn);
+                        cmd.Parameters.AddWithValue("@ID", valorSeleccionado);
+                        cn.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+                        while (reader.Read())
+                        {
+                            labelCantidad.Text = reader["PersonalID"].ToString();
+                            labelProducto.Text = reader["MaterialID"].ToString();
+                            labelCantidad.Text = reader["Stock"].ToString();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+
+            else if (rbPedidoRepuestos.Checked)
+                {
+
+                    valorSeleccionado2 = int.Parse(cbRepuestos.SelectedItem.ToString());
+
+                    try
+                    {
+                        using (SqlConnection cn = Conexion.Instancia.Conectar())
+                        {
+                            string consulta = "Select RepuestosID, Stock, PersonalID from PedidoDeRepuestos where PedidoDeRepuestosID = @ID";
+                            SqlCommand cmd = new SqlCommand(consulta, cn);
+                            cmd.Parameters.AddWithValue("@ID", valorSeleccionado2);
+                            cn.Open();
+                            SqlDataReader reader = cmd.ExecuteReader();
+
+                            while (reader.Read())
+                            {
+                                labelCantidad.Text = reader["PersonalID"].ToString();
+                                labelProducto.Text = reader["MaterialID"].ToString();
+                                labelCantidad.Text = reader["Stock"].ToString();
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
+        }
 }
+
+
