@@ -121,6 +121,7 @@ namespace Proyecto_MOANSO_Grupo_05
                 entContrato.RepuestosID = Convert.ToInt32(cbPersonal.SelectedItem.ToString());
                 entContrato.Estado = "ACTIVO";
                 logPlanificacionMantenimiento.Instancia.InsertarPlanificacion(entContrato);
+                MessageBox.Show("Planificación registrada.");
             }
             catch (Exception ex)
             {
