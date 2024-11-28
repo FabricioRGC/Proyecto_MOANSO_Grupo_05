@@ -183,7 +183,8 @@ namespace Proyecto_MOANSO_Grupo_05
                     FechaEntrega = dtpFechaEntrega.Value,
                     Stock = stockSolicitado,
                     RepuestosID = repuestosID,
-                    PersonalID = Convert.ToInt32(cboTecnicoAsignado.SelectedValue)
+                    PersonalID = Convert.ToInt32(cboTecnicoAsignado.SelectedValue),
+                    OrdenDeTrabajoID = Convert.ToInt32(cboOrdenTrabajo.SelectedValue)
                 };
 
                 // Insertar el Pedido de Repuesto
