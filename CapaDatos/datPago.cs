@@ -130,7 +130,7 @@ namespace CapaDatos
                 SqlConnection cn = Conexion.Instancia.Conectar();
                 cmd = new SqlCommand("VerPagosPorDNI", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@DNICliente", dni); // Pasar parámetro al SP
+                cmd.Parameters.AddWithValue("@DNICliente", dni); 
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())

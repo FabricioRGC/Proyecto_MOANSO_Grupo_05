@@ -303,5 +303,10 @@ namespace Proyecto_MOANSO_Grupo_05
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listarPagos();
+        }
     }
 }
