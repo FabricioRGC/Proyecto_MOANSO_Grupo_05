@@ -794,7 +794,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(679, 951);
+            this.ClientSize = new System.Drawing.Size(679, 854);
             this.Controls.Add(this.dataGridViewOrden);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox4);
