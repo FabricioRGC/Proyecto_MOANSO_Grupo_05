@@ -110,12 +110,13 @@ namespace Proyecto_MOANSO_Grupo_05
 
                 // Mostrar mensaje de éxito
                 MessageBox.Show("Contrato añadido exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listarContrato();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            listarContrato();
+            
         }
 
         // Actualizar Información

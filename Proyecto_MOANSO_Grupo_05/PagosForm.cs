@@ -108,19 +108,35 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
+                // Validar campos obligatorios
+                if (string.IsNullOrWhiteSpace(labelCodigoContrato.Text) ||
+                    string.IsNullOrWhiteSpace(txtMonto.Text) ||
+                    cbPago.SelectedItem == null)
+                {
+                    MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Crear pago
                 entPago pag = new entPago();
                 pag.contrato_id = labelCodigoContrato.Text;
                 pag.monto = txtMonto.Text;
                 pag.fecha = fechaPicker.Value.Date;
                 pag.metodo_pago = cbPago.SelectedItem.ToString();
                 pag.estado = "ACTIVO";
+
                 logPago.Instancia.InsertarPago(pag);
+
+                // Mostrar mensaje de éxito
+                MessageBox.Show("Pago registrado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Actualizar lista de pagos
+                listarPagos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            listarPagos();
         }
 
         private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)

@@ -413,7 +413,7 @@
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(200, 47);
             this.btnImprimir.TabIndex = 55;
-            this.btnImprimir.Text = "Generar Comprobante";
+            this.btnImprimir.Text = "Generar PDF";
             this.btnImprimir.UseVisualStyleBackColor = false;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
