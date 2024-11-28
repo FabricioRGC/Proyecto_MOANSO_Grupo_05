@@ -14,6 +14,7 @@ namespace CapaEntidad
             public int Stock { get; set; }
             public int RepuestosID { get; set; }
             public int PersonalID { get; set; }
+            public int OrdenDeTrabajoID { get; set; }
             public DateTime FechaRealizacion { get; set; }
             public DateTime? FechaEntrega { get; set; }
             public string Estado { get; set; }

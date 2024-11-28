@@ -30,6 +30,8 @@
         {
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cboOrdenTrabajo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtStockPedidoRep = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
@@ -81,6 +83,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cboOrdenTrabajo);
+            this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.txtStockPedidoRep);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.dtpFechaEntrega);
@@ -96,6 +100,25 @@
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles del Pedido";
+            // 
+            // cboOrdenTrabajo
+            // 
+            this.cboOrdenTrabajo.FormattingEnabled = true;
+            this.cboOrdenTrabajo.Location = new System.Drawing.Point(695, 65);
+            this.cboOrdenTrabajo.Name = "cboOrdenTrabajo";
+            this.cboOrdenTrabajo.Size = new System.Drawing.Size(200, 24);
+            this.cboOrdenTrabajo.TabIndex = 50;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.YellowGreen;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(565, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(114, 16);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "ID Orden Trabajo:";
             // 
             // txtStockPedidoRep
             // 
@@ -118,7 +141,7 @@
             // 
             // dtpFechaEntrega
             // 
-            this.dtpFechaEntrega.Location = new System.Drawing.Point(706, 49);
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(695, 27);
             this.dtpFechaEntrega.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(200, 22);
@@ -129,7 +152,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.YellowGreen;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(588, 54);
+            this.label2.Location = new System.Drawing.Point(577, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 16);
             this.label2.TabIndex = 21;
@@ -531,5 +554,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridRepuestos;
         private System.Windows.Forms.Button btnTerminarPedido;
+        private System.Windows.Forms.ComboBox cboOrdenTrabajo;
+        private System.Windows.Forms.Label label6;
     }
 }

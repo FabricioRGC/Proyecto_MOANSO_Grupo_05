@@ -44,6 +44,7 @@ namespace CapaDatos
                     PedidoRepuesto.Estado = dr["Estado"].ToString();
                     PedidoRepuesto.RepuestosID = Convert.ToInt32(dr["RepuestosID"]);
                     PedidoRepuesto.PersonalID = Convert.ToInt32(dr["PersonalID"]);
+                    PedidoRepuesto.OrdenDeTrabajoID = Convert.ToInt32(dr["OrdenDeTrabajoID"]);
                     lista.Add(PedidoRepuesto);
                 }
             }
@@ -77,6 +78,7 @@ namespace CapaDatos
                 cmd.Parameters.AddWithValue("@Stock", pedidoRepuesto.Stock);
                 cmd.Parameters.AddWithValue("@RepuestosID", pedidoRepuesto.RepuestosID);
                 cmd.Parameters.AddWithValue("@PersonalID", pedidoRepuesto.PersonalID);
+                cmd.Parameters.AddWithValue("@OrdenDeTrabajoID", pedidoRepuesto.OrdenDeTrabajoID);
                 cmd.Parameters.AddWithValue("@Estado", pedidoRepuesto.Estado);
                 cmd.Parameters.AddWithValue("@FechaRealizacion", pedidoRepuesto.FechaRealizacion);
                 cmd.Parameters.AddWithValue("@FechaEntrega", pedidoRepuesto.FechaEntrega.HasValue ? (object)pedidoRepuesto.FechaEntrega.Value : DBNull.Value);

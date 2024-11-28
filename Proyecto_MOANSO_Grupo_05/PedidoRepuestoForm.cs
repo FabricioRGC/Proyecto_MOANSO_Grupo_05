@@ -24,8 +24,10 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             InitializeComponent();
             ListarPedidosRepuesto();
-            cargarRepuestos();
+            
             cargarPersonalTecnico();
+            cargarOrdenTrabajo();
+            cargarRepuestos();
         }
 
         public void ListarPedidosRepuesto()
@@ -34,7 +36,6 @@ namespace Proyecto_MOANSO_Grupo_05
         }
 
         private bool cargandoRepuestos = false;
-
         private void cargarRepuestos()
         {
             string consulta = "SELECT RepuestosID, NombreRepuesto FROM Repuestos";
@@ -53,6 +54,33 @@ namespace Proyecto_MOANSO_Grupo_05
                     cboNomRepuestos.DataSource = dt;               // Vincula el DataTable
                     cboNomRepuestos.DisplayMember = "NombreRepuesto"; // Muestra el nombre
                     cboNomRepuestos.ValueMember = "RepuestosID";      // Usa el ID como valor
+                    cboNomRepuestos.SelectedIndex = -1;              // Sin selección inicial
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar repuestos: " + ex.Message);
+                }
+            }
+        }
+
+        private void cargarOrdenTrabajo()
+        {
+            string consulta = "SELECT OrdenDeTrabajoID FROM OrdenDeTrabajo";
+
+            using (SqlConnection cn = Conexion.Instancia.Conectar())
+            {
+                SqlCommand cmd = new SqlCommand(consulta, cn);
+                try
+                {
+                    cn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    DataTable dt = new DataTable();
+                    dt.Load(reader);
+
+                    cboNomRepuestos.DataSource = dt;               // Vincula el DataTable
+                    cboNomRepuestos.DisplayMember = "OrdenDeTrabajoID"; // Muestra el nombre
+                    cboNomRepuestos.ValueMember = "OrdenDeTrabajoID";      // Usa el ID como valor
                     cboNomRepuestos.SelectedIndex = -1;              // Sin selección inicial
                 }
                 catch (Exception ex)
