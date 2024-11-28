@@ -20,6 +20,7 @@ namespace CapaDatos
             get { return datCliente._instancia; }
         }
 
+
         // Metodo para listar los clientes
         public List<entCliente> ListarCliente()
         {
