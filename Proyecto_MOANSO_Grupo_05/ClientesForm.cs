@@ -45,19 +45,32 @@ namespace Proyecto_MOANSO_Grupo_05
         {
             try
             {
+                // Verificar si algún campo está vacío
+                if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                    string.IsNullOrWhiteSpace(txtDireccion.Text) ||
+                    string.IsNullOrWhiteSpace(txtTelefono.Text) ||
+                    string.IsNullOrWhiteSpace(txtDni.Text))
+                {
+                    MessageBox.Show("Todos los campos son obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Crear cliente si todo está completo
                 entCliente cli = new entCliente();
                 cli.nombre = txtNombre.Text.Trim();
                 cli.direccion = txtDireccion.Text.Trim();
                 cli.telefono = txtTelefono.Text.Trim();
                 cli.dni = txtDni.Text.Trim();
                 logCliente.Instancia.InsertaCliente(cli);
+
+                // Limpiar y listar
+                LimpiarVariables();
+                listarCliente();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            LimpiarVariables();
-            listarCliente();
         }
 
         // BOTON MODIFICAR
