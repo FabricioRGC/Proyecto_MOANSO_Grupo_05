@@ -36,8 +36,6 @@
             this.cbAsesor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tablaProformas = new System.Windows.Forms.DataGridView();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtCodigoCliente = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.labelcodigocliente = new System.Windows.Forms.Label();
             this.dniLabel = new System.Windows.Forms.Label();
@@ -169,25 +167,6 @@
             this.tablaProformas.Name = "tablaProformas";
             this.tablaProformas.Size = new System.Drawing.Size(1014, 290);
             this.tablaProformas.TabIndex = 54;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(688, 334);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(43, 13);
-            this.label16.TabIndex = 56;
-            this.label16.Text = "Buscar:";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
-            // 
-            // txtCodigoCliente
-            // 
-            this.txtCodigoCliente.ForeColor = System.Drawing.Color.Black;
-            this.txtCodigoCliente.Location = new System.Drawing.Point(737, 331);
-            this.txtCodigoCliente.Name = "txtCodigoCliente";
-            this.txtCodigoCliente.Size = new System.Drawing.Size(105, 20);
-            this.txtCodigoCliente.TabIndex = 55;
             // 
             // groupBox2
             // 
@@ -659,8 +638,6 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.txtCodigoCliente);
             this.Controls.Add(this.tablaProformas);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAñadir);
@@ -692,8 +669,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView tablaProformas;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtCodigoCliente;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label labelcodigocliente;
         private System.Windows.Forms.Label dniLabel;

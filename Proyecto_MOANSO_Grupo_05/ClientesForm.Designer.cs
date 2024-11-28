@@ -45,7 +45,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBuscarDni = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaClientes)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -207,7 +206,6 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.groupBox2.Controls.Add(this.btnBuscar);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtBuscarDni);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
@@ -237,18 +235,6 @@
             this.txtBuscarDni.Size = new System.Drawing.Size(116, 20);
             this.txtBuscarDni.TabIndex = 15;
             this.txtBuscarDni.TextChanged += new System.EventHandler(this.txtBuscarNombre_TextChanged_1);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
-            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscar.Location = new System.Drawing.Point(260, 19);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(161, 47);
-            this.btnBuscar.TabIndex = 14;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // ClientesForm
             // 
@@ -292,6 +278,5 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBuscarDni;
-        private System.Windows.Forms.Button btnBuscar;
     }
 }

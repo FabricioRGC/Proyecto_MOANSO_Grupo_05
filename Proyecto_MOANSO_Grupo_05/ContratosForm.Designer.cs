@@ -46,8 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.fechaPicker = new System.Windows.Forms.DateTimePicker();
             this.tablaContratos = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBuscarContrato = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -255,24 +253,6 @@
             this.tablaContratos.Size = new System.Drawing.Size(726, 267);
             this.tablaContratos.TabIndex = 38;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(387, 305);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "Buscar:";
-            // 
-            // txtBuscarContrato
-            // 
-            this.txtBuscarContrato.Location = new System.Drawing.Point(436, 302);
-            this.txtBuscarContrato.Name = "txtBuscarContrato";
-            this.txtBuscarContrato.Size = new System.Drawing.Size(117, 20);
-            this.txtBuscarContrato.TabIndex = 40;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -424,8 +404,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(751, 626);
             this.Controls.Add(this.btnImprimir);
-            this.Controls.Add(this.txtBuscarContrato);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.tablaContratos);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.groupBox2);
@@ -466,8 +444,6 @@
         private System.Windows.Forms.Label velocidadLabel;
         private System.Windows.Forms.DateTimePicker fechaPicker;
         private System.Windows.Forms.DataGridView tablaContratos;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBuscarContrato;
         private System.Windows.Forms.Label labelCodigoServicio;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;

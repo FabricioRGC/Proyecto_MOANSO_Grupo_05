@@ -117,6 +117,24 @@ namespace Proyecto_MOANSO_Grupo_05
                     return;
                 }
 
+                // Comparar monto con el costo del plan
+                decimal montoPago = Convert.ToDecimal(txtMonto.Text);
+                decimal costoPlan = Convert.ToDecimal(labelMONTOCONTRATO.Text);
+
+                if (montoPago < costoPlan)
+                {
+                    MessageBox.Show($"El monto ingresado ({montoPago:C}) no puede ser menor al costo del plan ({costoPlan:C}).",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (montoPago > costoPlan)
+                {
+                    MessageBox.Show($"El monto ingresado ({montoPago:C}) no puede ser mayor al costo del plan ({costoPlan:C}).",
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 // Crear pago
                 entPago pag = new entPago();
                 pag.contrato_id = labelCodigoContrato.Text;
