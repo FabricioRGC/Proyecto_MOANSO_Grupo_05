@@ -34,5 +34,12 @@ namespace CapaLogica
         {
             datPago.Instancia.AnularPago(pag);
         }
+
+        // Método para obtener pagos por DNI
+        public List<entPago> ObtenerPagosPorDNI(string dni)
+        {
+            return datPago.Instancia.ObtenerPagosPorDNI(dni);
+        }
+
     }
 }

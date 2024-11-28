@@ -257,5 +257,36 @@ namespace Proyecto_MOANSO_Grupo_05
             }
             
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string dniCliente = txtBuscarDni.Text; // Captura el DNI ingresado en el TextBox
+                if (string.IsNullOrEmpty(dniCliente))
+                {
+                    MessageBox.Show("Por favor, ingrese un DNI válido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Llamar a la lógica para obtener los pagos
+                List<entPago> listaPagos = logPago.Instancia.ObtenerPagosPorDNI(dniCliente);
+
+                // Verificar si hay resultados
+                if (listaPagos.Count > 0)
+                {
+                    tablaPagos.DataSource = listaPagos; // Mostrar en el DataGridView
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron pagos para el DNI ingresado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tablaPagos.DataSource = null; // Limpia el DataGridView si no hay datos
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

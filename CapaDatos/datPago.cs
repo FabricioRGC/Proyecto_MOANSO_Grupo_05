@@ -118,5 +118,40 @@ namespace CapaDatos
             }
             return anulado;
         }
+
+        // Método para obtener pagos por DNI
+        public List<entPago> ObtenerPagosPorDNI(string dni)
+        {
+            List<entPago> lista = new List<entPago>();
+            SqlCommand cmd = null;
+
+            try
+            {
+                SqlConnection cn = Conexion.Instancia.Conectar();
+                cmd = new SqlCommand("VerPagosPorDNI", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@DNICliente", dni); // Pasar parámetro al SP
+                cn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    entPago pag = new entPago();
+                    pag.monto = dr["Monto"].ToString();
+                    pag.fecha = Convert.ToDateTime(dr["FechaPago"]);
+                    pag.estado = dr["Estado"].ToString();
+                    lista.Add(pag);
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+            return lista;
+        }
+
     }
 }

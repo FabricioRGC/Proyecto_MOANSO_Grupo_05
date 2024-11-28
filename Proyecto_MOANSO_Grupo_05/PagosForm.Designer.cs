@@ -58,14 +58,17 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnAñadir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.labelMONTOCONTRATO = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.labelCodigoContrato = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.labelPlan = new System.Windows.Forms.Label();
             this.labelFechaContrato = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tablaPagos = new System.Windows.Forms.DataGridView();
-            this.labelMONTOCONTRATO = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtBuscarDni = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -88,6 +91,7 @@
             this.groupBox2.Controls.Add(this.labelTelefono);
             this.groupBox2.Controls.Add(this.labelCodigo);
             this.groupBox2.Controls.Add(this.labelEstado);
+            this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.labelDireccion);
             this.groupBox2.Controls.Add(this.labelDni);
             this.groupBox2.Controls.Add(this.dniLabel);
@@ -402,12 +406,31 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(434, 12);
+            this.groupBox3.Location = new System.Drawing.Point(146, 100);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(506, 105);
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detalles del Contrato:";
+            // 
+            // labelMONTOCONTRATO
+            // 
+            this.labelMONTOCONTRATO.AutoSize = true;
+            this.labelMONTOCONTRATO.ForeColor = System.Drawing.Color.Black;
+            this.labelMONTOCONTRATO.Location = new System.Drawing.Point(330, 68);
+            this.labelMONTOCONTRATO.Name = "labelMONTOCONTRATO";
+            this.labelMONTOCONTRATO.Size = new System.Drawing.Size(0, 13);
+            this.labelMONTOCONTRATO.TabIndex = 33;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(237, 68);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 13);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Monto Mensual:";
             // 
             // labelCodigoContrato
             // 
@@ -461,36 +484,49 @@
             this.tablaPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaPagos.Location = new System.Drawing.Point(434, 123);
             this.tablaPagos.Name = "tablaPagos";
-            this.tablaPagos.Size = new System.Drawing.Size(506, 256);
+            this.tablaPagos.Size = new System.Drawing.Size(770, 256);
             this.tablaPagos.TabIndex = 41;
             // 
-            // labelMONTOCONTRATO
+            // btnBuscar
             // 
-            this.labelMONTOCONTRATO.AutoSize = true;
-            this.labelMONTOCONTRATO.ForeColor = System.Drawing.Color.Black;
-            this.labelMONTOCONTRATO.Location = new System.Drawing.Point(330, 68);
-            this.labelMONTOCONTRATO.Name = "labelMONTOCONTRATO";
-            this.labelMONTOCONTRATO.Size = new System.Drawing.Size(0, 13);
-            this.labelMONTOCONTRATO.TabIndex = 33;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(179)))), ((int)(((byte)(179)))));
+            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscar.Location = new System.Drawing.Point(467, 53);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(219, 48);
+            this.btnBuscar.TabIndex = 55;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // label9
+            // label8
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(237, 68);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 13);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Monto Mensual:";
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(464, 23);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.TabIndex = 56;
+            this.label8.Text = "Buscar por dni:";
+            // 
+            // txtBuscarDni
+            // 
+            this.txtBuscarDni.Location = new System.Drawing.Point(570, 20);
+            this.txtBuscarDni.Name = "txtBuscarDni";
+            this.txtBuscarDni.Size = new System.Drawing.Size(116, 20);
+            this.txtBuscarDni.TabIndex = 57;
             // 
             // PagosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(956, 394);
+            this.ClientSize = new System.Drawing.Size(1215, 394);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtBuscarDni);
             this.Controls.Add(this.tablaPagos);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -506,6 +542,7 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaPagos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -548,5 +585,8 @@
         private System.Windows.Forms.Label codigoClientelabel;
         private System.Windows.Forms.Label labelMONTOCONTRATO;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtBuscarDni;
     }
 }
